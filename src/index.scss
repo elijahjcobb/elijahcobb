@@ -1,0 +1,397 @@
+/**
+ * Elijah Cobb
+ * elijah@elijahcobb.com
+ * elijahcobb.com
+ * github.com/elijahjcobb
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	//border: solid red 1px;
+}
+
+$blue: dodgerblue;
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: black;
+		color: white;
+	}
+}
+@media (prefers-color-scheme: light) {
+	body {
+		background-color: white;
+		color: black;
+	}
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 40px;
+}
+
+span, p, img {
+	display: block;
+}
+
+.reference,
+.business,
+.college,
+.project {
+	margin-top: 20px;
+}
+
+header {
+
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+
+	}
+
+	.contacts {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.contact {
+
+		display: flex;
+		text-decoration: none;
+		color: $blue;
+		align-items: center;
+		margin: 20px 10px 20px 0;
+
+		ion-icon {
+			width: 26px;
+			height: 26px;
+			margin-right: 6px;
+		}
+
+	}
+
+	.profile {
+		width: 100%;
+		transition: transform 250ms ease-in-out;
+	}
+
+	.profile:hover {
+		transform: scale(2) rotate(10deg) translateY(40px);
+	}
+
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+}
+
+h2 {
+	text-transform: uppercase;
+	background: $blue;
+	color: white;
+	padding: 4px 8px;
+	font-size: 1em;
+	margin-top: 40px;
+	border-radius: 4px;
+}
+
+.left {
+
+}
+
+.experiences {
+	display: flex;
+	flex-direction: column;
+}
+
+.link-container {
+	display: flex;
+	align-items: flex-start;
+}
+
+.business {
+
+	a {
+
+		display: flex;
+		color: $blue;
+		align-items: center;
+		justify-content: center;
+		margin-right: 10px;
+
+		.link {
+			display: block;
+			width: 20px;
+			height: 20px;
+		}
+
+	}
+
+	.header {
+
+		display: flex;
+		align-items: flex-start;
+
+		.info {
+
+			display: flex;
+			flex-direction: column;
+
+			.name, .subname, .location {
+				margin-top: 4px;
+			}
+
+			.name {
+				font-weight: bold;
+				font-size: 1.5em;
+			}
+
+			.subname {
+				font-weight: lighter;
+				font-size: 1.125em;
+			}
+
+			.location {
+				font-style: italic;
+				font-size: 1.125em;
+			}
+
+		}
+
+	}
+
+	.position {
+
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+		margin-left: 50px;
+
+		.title, .date, .description {
+			margin-top: 4px;
+		}
+
+		.title {
+			font-size: 1.125em;
+			font-weight: bold;
+		}
+
+		.date {
+			color: gray;
+		}
+
+	}
+
+}
+
+.educations {
+	display: flex;
+	flex-direction: column;
+}
+
+.college {
+
+	display: flex;
+	width: 100%;
+	align-items: flex-start;
+
+	.logo {
+		max-width: 60px;
+		display: block;
+		object-fit: contain;
+		margin-right: 20px;
+	}
+
+	.info {
+
+		.name {
+			font-weight: bold;
+			font-size: 1.25em;
+		}
+
+		.degree {
+
+			margin-top: 10px;
+
+			.title {
+				font-size: 1.125em;
+			}
+
+			.date {
+				color: gray;
+			}
+
+		}
+
+	}
+
+}
+
+.right {
+
+	.skills {
+
+		ul {
+			margin-top: 10px;
+			margin-left: 40px;
+		}
+
+		li {
+			margin-top: 4px;
+		}
+
+	}
+
+	.projects {
+
+		.project {
+
+			.header {
+
+				display: flex;
+
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: $blue;
+
+					.link {
+						width: 20px;
+						height: 20px;
+					}
+
+					margin-right: 8px;
+
+				}
+
+				.name {
+					font-weight: bold;
+				}
+
+			}
+
+			.description {
+				margin-top: 8px;
+				margin-left: 30px;
+			}
+
+		}
+
+	}
+
+	.references {
+
+		.reference {
+
+			display: flex;
+			align-items: flex-start;
+
+			.link {
+				width: 20px;
+				height: 20px;
+				margin-right: 10px;
+				color: $blue;
+			}
+
+			.name {
+				font-weight: bold;
+			}
+
+			.title {
+				font-style: italic;
+			}
+		}
+
+	}
+
+}
+
+@media (min-width: 800px) {
+
+	html {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.App {
+		max-width: 1080px;
+	}
+
+	.left {
+		width: 65%;
+	}
+
+	.right {
+		width: 35%;
+	}
+
+	.experienceLabel {
+		margin-top: 0;
+	}
+
+	.references,
+	.business,
+	.college,
+	.projects {
+		margin-top: 40px;
+	}
+
+	a {
+		transition: transform 250ms ease-in-out;
+	}
+
+	a:hover {
+		transform: scale(1.25);
+	}
+
+	header {
+
+		flex-direction: row;
+
+		.about {
+			flex-grow: 1;
+		}
+
+		.profile {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+		}
+
+		.contacts {
+			display: flex;
+			flex-direction: row;
+
+			.contact {
+				margin-right: 40px;
+			}
+		}
+
+	}
+
+}
+
+@media (min-width: 1280px) {
+
+	body {
+		max-width: 1000px;
+	}
+
+	main {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.left {
+		margin-right: 80px;
+	}
+
+}
