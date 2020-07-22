@@ -15,13 +15,13 @@ export const experiences: Experience[] = [
 		positions: [
 			{
 				title: "AntiGravity Device Software Engineer",
-				description: "Worked to develop software for an anti-gravity trolley for a lunar simulant chamber with close mentorship from NASA's JPL.",
+				description: "Worked to develop software for an anti-gravity trolley for a lunar simulant chamber with mentorship from NASA's JPL.",
 				start: "July 2020",
 				end: "Present"
 			},
 			{
 				title: "COM & Ground Control Software Engineer",
-				description: "Developed ground control software for NASA's BIG Idea funded L-SABRE mission. Funded by NASA to develop a lunar rover to supply communication and power to other rovers in the permanently shadowed craters of the lunar surface.",
+				description: "Developed ground control software for NASA's BIG Idea funded L-SABRE mission. L-SABRE was funded by NASA to develop a lunar rover to supply communication and power to other rovers in the permanently shadowed craters of the lunar surface.",
 				start: "June 2020",
 				end: "Present"
 			},
@@ -105,18 +105,5 @@ export const experiences: Experience[] = [
 				description: "Worked as a full-stack developer for Solution Studio. They are a contracting company serving any type of development need. While working with them I focused on developing iPad applications and Facebook Messenger Bots."
 			}
 		]
-	},
-	// {
-	// 	title: "Lochenheath Golf Club",
-	// 	url: "http://www.lochenheath.com/",
-	// 	location: "Traverse City, MI",
-	// 	positions: [
-	// 		{
-	// 			title: "Grounds Staff",
-	// 			start: "June 2015",
-	// 			end: "June 2017",
-	// 			description: "Worked on the course assisting members and maintaining the grounds."
-	// 		}
-	// 	]
-	// }
+	}
 ]
