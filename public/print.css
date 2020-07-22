@@ -1,0 +1,206 @@
+/**
+ * Elijah Cobb
+ * elijah@elijahcobb.com
+ * elijahcobb.com
+ * github.com/elijahjcobb
+ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.App {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+
+#bmc-wbtn {
+  display: none;
+}
+
+.header-url {
+  display: block;
+  font-size: 22px;
+  margin: 12px 0;
+  color: dodgerblue;
+  text-decoration: none;
+}
+
+header {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+}
+header .contacts {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+header .contact {
+  color: dodgerblue;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 10px;
+}
+header .profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+h2 {
+  color: dodgerblue;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 16px 0;
+}
+
+.experiences {
+  width: 100%;
+}
+.experiences .business {
+  margin-bottom: 12px;
+}
+.experiences .business span {
+  display: block;
+}
+.experiences .business .header .link {
+  display: none;
+}
+.experiences .business .header .info {
+  display: flex;
+  flex-direction: column;
+}
+.experiences .business .header .info .name {
+  font-size: 16px;
+  font-weight: bold;
+}
+.experiences .business .header .info .subname {
+  font-size: 14px;
+}
+.experiences .business .header .info .location {
+  font-size: 14px;
+  font-style: italic;
+}
+.experiences .business .position {
+  padding-left: 20px;
+  margin-top: 6px;
+}
+.experiences .business .position .title {
+  font-weight: bold;
+  font-size: 14px;
+}
+.experiences .business .position .date {
+  font-weight: lighter;
+  font-size: 12px;
+}
+.experiences .business .position .description {
+  font-size: 12px;
+}
+
+.educations {
+  width: 100%;
+}
+.educations .colleges {
+  width: 100%;
+  display: flex;
+}
+.educations .college {
+  width: 40%;
+}
+.educations .college .logo {
+  height: 80px;
+  display: block;
+}
+.educations .college .info {
+  margin-top: 4px;
+}
+.educations .college .info .name {
+  font-size: 16px;
+  font-weight: bold;
+}
+.educations .college .info .degree {
+  margin-top: 4px;
+}
+.educations .college .info .degree span {
+  display: block;
+}
+.educations .college .info .degree .title {
+  font-weight: bold;
+  font-size: 14px;
+}
+.educations .college .info .degree .date {
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.allSkills {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.allSkills .skills {
+  margin-right: 40px;
+}
+.allSkills .skills ul li {
+  margin-left: 30px;
+  font-size: 12px;
+}
+
+.project {
+  margin-top: 12px;
+}
+.project .header .link {
+  display: none;
+}
+.project .header .name {
+  font-weight: bold;
+  font-size: 14px;
+}
+.project .description {
+  font-size: 12px;
+}
+
+.PDFFooter {
+  background: #ddd;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.allReferences {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.allReferences .reference {
+  margin-right: 20px;
+}
+.allReferences .reference span {
+  display: block;
+}
+.allReferences .reference .link {
+  display: none;
+}
+.allReferences .reference .name {
+  font-weight: bold;
+}
+.allReferences .reference .title, .allReferences .reference .company {
+  font-size: 12px;
+}
+.allReferences .reference .company {
+  font-weight: lighter;
+}
+
+/*# sourceMappingURL=print.css.map */

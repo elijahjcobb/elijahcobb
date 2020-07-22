@@ -16,6 +16,10 @@
 
 $blue: dodgerblue;
 
+.header-url, .PDFFooter {
+	display: none;
+}
+
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: black;
@@ -48,7 +52,7 @@ span, p, img {
 header {
 
 	display: flex;
-	flex-direction: column;
+	flex-direction: colum
 
 	h1 {
 

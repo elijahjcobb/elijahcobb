@@ -30,6 +30,7 @@ export class HeaderView extends React.Component<HeaderViewProps, HeaderViewState
 		return (<header>
 			<div className="about">
 				<h1>Elijah Cobb</h1>
+				<a className={"header-url"} href={"https://elijahcobb.com"}>elijahcobb.com</a>
 				<div className="contacts">
 					<a className="contact" href="mailto:elijah@elijahcobb.com">
 						<Mail/>

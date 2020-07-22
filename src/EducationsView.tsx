@@ -30,11 +30,13 @@ export class EducationsView extends React.Component<EducationsViewProps, Educati
 	public render(): React.ReactElement {
 		return (<div className="educations">
 			<h2>education</h2>
-			{
-				educations.map((education, index) => {
-					return (<EducationView value={education} key={index}/>)
-				})
-			}
+			<div className={"colleges"}>
+				{
+					educations.map((education, index) => {
+						return (<EducationView value={education} key={index}/>)
+					})
+				}
+			</div>
 		</div>);
 	}
 

@@ -1,0 +1,277 @@
+/**
+ * Elijah Cobb
+ * elijah@elijahcobb.com
+ * elijahcobb.com
+ * github.com/elijahjcobb
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+$blue: dodgerblue;
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	//border: solid red 1px;
+}
+
+body {
+	margin: 0;
+}
+
+.App {
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+}
+
+#bmc-wbtn {
+	display: none;
+}
+
+.header-url {
+	display: block;
+	font-size: 22px;
+	margin: 12px 0;
+	color: $blue;
+	text-decoration: none;
+}
+
+header {
+
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+	width: 100%;
+
+	.contacts {
+		display: flex;
+		align-items: center;
+		margin-top: 4px
+	}
+
+	.contact {
+		color: $blue;
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		margin-right: 10px;
+	}
+
+	.profile {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+	}
+}
+
+h2 {
+	color: $blue;
+	text-transform: uppercase;
+	font-size: 16px;
+	margin: 16px 0;
+}
+
+.experiences {
+
+	width: 100%;
+
+	.business {
+
+		margin-bottom: 12px;
+
+		span {
+			display: block;
+		}
+
+		.header {
+
+			.link {
+				display: none;
+			}
+
+			.info {
+
+				display: flex;
+				flex-direction: column;
+
+				.name {
+					font-size: 16px;
+					font-weight: bold;
+				}
+
+				.subname {
+					font-size: 14px;
+				}
+
+				.location {
+					font-size: 14px;
+					font-style: italic;
+				}
+
+			}
+
+		}
+
+		.position {
+
+			padding-left: 20px;
+			margin-top: 6px;
+
+			.title {
+				font-weight: bold;
+				font-size: 14px;
+			}
+
+			.date {
+				font-weight: lighter;
+				font-size: 12px;
+			}
+
+			.description {
+				font-size: 12px;
+			}
+
+		}
+	}
+
+}
+
+.educations {
+
+	width: 100%;
+
+	.colleges {
+		width: 100%;
+		display: flex;
+	}
+
+	.college {
+
+		width: 40%;
+
+		.logo {
+			height: 80px;
+			display: block;
+		}
+
+		.info {
+
+			margin-top: 4px;
+
+
+			.name {
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+			.degree {
+
+				margin-top: 4px;
+
+				span {
+					display: block;
+				}
+
+				.title {
+					font-weight: bold;
+					font-size: 14px;
+				}
+
+				.date {
+					font-weight: lighter;
+					font-size: 12px;
+				}
+
+			}
+		}
+	}
+}
+
+.allSkills {
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	.skills {
+
+		margin-right: 40px;
+
+		ul {
+
+			li {
+				margin-left: 30px;
+				font-size: 12px;
+			}
+		}
+	}
+
+}
+
+.project {
+
+	margin-top: 12px;
+
+	.header {
+
+		.link {
+			display: none;
+		}
+
+		.name {
+			font-weight: bold;
+			font-size: 14px;
+		}
+
+	}
+
+	.description {
+		font-size: 12px;
+	}
+
+}
+
+.PDFFooter {
+	background: #ddd;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+	margin-bottom: 8px;
+}
+
+.allReferences {
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	.reference {
+
+		margin-right: 20px;
+
+		span {
+			display: block;
+		}
+
+		.link {
+			display: none;
+		}
+
+		.name {
+			font-weight: bold;
+		}
+
+		.title, .company {
+			font-size: 12px;
+		}
+
+		.company {
+			font-weight: lighter;
+		}
+	}
+
+}

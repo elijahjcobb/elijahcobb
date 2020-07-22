@@ -49,7 +49,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: "ABADI Lab",
-		url: "abadi.me.mtu.edu"
+		url: "http://abadi.me.mtu.edu"
 	},
 	{
 		title: "Vacation Village",

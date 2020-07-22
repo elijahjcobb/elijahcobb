@@ -13,6 +13,7 @@ import {ProjectsView} from "./ProjectsView";
 import {ReferencesView} from "./ReferencesView";
 import {SkillsView} from "./SkillsView";
 import {databases, frameworks, languages} from "./data/skills";
+import {PDFFooter} from "./PDFFooter";
 
 export interface AppProps {
 
@@ -34,6 +35,7 @@ export class App extends React.Component<AppProps, AppState> {
 
 	public render(): React.ReactElement {
 		return (<div className={"App"}>
+			<PDFFooter/>
 			<HeaderView/>
 			<main>
 				<div className="left">
@@ -41,9 +43,11 @@ export class App extends React.Component<AppProps, AppState> {
 					<EducationsView/>
 				</div>
 				<div className="right">
-					<SkillsView value={languages}/>
-					<SkillsView value={frameworks}/>
-					<SkillsView value={databases}/>
+					<div className={"allSkills"}>
+						<SkillsView value={languages}/>
+						<SkillsView value={frameworks}/>
+						<SkillsView value={databases}/>
+					</div>
 					<ProjectsView/>
 					<ReferencesView/>
 				</div>

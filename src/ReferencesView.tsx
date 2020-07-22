@@ -30,11 +30,13 @@ export class ReferencesView extends React.Component<ReferencesViewProps, Referen
 	public render(): React.ReactElement {
 		return (<div className="references">
 			<h2>references</h2>
-			{
-				references.map((reference, index) => {
-					return (<ReferenceView value={reference} key={index}/>);
-				})
-			}
+			<div className={"allReferences"}>
+				{
+					references.map((reference, index) => {
+						return (<ReferenceView value={reference} key={index}/>);
+					})
+				}
+			</div>
 		</div>);
 	}
 
