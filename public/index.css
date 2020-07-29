@@ -45,7 +45,7 @@ span, p, img {
 
 header {
   display: flex;
-  flex-direction: colum h1;
+  flex-direction: column-reverse;
 }
 header .contacts {
   display: flex;
@@ -58,6 +58,9 @@ header .contact {
   align-items: center;
   margin: 20px 10px 20px 0;
 }
+header .contact span {
+  font-size: 0.75em;
+}
 header .contact ion-icon {
   width: 26px;
   height: 26px;
@@ -65,10 +68,11 @@ header .contact ion-icon {
 }
 header .profile {
   width: 100%;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  max-height: 400px;
+  object-fit: cover;
   transition: transform 250ms ease-in-out;
-}
-header .profile:hover {
-  transform: scale(2) rotate(10deg) translateY(40px);
 }
 
 main {
@@ -271,6 +275,7 @@ h2 {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    margin-bottom: 0;
   }
   header .contacts {
     display: flex;
@@ -278,6 +283,12 @@ h2 {
   }
   header .contacts .contact {
     margin-right: 40px;
+  }
+  header .profile:hover {
+    transform: scale(2) rotate(10deg) translateY(40px);
+  }
+  header .contact span {
+    font-size: 1em;
   }
 }
 @media (min-width: 1280px) {
