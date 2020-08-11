@@ -20,7 +20,13 @@ export const experiences: Experience[] = [
 				end: "Present"
 			},
 			{
-				title: "COM & Ground Control Software Engineer",
+				title: "Embedded Communications Software Engineer",
+				description: "Developer software for communication through all rover subsystems using WebSockets, Named pipes, process memory sharing, and multi-threading management.",
+				start: "June 2020",
+				end: "Present"
+			},
+			{
+				title: "Ground Control Software Engineer",
 				description: "Developed ground control software for NASA's BIG Idea funded L-SABRE mission. L-SABRE was funded by NASA to develop a lunar rover to supply communication and power to other rovers in the permanently shadowed craters of the lunar surface.",
 				start: "June 2020",
 				end: "Present"
