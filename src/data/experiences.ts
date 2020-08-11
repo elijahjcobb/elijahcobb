@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
 			},
 			{
 				title: "Embedded Communications Software Engineer",
-				description: "Developer software for communication through all rover subsystems using WebSockets, Named pipes, process memory sharing, and multi-threading management.",
+				description: "Developed software for communication through all rover subsystems using WebSockets, Named pipes, process memory sharing, and multi-threading management.",
 				start: "June 2020",
 				end: "Present"
 			},
