@@ -17,7 +17,8 @@ export const languages: Skills = {
 		"Objective-C",
 		"Python",
 		"C#",
-		"HTML & CSS"
+		"HTML & CSS",
+		"Rust"
 	]
 }
 

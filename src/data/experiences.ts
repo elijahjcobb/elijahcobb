@@ -15,13 +15,13 @@ export const experiences: Experience[] = [
 		positions: [
 			{
 				title: "AntiGravity Device Software Engineer",
-				description: "Worked to develop software for an anti-gravity trolley for a lunar simulant chamber with mentorship from NASA's JPL.",
+				description: "Worked to develop software for an anti-gravity trolley for a lunar simulant chamber with mentorship from JPL.",
 				start: "July 2020",
 				end: "Present"
 			},
 			{
 				title: "Embedded Communications Software Engineer",
-				description: "Developed software for communication through all rover subsystems using WebSockets, Named pipes, process memory sharing, and multi-threading management.",
+				description: "Developed software for communication through subsystems on the L-SABRE mission using WebSockets, named pipes, process memory sharing, and multi-threading management.",
 				start: "June 2020",
 				end: "Present"
 			},
@@ -35,6 +35,20 @@ export const experiences: Experience[] = [
 				title: "Web Developer",
 				description: "Developed a website for the PSTDL laboratory at Michigan Technological University.",
 				start: "June 2020",
+				end: "Present"
+			}
+		]
+	},
+	{
+		title: "MTU Aerospace Enterprise",
+		url: "http://aerospace.mtu.edu/",
+		subtitle: "Michigan Technological University",
+		location: "Houghton, MI",
+		positions: [
+			{
+				title: "Software Team",
+				description: "A member of the MTU Aerospace enterprise software team.",
+				start: "August 2020",
 				end: "Present"
 			}
 		]
