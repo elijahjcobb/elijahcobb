@@ -11,7 +11,7 @@ export const experiences: Experience[] = [
 		title: "Planetary Surface Technology Development Lab",
 		subtitle: "Michigan Technological University",
 		location: "Houghton, MI",
-		url: "https://github.com/mtu-pstdl",
+		url: "https://huskyworks.space",
 		positions: [
 			{
 				title: "AntiGravity Device Software Engineer",
