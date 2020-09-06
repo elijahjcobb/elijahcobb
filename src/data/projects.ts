@@ -8,6 +8,11 @@ import {Project} from "../types";
 
 export const projects: Project[] = [
 	{
+		title: "NMC Music",
+		url: "https://nmcmusic.jeffreycobb.com",
+		description: "Developed a very simple web app for the music department at Northwestern Michigan College. Administrators can log into an SFTP server and add/change files and directories that are presented and playable in the web app."
+	},
+	{
 		title: "@element-ts/silicon",
 		url: "https://github.com/element-ts/silicon",
 		description: "A MongoDB driver wrapping the official driver provided by MongoDB found here on NPM. It simplifies many processes by providing a type-safe object-oriented wrapper of the MongoDB driver. Also included in silicon is a powerful type-safe query driver."
