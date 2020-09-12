@@ -14,14 +14,14 @@ export const experiences: Experience[] = [
 		url: "https://huskyworks.space",
 		positions: [
 			{
-				title: "AntiGravity Device Software Engineer",
-				description: "Developed software for an anti-gravity trolley for a lunar simulant chamber with mentorship from JPL.",
+				title: "Gravity Offloading System",
+				description: "Developed control software and networking for a gravity offloading trolley for a lunar simulant chamber with mentorship from JPL.",
 				start: "July 2020",
 				end: "Present"
 			},
 			{
-				title: "Software Engineer",
-				description: "Developed software for the NASA BIG Idea funded lunar rover exploring permanantly shaded regions on the lunar surface. Developed ground control software, networking, and subsystem management.",
+				title: "L-SABRE / T-REX",
+				description: "Developed ground control software, networking, and subsystem management, for the NASA BIG Idea funded lunar rover exploring permanently shaded regions on the lunar surface.",
 				start: "June 2020",
 				end: "Present"
 			},
