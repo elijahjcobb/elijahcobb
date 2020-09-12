@@ -20,7 +20,7 @@ export const educations: Education[] = [
 			{
 				level: "Bachelor's Degree",
 				major: "Computer Science",
-				gpa: "3.62",
+				gpa: "3.61",
 				start: "2018",
 				end: "2021"
 			}

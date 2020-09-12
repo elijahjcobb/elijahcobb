@@ -15,19 +15,13 @@ export const experiences: Experience[] = [
 		positions: [
 			{
 				title: "AntiGravity Device Software Engineer",
-				description: "Worked to develop software for an anti-gravity trolley for a lunar simulant chamber with mentorship from JPL.",
+				description: "Developed software for an anti-gravity trolley for a lunar simulant chamber with mentorship from JPL.",
 				start: "July 2020",
 				end: "Present"
 			},
 			{
-				title: "Embedded Communications Software Engineer",
-				description: "Developed software for communication through subsystems on the L-SABRE mission using WebSockets, named pipes, process memory sharing, and multi-threading management.",
-				start: "June 2020",
-				end: "Present"
-			},
-			{
-				title: "Ground Control Software Engineer",
-				description: "Developed ground control software for NASA's BIG Idea funded L-SABRE mission. L-SABRE was funded by NASA to develop a lunar rover to supply communication and power to other rovers in the permanently shadowed craters of the lunar surface.",
+				title: "Software Engineer",
+				description: "Developed software for the NASA BIG Idea funded lunar rover exploring permanantly shaded regions on the lunar surface. Developed ground control software, networking, and subsystem management.",
 				start: "June 2020",
 				end: "Present"
 			},
@@ -81,19 +75,19 @@ export const experiences: Experience[] = [
 			}
 		]
 	},
-	{
-		title: "Michigan Technological University",
-		url: "https://www.mtu.edu/it/",
-		location: "Houghton, MI",
-		positions: [
-			{
-				title: "IT Help Desk Consultant",
-				description: "Conversed with faculty and students providing tech support over the phone and in person for university property.",
-				start: "August 2019",
-				end: "February 2020"
-			}
-		]
-	},
+	// {
+	// 	title: "Michigan Technological University",
+	// 	url: "https://www.mtu.edu/it/",
+	// 	location: "Houghton, MI",
+	// 	positions: [
+	// 		{
+	// 			title: "IT Help Desk Consultant",
+	// 			description: "Conversed with faculty and students providing tech support over the phone and in person for university property.",
+	// 			start: "August 2019",
+	// 			end: "February 2020"
+	// 		}
+	// 	]
+	// },
 	{
 		title: "Ampel Feedback",
 		url: "https://ampelfeedback.com",
