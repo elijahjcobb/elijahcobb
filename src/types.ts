@@ -51,3 +51,10 @@ export type Experience = {
 	url?: string,
 	positions: Position[]
 };
+
+export type Publication = {
+	title: string;
+	date: {month?: number, day?: number, year?: number};
+	publication: string;
+	authors: string[];
+};
