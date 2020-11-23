@@ -16,12 +16,12 @@ export const references: Reference[] = [
 	{
 		name: "Dr. Charles Wallace",
 		position: "Associate Professor",
-		organization: "Michigan Technological University College of Computing",
+		organization: "Michigan Technological University",
 		email: "wallace@mtu.edu"
 	},
 	{
 		name: "Sebastian Garbsch",
-		position: "Owner",
+		position: "CEO",
 		organization: "Ampel Feedback",
 		email: "sebastian@ampelfeedback.com"
 	}
