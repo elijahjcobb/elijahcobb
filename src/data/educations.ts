@@ -15,13 +15,13 @@ export const educations: Education[] = [
 				level: "Doctoral Degree",
 				major: "Computer Science & Robotics",
 				start: "2021",
-				end: "2024"
+				end: "2024 (Expected)"
 			},
 			{
 				level: "Master's Degree",
 				major: "Computer Science & Robotics",
 				start: "2021",
-				end: "2022"
+				end: "2022 (Expected)"
 			},
 			{
 				level: "Bachelor's Degree",
