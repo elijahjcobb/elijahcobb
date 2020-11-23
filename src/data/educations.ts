@@ -12,10 +12,10 @@ export const educations: Education[] = [
 		img: "./mtu-logo.png",
 		degrees: [
 			{
-				level: "Master's Degree",
+				level: "Doctoral Degree",
 				major: "Computer Science",
-				start: "2020",
-				end: "2022 (Expected)"
+				start: "2021",
+				end: "2024"
 			},
 			{
 				level: "Bachelor's Degree",

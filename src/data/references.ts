@@ -9,7 +9,7 @@ import {Reference} from "../types";
 export const references: Reference[] = [
 	{
 		name: "Dr. Paul Van Susante",
-		position: "Principal Investigator & Assistant Professor",
+		position: "Principal Investigator",
 		organization: "Planetary Surface Technology Development Lab",
 		email: "pjvansus@mtu.edu"
 	},
