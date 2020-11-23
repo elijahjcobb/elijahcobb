@@ -13,9 +13,15 @@ export const educations: Education[] = [
 		degrees: [
 			{
 				level: "Doctoral Degree",
-				major: "Computer Science",
+				major: "Computer Science & Robotics",
 				start: "2021",
 				end: "2024"
+			},
+			{
+				level: "Master's Degree",
+				major: "Computer Science & Robotics",
+				start: "2021",
+				end: "2022"
 			},
 			{
 				level: "Bachelor's Degree",
