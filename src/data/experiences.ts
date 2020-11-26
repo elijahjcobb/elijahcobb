@@ -71,7 +71,7 @@ export const experiences: Experience[] = [
 				title: "Web Developer",
 				description: "Developed a website for Dr. Parissa Abadi's 'ABADI Labratory' located at Michigan Technological University.",
 				start: "August 2019",
-				end: "Present"
+				end: "August 2020"
 			}
 		]
 	},
