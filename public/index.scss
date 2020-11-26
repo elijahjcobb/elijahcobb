@@ -424,7 +424,6 @@ section {
 
 	header {
 
-		box-shadow: 0 0 10px black;
 		flex-direction: row;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -453,11 +452,14 @@ section {
 		}
 
 		.contacts {
+
 			display: flex;
-			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			min-width: 240px;
 
 			.contact {
-				margin-right: 40px;
+				display: block;
 			}
 
 			.contact:hover {
@@ -466,7 +468,7 @@ section {
 		}
 
 		.profile:hover {
-			transform: scale(1.5) rotate(-15deg);
+			transform: scale(1.25) rotate(-7.5deg);
 		}
 
 		.contact {

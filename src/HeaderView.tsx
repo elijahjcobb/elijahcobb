@@ -37,18 +37,18 @@ export class HeaderView extends React.Component<HeaderViewProps, HeaderViewState
 						<Mail/>
 						{/*<span style={{marginLeft: "4px"}}>elijah@elijahcobb.com</span>*/}
 					</a>
-					<a rel={"noopener noreferrer"} className="contact" href="https://github.com/elijahjcobb" target="_blank">
-						<GitHub/>
-					</a>
 					<a rel={"noopener noreferrer"} className="contact" href="https://www.linkedin.com/in/elijahjcobb" target="_blank">
 						<LinkedIn/>
+					</a>
+					<a rel={"noopener noreferrer"} className="contact" href="https://github.com/elijahjcobb" target="_blank">
+						<GitHub/>
 					</a>
 					<a rel={"noopener noreferrer"} className="contact" href="https://twitter.com/elijahjcobb" target="_blank">
 						<Twitter/>
 					</a>
-					<a rel={"noopener noreferrer"} className="contact" href="https://www.reddit.com/user/elijahcobb" target="_blank">
-						<Reddit/>
-					</a>
+					{/*<a rel={"noopener noreferrer"} className="contact" href="https://www.reddit.com/user/elijahcobb" target="_blank">*/}
+					{/*	<Reddit/>*/}
+					{/*</a>*/}
 				</div>
 			</div>
 		</header>);

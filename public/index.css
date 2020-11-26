@@ -317,7 +317,6 @@ section {
   }
 
   header {
-    box-shadow: 0 0 10px black;
     flex-direction: row;
     background-repeat: no-repeat;
     background-size: cover;
@@ -345,16 +344,18 @@ section {
   }
   header .contacts {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 240px;
   }
   header .contacts .contact {
-    margin-right: 40px;
+    display: block;
   }
   header .contacts .contact:hover {
     transform: scale(1.5);
   }
   header .profile:hover {
-    transform: scale(1.5) rotate(-15deg);
+    transform: scale(1.25) rotate(-7.5deg);
   }
   header .contact span {
     font-size: 1em;
