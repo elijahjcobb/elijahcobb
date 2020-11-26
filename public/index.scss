@@ -67,7 +67,7 @@ span, p, img {
 .publications {
 	.publications-table {
 		.publication {
-			margin-bottom: 20px;
+			margin-top: 20px;
 			display: flex;
 			span {
 				margin-bottom: 8px;
@@ -159,6 +159,10 @@ h2 {
 	font-size: 1em;
 	//margin: 40px 0;
 	border-radius: 4px;
+}
+
+section {
+	margin: 20px 0;
 }
 
 .experiences {
@@ -462,7 +466,7 @@ h2 {
 		}
 
 		.profile:hover {
-			transform: scale(1.25) rotate(10deg) translateY(40px);
+			transform: scale(1.5) rotate(-15deg);
 		}
 
 		.contact {

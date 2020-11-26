@@ -33,20 +33,20 @@ export class HeaderView extends React.Component<HeaderViewProps, HeaderViewState
 				<img className="profile" src="./profile.jpeg" alt="elijah profile"/>
 				<a className={"header-url"} href={"https://elijahcobb.com"}>elijahcobb.com</a>
 				<div className="contacts">
-					<a className="contact" href="mailto:elijah@elijahcobb.com">
+					<a rel={"noopener noreferrer"} className="contact" href="mailto:elijah@elijahcobb.com">
 						<Mail/>
 						{/*<span style={{marginLeft: "4px"}}>elijah@elijahcobb.com</span>*/}
 					</a>
-					<a className="contact" href="https://github.com/elijahjcobb" target="_blank">
+					<a rel={"noopener noreferrer"} className="contact" href="https://github.com/elijahjcobb" target="_blank">
 						<GitHub/>
 					</a>
-					<a className="contact" href="https://www.linkedin.com/in/elijahjcobb" target="_blank">
+					<a rel={"noopener noreferrer"} className="contact" href="https://www.linkedin.com/in/elijahjcobb" target="_blank">
 						<LinkedIn/>
 					</a>
-					<a className="contact" href="https://twitter.com/elijahjcobb" target="_blank">
+					<a rel={"noopener noreferrer"} className="contact" href="https://twitter.com/elijahjcobb" target="_blank">
 						<Twitter/>
 					</a>
-					<a className="contact" href="https://www.reddit.com/user/elijahcobb" target="_blank">
+					<a rel={"noopener noreferrer"} className="contact" href="https://www.reddit.com/user/elijahcobb" target="_blank">
 						<Reddit/>
 					</a>
 				</div>
