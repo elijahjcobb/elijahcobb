@@ -54,7 +54,8 @@ export type Experience = {
 
 export type Publication = {
 	title: string;
-	date: {month?: number, day?: number, year?: number};
+	date: {month: number, day: number, year: number};
 	publication: string;
 	authors: string[];
+	url?: string;
 };

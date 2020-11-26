@@ -14,6 +14,7 @@ import {ReferencesView} from "./ReferencesView";
 import {SkillsView} from "./SkillsView";
 import {databases, frameworks, languages} from "./data/skills";
 import {PDFFooter} from "./PDFFooter";
+import {PublicationsView} from "./PublicationsView";
 
 export interface AppProps {
 
@@ -41,6 +42,7 @@ export class App extends React.Component<AppProps, AppState> {
 				<div className="left">
 					<ExperiencesView/>
 					<EducationsView/>
+					<PublicationsView/>
 				</div>
 				<div className="right">
 					<div className={"allSkills"}>

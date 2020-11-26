@@ -27,14 +27,14 @@ export class ProjectsView extends React.Component<ProjectsViewProps, ProjectsVie
 	}
 
 	public render(): React.ReactElement {
-		return (<div className="projects">
+		return (<section className="projects">
 			<h2>Projects</h2>
 			{
 				projects.map((project, index) => {
 					return (<ProjectView value={project} key={index}/>);
 				})
 			}
-		</div>);
+		</section>);
 	}
 
 }

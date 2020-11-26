@@ -11,13 +11,17 @@
   box-sizing: border-box;
 }
 
-.header-url, .PDFFooter {
-  display: none;
-}
-
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;
+    color: white;
+  }
+
+  .about {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .contact {
     color: white;
   }
 }
@@ -26,7 +30,19 @@
     background-color: white;
     color: black;
   }
+
+  .about {
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .contact {
+    color: black;
+  }
 }
+.header-url, .PDFFooter {
+  display: none;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   padding: 40px;
@@ -43,6 +59,25 @@ span, p, img {
   margin-top: 20px;
 }
 
+.publications .publications-table .publication {
+  margin-bottom: 20px;
+  display: flex;
+}
+.publications .publications-table .publication span {
+  margin-bottom: 8px;
+}
+.publications .publications-table .publication .link {
+  margin-right: 8px;
+  color: dodgerblue;
+}
+.publications .publications-table .publication .detail .title {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.publications .publications-table .publication .detail .publication {
+  font-style: italic;
+  font-size: 1.125em;
+}
 header {
   display: flex;
   flex-direction: column-reverse;
@@ -50,6 +85,7 @@ header {
 header .contacts {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 header .contact {
   display: flex;
@@ -66,7 +102,11 @@ header .contact ion-icon {
   height: 26px;
   margin-right: 6px;
 }
+header h1 {
+  text-align: center;
+}
 header .profile {
+  margin-top: 20px;
   width: 100%;
   border-radius: 40px;
   margin-bottom: 20px;
@@ -86,7 +126,6 @@ h2 {
   color: white;
   padding: 4px 8px;
   font-size: 1em;
-  margin-top: 40px;
   border-radius: 4px;
 }
 
@@ -228,6 +267,17 @@ h2 {
 }
 
 @media (min-width: 800px) {
+  section {
+    margin: 60px 0;
+  }
+  section h2 {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    box-shadow: 0 0 5px black;
+  }
+
   html {
     display: flex;
     flex-direction: column;
@@ -250,13 +300,6 @@ h2 {
     margin-top: 0;
   }
 
-  .references,
-.business,
-.college,
-.projects {
-    margin-top: 40px;
-  }
-
   a {
     transition: transform 250ms ease-in-out;
   }
@@ -265,17 +308,36 @@ h2 {
     transform: scale(1.25);
   }
 
+  main {
+    margin-top: 60vh;
+  }
+
   header {
+    box-shadow: 0 0 10px black;
     flex-direction: row;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("./header.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60vh;
   }
   header .about {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   header .profile {
-    width: 150px;
-    height: 150px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    margin-bottom: 0;
+    margin: 20px 0;
+    box-shadow: 0 0 10px gray;
   }
   header .contacts {
     display: flex;
@@ -284,8 +346,11 @@ h2 {
   header .contacts .contact {
     margin-right: 40px;
   }
+  header .contacts .contact:hover {
+    transform: scale(1.5);
+  }
   header .profile:hover {
-    transform: scale(2) rotate(10deg) translateY(40px);
+    transform: scale(1.25) rotate(10deg) translateY(40px);
   }
   header .contact span {
     font-size: 1em;

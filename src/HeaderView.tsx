@@ -30,11 +30,12 @@ export class HeaderView extends React.Component<HeaderViewProps, HeaderViewState
 		return (<header>
 			<div className="about">
 				<h1>Elijah Cobb</h1>
+				<img className="profile" src="./profile.jpeg" alt="elijah profile"/>
 				<a className={"header-url"} href={"https://elijahcobb.com"}>elijahcobb.com</a>
 				<div className="contacts">
 					<a className="contact" href="mailto:elijah@elijahcobb.com">
 						<Mail/>
-						<span style={{marginLeft: "4px"}}>elijah@elijahcobb.com</span>
+						{/*<span style={{marginLeft: "4px"}}>elijah@elijahcobb.com</span>*/}
 					</a>
 					<a className="contact" href="https://github.com/elijahjcobb" target="_blank">
 						<GitHub/>
@@ -50,7 +51,6 @@ export class HeaderView extends React.Component<HeaderViewProps, HeaderViewState
 					</a>
 				</div>
 			</div>
-			<img className="profile" src="./profile.jpeg" alt="elijah profile"/>
 		</header>);
 	}
 

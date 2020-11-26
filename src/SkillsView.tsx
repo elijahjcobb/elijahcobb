@@ -27,14 +27,14 @@ export class SkillsView extends React.Component<SkillsViewProps, SkillsViewState
 	}
 
 	public render(): React.ReactElement {
-		return (<div className="skills">
+		return (<section className="skills">
 			<h2>{this.props.value.title}</h2>
 			<ul>
 				{this.props.value.skills.map((skill, index) => {
 					return (<li key={index}>{skill}</li>);
 				})}
 			</ul>
-		</div>);
+		</section>);
 	}
 
 }

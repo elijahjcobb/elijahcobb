@@ -28,7 +28,7 @@ export class ReferencesView extends React.Component<ReferencesViewProps, Referen
 	}
 
 	public render(): React.ReactElement {
-		return (<div className="references">
+		return (<section className="references">
 			<h2>references</h2>
 			<div className={"allReferences"}>
 				{
@@ -37,7 +37,7 @@ export class ReferencesView extends React.Component<ReferencesViewProps, Referen
 					})
 				}
 			</div>
-		</div>);
+		</section>);
 	}
 
 }

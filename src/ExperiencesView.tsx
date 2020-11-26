@@ -28,14 +28,14 @@ export class ExperiencesView extends React.Component<ExperiencesViewProps, Exper
 	}
 
 	public render(): React.ReactElement {
-		return (<div className="experiences">
+		return (<section className="experiences">
 			<h2 className="experienceLabel">experience</h2>
 			<div className={"businesses"}>
 				{experiences.map((experience, index) => {
 					return (<ExperienceView value={experience} key={index}/>)
 				})}
 			</div>
-		</div>);
+		</section>);
 	}
 
 }

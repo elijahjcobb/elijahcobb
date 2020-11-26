@@ -14,23 +14,38 @@
 	//border: solid red 1px;
 }
 
-$blue: dodgerblue;
-
-.header-url, .PDFFooter {
-	display: none;
-}
-
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: black;
 		color: white;
 	}
+	.about {
+		background: rgba(0,0,0,0.5);
+	}
+	.contact {
+		color: white;
+	}
 }
+
 @media (prefers-color-scheme: light) {
 	body {
 		background-color: white;
 		color: black;
 	}
+	.about {
+		background: rgba(255,255,255,0.75);
+	}
+
+	.contact {
+		color: black;
+	}
+}
+
+
+$blue: dodgerblue;
+
+.header-url, .PDFFooter {
+	display: none;
 }
 
 body {
@@ -49,6 +64,37 @@ span, p, img {
 	margin-top: 20px;
 }
 
+.publications {
+	.publications-table {
+		.publication {
+			margin-bottom: 20px;
+			display: flex;
+			span {
+				margin-bottom: 8px;
+			}
+			.link {
+				margin-right: 8px;
+				color: $blue;
+			}
+			.detail {
+
+				.title {
+					font-weight: bold;
+					font-size: 1.25em;
+				}
+
+				.date {}
+
+				.publication {
+					font-style: italic;
+					font-size: 1.125em;
+				}
+				.authors {}
+			}
+		}
+	}
+}
+
 header {
 
 	display: flex;
@@ -61,6 +107,7 @@ header {
 	.contacts {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.contact {
@@ -83,7 +130,12 @@ header {
 
 	}
 
+	h1 {
+		text-align: center;
+	}
+
 	.profile {
+		margin-top: 20px;
 		width: 100%;
 		border-radius: 40px;
 		margin-bottom: 20px;
@@ -105,12 +157,8 @@ h2 {
 	color: white;
 	padding: 4px 8px;
 	font-size: 1em;
-	margin-top: 40px;
+	//margin: 40px 0;
 	border-radius: 4px;
-}
-
-.left {
-
 }
 
 .experiences {
@@ -323,6 +371,19 @@ h2 {
 
 @media (min-width: 800px) {
 
+	section {
+
+		margin: 60px 0;
+
+		h2 {
+			margin-bottom: 20px;
+		}
+	}
+
+	h2 {
+		box-shadow: 0 0 5px black;
+	}
+
 	html {
 		display: flex;
 		flex-direction: column;
@@ -345,13 +406,6 @@ h2 {
 		margin-top: 0;
 	}
 
-	.references,
-	.business,
-	.college,
-	.projects {
-		margin-top: 40px;
-	}
-
 	a {
 		transition: transform 250ms ease-in-out;
 	}
@@ -360,19 +414,38 @@ h2 {
 		transform: scale(1.25);
 	}
 
+	main {
+		margin-top: 60vh;
+	}
+
 	header {
 
+		box-shadow: 0 0 10px black;
 		flex-direction: row;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-image: url("./header.jpg");
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 60vh;
 
 		.about {
 			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 		}
 
 		.profile {
-			width: 150px;
-			height: 150px;
+			width: 240px;
+			height: 240px;
 			border-radius: 50%;
-			margin-bottom: 0;
+			margin: 20px 0;
+			box-shadow: 0 0 10px gray;
 		}
 
 		.contacts {
@@ -382,10 +455,14 @@ h2 {
 			.contact {
 				margin-right: 40px;
 			}
+
+			.contact:hover {
+				transform: scale(1.5);
+			}
 		}
 
 		.profile:hover {
-			transform: scale(2) rotate(10deg) translateY(40px);
+			transform: scale(1.25) rotate(10deg) translateY(40px);
 		}
 
 		.contact {

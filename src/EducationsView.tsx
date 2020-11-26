@@ -28,7 +28,7 @@ export class EducationsView extends React.Component<EducationsViewProps, Educati
 	}
 
 	public render(): React.ReactElement {
-		return (<div className="educations">
+		return (<section className="educations">
 			<h2>education</h2>
 			<div className={"colleges"}>
 				{
@@ -37,7 +37,7 @@ export class EducationsView extends React.Component<EducationsViewProps, Educati
 					})
 				}
 			</div>
-		</div>);
+		</section>);
 	}
 
 }
