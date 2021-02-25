@@ -5,39 +5,19 @@
  * github.com/elijahjcobb
  */
 
-import * as React from "react";
+import React, {ReactElement} from "react";
 import {educations} from "./data/educations";
 import {EducationView} from "./EducationView";
 
-export interface EducationsViewProps {
-
-}
-
-export interface EducationsViewState {
-
-}
-
-export class EducationsView extends React.Component<EducationsViewProps, EducationsViewState> {
-
-	public constructor(props: EducationsViewProps) {
-
-		super(props);
-
-		this.state = {};
-
-	}
-
-	public render(): React.ReactElement {
-		return (<section className="educations">
-			<h2>education</h2>
-			<div className={"colleges"}>
-				{
-					educations.map((education, index) => {
-						return (<EducationView value={education} key={index}/>)
-					})
-				}
-			</div>
-		</section>);
-	}
-
+export function EducationsView(): ReactElement {
+	return (<section className="educations">
+		<h2>education</h2>
+		<div className={"colleges"}>
+			{
+				educations.map((education, index) => {
+					return (<EducationView value={education} key={index}/>)
+				})
+			}
+		</div>
+	</section>);
 }

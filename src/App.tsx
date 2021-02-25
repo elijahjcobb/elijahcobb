@@ -7,14 +7,16 @@
 
 import * as React from "react";
 import {HeaderView} from "./HeaderView";
-import {ExperiencesView} from "./ExperiencesView";
+import {PositionsView} from "./PositionsView";
 import {EducationsView} from "./EducationsView";
-import {ProjectsView} from "./ProjectsView";
+import {ResearchProjectsView} from "./ResearchProjectsView";
 import {ReferencesView} from "./ReferencesView";
-import {SkillsView} from "./SkillsView";
-import {databases, frameworks, languages} from "./data/skills";
 import {PDFFooter} from "./PDFFooter";
 import {PublicationsView} from "./PublicationsView";
+import {DefaultViewContainer} from "./DefaultViewContainer";
+import {research} from "./data/research";
+import {presentations} from "./data/presentations";
+import {accomplishments} from "./data/accomplishments";
 
 export interface AppProps {
 
@@ -39,20 +41,13 @@ export class App extends React.Component<AppProps, AppState> {
 			<PDFFooter/>
 			<HeaderView/>
 			<main>
-				<div className="left">
-					<ExperiencesView/>
-					<EducationsView/>
-					<PublicationsView/>
-				</div>
-				<div className="right">
-					<div className={"allSkills"}>
-						<SkillsView value={languages}/>
-						<SkillsView value={frameworks}/>
-						<SkillsView value={databases}/>
-					</div>
-					<ProjectsView/>
-					<ReferencesView/>
-				</div>
+				<PositionsView/>
+				<DefaultViewContainer header={"research"} values={research}/>
+				<DefaultViewContainer header={"presentations/conferences"} values={presentations}/>
+				<DefaultViewContainer header={"accomplishments"} values={accomplishments}/>
+				<PublicationsView/>
+				<EducationsView/>
+				<ReferencesView/>
 			</main>
 		</div>);
 	}

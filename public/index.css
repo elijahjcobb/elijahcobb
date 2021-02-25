@@ -98,9 +98,9 @@ header .contact span {
   font-size: 0.75em;
 }
 header .contact ion-icon {
-  width: 26px;
-  height: 26px;
-  margin-right: 6px;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 header h1 {
   text-align: center;
@@ -225,61 +225,69 @@ section {
   color: gray;
 }
 
-.right .skills ul {
+.skills ul {
   margin-top: 10px;
   margin-left: 40px;
 }
-.right .skills li {
+.skills li {
   margin-top: 4px;
 }
-.right .projects .project .header {
+
+.projects .project .header {
   display: flex;
 }
-.right .projects .project .header a {
+.projects .project .header a {
   display: flex;
   align-items: center;
   justify-content: center;
   color: dodgerblue;
   margin-right: 8px;
 }
-.right .projects .project .header a .link {
+.projects .project .header a .link {
   width: 20px;
   height: 20px;
 }
-.right .projects .project .header .name {
+.projects .project .header .name {
   font-weight: bold;
 }
-.right .projects .project .description {
+.projects .project .description {
   margin-top: 8px;
   margin-left: 30px;
 }
-.right .references .reference {
+
+.references .reference {
   display: flex;
   align-items: flex-start;
 }
-.right .references .reference .link {
+.references .reference .link {
   width: 20px;
   height: 20px;
   margin-right: 10px;
   color: dodgerblue;
 }
-.right .references .reference .name {
+.references .reference .name {
   font-weight: bold;
 }
-.right .references .reference .title {
+.references .reference .title {
   font-style: italic;
 }
 
 @media (min-width: 800px) {
   section {
-    margin: 60px 0;
-  }
-  section h2 {
-    margin-bottom: 20px;
+    margin: 80px 0;
+    font-size: 1.25em;
   }
 
   h2 {
+    margin-bottom: 40px;
+    font-size: 24px;
+    padding: 10px 20px;
+    font-weight: bold;
     box-shadow: 0 0 5px black;
+  }
+
+  h1 {
+    font-size: 72px;
   }
 
   html {
@@ -290,14 +298,6 @@ section {
 
   .App {
     max-width: 1080px;
-  }
-
-  .left {
-    width: 65%;
-  }
-
-  .right {
-    width: 35%;
   }
 
   .experienceLabel {
@@ -313,7 +313,7 @@ section {
   }
 
   main {
-    margin-top: 60vh;
+    margin-top: 80vh;
   }
 
   header {
@@ -326,7 +326,7 @@ section {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 60vh;
+    height: 80vh;
   }
   header .about {
     flex-grow: 1;
@@ -336,10 +336,10 @@ section {
     align-items: center;
   }
   header .profile {
-    width: 240px;
-    height: 240px;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
-    margin: 20px 0;
+    margin: 40px 0;
     box-shadow: 0 0 10px gray;
   }
   header .contacts {
@@ -347,6 +347,10 @@ section {
     justify-content: space-between;
     align-items: center;
     min-width: 240px;
+    padding: 0 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px black;
+    background: white;
   }
   header .contacts .contact {
     display: block;
@@ -364,15 +368,6 @@ section {
 @media (min-width: 1280px) {
   body {
     max-width: 1000px;
-  }
-
-  main {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .left {
-    margin-right: 80px;
   }
 }
 

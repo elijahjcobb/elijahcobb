@@ -5,14 +5,10 @@
  * github.com/elijahjcobb
  */
 
-export type Skills = {
-	title: string,
-	skills: string[];
-};
 
-export type Project = {
+export type Research = {
 	title: string,
-	url: string,
+	url?: string,
 	description?: string
 }
 
@@ -23,25 +19,16 @@ export type Reference = {
 	email: string
 }
 
-export type Degree = {
-	level?: string,
-	major: string,
-	gpa?: string,
-	start: string,
-	end: string
-}
-
 export type Education = {
 	college: string,
 	img: string,
-	degrees: Degree[];
-}
-
-export type Position = {
-	title: string,
-	start: string,
-	end: string,
-	description: string
+	degrees: {
+		level?: string,
+		major: string,
+		gpa?: string,
+		start: string,
+		end: string
+	}[];
 }
 
 export type Experience = {
@@ -49,7 +36,12 @@ export type Experience = {
 	subtitle?: string,
 	location: string,
 	url?: string,
-	positions: Position[]
+	positions: {
+		title: string,
+		start: string,
+		end: string,
+		description: string
+	}[]
 };
 
 export type Publication = {
@@ -59,3 +51,10 @@ export type Publication = {
 	authors: string[];
 	url?: string;
 };
+
+export type DefaultItem = {
+	title: string;
+	date?: {month: number, day: number, year: number};
+	description?: string;
+	url?: string;
+}

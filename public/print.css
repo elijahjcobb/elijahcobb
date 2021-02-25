@@ -189,6 +189,10 @@ h2 {
   font-weight: bold;
   font-size: 14px;
 }
+.project .date {
+  font-size: 12px;
+  font-weight: lighter;
+}
 .project .description {
   font-size: 12px;
 }
