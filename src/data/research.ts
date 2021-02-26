@@ -45,8 +45,7 @@ export const research: DefaultItem[] = [
 	{
 		title: "Aerospace Enterprise - MTU",
 		url: "http://aerospace.mtu.edu/spacecraft/#auris",
-		description: "Auris is tasked with listening to radio frequency emissions from spacecraft in a high orbit " +
-			"and spatially mapping the power radiated from these satellites to analyze how it will " +
-			"impact ground receivers. "
+		description: "Member of Software team for Auris, a cubesat funded by the US Air Force for monitoring and " +
+			"mapping communications in space."
 	},
 ];
