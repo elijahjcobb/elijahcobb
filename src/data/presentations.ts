@@ -19,12 +19,13 @@ export const presentations: DefaultItem[] = [
 		url: "http://bigidea.nianet.org/",
 		date: {month: 1, day: 6, year: 2021},
 		description: "Presented T-REX rover in the NASA BIG Idea 2020 Conference to the Director of NASA, Administrator" +
-			"Jim Bridenstine. Finished the conference's competition in first place, receiving the 'Artemis Award'."
+			"Jim Bridenstine. The T-REX team finished the conference's competition in first place, receiving the " +
+			"'Artemis Award'."
 	},
 	{
 		title: "T-REX CDR",
 		date: {month: 5, day: 4, year: 2021},
 		description: "Presenting T-REX MK-III to a panel of engineers from NASA's Jet Propulsion Laboratory for" +
-			"a critical design review to gage flight readiness for a possible mission to the lunar pole."
+			" a critical design review to gauge flight readiness for a possible mission to the lunar pole."
 	},
 ];
