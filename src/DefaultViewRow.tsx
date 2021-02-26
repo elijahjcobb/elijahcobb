@@ -49,9 +49,11 @@ export function DefaultViewRow(props: PropsWithChildren<DefaultViewRowProps>): R
 	return (<div className="project">
 		<div className="header">
 			{props.value.url ? <LinkView url={props.value.url}/> : <div/>}
-			<span className="name">{props.value.title}</span>
+			<div className={"title"}>
+				<span className="name">{props.value.title}</span>
+				{props.value.date ? <span className={"date"}>{`${getDateString(props.value.date.month)} ${props.value.date.day}, ${props.value.date.year}`}</span> : <div/>}
+			</div>
 		</div>
-		{props.value.date ? <span className={"date"}>{`${getDateString(props.value.date.month)} ${props.value.date.day}, ${props.value.date.year}`}</span> : <div/>}
 		{props.value.description ? <p className={"description"}>{props.value.description}</p> : <div/>}
 	</div>);
 

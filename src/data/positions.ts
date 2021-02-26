@@ -32,7 +32,7 @@ export const positions: Experience[] = [
 			{
 				title: "Undergraduate Research Fellow",
 				description: "Through the direction of Dr. Charles Wallace, research involving the INFEWS FEWCON " +
-					"Project, ARiA Acoustics Contracts, College of Computing Fellowship, and more.",
+					"Project, ARiA Acoustics, a College of Computing Fellowship, and more.",
 				start: "May 2020",
 				end: "Present"
 			}

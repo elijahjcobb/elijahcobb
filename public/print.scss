@@ -5,7 +5,7 @@
  * github.com/elijahjcobb
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&display=swap');
 
 $blue: dodgerblue;
 
@@ -22,7 +22,7 @@ body {
 }
 
 .App {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto Slab', sans-serif;
 	width: 100%;
 }
 
@@ -45,6 +45,13 @@ header {
 	display: flex;
 	width: 100%;
 
+	.about {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
 	.contacts {
 		display: none;
 		align-items: center;
@@ -60,10 +67,7 @@ header {
 	}
 
 	.profile {
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
-		margin: 10px 0;
+		display: none;
 	}
 }
 
@@ -257,6 +261,13 @@ h2 {
 
 	}
 
+	.title {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	.date {
 		font-size: 12px;
 		font-weight: lighter;
@@ -274,8 +285,9 @@ h2 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 16px;
+	padding: 8px;
 	margin-bottom: 8px;
+	font-size: 14px;
 }
 
 .allReferences {
