@@ -17,7 +17,7 @@ export const accomplishments: DefaultItem[] = [
 	{
 		title: "College of Computing Fellowship",
 		description: "Awarded Fellowship under the direction of Dr. Charles Wallace for the project, " +
-			"'Designing Scaffolded Interactive Instruction in Discrete Mathematics,'.",
+			"'Designing Scaffolded Interactive Instruction in Discrete Mathematics'.",
 		url: "https://blogs.mtu.edu/computing/2020/05/12/elijah-cobb-awarded-college-of-computing-undergraduate-research-fellowship/"
 	}
 ];
