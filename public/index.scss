@@ -5,19 +5,14 @@
  * github.com/elijahjcobb
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&display=swap');
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	//border: solid red 1px;
-}
-
-$blue: dodgerblue;
-
-.header-url, .PDFFooter {
-	display: none;
+	//border: solid re3d 1px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,16 +20,44 @@ $blue: dodgerblue;
 		background-color: black;
 		color: white;
 	}
+	.about {
+		background: rgba(0,0,0,0.5);
+	}
+	.contact {
+		color: white;
+	}
+	.contacts {
+		background: black;
+	}
 }
+
 @media (prefers-color-scheme: light) {
 	body {
 		background-color: white;
 		color: black;
 	}
+	.about {
+		background: rgba(255,255,255,0.75);
+	}
+
+	.contact {
+		color: black;
+	}
+	.contacts {
+		background: white;
+	}
+}
+
+
+$blue: dodgerblue;
+
+.header-url, .PDFFooter {
+	display: none;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	//font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto Slab', serif;
 	padding: 40px;
 }
 
@@ -49,6 +72,37 @@ span, p, img {
 	margin-top: 20px;
 }
 
+.publications {
+	.publications-table {
+		.publication {
+			margin-top: 20px;
+			display: flex;
+			span {
+				margin-bottom: 8px;
+			}
+			.link {
+				margin-right: 8px;
+				color: $blue;
+			}
+			.detail {
+
+				.title {
+					font-weight: bold;
+					font-size: 1.25em;
+				}
+
+				.date {}
+
+				.publication {
+					font-style: italic;
+					font-size: 1.125em;
+				}
+				.authors {}
+			}
+		}
+	}
+}
+
 header {
 
 	display: flex;
@@ -61,6 +115,7 @@ header {
 	.contacts {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.contact {
@@ -76,14 +131,19 @@ header {
 		}
 
 		ion-icon {
-			width: 26px;
-			height: 26px;
-			margin-right: 6px;
+			width: 40px;
+			height: 40px;
+			margin-right: 10px;
 		}
 
 	}
 
+	h1 {
+		text-align: center;
+	}
+
 	.profile {
+		margin-top: 20px;
 		width: 100%;
 		border-radius: 40px;
 		margin-bottom: 20px;
@@ -105,12 +165,12 @@ h2 {
 	color: white;
 	padding: 4px 8px;
 	font-size: 1em;
-	margin-top: 40px;
+	//margin: 40px 0;
 	border-radius: 4px;
 }
 
-.left {
-
+section {
+	margin: 20px 0;
 }
 
 .experiences {
@@ -241,87 +301,107 @@ h2 {
 
 }
 
-.right {
+.skills {
 
-	.skills {
-
-		ul {
-			margin-top: 10px;
-			margin-left: 40px;
-		}
-
-		li {
-			margin-top: 4px;
-		}
-
+	ul {
+		margin-top: 10px;
+		margin-left: 40px;
 	}
 
-	.projects {
-
-		.project {
-
-			.header {
-
-				display: flex;
-
-				a {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					color: $blue;
-
-					.link {
-						width: 20px;
-						height: 20px;
-					}
-
-					margin-right: 8px;
-
-				}
-
-				.name {
-					font-weight: bold;
-				}
-
-			}
-
-			.description {
-				margin-top: 8px;
-				margin-left: 30px;
-			}
-
-		}
-
+	li {
+		margin-top: 4px;
 	}
 
-	.references {
+}
 
-		.reference {
+.projects {
+
+	.project {
+
+		.header {
 
 			display: flex;
-			align-items: flex-start;
 
-			.link {
-				width: 20px;
-				height: 20px;
-				margin-right: 10px;
+			.title {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+			}
+
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				color: $blue;
+
+				.link {
+					width: 20px;
+					height: 20px;
+				}
+
+				margin-right: 8px;
+
 			}
 
 			.name {
 				font-weight: bold;
 			}
 
-			.title {
-				font-style: italic;
-			}
+		}
+
+		.description {
+			margin-top: 8px;
 		}
 
 	}
 
 }
 
+.references {
+
+	.reference {
+
+		display: flex;
+		align-items: flex-start;
+
+		.link {
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+			color: $blue;
+		}
+
+		.name {
+			font-weight: bold;
+		}
+
+		.title {
+			font-style: italic;
+		}
+	}
+
+}
 @media (min-width: 800px) {
+
+	section {
+
+		margin: 80px 0;
+		font-size: 1.125em;
+
+	}
+
+	h2 {
+		margin-bottom: 40px;
+		font-size: 24px;
+		padding: 10px 20px;
+		font-weight: bold;
+		box-shadow: 0 0 5px black;
+	}
+
+	h1 {
+		font-size: 72px;
+	}
 
 	html {
 		display: flex;
@@ -333,23 +413,8 @@ h2 {
 		max-width: 1080px;
 	}
 
-	.left {
-		width: 65%;
-	}
-
-	.right {
-		width: 35%;
-	}
-
 	.experienceLabel {
 		margin-top: 0;
-	}
-
-	.references,
-	.business,
-	.college,
-	.projects {
-		margin-top: 40px;
 	}
 
 	a {
@@ -360,32 +425,61 @@ h2 {
 		transform: scale(1.25);
 	}
 
+	main {
+		margin-top: 80vh;
+	}
+
 	header {
 
 		flex-direction: row;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		background-image: url("./header.jpg");
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 80vh;
 
 		.about {
 			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 		}
 
 		.profile {
-			width: 150px;
-			height: 150px;
+			width: 360px;
+			height: 360px;
 			border-radius: 50%;
-			margin-bottom: 0;
+			margin: 40px 0;
+			box-shadow: 0 0 10px gray;
 		}
 
 		.contacts {
+
 			display: flex;
-			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			min-width: 240px;
+			padding: 0 20px;
+			border-radius: 20px;
+			box-shadow: 0 0 20px black;
 
 			.contact {
-				margin-right: 40px;
+				display: block;
+			}
+
+			.contact:hover {
+				transform: scale(1.5);
 			}
 		}
 
 		.profile:hover {
-			transform: scale(2) rotate(10deg) translateY(40px);
+			transform: scale(1.25) rotate(-7.5deg);
 		}
 
 		.contact {
@@ -402,15 +496,6 @@ h2 {
 
 	body {
 		max-width: 1000px;
-	}
-
-	main {
-		display: flex;
-		flex-direction: row;
-	}
-
-	.left {
-		margin-right: 80px;
 	}
 
 }

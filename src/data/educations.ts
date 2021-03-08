@@ -4,6 +4,7 @@
  * elijahcobb.com
  * github.com/elijahjcobb
  */
+
 import {Education} from "../types";
 
 export const educations: Education[] = [
@@ -12,15 +13,21 @@ export const educations: Education[] = [
 		img: "./mtu-logo.png",
 		degrees: [
 			{
+				level: "Doctoral Degree",
+				major: "Computer Science",
+				start: "2021",
+				end: "2024 (Expected)"
+			},
+			{
 				level: "Master's Degree",
 				major: "Computer Science",
-				start: "2020",
-				end: "2022"
+				start: "2021",
+				end: "2022 (Expected)"
 			},
 			{
 				level: "Bachelor's Degree",
 				major: "Computer Science",
-				gpa: "3.62",
+				gpa: "3.61",
 				start: "2018",
 				end: "2021"
 			}
