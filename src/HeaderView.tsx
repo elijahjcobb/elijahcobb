@@ -12,7 +12,7 @@ export function HeaderView(): React.ReactElement {
 	return (<header>
 		<div className="about">
 			<h1>Elijah Cobb</h1>
-			<img className="profile" src="./profile.jpeg" alt="elijah profile"/>
+			<img className="profile" src="./profile.png" alt="elijah profile"/>
 			<a className={"header-url"} href={"mailto:ejcobb@mtu.edu"}>ejcobb@mtu.edu</a>
 			<a className={"header-url"} href={"https://elijahcobb.com"}>elijahcobb.com</a>
 			<div className="contacts">

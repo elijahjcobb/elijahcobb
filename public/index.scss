@@ -148,7 +148,7 @@ header {
 		border-radius: 40px;
 		margin-bottom: 20px;
 		max-height: 400px;
-		object-fit: cover;
+		object-fit: contain;
 		transition: transform 250ms ease-in-out;
 	}
 
@@ -454,9 +454,9 @@ section {
 		.profile {
 			width: 360px;
 			height: 360px;
-			border-radius: 50%;
+			//border-radius: 50%;
 			margin: 40px 0;
-			box-shadow: 0 0 10px gray;
+			//box-shadow: 0 0 10px gray;
 		}
 
 		.contacts {
@@ -479,7 +479,7 @@ section {
 		}
 
 		.profile:hover {
-			transform: scale(1.25) rotate(-7.5deg);
+			//transform: scale(1.25) rotate(-7.5deg);
 		}
 
 		.contact {
