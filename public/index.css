@@ -358,10 +358,12 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 240px;
+    min-width: 300px;
     padding: 0 20px;
     border-radius: 20px;
     box-shadow: 0 0 20px black;
+    position: relative;
+    top: -60px;
   }
   header .contacts .contact {
     display: block;
