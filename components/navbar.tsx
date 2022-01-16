@@ -18,10 +18,10 @@ export const NavBar: FC = () => {
 			<Link href={"/"}>
 				<img className={styles.profile} alt={"profile"} src={"/bitmoji.png"}/>
 			</Link>
-			<Link href={"/"}>Home</Link>
-			<Link href={"/updates"}>Updates</Link>
-			<Link href={"/publications"}>Publications</Link>
-			<a target={"_blank"} href={"/resume.pdf"}>Resume</a>
+			<Link href={"/"}>home</Link>
+			<Link href={"/updates"}>updates</Link>
+			<Link href={"/writing"}>writing</Link>
+			<a target={"_blank"} href={"/resume.pdf"}>resume</a>
 		</div>
 		<div className={styles.logos}>
 			<a className={styles.twitter} target={"_blank"} href={"https://twitter.com/elijahjcobb"}><TwitterIcon/></a>
