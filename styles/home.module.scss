@@ -1,0 +1,83 @@
+/**
+ * Elijah Cobb
+ * elijah@elijahcobb.com
+ * elijahcobb.com
+ * github.com/elijahjcobb
+ */
+
+.header {
+	display: flex;
+	flex-direction: column;
+	margin-top: 16px;
+	padding: 8px;
+	width: 100%;
+	align-items: center;
+}
+
+.profile {
+	width: 100px;
+	height: 100px;
+	align-self: center;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #ccc;
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 480px;
+	border-radius: 8px;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 2em;
+	text-align: center;
+}
+
+.desc {
+	margin-top: 8px;
+	text-align: center;
+}
+
+@media (min-width: 720px) {
+	.header {
+		flex-direction: row;
+		justify-content: center;
+		margin: 48px 0;
+	}
+	.profile {
+		margin-right: 0px;
+		width: 260px;
+		height: 260px;
+		z-index: 2;
+	}
+	.text {
+		align-items: flex-start;
+		box-shadow: 0 0 10px #ddd;
+		margin-left: -32px;
+		padding: 16px 16px 16px 64px;
+	}
+	.title, .desc {
+		text-align: left;
+	}
+	.desc {
+		line-height: 1.5;
+		margin-top: 16px;
+	}
+}
+
+@media (min-width: 1280px) {
+	.text {
+		padding: 32px;
+		margin-left: 32px;
+	}
+	.title {
+		font-size: 2.5em;
+	}
+	.desc {
+		font-size: 1.125em;
+	}
+}

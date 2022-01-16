@@ -1,0 +1,95 @@
+/**
+ * Elijah Cobb
+ * elijah@elijahcobb.com
+ * elijahcobb.com
+ * github.com/elijahjcobb
+ */
+
+.container {
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 0 10px #ddd;
+	border-bottom: solid #eee 1px;
+	padding: 8px;
+	width: 100%;
+
+	.links {
+
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		.profile {
+			width: 36px;
+			height: 36px;
+			object-fit: cover;
+			border-radius: 50%;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		a {
+			text-decoration: none;
+			margin-left: 8px;
+			color: #666;
+			font-weight: 500;
+			transition: color 250ms ease-in-out;
+			border-bottom: none;
+
+			&:hover {
+				color: black;
+			}
+		}
+
+	}
+
+	.logos {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+
+		.twitter, .linkedin, .github {
+			margin-right: 8px;
+			transition: color 250ms ease-in-out;
+			cursor: pointer;
+			color: #666;
+			border-bottom: none;
+		}
+
+		.twitter:hover {
+			color: #1DA1F2;
+		}
+
+		.linkedin:hover {
+			color: #0072b1;
+		}
+		.github:hover {
+			color: rgb(36, 41, 47);
+		}
+	}
+
+	* {
+		display: block;
+	}
+
+}
+
+@media (min-width: 560px) {
+	.container {
+		.links {
+			.profile {
+				width: 48px;
+				height: 48px;
+			}
+			a {
+				margin-left: 16px;
+				font-size: 1.125em;
+			}
+		}
+	}
+}
