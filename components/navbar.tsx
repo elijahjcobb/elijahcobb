@@ -21,12 +21,12 @@ export const NavBar: FC = () => {
 			<Link href={"/"}>home</Link>
 			<Link href={"/updates"}>updates</Link>
 			<Link href={"/papers"}>papers</Link>
-			<a target={"_blank"} href={"/resume.pdf"}>resume</a>
+			<a rel="noreferrer" target={"_blank"} href={"/resume.pdf"}>resume</a>
 		</div>
 		<div className={styles.logos}>
-			<a className={styles.twitter} target={"_blank"} href={"https://twitter.com/elijahjcobb"}><TwitterIcon/></a>
-			<a className={styles.linkedin} target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}><LinkedInIcon/></a>
-			<a className={styles.github} target={"_blank"} href={"https://github.com/elijahjcobb/"}><GitHubIcon/></a>
+			<a rel="noreferrer" className={styles.twitter} target={"_blank"} href={"https://twitter.com/elijahjcobb"}><TwitterIcon/></a>
+			<a rel="noreferrer" className={styles.linkedin} target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}><LinkedInIcon/></a>
+			<a rel="noreferrer" className={styles.github} target={"_blank"} href={"https://github.com/elijahjcobb/"}><GitHubIcon/></a>
 		</div>
 	</div>);
 

@@ -41,7 +41,7 @@ const Page: NextPage<PageProps> = props => {
 				className={styles.md}
 				components={{
 					a({children, ...props}) {
-						return <a href={props.href} target={"_blank"}>{children}</a>
+						return <a rel="noreferrer" href={props.href} target={"_blank"}>{children}</a>
 					},
 					h1({children}) {
 						return <h3>{children}</h3>
