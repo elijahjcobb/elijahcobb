@@ -35,6 +35,7 @@
 	font-weight: bold;
 	font-size: 2em;
 	text-align: center;
+	font-family: 'Roboto Slab', serif;
 }
 
 .desc {
@@ -42,7 +43,23 @@
 	text-align: center;
 }
 
+@keyframes wave {
+	0% {
+		transform: rotate(-45deg);
+	}
+	50% {
+		transform: rotate(45deg);
+	}
+	100% {
+		transform: rotate(-45deg);
+	}
+}
+
 @media (min-width: 720px) {
+	.hand {
+		display: inline-block;
+		animation: wave 2s infinite linear;
+	}
 	.header {
 		flex-direction: row;
 		justify-content: center;

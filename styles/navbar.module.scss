@@ -14,6 +14,10 @@
 	border-bottom: solid #eee 1px;
 	padding: 8px;
 	width: 100%;
+	position: sticky;
+	top: 0;
+	background: white;
+	z-index: 8;
 
 	.links {
 
@@ -69,7 +73,7 @@
 			color: #0072b1;
 		}
 		.github:hover {
-			color: rgb(36, 41, 47);
+			color: #6e5494;
 		}
 	}
 

@@ -1,0 +1,10 @@
+---
+title: Beginning work on NASA LuSTR
+date: 5-1-2021
+description: As my second to last semester of my undergraduate degree wraps up, the lab took on a new grant. I will be working on a project called the Lunar Surface Technology Research (LuSTR) program. We will be developing a thermal model for a heated percusive cone penetrometer as well as a ground penetrating radar in an effort to find water ice within the lunar subsurface.  
+---
+
+> One of the key questions about lunar ice and regolith is what the spatial distribution and concentration of ice is and what the geotechnical properties of the regolith and ice mixture are. This project will combine dual percussive cone penetrometers with heaters and sensors based on a modified version of the TRIDENT drill stage from Honeybee Robotics. This allows geotechnical property measurements and differential calorimetry measurements to identify and quantify volatile content. The Percussive Hot Cone Penetrometer (PHCP) spot tests will be able to measure volatile composition and concentration in the test locations. Combined with high frequency ground penetrating radar to determine layers and continuity of the subsurface over large areas, this will allow horizontal and vertical spatial distribution measurements and identification of volatiles in the top 1 meter with a resolution of 0.1 wt% at 10 cm intervals as well as determination of geotechnical properties where PHCP spot tests are done. 
+>Research will consist of measuring thermal release profiles of cryogenic volatiles in regolith, ground penetrating radar (GPR) calibration of subsurface ice and layering detection, developing the differential calorimetry instrument and integrate it with the percussive penetrometer, testing and selecting the best cone geometry for geotechnical property determination, laboratory, Dirty Thermal Vacuum Chamber (DTVAC) and field tests at Michigan Technological University and Honeybee Robotics of the PHCP and GPR to achieve TRL-5 or 6 by the end of the project.
+
+[nasa.gov](https://www.nasa.gov/directorates/spacetech/strg/lustr/2020/Geotechnical_and_Volatiles_Mapping/)

@@ -1,0 +1,85 @@
+/**
+ * Elijah Cobb
+ * elijah@elijahcobb.com
+ * elijahcobb.com
+ * github.com/elijahjcobb
+ */
+
+.items {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	width: 100%;
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	box-shadow: 0 0 8px #ddd, 0 8px 16px #ccc;
+	padding: 16px;
+	margin: 16px;
+	max-width: 720px;
+	min-width: 480px;
+	text-decoration: none;
+	color: black;
+	border-bottom: none;
+	border-radius: 8px;
+	position: relative;
+}
+
+.top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	* {
+		display: block;
+	}
+}
+
+.date {
+	font-weight: lighter;
+}
+
+.title {
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.read {
+	position: absolute;
+	color: dodgerblue;
+	bottom: 8px;
+	right: 8px;
+	display: none;
+}
+
+.date {
+
+}
+
+.description {
+	margin-top: 16px;
+	line-height: 1.5;
+}
+
+@media (min-width: 720px) {
+	.items {
+		align-items: center;
+	}
+	.item {
+		width: 40%;
+		padding: 32px;
+		margin-top: 32px;
+		transition: transform 250ms ease-in-out;
+	}
+	.item:hover {
+		cursor: pointer;
+		transform: scale(1.05);
+		border-bottom: none;
+	}
+}

@@ -20,7 +20,7 @@ export const NavBar: FC = () => {
 			</Link>
 			<Link href={"/"}>home</Link>
 			<Link href={"/updates"}>updates</Link>
-			<Link href={"/writing"}>writing</Link>
+			<Link href={"/papers"}>papers</Link>
 			<a target={"_blank"} href={"/resume.pdf"}>resume</a>
 		</div>
 		<div className={styles.logos}>

@@ -1,0 +1,126 @@
+/**
+ * Elijah Cobb
+ * elijah@elijahcobb.com
+ * elijahcobb.com
+ * github.com/elijahjcobb
+ */
+
+.page {
+	padding: 16px;
+	margin: auto;
+	max-width: 720px;
+}
+
+.header {
+
+	margin-bottom: 16px;
+	border-bottom: solid 1px #eee;
+	padding-bottom: 8px;
+
+	h2 {
+		font-family: 'Roboto Slab', serif;
+	}
+
+	.date {
+		font-weight: lighter;
+		margin: 4px 0;
+	}
+}
+
+.md {
+
+	blockquote p {
+		font-family: 'Roboto Slab', serif;
+		border-left: solid black 6px;
+		padding-left: 12px;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	h3 {
+		margin: 16px 0 4px 0;
+	}
+	p {
+		margin: 16px 0;
+	}
+	code {
+		font-family: 'Roboto Mono', monospace;
+		background: #eee;
+		padding: 2px 4px;
+		font-size: 0.9em;
+	}
+	pre div {
+		border-radius: 4px;
+		margin: 8px 0;
+	}
+
+	li {
+		margin: 4px 16px;
+	}
+}
+
+@media (min-width: 720px) {
+	.header {
+		margin: 32px 0;
+		padding-bottom: 16px;
+		.date {
+			margin: 16px 0;
+		}
+	}
+	.md {
+
+		blockquote p, img, pre div, p a:first-child {
+			box-shadow: 0 0 12px #eee;
+			background: #eee;
+			border-radius: 4px;
+		}
+
+		li {
+			margin: 12px 32px;
+		}
+		pre div {
+			border-radius: 8px;
+			margin: 16px 0;
+		}
+		h3 {
+			font-size: 1.5em;
+			margin: 32px 0 8px 0;
+		}
+		p {
+			margin: 32px 0;
+			line-height: 1.5;
+			font-size: 1.125em;
+		}
+		code {
+			font-family: 'Roboto Mono', monospace;
+			background: #eee;
+			padding: 2px 4px;
+			font-size: 0.9em;
+		}
+
+		p a:first-child {
+			background: white;
+			display: block;
+			padding: 4px 8px;
+			color: dodgerblue;
+			border: solid dodgerblue 2px;
+			flex-grow: 0;
+			text-align: center;
+			transition: all 250ms ease-in-out;
+
+			&:hover {
+				background: dodgerblue;
+				color: white;
+				transform: scale(1.025);
+			}
+		}
+
+		blockquote p {
+			border-left: solid dodgerblue 6px;
+			padding: 24px;
+			background: #eee;
+		}
+	}
+}
