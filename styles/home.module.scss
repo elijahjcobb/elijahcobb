@@ -57,16 +57,18 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: stretch;
 	margin-top: 32px;
 
 	h2 {
 		align-self: flex-start;
+		margin: 16px;
 	}
 
 	.more {
 		display: block;
 		align-self: flex-start;
-		margin-right: 16px;
+		margin: 16px;
 	}
 }
 
@@ -124,8 +126,10 @@
 		display: block;
 		padding: 6px 12px;
 		background: white;
+		align-self: flex-end;
+		margin: 16px;
 		color: dodgerblue;
-		align-self: center;
+		//align-self: center;
 		border: solid 2px dodgerblue;
 		text-align: center;
 		font-weight: bold;
@@ -164,6 +168,12 @@
 	@media (min-width: 720px) {
 		.text {
 			box-shadow: 0 0 10px #333;
+		}
+		.more {
+			background: black;
+		}
+		.more:hover {
+			color: black;
 		}
 	}
 
