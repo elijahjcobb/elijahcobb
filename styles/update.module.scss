@@ -124,3 +124,41 @@
 		}
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	.header {
+		border-bottom: solid 1px #222;
+	}
+	.md {
+
+		blockquote p {
+			border-left: solid white 6px;
+		}
+
+		code {
+			background: #222;
+		}
+	}
+	@media (min-width: 720px) {
+		.md {
+			blockquote p, img, pre div, p a:first-child {
+				box-shadow: 0 0 12px #222;
+				background: #222;
+			}
+			code {
+				background: #222;
+			}
+			p a:first-child {
+				background: black;
+
+				&:hover {
+					color: black;
+				}
+			}
+			blockquote p {
+				background: #222;
+			}
+		}
+	}
+
+}

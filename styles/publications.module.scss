@@ -78,3 +78,10 @@
 		line-height: 1.5;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	.doc {
+		box-shadow: 0 0 16px #222;
+		color: white;
+	}
+}

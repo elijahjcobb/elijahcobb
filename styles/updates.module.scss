@@ -18,11 +18,10 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	box-shadow: 0 0 8px #ddd, 0 8px 16px #ccc;
+	box-shadow: 0 0 8px #eee, 0 8px 16px #ddd;
 	padding: 16px;
 	margin: 16px;
 	max-width: 720px;
-	min-width: 480px;
 	text-decoration: none;
 	color: black;
 	border-bottom: none;
@@ -30,10 +29,15 @@
 	position: relative;
 }
 
+.item:hover {
+	border-bottom: none;
+}
+
 .top {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
 	width: 100%;
 	* {
 		display: block;
@@ -59,11 +63,10 @@
 }
 
 .date {
-
+	margin: 8px 0;
 }
 
 .description {
-	margin-top: 16px;
 	line-height: 1.5;
 }
 
@@ -73,6 +76,7 @@
 	}
 	.item {
 		width: 40%;
+		min-width: 600px;
 		padding: 32px;
 		margin-top: 32px;
 		transition: transform 250ms ease-in-out;
@@ -81,5 +85,24 @@
 		cursor: pointer;
 		transform: scale(1.05);
 		border-bottom: none;
+	}
+	.top {
+		flex-direction: row;
+		justify-content: space-between;
+		align-content: center;
+	}
+	.date {
+		margin-left: 8px;
+	}
+	.description {
+		margin-top: 16px;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.item {
+		background: black;
+		color: white;
+		box-shadow: 0 0 8px #111, 0 8px 16px #222;
 	}
 }

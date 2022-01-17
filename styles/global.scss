@@ -27,3 +27,10 @@ a {
 		border-bottom-style: solid;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: black;
+		color: white;
+	}
+}

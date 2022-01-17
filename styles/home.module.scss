@@ -5,6 +5,15 @@
  * github.com/elijahjcobb
  */
 
+.main {
+	display: flex;
+	flex-direction: column;
+	margin-top: 16px;
+	padding: 8px;
+	width: 100%;
+	align-items: center;
+}
+
 .header {
 	display: flex;
 	flex-direction: column;
@@ -19,7 +28,7 @@
 	height: 100px;
 	align-self: center;
 	border-radius: 50%;
-	box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ddd;
 }
 
 .text {
@@ -41,6 +50,23 @@
 .desc {
 	margin-top: 8px;
 	text-align: center;
+}
+
+.updates {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 32px;
+
+	h2 {
+		align-self: flex-start;
+	}
+
+	.more {
+		display: block;
+		align-self: flex-start;
+		margin-right: 16px;
+	}
 }
 
 @keyframes wave {
@@ -73,7 +99,7 @@
 	}
 	.text {
 		align-items: flex-start;
-		box-shadow: 0 0 10px #ddd;
+		box-shadow: 0 0 10px #eee;
 		margin-left: -32px;
 		padding: 16px 16px 16px 64px;
 	}
@@ -97,4 +123,21 @@
 	.desc {
 		font-size: 1.125em;
 	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.main {
+		background: black;
+		color: white;
+	}
+	.profile {
+		box-shadow: 0 0 10px #333;
+	}
+	@media (min-width: 720px) {
+		.text {
+			box-shadow: 0 0 10px #333;
+		}
+	}
+
+
 }
