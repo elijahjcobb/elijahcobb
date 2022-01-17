@@ -27,7 +27,7 @@ const Page: NextPage<PageProps> = props => {
 			{props.updates.sort((a, b) => {
 				const aDate = new Date(a.date);
 				const bDate = new Date(b.date);
-				return bDate - aDate;
+				return (aDate < bDate) ? 1 : -1
 			}).map((v, i) => {
 				return (<a
 					href={v.url}
