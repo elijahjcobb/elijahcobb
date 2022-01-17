@@ -53,6 +53,7 @@
 }
 
 .updates {
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -113,6 +114,29 @@
 	.desc {
 		line-height: 1.5;
 		margin-top: 16px;
+	}
+	.updates {
+		a:not(.more) {
+			width: 100%;
+		}
+	}
+	.more {
+		display: block;
+		padding: 6px 12px;
+		background: white;
+		color: dodgerblue;
+		align-self: center;
+		border: solid 2px dodgerblue;
+		text-align: center;
+		font-weight: bold;
+		font-size: 18px;
+		border-radius: 4px;
+		transition: all 250ms ease-in-out;
+	}
+	.more:hover {
+		background: dodgerblue;
+		color: white;
+		transform: scale(1.025);
 	}
 }
 

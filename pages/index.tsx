@@ -29,7 +29,7 @@ const Page: NextPage<PageProps> = props => {
 				{props.updates.map((v, i) => {
 					return <UpdateRow key={i} {...v}/>
 				})}
-				<a className={styles.more} href={"/updates"}>See more...</a>
+				<a className={styles.more} href={"/updates"}>See more updates...</a>
 			</div>
 		</div>
 	);
