@@ -51,7 +51,6 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (context)
 	const updates: Update[] = [];
 
 	for (const f of files) {
-		console.log(f);
 		const data = FS.readFileSync(f).toString("utf8");
 		const file = matter(data);
 		const meta = file.data as {title: any, date: any, description: any};

@@ -1,0 +1,13 @@
+[Unit]
+Description=The backend for elijahcobb.com.
+After=network.target
+
+[Service]
+type=simple
+User=root
+WorkingDirectory=/srv/elijahcobb
+ExecStart=/usr/bin/npm run start
+
+[Install]
+WantedBy=multi-user.target
+Alias=elijahcobb
