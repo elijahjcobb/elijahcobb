@@ -69,6 +69,11 @@
 	}
 }
 
+.hand {
+	display: inline-block;
+	transform: rotate(-45deg);
+}
+
 @keyframes wave {
 	0% {
 		transform: rotate(-45deg);
@@ -83,7 +88,6 @@
 
 @media (min-width: 720px) {
 	.hand {
-		display: inline-block;
 		animation: wave 2s infinite linear;
 	}
 	.header {
