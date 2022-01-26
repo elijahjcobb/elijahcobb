@@ -6,8 +6,8 @@ description: As a side project, I developed a Markdown web-app. With an accessib
 
 ![editor](/dotmd/editor.png)
 
-I have always used Markdown for notes, documentation, etc. For a long time I used [Notable](https://notable.app/),
-then I moved to [Typora](https://typora.io/), then moved to start using [StackEdit](https://stackedit.io/). All three
+I have always used Markdown for notes, documentation, etc. For a long time I used [Notable](https://notable.app/), then
+I moved to [Typora](https://typora.io/), then moved to start using [StackEdit](https://stackedit.io/). All three
 of these are great, and all three of these are the best at something.
 
 [Open dotmd.app](https://dotmd.app)
