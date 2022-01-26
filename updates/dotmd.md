@@ -45,8 +45,6 @@ links with JS objects in a typesafe way.
 
 ## Landing Page Info
 
-![fs](/dotmd/fs.png)
-
 ### Your new Markdown Application!
 A web-based markdown editor accessible on any device. Simply sign in with Google and all your files will be synced
 automatically. Full markdown support, LaTeX, Github syntax highlighting, and much more!
