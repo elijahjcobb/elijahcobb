@@ -6,11 +6,12 @@ description: As a side project, I developed a Markdown web-app. With an accessib
 
 ![editor](/dotmd/editor.png)
 
+[Open dotmd.app](https://dotmd.app)
+
+
 I have always used Markdown for notes, documentation, etc. For a long time I used [Notable](https://notable.app/), then
 I moved to [Typora](https://typora.io/), then moved to start using [StackEdit](https://stackedit.io/). All three
 of these are great, and all three of these are the best at something.
-
-[Open dotmd.app](https://dotmd.app)
 
 * **Notable:** Great tagging system, nice editor/preview window, reliable, buttery smooth.
 * **Typora:** I really like the UI/UX, the editor previews the markdown at the same time and I really liked that it did
