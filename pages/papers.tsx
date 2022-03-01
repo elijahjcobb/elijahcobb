@@ -8,6 +8,7 @@ import type {NextPage, GetStaticProps, GetStaticPaths, GetServerSideProps} from 
 import * as FS from "fs";
 import styles from "../styles/publications.module.scss";
 import ArticleIcon from '@mui/icons-material/Article';
+import Head from "next/head";
 
 interface PageProps {
 	files: {name: string, url: string}[];
@@ -16,7 +17,9 @@ interface PageProps {
 const Page: NextPage<PageProps> = props => {
 	return (
 		<div className={styles.page}>
-			<title>Elijah Cobb | Papers</title>
+			<Head>
+				<title>Elijah Cobb | Updates</title>
+			</Head>
 			<div className={styles.docs}>
 				{props.files.map((doc, i) => {
 					return <a rel={"noreferrer"} href={doc.url} target={"_blank"} key={i} className={styles.doc}>

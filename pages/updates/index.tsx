@@ -10,6 +10,7 @@ import matter from "gray-matter";
 import styles from "../../styles/updates.module.scss";
 import {fetchUpdates, Update} from "../../components/update-loader";
 import {UpdateRow} from "../../components/UpdateRow";
+import Head from "next/head";
 
 interface PageProps {
 	updates: Update[];
@@ -18,7 +19,9 @@ interface PageProps {
 const Page: NextPage<PageProps> = props => {
 	return (
 		<div className={styles.items}>
-			<title>Elijah Cobb | Updates</title>
+			<Head>
+				<title>Elijah Cobb | Updates</title>
+			</Head>
 			{props.updates.map((v, i) => {
 				return <UpdateRow key={i} {...v}/>
 			})}

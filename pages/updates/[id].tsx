@@ -15,6 +15,8 @@ import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import formatRelative from "date-fns/formatRelative";
+import Head from 'next/head'
+
 
 interface PageProps {
 	title: string;
@@ -32,7 +34,9 @@ const Page: NextPage<PageProps> = props => {
 
 	return (
 		<div className={styles.page}>
-			<title>{"Elijah Cobb | " + props.title}</title>
+			<Head>
+				<title>{"Elijah Cobb | " + props.title}</title>
+			</Head>
 			<div className={styles.header}>
 				<h2>{props.title}</h2>
 				<p className={styles.date}>{new Date(props.date).toLocaleDateString() + " • about a " + mString + " min read"}</p>
