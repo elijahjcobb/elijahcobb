@@ -22,7 +22,7 @@ export const NavBar: FC = () => {
 			<Link href={"/"}>home</Link>
 			<Link href={"/updates"}>updates</Link>
 			<Link href={"/papers"}>papers</Link>
-			<a rel="noreferrer" target={"_blank"} href={"/resume.pdf"}>resume</a>
+			<a rel="noreferrer" target={"_blank"} href={"/Elijah-Cobb-Resume.pdf"}>resume</a>
 		</div>
 		<div className={styles.logos}>
 			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:ejcobb@mtu.edu"}><EmailIcon/></a>
