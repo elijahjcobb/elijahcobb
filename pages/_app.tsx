@@ -2,9 +2,15 @@ import '../styles/global.scss'
 import type { AppProps } from 'next/app'
 import {NavBar} from "../components/navbar";
 import Head from 'next/head';
+import { GoogleAnalytics, usePagesViews } from "nextjs-google-analytics";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+	usePagesViews();
+
 	return <div>
+		<GoogleAnalytics/>
 		<Head>
 			<title>Elijah Cobb</title>
 			<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon.png"/>
