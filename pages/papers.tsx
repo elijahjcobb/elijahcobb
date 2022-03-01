@@ -16,6 +16,7 @@ interface PageProps {
 const Page: NextPage<PageProps> = props => {
 	return (
 		<div className={styles.page}>
+			<title>Elijah Cobb | Papers</title>
 			<div className={styles.docs}>
 				{props.files.map((doc, i) => {
 					return <a rel={"noreferrer"} href={doc.url} target={"_blank"} key={i} className={styles.doc}>

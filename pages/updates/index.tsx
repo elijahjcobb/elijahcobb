@@ -18,6 +18,7 @@ interface PageProps {
 const Page: NextPage<PageProps> = props => {
 	return (
 		<div className={styles.items}>
+			<title>Elijah Cobb | Updates</title>
 			{props.updates.map((v, i) => {
 				return <UpdateRow key={i} {...v}/>
 			})}
