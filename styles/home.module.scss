@@ -53,19 +53,22 @@
 }
 
 .updates {
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: stretch;
 	margin-top: 32px;
 
 	h2 {
 		align-self: flex-start;
+		margin: 16px;
 	}
 
 	.more {
 		display: block;
 		align-self: flex-start;
-		margin-right: 16px;
+		margin: 16px;
 	}
 }
 
@@ -114,6 +117,31 @@
 		line-height: 1.5;
 		margin-top: 16px;
 	}
+	.updates {
+		a:not(.more) {
+			width: 100%;
+		}
+	}
+	.more {
+		display: block;
+		padding: 6px 12px;
+		background: white;
+		align-self: flex-end;
+		margin: 16px;
+		color: dodgerblue;
+		//align-self: center;
+		border: solid 2px dodgerblue;
+		text-align: center;
+		font-weight: bold;
+		font-size: 18px;
+		border-radius: 4px;
+		transition: all 250ms ease-in-out;
+	}
+	.more:hover {
+		background: dodgerblue;
+		color: white;
+		transform: scale(1.025);
+	}
 }
 
 @media (min-width: 1280px) {
@@ -140,6 +168,12 @@
 	@media (min-width: 720px) {
 		.text {
 			box-shadow: 0 0 10px #333;
+		}
+		.more {
+			background: black;
+		}
+		.more:hover {
+			color: black;
 		}
 	}
 
