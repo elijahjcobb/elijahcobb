@@ -18,7 +18,7 @@ const Page: NextPage<PageProps> = props => {
 	return (
 		<div className={styles.page}>
 			<Head>
-				<title>Elijah Cobb | Updates</title>
+				<title>Elijah Cobb | Papers</title>
 			</Head>
 			<div className={styles.docs}>
 				{props.files.map((doc, i) => {
