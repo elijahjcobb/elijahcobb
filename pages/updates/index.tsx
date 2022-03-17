@@ -4,9 +4,7 @@
  * https://elijahcobb.com
  */
 
-import type {NextPage, GetStaticProps, GetStaticPaths, GetServerSideProps} from "next";
-import * as FS from "fs";
-import matter from "gray-matter";
+import type {NextPage, GetServerSideProps} from "next";
 import styles from "../../styles/updates.module.scss";
 import {fetchUpdates, Update} from "../../components/update-loader";
 import {UpdateRow} from "../../components/UpdateRow";

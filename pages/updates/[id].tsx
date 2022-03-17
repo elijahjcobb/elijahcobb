@@ -4,7 +4,7 @@
  * https://elijahcobb.com
  */
 
-import type {NextPage, GetServerSideProps} from "next";
+import type {NextPage, GetServerSideProps, GetStaticProps, GetStaticPaths} from "next";
 import * as FS from "fs";
 import matter from "gray-matter";
 import styles from "../../styles/update.module.scss";
@@ -82,7 +82,7 @@ const Page: NextPage<PageProps> = props => {
 	);
 };
 
-export const getServerSideProps: GetServerSideProps<PageProps> = async (context) => {
+export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 
 	const url = (context.params as {id: string}).id;
 	const file = FS.readFileSync("updates/" + url + ".md").toString("utf8");
@@ -96,6 +96,15 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (context)
 			date: data.date ?? "1-1-2000",
 			content: meta.content ?? ""
 		}
+	}
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+	return {
+		paths: FS.readdirSync("updates").map(f => {
+			return {params: {id: f}}
+		}),
+		fallback: false
 	}
 }
 

@@ -4,7 +4,7 @@
  * https://elijahcobb.com
  */
 
-import type {NextPage, GetStaticProps, GetStaticPaths, GetServerSideProps} from "next";
+import type {NextPage, GetStaticProps} from "next";
 import styles from "../styles/home.module.scss";
 import {fetchUpdates, Update} from "../components/update-loader";
 import {UpdateRow} from "../components/UpdateRow";
@@ -35,7 +35,7 @@ const Page: NextPage<PageProps> = props => {
 	);
 };
 
-export const getServerSideProps: GetServerSideProps<PageProps> = async (context) => {
+export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 	return {props: {updates: await fetchUpdates(3)}}
 }
 

@@ -4,7 +4,7 @@
  * https://elijahcobb.com
  */
 
-import type {NextPage, GetStaticProps, GetStaticPaths, GetServerSideProps} from "next";
+import type {NextPage, GetStaticProps} from "next";
 import * as FS from "fs";
 import styles from "../styles/publications.module.scss";
 import ArticleIcon from '@mui/icons-material/Article';
@@ -32,7 +32,7 @@ const Page: NextPage<PageProps> = props => {
 	);
 };
 
-export const getServerSideProps: GetServerSideProps<PageProps> = async (context) => {
+export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 
 	const ls = FS.readdirSync("public/publications")
 	const files: {name: string, url: string}[] = [];
