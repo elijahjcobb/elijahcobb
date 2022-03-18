@@ -19,7 +19,7 @@ export interface Update {
 
 export async function fetchUpdates(limit?: number): Promise<Update[]> {
 
-	const files = FS.readdirSync("public/updates").map(v => "updates/" + v);
+	const files = FS.readdirSync("updates").map(v => "updates/" + v);
 	const updates: Update[] = [];
 
 	for (const f of files) {

@@ -85,7 +85,7 @@ const Page: NextPage<PageProps> = props => {
 export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 
 	const url = (context.params as {id: string}).id;
-	const file = FS.readFileSync("updates/" + url + ".md").toString("utf8");
+	const file = FS.readFileSync("updates/" + url).toString("utf8");
 	const meta = matter(file);
 	const data = meta.data;
 
