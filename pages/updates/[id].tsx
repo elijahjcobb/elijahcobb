@@ -16,6 +16,8 @@ import 'katex/dist/katex.min.css'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import formatRelative from "date-fns/formatRelative";
 import Head from 'next/head'
+import formatDuration from "date-fns/formatDuration";
+import {intervalToDuration} from "date-fns";
 
 
 interface PageProps {
@@ -32,6 +34,12 @@ const Page: NextPage<PageProps> = props => {
 	const m = (wordCount / wpm) + 1;
 	const mString = m.toFixed(0);
 
+	let d = formatDuration(intervalToDuration({start: new Date(props.date.replaceAll("-", "/")), end: new Date()}), {
+		format: ["years", "months", "weeks"]
+	});
+	if (d.length === 0) d = "today"
+	else d += " ago";
+
 	return (
 		<div className={styles.page}>
 			<Head>
@@ -39,7 +47,7 @@ const Page: NextPage<PageProps> = props => {
 			</Head>
 			<div className={styles.header}>
 				<h2>{props.title}</h2>
-				<p className={styles.date}>{new Date(props.date.replaceAll("-", "/")).toLocaleDateString() + " • about a " + mString + " min read"}</p>
+				<p className={styles.date}>{d + " • about a " + mString + " min read"}</p>
 				{props.description && <p>{props.description}</p>}
 			</div>
 			<ReactMarkdown

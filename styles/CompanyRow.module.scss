@@ -19,6 +19,13 @@
 	box-shadow: 0 0 16px #ddd;
 	border-radius: 16px;
 	padding: 16px;
+	transition: transform 250ms ease-in-out;
+	user-select: none;
+}
+
+.container:hover {
+	cursor: pointer;
+	transform: scale(1.025);
 }
 
 .img {
@@ -26,6 +33,7 @@
 	width: 64px !important;
 	display: block !important;
 	border-radius: 50%;
+	border: solid 1px #fff;
 }
 
 .right {
@@ -51,21 +59,35 @@
 	}
 
 	.title {
-		margin-bottom: -16px;
-		.circle {
+		margin-bottom: -48px;
+		.circle, .line {
 			display: block;
+			background: #f0f0f0;
+			position: relative;
+		}
+		.circle {
 			width: 16px;
 			height: 16px;
-			background: #f0f0f0;
-			border-radius: 50%;
-			position: relative;
 			left: -60px;
+			border-radius: 50%;
 			top: -16px;
+		}
+		.line {
+			width: 2px;
+			height: 32px;
+			top: -16px;
+			left: -53px;
 		}
 	}
 
 	.subtitle {
 		color: #888;
 		margin: 4px 0;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.container {
+		box-shadow: 0 0 16px #333;
 	}
 }

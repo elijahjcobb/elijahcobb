@@ -16,6 +16,7 @@ export interface Company {
 	name: string;
 	location: string;
 	image: string;
+	link: string;
 	positions: Position[];
 }
 
@@ -23,7 +24,8 @@ export const positions: Company[] = [
 	{
 		name: "Vercel",
 		location: "Remote",
-		image: "https://media-exp1.licdn.com/dms/image/C560BAQHzRmUo-uRc3g/company-logo_100_100/0/1587463448826?e=1655942400&v=beta&t=l-gn_9BHKQ1exFX-b1Yy2p62wqukvm3cwUyfpZBshXM",
+		image: "/vercel.jpg",
+		link: "http://vercel.com",
 		positions: [
 			{
 				title: "Full Stack Engineer",
@@ -34,40 +36,67 @@ export const positions: Company[] = [
 	{
 		name: "Planetary Surface Technology Development Lab",
 		location: "Houghton, MI",
-		image: "https://media-exp1.licdn.com/dms/image/C4E0BAQHmdlqIq-Tzgw/company-logo_100_100/0/1626099021072?e=1655942400&v=beta&t=deSRjC2VV9HhoejLUZE-baDH7BwRrdHR7RLUGaqMeKI",
+		image: "/pstdl.jpg",
+		link: "https://pstdl.com",
 		positions: [
 			{
 				title: "Graduate Researcher",
-				start: "1/1/2022"
+				start: "1/1/2022",
+				end: "3/1/2022"
+			},
+			{
+				title: "Undergraduate Researcher",
+				start: "5/1/2020",
+				end: "12/31/2021"
+			}
+		]
+	},
+	{
+		name: "Michigan Technological University",
+		location: "Houghton, MI",
+		image: "/mtu.jpg",
+		link: "http://mtu.edu",
+		positions: [
+			{
+				title: "Doctoral Researcher",
+				start: "1/1/2022",
+				end: "3/1/2022"
+			},
+			{
+				title: "Undergraduate Research Fellow",
+				start: "5/1/2020",
+				end: "12/1/2021"
 			}
 		]
 	},
 	{
 		name: "Ampel Feedback",
 		location: "Traverse City, MI",
-		image: "https://media-exp1.licdn.com/dms/image/C560BAQEBv9kVTZVP9Q/company-logo_100_100/0/1647615326312?e=1655942400&v=beta&t=1-vLv0LjMiUWSgggp3Q4TrzsBy-rzXZpJa3nMnkLm6Y",
+		image: "/ampel.jpg",
+		link: "https://www.linkedin.com/company/79548021",
 		positions: [
 			{
 				title: "iOS Software Engineer",
-				start: "1/1/2013",
-				end: "1/1/2015"
+				start: "12/1/2017",
+				end: "8/1/2018"
 			},
 			{
 				title: "Backend Software Engineer",
-				start: "1/1/2015",
-				end: "1/1/2015"
+				start: "8/1/2018",
+				end: "2/1/2020"
 			},
 		]
 	},
 	{
 		name: "Solution Studio",
 		location: "Traverse City, MI",
-		image: "https://media-exp1.licdn.com/dms/image/C4E0BAQFG-W2__S3JMA/company-logo_100_100/0/1590842777906?e=1655942400&v=beta&t=dO-w0hBv1xVxDLP4rJE3kiziYolrmu7coqgCXttNY9g",
+		image: "/ss.jpg",
+		link: "https://solutionstud.io",
 		positions: [
 			{
 				title: "Software Engineer",
-				start: "1/1/2012",
-				end: "1/1/2013"
+				start: "8/1/2017",
+				end: "12/1/2017"
 			}
 		]
 	}
