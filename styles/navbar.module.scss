@@ -8,7 +8,7 @@
 .container {
 
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 	box-shadow: 0 0 10px #ddd;
 	border-bottom: solid #eee 1px;
@@ -19,30 +19,35 @@
 	background: white;
 	z-index: 8;
 
+	.profile {
+		width: 36px;
+		height: 36px;
+		object-fit: cover;
+		border-radius: 50%;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
 	.links {
 
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
+		overflow-x: auto;
+		margin: 0 4px;
+		flex-grow: 1;
 
-		.profile {
-			width: 36px;
-			height: 36px;
-			object-fit: cover;
-			border-radius: 50%;
-
-			&:hover {
-				cursor: pointer;
-			}
-		}
 
 		a {
 			text-decoration: none;
-			margin-left: 6px;
+			//margin-left: 6px;
 			color: #666;
 			font-weight: 500;
 			transition: color 250ms ease-in-out;
 			border-bottom: none;
+			margin: 4px 3px;
 
 			&:hover {
 				color: black;
@@ -87,7 +92,7 @@
 
 }
 
-@media (min-width: 560px) {
+@media (min-width: 720px) {
 	.container {
 		.links {
 			.profile {

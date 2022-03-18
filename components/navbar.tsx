@@ -15,10 +15,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 export const NavBar: FC = () => {
 
 	return (<div className={styles.container}>
+		<Link href={"/"}>
+			<img className={styles.profile} alt={"profile"} src={"/bitmoji.png"}/>
+		</Link>
 		<div className={styles.links}>
-			<Link href={"/"}>
-				<img className={styles.profile} alt={"profile"} src={"/bitmoji.png"}/>
-			</Link>
 			<Link href={"/"}>home</Link>
 			<Link href={"/updates"}>updates</Link>
 			<Link href={"/papers"}>papers</Link>
