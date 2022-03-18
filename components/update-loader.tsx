@@ -28,7 +28,7 @@ export async function fetchUpdates(limit?: number): Promise<Update[]> {
 		if (typeof meta.title !== "string") continue;
 		if (typeof meta.date !== "string") continue;
 		const url = encodeURI("/" + f.replace(".md", ""));
-		updates.push({url, title: meta.title, date: meta.date.replaceAll("-", "/"), description: meta.description ?? "", readMore: file.content.length !== 0})
+		updates.push({url, title: meta.title, date: meta.date.replace(RegExp("-", "g"), "/"), description: meta.description ?? "", readMore: file.content.length !== 0})
 	}
 
 	updates.sort((a, b) => {

@@ -34,7 +34,7 @@ const Page: NextPage<PageProps> = props => {
 	const m = (wordCount / wpm) + 1;
 	const mString = m.toFixed(0);
 
-	let d = formatDuration(intervalToDuration({start: new Date(props.date.replaceAll("-", "/")), end: new Date()}), {
+	let d = formatDuration(intervalToDuration({start: new Date(props.date.replace(RegExp("-", "g"), "/")), end: new Date()}), {
 		format: ["years", "months", "weeks"]
 	});
 	if (d.length === 0) d = "today"

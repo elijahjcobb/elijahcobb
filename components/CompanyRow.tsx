@@ -35,7 +35,7 @@ const PositionItem: FC<{
 
 	const startDate = new Date(start);
 	let endDate: Date | undefined;
-	if (end) endDate = new Date(end.replaceAll("-", "/"));
+	if (end) endDate = new Date(end.replace(RegExp("-", "g"), "/"));
 	else endDate = new Date();
 
 	const duration = durationString(startDate, endDate);
