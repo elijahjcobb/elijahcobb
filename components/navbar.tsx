@@ -21,6 +21,7 @@ export const NavBar: FC = () => {
 		<div className={styles.links}>
 			<Link href={"/"}>home</Link>
 			<Link href={"/updates"}>updates</Link>
+			<Link href={"/positions"}>positions</Link>
 			<Link href={"/papers"}>papers</Link>
 			<a rel="noreferrer" target={"_blank"} href={"/Elijah-Cobb-Resume.pdf"}>resume</a>
 		</div>
