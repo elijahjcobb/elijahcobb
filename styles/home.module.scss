@@ -11,18 +11,19 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	height: calc(100vh - 72px);
+	height: 100vh;
 	padding: 8px;
 	flex-grow: 1;
 	align-items: center;
+	background: $blue1;
 }
 
 .mtn {
-	position: fixed;
+	//position: fixed;
 	width: 110vw;
-	height: 110vh;
-	top: -5vh;
-	left: -5w;
+	height: 60vh;
+	//top: -5vh;
+	//left: -5vw;
 	object-fit: cover;
 }
 

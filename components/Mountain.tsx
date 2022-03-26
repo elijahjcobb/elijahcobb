@@ -23,7 +23,7 @@ export const Mountain: FC<MountainProps> = props => {
 	const yellow = "#fff3b0"
 	const purple = "#A23F7D";
 	const orange = "#e09f3e";
-	const PARALLAX_EFFECT = 0.025
+	const PARALLAX_EFFECT = 0.0125
 
 	useEffect(() => {
 		const listen = (ev: MouseEvent) => {
@@ -42,9 +42,12 @@ export const Mountain: FC<MountainProps> = props => {
 				 style={{
 					 background: `linear-gradient(${purple}, 20%, ${orange})`,
 					 // transition: "transform 10ms ease-in-out",
-					 transform: `translateX(${pos.x}px) translateY(${pos.y}px)`
+
 	}}>
-		<g>
+		<circle cx="1200" cy="300" r="50" fill={yellow} stroke={orange} className={styles.sun}/>
+		<g style={{
+			transform: `translateX(${pos.x}px) translateY(${pos.y}px)`
+		}}>
 			<path fill={color3} stroke={color3} d="M331.74,452.75c17.73-4.66,36.33-3.67,54.27-0.82c11.8,2.33,23.08,6.63,34.33,10.8
 		c12.44,4.15,25.1,7.86,38.09,9.83c9.32,1.52,18.51,4.02,27.14,7.89c9.94,4.49,20.06,8.74,29.31,14.58
 		c13.86,8.75,27.23,18.25,41.02,27.1c15.72,10.26,28.45,24.17,42.38,36.58c12.75,11.61,24.95,23.96,39.22,33.76

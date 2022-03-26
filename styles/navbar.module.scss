@@ -12,13 +12,13 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	//box-shadow: 0 0 10px #ddd;
-	//border-bottom: solid #eee 1px;
+	box-shadow: 0 0 10px #ddd;
+	border-bottom: solid #eee 1px;
 	padding: 8px;
 	width: 100%;
 	position: sticky;
 	top: 0;
-	//background: white;
+	background: white;
 	z-index: 8;
 
 	.profile {
@@ -52,7 +52,7 @@
 			margin: 4px 3px;
 
 			&:hover {
-				color: white;
+				color: $blue4;
 			}
 		}
 
@@ -72,24 +72,24 @@
 			border-bottom: none;
 
 			&:hover {
-				color: white;
+				color: $blue5;
 			}
 		}
 
-		//.mail:hover {
-		//	color: #BB001B;
-		//}
-		//
-		//.twitter:hover {
-		//	color: #1DA1F2;
-		//}
-		//
-		//.linkedin:hover {
-		//	color: #0072b1;
-		//}
-		//.github:hover {
-		//	color: #6e5494;
-		//}
+		.mail:hover {
+			color: #BB001B;
+		}
+
+		.twitter:hover {
+			color: #1DA1F2;
+		}
+
+		.linkedin:hover {
+			color: #0072b1;
+		}
+		.github:hover {
+			color: #6e5494;
+		}
 	}
 
 	* {
