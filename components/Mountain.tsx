@@ -4,7 +4,7 @@
  * ejcobb@mtu.edu
  */
 
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import styles from "../styles/Mountain.module.scss";
 
 export interface MountainProps {
@@ -12,6 +12,8 @@ export interface MountainProps {
 }
 
 export const Mountain: FC<MountainProps> = props => {
+
+	const [pos, setPos] = useState({x: 0, y: 0});
 
 	const color1 = "#061036"
 	const color2 = "#102264"
@@ -21,10 +23,27 @@ export const Mountain: FC<MountainProps> = props => {
 	const yellow = "#fff3b0"
 	const purple = "#A23F7D";
 	const orange = "#e09f3e";
+	const PARALLAX_EFFECT = 0.025
+
+	useEffect(() => {
+		const listen = (ev: MouseEvent) => {
+			let x = ev.x;
+			let y = ev.y;
+			x = (window.innerWidth / 2 - x) * PARALLAX_EFFECT;
+			y = (window.innerHeight / 2 - y) * PARALLAX_EFFECT;
+			setPos({x, y});
+		}
+		document.addEventListener("mousemove", listen);
+		return () => document.removeEventListener("mousemove", listen);
+	}, []);
 
 	return (<svg className={props.className} preserveAspectRatio={"xMidYMin slice"} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
 				 x="0px" y="0px" viewBox="0 0 1920 1440" enableBackground="new 0 0 1920 1440" xmlSpace="preserve"
-				 style={{background: `linear-gradient(${purple}, 20%, ${orange})`}}>
+				 style={{
+					 background: `linear-gradient(${purple}, 20%, ${orange})`,
+					 // transition: "transform 10ms ease-in-out",
+					 transform: `translateX(${pos.x}px) translateY(${pos.y}px)`
+	}}>
 		<g>
 			<path fill={color3} stroke={color3} d="M331.74,452.75c17.73-4.66,36.33-3.67,54.27-0.82c11.8,2.33,23.08,6.63,34.33,10.8
 		c12.44,4.15,25.1,7.86,38.09,9.83c9.32,1.52,18.51,4.02,27.14,7.89c9.94,4.49,20.06,8.74,29.31,14.58

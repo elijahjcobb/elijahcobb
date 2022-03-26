@@ -9,6 +9,7 @@ import styles from "../styles/home.module.scss";
 import {fetchUpdates, Update} from "../components/update-loader";
 import {Mountain} from "../components/Mountain";
 import {Typr} from "../components/Typr";
+import {useEffect, useState} from "react";
 
 
 interface PageProps {
