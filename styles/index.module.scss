@@ -1,0 +1,93 @@
+/**
+ * Elijah Cobb
+ * elijah@elijahcobb.com
+ * elijahcobb.com
+ * github.com/elijahjcobb
+ */
+
+@import "var";
+
+.main {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.mountain {
+	position: absolute;
+	overflow-x: hidden;
+}
+
+.sky {
+	position: fixed;
+}
+
+.mountain, .sky {
+	width: 100vw;
+	left: 0;
+	height: 100vh;
+	overflow: hidden;
+	top: 0;
+}
+
+.body {
+	position: absolute;
+	width: 100vw;
+	top: 60vh;
+	background: $blue1;
+	z-index: 4;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container {
+	width: 90%;
+	max-width: 1080px;
+	color: $blue6;
+	display: flex;
+	flex-direction: column;
+	height: 400vh;
+	padding-top: 8px;
+}
+
+.hero {
+	display: flex;
+	align-items: center;
+	align-self: center;
+	justify-content: flex-start;
+}
+
+.profile {
+	max-width: 240px;
+	object-fit: contain;
+	width: 30vw;
+	background: linear-gradient($orange, $purple);
+	border-radius: 50%;
+	margin-right: 8px;
+}
+
+.title {
+	flex-grow: 1;
+	color: $blue5;
+	font-size: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+
+	h1 {
+		color: $orange;
+		font-size: 2em;
+		font-family: 'Roboto Slab', serif;
+		font-weight: bolder;
+	}
+}
+
+@media(min-width: 720px) {
+	.title {
+		font-size: 2em;
+	}
+	.profile {
+		margin-right: 32px;
+	}
+}

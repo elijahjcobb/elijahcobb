@@ -4,51 +4,42 @@
  * https://elijahcobb.com
  */
 
-import type {NextPage, GetStaticProps} from "next";
-import styles from "../styles/home.module.scss";
-import {fetchUpdates, Update} from "../components/update-loader";
+import type {NextPage, GetStaticProps, GetStaticPaths, GetServerSideProps} from "next";
 import {Mountain} from "../components/Mountain";
+import styles from "../styles/index.module.scss";
+import {Sky} from "../components/Sky";
+import {NavBar} from "../components/navbar";
+import profilePic from "../public/profile-cas-clear.png";
+import Image from "next/image";
 import {Typr} from "../components/Typr";
-import {useEffect, useState} from "react";
-
 
 interface PageProps {
 
 }
 
-const Page: NextPage<PageProps> = props => {
-
-	return (
-		<div className={styles.main}>
-			<Mountain className={styles.mtn}/>
-			<div className={styles.header}>
-				<img className={styles.profile} alt={"elijah"} src={"/profile-cas-clear.png"}/>
-				<div className={styles.text}>
-					<Typr className={styles.title} content={[
-						"Hello!",
-						1000,
-						"Hello",
-						200,
-						"Hello, I am Elijah!"
-					]}/>
-					<Typr className={styles.desc} cursor={true} content={[
-						3000,
-						"I am a Full Stack Engineer at ▲ Vercel. Before that, I worked as a graduate researcher at HuskyWorks",
-						600,
-						"I am a Full Stack Engineer at ▲ Vercel. Before that, I worked as a graduate researcher at the Planetary Surface Technology Development Lab (PSTDL)",
-						"I am a Full Stack Engineer at ▲ Vercel. Before that, I worked as a graduate researcher at the Planetary Surface Technology Development Lab (PSTDL), where I did R&D work on Lunar robotics for NASA.",
-						1000,
-						"I am a Full Stack Engineer at ▲ Vercel. Before that, I worked as a graduate researcher at the Planetary Surface Technology Development Lab (PSTDL), where I did R&D work on Lunar robotics for NASA." + "In my free time I enjoy playing Hockey, Skiing, Rock Climbing, and Hiking!"
-					]}/>
-					<p className={styles.desc}>Reach out to me at <a rel="noreferrer" target={"_blank"} href={"mailto:elijah@elijahcobb.com"}>elijah@elijahcobb.com</a> or <a rel="noreferrer" target={"_blank"} href={"https://twitter.com/elijahjcobb"}>@elijahjcobb</a>!</p>
+const Page: NextPage<PageProps> = () => {
+	return <div className={styles.main}>
+		{/*<NavBar/>*/}
+		<Sky className={styles.sky}/>
+		<Mountain className={styles.mountain}/>
+		<div className={styles.body}>
+			<div className={styles.container}>
+				<div className={styles.hero}>
+					<img src={"/profile-cas-clear.png"} alt={"profile"} className={styles.profile}/>
+					<div className={styles.title}>
+						<Typr content={["Hello, my name is,"]} wrapper={"p"}/>
+						<Typr content={[1400, "Elijah Cobb!"]} cursor={false} wrapper={"h1"}/>
+					</div>
 				</div>
 			</div>
 		</div>
-	);
+	</div>;
 };
 
-// export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
-// 	return {props: {updates: await fetchUpdates(3)}}
+// export const getServerSideProps: GetServerSideProps<PageProps> = async (context) => {
+// 	return {
+// 		props: {}
+// 	}
 // }
 
 // export const getStaticProps: GetStaticProps<PageProps> = async (context) => {

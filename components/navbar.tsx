@@ -16,15 +16,16 @@ export const NavBar: FC = () => {
 
 	return (<div className={styles.container}>
 		<Link href={"/"}>
-			<img className={styles.profile} alt={"profile"} src={"/bitmoji.png"}/>
+			<img className={styles.profile} alt={"profile"} src={"/profile-cas-clear.png"}/>
 		</Link>
+		<b>Elijah Cobb</b>
 		<div className={styles.links}>
-			<Link href={"/"}>home</Link>
-			<Link href={"/projects"}>projects</Link>
-			<Link href={"/blog"}>blog</Link>
-			{/*<Link href={"/positions"}>positions</Link>*/}
-			{/*<Link href={"/papers"}>papers</Link>*/}
-			<a rel="noreferrer" target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}>resume</a>
+			{/*<Link href={"/"}>home</Link>*/}
+			{/*<Link href={"/projects"}>projects</Link>*/}
+			{/*<Link href={"/blog"}>blog</Link>*/}
+			{/*/!*<Link href={"/positions"}>positions</Link>*!/*/}
+			{/*/!*<Link href={"/papers"}>papers</Link>*!/*/}
+			{/*<a rel="noreferrer" target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}>resume</a>*/}
 		</div>
 		<div className={styles.logos}>
 			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:elijah@elijahcobb.com"}><EmailIcon/></a>
