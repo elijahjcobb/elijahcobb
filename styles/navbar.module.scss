@@ -5,6 +5,8 @@
  * github.com/elijahjcobb
  */
 
+@import "var";
+
 .container {
 
 	display: flex;
@@ -124,7 +126,7 @@
 			a {
 
 				&:hover {
-					color: white;
+					color: $blue3;
 				}
 			}
 

@@ -5,6 +5,8 @@
  * github.com/elijahjcobb
  */
 
+@import "var";
+
 .main {
 	display: flex;
 	flex-direction: column;
@@ -14,6 +16,13 @@
 	align-items: center;
 }
 
+.mtn {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+}
+
 .header {
 	display: flex;
 	flex-direction: column;
@@ -21,6 +30,7 @@
 	padding: 8px;
 	width: 100%;
 	align-items: center;
+	z-index: 1;
 }
 
 .profile {
@@ -33,11 +43,13 @@
 
 .text {
 	display: flex;
+	background: $gradient;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	max-width: 480px;
 	border-radius: 8px;
+	color: white;
 }
 
 .title {
@@ -53,6 +65,7 @@
 
 .updates {
 
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -137,7 +150,7 @@
 		transition: all 250ms ease-in-out;
 	}
 	.more:hover {
-		background: dodgerblue;
+		background: $gradient;
 		color: white;
 		transform: scale(1.025);
 	}
@@ -172,7 +185,8 @@
 			background: black;
 		}
 		.more:hover {
-			color: black;
+			color: white;
+			background: $gradient;
 		}
 	}
 

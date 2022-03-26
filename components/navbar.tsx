@@ -20,13 +20,13 @@ export const NavBar: FC = () => {
 		</Link>
 		<div className={styles.links}>
 			<Link href={"/"}>home</Link>
-			<Link href={"/updates"}>updates</Link>
-			<Link href={"/positions"}>positions</Link>
-			<Link href={"/papers"}>papers</Link>
-			<a rel="noreferrer" target={"_blank"} href={"/Elijah-Cobb-Resume.pdf"}>resume</a>
+			<Link href={"/blog"}>blog</Link>
+			{/*<Link href={"/positions"}>positions</Link>*/}
+			{/*<Link href={"/papers"}>papers</Link>*/}
+			<a rel="noreferrer" target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}>resume</a>
 		</div>
 		<div className={styles.logos}>
-			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:elijahjcobb@gmail.com"}><EmailIcon/></a>
+			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:elijah@elijahcobb.com"}><EmailIcon/></a>
 			<a rel="noreferrer" className={styles.twitter} target={"_blank"} href={"https://twitter.com/elijahjcobb"}><TwitterIcon/></a>
 			<a rel="noreferrer" className={styles.linkedin} target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}><LinkedInIcon/></a>
 			<a rel="noreferrer" className={styles.github} target={"_blank"} href={"https://github.com/elijahjcobb/"}><GitHubIcon/></a>

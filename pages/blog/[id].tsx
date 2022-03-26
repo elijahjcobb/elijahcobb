@@ -47,7 +47,7 @@ const Page: NextPage<PageProps> = props => {
 			</Head>
 			<div className={styles.header}>
 				<h2>{props.title}</h2>
-				<p className={styles.date}>{d + " • about a " + mString + " min read"}</p>
+				<p className={styles.date}>{"~ " + d + " • " + mString + " min read"}</p>
 				{props.description && <p>{props.description}</p>}
 			</div>
 			<ReactMarkdown
@@ -93,7 +93,7 @@ const Page: NextPage<PageProps> = props => {
 export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 
 	const url = (context.params as {id: string}).id;
-	const file = FS.readFileSync("updates/" + url + ".md").toString("utf8");
+	const file = FS.readFileSync("blog/" + url + ".md").toString("utf8");
 	const meta = matter(file);
 	const data = meta.data;
 
@@ -109,7 +109,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
-		paths: FS.readdirSync("updates").map(f => {
+		paths: FS.readdirSync("blog").map(f => {
 			return {params: {id: f.replace(".md", "")}}
 		}),
 		fallback: false

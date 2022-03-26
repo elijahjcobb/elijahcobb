@@ -16,7 +16,7 @@ export type UpdateRowProps = Update;
 export const UpdateRow: FC<UpdateRowProps> = props => {
 
 	let d = formatDuration(intervalToDuration({start: new Date(props.date.replace(RegExp("-", "g"), "/")), end: new Date()}), {
-		format: ["years", "months", "weeks"]
+		format: ["years", "months", "weeks", "days"]
 	});
 	if (d.length === 0) d = "today"
 	else d += " ago";

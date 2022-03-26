@@ -5,6 +5,8 @@
  * github.com/elijahjcobb
  */
 
+@import "var";
+
 .page {
 	padding: 16px;
 	margin: auto;
@@ -110,7 +112,7 @@
 			transition: all 250ms ease-in-out;
 
 			&:hover {
-				background: dodgerblue;
+				background: $gradient;
 				color: white;
 				transform: scale(1.025);
 			}
@@ -151,7 +153,7 @@
 				background: black;
 
 				&:hover {
-					color: black;
+					color: white;
 				}
 			}
 			blockquote p {
