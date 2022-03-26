@@ -12,13 +12,13 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	box-shadow: 0 0 10px #ddd;
-	border-bottom: solid #eee 1px;
+	//box-shadow: 0 0 10px #ddd;
+	//border-bottom: solid #eee 1px;
 	padding: 8px;
 	width: 100%;
 	position: sticky;
 	top: 0;
-	background: white;
+	//background: white;
 	z-index: 8;
 
 	.profile {
@@ -45,14 +45,14 @@
 		a {
 			text-decoration: none;
 			//margin-left: 6px;
-			color: #666;
+			color: black;
 			font-weight: 500;
 			transition: color 250ms ease-in-out;
 			border-bottom: none;
 			margin: 4px 3px;
 
 			&:hover {
-				color: black;
+				color: white;
 			}
 		}
 
@@ -68,24 +68,28 @@
 			margin-right: 6px;
 			transition: color 250ms ease-in-out;
 			cursor: pointer;
-			color: #666;
+			color: black;
 			border-bottom: none;
+
+			&:hover {
+				color: white;
+			}
 		}
 
-		.mail:hover {
-			color: #BB001B;
-		}
-
-		.twitter:hover {
-			color: #1DA1F2;
-		}
-
-		.linkedin:hover {
-			color: #0072b1;
-		}
-		.github:hover {
-			color: #6e5494;
-		}
+		//.mail:hover {
+		//	color: #BB001B;
+		//}
+		//
+		//.twitter:hover {
+		//	color: #1DA1F2;
+		//}
+		//
+		//.linkedin:hover {
+		//	color: #0072b1;
+		//}
+		//.github:hover {
+		//	color: #6e5494;
+		//}
 	}
 
 	* {
@@ -98,12 +102,12 @@
 	.container {
 		.links {
 			.profile {
-				width: 48px;
-				height: 48px;
+				width: 64px;
+				height: 64px;
 			}
 			a {
 				margin-left: 16px;
-				font-size: 1.125em;
+				font-size: 1.25em;
 			}
 		}
 		.logos {
@@ -126,7 +130,7 @@
 			a {
 
 				&:hover {
-					color: $blue3;
+					//color: $blue3;
 				}
 			}
 

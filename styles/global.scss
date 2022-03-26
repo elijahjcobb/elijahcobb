@@ -5,6 +5,11 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,700&display=swap');
+@import "var";
+
+html {
+	background: $blue1;
+}
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -14,18 +19,19 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	//border: solid 1px red;
 }
 
 a {
-	color: dodgerblue;
-	border-bottom: dotted 2px dodgerblue;
+	color: $blue4;
+	border-bottom: none 2px $blue4;
 	padding-bottom: 1px;
-	transition: border-bottom-style 250ms ease-in-out;
+	transition: all 250ms ease-in-out;
 	text-decoration: none;
 
 	&:hover {
 		border-bottom-style: solid;
+		color: $blue2;
+		border-bottom-color: $blue2;
 	}
 }
 

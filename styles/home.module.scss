@@ -9,10 +9,11 @@
 
 .main {
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
-	margin-top: 16px;
+	height: calc(100vh - 72px);
 	padding: 8px;
-	width: 100%;
+	flex-grow: 1;
 	align-items: center;
 }
 
@@ -20,6 +21,7 @@
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
+	top: 0;
 	object-fit: cover;
 }
 
@@ -34,22 +36,25 @@
 }
 
 .profile {
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
+	margin-bottom: 20px;
+	background: linear-gradient($yellow, $orange);
 	align-self: center;
 	border-radius: 50%;
-	box-shadow: 0 0 10px #ddd;
+	box-shadow: 0 0 16px $blue2;
 }
 
 .text {
 	display: flex;
-	background: $gradient;
+	background: white;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	max-width: 480px;
 	border-radius: 8px;
-	color: white;
+	color: black;
+	padding: 16px;
 }
 
 .title {
@@ -111,14 +116,14 @@
 		margin: 48px 0;
 	}
 	.profile {
-		margin-right: 0px;
+		margin-right: 0;
 		width: 260px;
 		height: 260px;
 		z-index: 2;
 	}
 	.text {
 		align-items: flex-start;
-		box-shadow: 0 0 10px #eee;
+		box-shadow: 0 0 16px $blue2;
 		margin-left: -32px;
 		padding: 16px 16px 16px 64px;
 	}

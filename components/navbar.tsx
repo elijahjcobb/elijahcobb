@@ -20,6 +20,7 @@ export const NavBar: FC = () => {
 		</Link>
 		<div className={styles.links}>
 			<Link href={"/"}>home</Link>
+			<Link href={"/projects"}>projects</Link>
 			<Link href={"/blog"}>blog</Link>
 			{/*<Link href={"/positions"}>positions</Link>*/}
 			{/*<Link href={"/papers"}>papers</Link>*/}
