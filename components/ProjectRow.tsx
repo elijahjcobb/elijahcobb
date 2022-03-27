@@ -53,8 +53,8 @@ export const ProjectRow: FC<ProjectRowProps> = props => {
             max-height: 200px;
             object-fit: contain;
             margin-bottom: 32px;
-            filter: grayscale(100%);
-            transition: filter 250ms ease-in-out;
+            filter: grayscale(100%) blur(4px);
+            transition: 250ms ease-in-out;
           }
           
           .container:hover .img {
