@@ -12,6 +12,7 @@ import {NavBar} from "../components/navbar";
 import profilePic from "../public/profile-cas-clear.png";
 import Image from "next/image";
 import {Typr} from "../components/Typr";
+import {ProjectsTable} from "../components/ProjectsTable";
 
 interface PageProps {
 
@@ -31,6 +32,7 @@ const Page: NextPage<PageProps> = () => {
 						<Typr content={[1400, "Elijah Cobb!"]} cursor={false} wrapper={"h1"}/>
 					</div>
 				</div>
+				<ProjectsTable/>
 			</div>
 		</div>
 	</div>;
