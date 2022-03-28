@@ -4,24 +4,28 @@
  * ejcobb@mtu.edu
  */
 
-import {FC} from "react";
-import {COLOR_blue2, COLOR_orange, COLOR_purple} from "./colors";
+import { FC } from "react";
+import { COLOR_blue1, COLOR_blue2, COLOR_orange, COLOR_purple } from "./colors";
+import {IProject} from "../data/projects";
+import {Chips} from "./Chips";
+
+export enum ProjectType {
+  HOBBY,
+  PROFESSIONAL
+}
 
 export interface ProjectRowProps {
-	title: string;
-	slug: string;
-	date: [number, number?];
-	description: string;
-	chips: string[];
-	img: string;
+  project: IProject;
 }
 
 export const ProjectRow: FC<ProjectRowProps> = props => {
 
-	return (<>
-		<style jsx>{`
+  const project = props.project;
+
+  return (<>
+    <style jsx>{`
           * {
-            //border: solid 1px red;
+            /* border: solid 1px red; */
           }
 
           .container {
@@ -80,38 +84,41 @@ export const ProjectRow: FC<ProjectRowProps> = props => {
             margin-top: 16px;
           }
 
-          .chipsContainer {
-            width: 100%;
+          .bottom {
             display: flex;
-            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: none;
+            align-items: flex-end;
           }
 
-          .chip {
-          	margin-top: 16px;
-          	margin-right: 16px;
-          	background: #333;
-          	padding: 4px;
-          	font-family: 'Roboto Mono', monospace;
-          	font-size: 14px;
-          	border-radius: 4px;
-          	transition: all 250ms ease-in-out;
+          .bottom .type {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: #222;
           }
-          
-          .container:hover .chip {
-          	background: black;
+
+          .container:hover .bottom .type {
+            background: ${COLOR_blue1};
           }
 		`}</style>
-		<a href={"/projects/" + props.slug} className={"container"}>
-			<img alt={"preview"} className={"img"} src={props.img}/>
-			<div className={"titleRow"}>
-				<b>{props.title}</b>
-				<span>{props.date[0]} - {props.date[1]}</span>
-			</div>
-			<p className={"desc"}>{props.description}</p>
-			<div className={"chipsContainer"}>
-				{props.chips.map((chip, i) => <span className={"chip"} key={i}>{chip}</span>)}
-			</div>
-		</a>
-	</>);
+    <a href={"/projects/" + project.slug} className={"container"}>
+      <img alt={"preview"} className={"img"} src={project.img} />
+      <div className={"titleRow"}>
+        <b>{project.title}</b>
+        <span>{project.date[0]} - {project.date[1] ?? "present"}</span>
+      </div>
+      <p className={"desc"}>{project.description}</p>
+      <div className="bottom">
+        <Chips chips={props.project.chips}/>
+        <div className="type">{project.type === ProjectType.PROFESSIONAL ? "💼" : "👨‍💻"}</div>
+      </div>
+    </a>
+  </>);
 
 };

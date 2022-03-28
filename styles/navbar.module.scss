@@ -8,126 +8,133 @@
 @import "var";
 
 .container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: $blue1;
+  color: $blue5;
+  z-index: 100;
 
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	//box-shadow: 0 0 10px #ddd;
-	//border-bottom: solid #eee 1px;
-	padding: 8px;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	background: $blue1;
-	color: $blue5;
-	z-index: 100;
+  .profile {
+    background: linear-gradient($orange, $purple);
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 8px;
 
-	.profile {
-		background: $blue4;
-		width: 36px;
-		height: 36px;
-		object-fit: cover;
-		border-radius: 50%;
-		margin-right: 8px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
-		&:hover {
-			cursor: pointer;
-		}
-	}
+  .homeLink {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 
-	.links {
+    b {
+      transition: 250ms ease-in-out;
+    }
 
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		overflow-x: auto;
-		margin: 0 4px;
-		flex-grow: 1;
+    &:hover b {
+      color: $orange;
+    }
+  }
 
+  .links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    margin: 0 4px;
+    flex-grow: 1;
 
-		a {
-			text-decoration: none;
-			//margin-left: 6px;
-			color: $blue4;
-			font-weight: 500;
-			transition: color 250ms ease-in-out;
-			border-bottom: none;
-			margin: 4px 3px;
+    a {
+      text-decoration: none;
+      //margin-left: 6px;
+      color: $blue4;
+      font-weight: 500;
+      transition: color 250ms ease-in-out;
+      border-bottom: none;
+      margin: 4px 3px;
 
-			&:hover {
-				color: $blue4;
-			}
-		}
+      &:hover {
+        color: $blue4;
+      }
+    }
+  }
 
-	}
+  .logos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-	.logos {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
+    .twitter,
+    .linkedin,
+    .github,
+    .mail {
+      margin-right: 8px;
+      transition: color 250ms ease-in-out;
+      cursor: pointer;
+      color: $blue5;
+      border-bottom: none;
 
+      &:hover {
+        color: $orange;
+      }
+    }
+    //
+    //.mail:hover {
+    //	color: #BB001B;
+    //}
+    //
+    //.twitter:hover {
+    //	color: #1DA1F2;
+    //}
+    //
+    //.linkedin:hover {
+    //	color: #0072b1;
+    //}
+    //.github:hover {
+    //	color: #6e5494;
+    //}
+  }
 
-		.twitter, .linkedin, .github, .mail {
-			margin-right: 8px;
-			transition: color 250ms ease-in-out;
-			cursor: pointer;
-			color: $blue5;
-			border-bottom: none;
-
-			&:hover {
-				color: $orange;
-			}
-		}
-		//
-		//.mail:hover {
-		//	color: #BB001B;
-		//}
-		//
-		//.twitter:hover {
-		//	color: #1DA1F2;
-		//}
-		//
-		//.linkedin:hover {
-		//	color: #0072b1;
-		//}
-		//.github:hover {
-		//	color: #6e5494;
-		//}
-	}
-
-	* {
-		display: block;
-	}
-
+  * {
+    display: block;
+  }
 }
 
 @media (min-width: 480px) {
-	.container {
-		.links {
-			.profile {
-				width: 64px;
-				height: 64px;
-			}
-			a {
-				margin-left: 16px;
-				font-size: 1.25em;
-			}
-		}
-		.logos {
-			* {
-				margin-right: 8px;
-			}
-		}
-	}
+  .container {
+    .links {
+      .profile {
+        width: 64px;
+        height: 64px;
+      }
+      a {
+        margin-left: 16px;
+        font-size: 1.25em;
+      }
+    }
+    .logos {
+      * {
+        margin-right: 8px;
+      }
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	//.container {
-	//	background: black;
-	//	color: white;
-	//	box-shadow: 0 0 10px #222;
-	//	border-bottom: solid #111 1px;
-	//}
-
-
+  //.container {
+  //	background: black;
+  //	color: white;
+  //	box-shadow: 0 0 10px #222;
+  //	border-bottom: solid #111 1px;
+  //}
 }

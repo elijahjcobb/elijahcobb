@@ -4,7 +4,7 @@
  * ejcobb@mtu.edu
  */
 
-import {FC} from "react";
+import { FC } from "react";
 import Link from "next/link";
 import styles from "../styles/navbar.module.scss";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -16,22 +16,18 @@ export const NavBar: FC = () => {
 
 	return (<div className={styles.container}>
 		<Link href={"/"}>
-			<img className={styles.profile} alt={"profile"} src={"/profile-cas-clear.png"}/>
+			<div className={styles.homeLink}>
+				<img className={styles.profile} alt={"profile"} src={"/profile-cas-clear.png"} />
+				<b>Elijah Cobb</b>
+			</div>
 		</Link>
-		<b>Elijah Cobb</b>
 		<div className={styles.links}>
-			{/*<Link href={"/"}>home</Link>*/}
-			{/*<Link href={"/projects"}>projects</Link>*/}
-			{/*<Link href={"/blog"}>blog</Link>*/}
-			{/*/!*<Link href={"/positions"}>positions</Link>*!/*/}
-			{/*/!*<Link href={"/papers"}>papers</Link>*!/*/}
-			{/*<a rel="noreferrer" target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}>resume</a>*/}
 		</div>
 		<div className={styles.logos}>
-			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:elijah@elijahcobb.com"}><EmailIcon/></a>
-			<a rel="noreferrer" className={styles.twitter} target={"_blank"} href={"https://twitter.com/elijahjcobb"}><TwitterIcon/></a>
-			<a rel="noreferrer" className={styles.linkedin} target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}><LinkedInIcon/></a>
-			<a rel="noreferrer" className={styles.github} target={"_blank"} href={"https://github.com/elijahjcobb/"}><GitHubIcon/></a>
+			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:elijah@elijahcobb.com"}><EmailIcon /></a>
+			<a rel="noreferrer" className={styles.twitter} target={"_blank"} href={"https://twitter.com/elijahjcobb"}><TwitterIcon /></a>
+			<a rel="noreferrer" className={styles.linkedin} target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}><LinkedInIcon /></a>
+			<a rel="noreferrer" className={styles.github} target={"_blank"} href={"https://github.com/elijahjcobb/"}><GitHubIcon /></a>
 		</div>
 	</div>);
 

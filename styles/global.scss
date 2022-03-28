@@ -4,40 +4,55 @@
  * ejcobb@mtu.edu
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,700&display=swap");
 @import "var";
 
 html {
-	background: white;
+  background: white;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-	color: $blue4;
-	border-bottom: none 2px $blue4;
-	padding-bottom: 1px;
-	transition: all 250ms ease-in-out;
-	text-decoration: none;
+  color: $blue4;
+  border-bottom: none 2px $blue4;
+  padding-bottom: 1px;
+  transition: all 250ms ease-in-out;
+  text-decoration: none;
 
-	&:hover {
-		border-bottom-style: solid;
-		color: $orange;
-		border-bottom-color: $orange;
-	}
+  &:hover {
+    border-bottom-style: solid;
+    color: $orange;
+    border-bottom-color: $orange;
+  }
+}
+
+// h1::before {
+//   content: "# ";
+// }
+
+h2::before {
+  content: "# ";
+}
+
+h2 {
+  color: $blue4;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 @media (prefers-color-scheme: dark) {
-	body {
-		background: black;
-		color: white;
-	}
+  body {
+    background: black;
+    color: white;
+  }
 }
