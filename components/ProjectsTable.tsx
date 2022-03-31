@@ -7,7 +7,7 @@
 import { FC } from "react";
 import { ProjectRow, ProjectRowProps } from "./ProjectRow";
 import { COLOR_blue5 } from "./colors";
-import {IProject} from "../data/projects";
+import { IProject } from "../data/projects";
 
 export interface ProjectsTableProps {
 	projects: IProject[];
@@ -41,14 +41,17 @@ export const ProjectsTable: FC<ProjectsTableProps> = props => {
 			.projects {
 				margin-top: 32px;
 				display: grid;
-				grid-template-columns: 100%;
+				grid-template-columns: auto;
 				grid-template-rows: auto;
+				grid-auto-flow: row;
 				grid-gap: 32px;
 				align-items: start;
+				justify-items: start;
+				grid-auto-rows: min-content;
 			}
 			@media (min-width: 780px) {
 				.projects {
-					grid-template-columns: repeat(2, 50%);
+					grid-template-columns: repeat(2, auto);
 				}
 			}
 		`}</style>

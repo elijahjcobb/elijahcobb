@@ -6,8 +6,8 @@
 
 import { FC } from "react";
 import { COLOR_blue1, COLOR_blue2, COLOR_orange, COLOR_purple } from "./colors";
-import {IProject} from "../data/projects";
-import {Chips} from "./Chips";
+import { IProject } from "../data/projects";
+import { Chips } from "./Chips";
 
 export enum ProjectType {
   HOBBY,
@@ -108,14 +108,14 @@ export const ProjectRow: FC<ProjectRowProps> = props => {
           }
 		`}</style>
     <a href={"/projects/" + project.slug} className={"container"}>
-      <img alt={"preview"} className={"img"} src={project.img} />
+      {project.img && <img alt={"preview"} className={"img"} src={project.img} />}
       <div className={"titleRow"}>
         <b>{project.title}</b>
         <span>{project.date[0]} - {project.date[1] ?? "present"}</span>
       </div>
       <p className={"desc"}>{project.description}</p>
       <div className="bottom">
-        <Chips chips={props.project.chips}/>
+        <Chips chips={props.project.chips} />
         <div className="type">{project.type === ProjectType.PROFESSIONAL ? "💼" : "👨‍💻"}</div>
       </div>
     </a>

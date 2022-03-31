@@ -12,14 +12,14 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 import Head from 'next/head'
-import {IProject, projects} from "../../data/projects";
+import { IProject, projects } from "../../data/projects";
 import markdownStyles from "../../styles/markdownStyles.module.scss";
-import {COLOR_blue1, COLOR_blue5, COLOR_orange, COLOR_purple} from "../../components/colors";
-import {useCallback} from "react";
-import {GitHub, Link} from "@mui/icons-material";
-import {PrismAsync as SyntaxHighlighter} from "react-syntax-highlighter";
-import {Chips} from "../../components/Chips";
-import {ProjectType} from "../../components/ProjectRow";
+import { COLOR_blue1, COLOR_blue5, COLOR_orange, COLOR_purple } from "../../components/colors";
+import { useCallback } from "react";
+import { GitHub, Link } from "@mui/icons-material";
+import { PrismAsync as SyntaxHighlighter } from "react-syntax-highlighter";
+import { Chips } from "../../components/Chips";
+import { ProjectType } from "../../components/ProjectRow";
 
 interface PageProps {
 	project: IProject;
@@ -46,6 +46,7 @@ const Page: NextPage<PageProps> = props => {
 				align-items: center;
 				margin-top: 52px;
 				min-height: calc(100vh - 52px);
+				color: white;w
 			}
 			.container {
 				width: 90%;
@@ -56,6 +57,7 @@ const Page: NextPage<PageProps> = props => {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				margin: 32px 0;
 			}
 			.top h1 {
 			  text-align: center;
@@ -68,7 +70,6 @@ const Page: NextPage<PageProps> = props => {
 			.top img {
 				width: 80%;
 				max-width: 400px;
-				margin: 32px 0;
 			}
 			.date {
 				text-transform: uppercase;
@@ -112,7 +113,7 @@ const Page: NextPage<PageProps> = props => {
 			<div className={"container"}>
 				<div className={"top"}>
 					<h1>{props.project.title}</h1>
-					<img src={props.project.img} alt={props.project.slug}/>
+					{props.project.img && <img src={props.project.img} alt={props.project.slug} />}
 				</div>
 				<div className={"mid"}>
 					<span className={"date"}>{dateString()}</span>
@@ -120,17 +121,17 @@ const Page: NextPage<PageProps> = props => {
 						target={"_blank"} rel={"noreferrer"}
 						href={"https://" + props.project.link}
 						className={"icon-link"}>
-						<Link/>
+						<Link />
 						<span>{props.project.link}</span>
 					</a>}
 					{props.project.github && <a
 						target={"_blank"} rel={"noreferrer"}
 						href={"https://github.com/" + props.project.github}
 						className={"icon-link"}>
-						<GitHub/>
+						<GitHub />
 						<span>{props.project.github}</span>
 					</a>}
-					<Chips chips={props.project.chips.concat([props.project.type === ProjectType.PROFESSIONAL ? "💼" : "👨‍💻"])}/>
+					<Chips chips={props.project.chips.concat([props.project.type === ProjectType.PROFESSIONAL ? "💼" : "👨‍💻"])} />
 				</div>
 				<ReactMarkdown
 					className={markdownStyles.container}
@@ -173,8 +174,9 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 	try {
 		console.log(__dirname);
 		fileData = FS.readFileSync("data/md/" + url + ".md").toString("utf8");
-	} catch (e) { console.error(e); }
-	if (!project || !fileData) return { redirect: { destination: "/", permanent: false } }
+	} catch (e) { }
+	if (!project) return { redirect: { destination: "/", permanent: false } }
+	if (!fileData) fileData = "Elijah was lazy and did not add info about this project yet.";
 
 	return {
 		props: {
