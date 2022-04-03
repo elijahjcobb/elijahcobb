@@ -23,7 +23,8 @@ import { ProjectType } from "../../components/ProjectRow";
 
 interface PageProps {
 	project: IProject;
-	md: string;
+	mdManual: string | null;
+	mdGitHub: string | null;
 }
 
 const Page: NextPage<PageProps> = props => {
@@ -46,7 +47,8 @@ const Page: NextPage<PageProps> = props => {
 				align-items: center;
 				margin-top: 52px;
 				min-height: calc(100vh - 52px);
-				color: white;w
+				color: white;
+				user-select: none;
 			}
 			.container {
 				width: 90%;
@@ -66,6 +68,7 @@ const Page: NextPage<PageProps> = props => {
 			  background: -webkit-linear-gradient(${COLOR_orange} 60%, ${COLOR_purple});
 			  -webkit-background-clip: text;
 			  -webkit-text-fill-color: transparent;
+			  user-select: none;
 			}
 			.top img {
 				width: 80%;
@@ -140,17 +143,12 @@ const Page: NextPage<PageProps> = props => {
 							return <a rel="noreferrer" href={props.href} target={"_blank"}>{children}</a>
 						},
 						code({ node, inline, className, children, ...props }) {
-							const match = /language-(\w+)/.exec(className || '')
-							return !inline && match ? (
-								<SyntaxHighlighter
-									language={match[1]}
-									PreTag="div"
-									{...props}
-								>
-									{String(children).replace(/\n$/, '')}
-								</SyntaxHighlighter>
+							return !inline ? (
+								<code className={markdownStyles.codeBlock} {...props}>
+									{children}
+								</code>
 							) : (
-								<code className={className} {...props}>
+								<code className={markdownStyles.codeInline} {...props}>
 									{children}
 								</code>
 							)
@@ -158,7 +156,7 @@ const Page: NextPage<PageProps> = props => {
 					}}
 					remarkPlugins={[remarkMath, remarkGfm]}
 					rehypePlugins={[rehypeKatex]}>
-					{props.md}
+					{[(props.mdManual ?? ""), (props.mdGitHub ?? "")].join("\n")}
 				</ReactMarkdown>
 			</div>
 		</div>
@@ -176,12 +174,21 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 		fileData = FS.readFileSync("data/md/" + url + ".md").toString("utf8");
 	} catch (e) { }
 	if (!project) return { redirect: { destination: "/", permanent: false } }
-	if (!fileData) fileData = "Elijah was lazy and did not add info about this project yet.";
+
+	let githubSource: string | undefined;
+	if (project.github) {
+		try {
+			const r = await fetch(`https://raw.githubusercontent.com/${project.github}/master/README.md`)
+			githubSource = await r.text();
+		} catch (e) {}
+	}
+
 
 	return {
 		props: {
 			project,
-			md: fileData
+			mdManual: fileData ?? null,
+			mdGitHub: githubSource ?? null
 		}
 	}
 }

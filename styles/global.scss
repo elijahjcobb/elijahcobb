@@ -9,6 +9,12 @@
 
 html {
   background: white;
+
+  ::selection {
+    color: $blue1;
+    background: $orange;
+  }
+
 }
 
 body {

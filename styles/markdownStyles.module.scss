@@ -7,7 +7,31 @@
 
 @import "var";
 
+.condeInline, .codeBlock {
+  font-family: "Roboto Mono", monospace;
+  color: white;
+  user-select: all;
+}
+
+.codeInline {
+  background: $blue2;
+  text-wrap: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.codeBlock {
+  background: none;
+  display: block;
+  box-shadow: 0 0 8px $blue2;
+  padding: 16px;
+  white-space: pre-wrap;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
 .container {
+  user-select: text;
   font-size: 1.125em;
   padding: 32px 0;
   line-height: 1.5;
@@ -89,49 +113,6 @@
   li {
     margin: 8px 8px 0px 32px;
   }
-
-  code {
-    font-family: "Roboto Mono", monospace;
-    background: $blue2;
-    text-wrap: none;
-    color: white;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
-
-  pre {
-    background: none;
-    display: block;
-    box-shadow: 0 0 8px $blue2;
-    padding: 16px;
-    border-radius: 8px;
-  }
-
-  pre div {
-    background: none !important;
-  }
-
-  pre div code {
-    background: none;
-    color: colo;
-  }
-
-  //
-  //.icon-link {
-  //	display: flex;
-  //	align-items: center;
-  //	margin: 16px 0;
-  //	font-size: 1em;
-  //	color: ${COLOR_blue5};
-  //	transition: 250ms ease-in-out;
-  //	text-decoration: none;
-  //}
-  //.icon-link:hover {
-  //	color: ${COLOR_orange};
-  //	transform: scale(1.05);
-  //	cursor: pointer;
-  //	border: none;
-  //}
 
   a::before {
     content: "🔗 [ ";
