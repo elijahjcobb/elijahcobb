@@ -11,6 +11,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import WorkIcon from '@mui/icons-material/Work';
 
 export const NavBar: FC = () => {
 
@@ -24,6 +25,7 @@ export const NavBar: FC = () => {
 		<div className={styles.links}>
 		</div>
 		<div className={styles.logos}>
+			<a className={styles.mail} href={"/positions"}><WorkIcon /></a>
 			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:elijah@elijahcobb.com"}><EmailIcon /></a>
 			<a rel="noreferrer" className={styles.twitter} target={"_blank"} href={"https://twitter.com/elijahjcobb"}><TwitterIcon /></a>
 			<a rel="noreferrer" className={styles.linkedin} target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}><LinkedInIcon /></a>

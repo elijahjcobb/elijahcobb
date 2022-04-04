@@ -5,10 +5,15 @@
  * github.com/elijahjcobb
  */
 
+@import "_var";
+
 .root {
 	width: 90vw;
 	max-width: 720px;
 	margin: auto;
+	padding-top: 48px;
+	background: $blue1;
+	color: white;
 }
 
 .container {
@@ -16,16 +21,17 @@
 	align-items: flex-start;
 	justify-content: flex-start;
 	margin: 32px 0;
-	box-shadow: 0 0 16px #ddd;
+	box-shadow: 0 0 16px $blue2;
 	border-radius: 16px;
 	padding: 16px;
-	transition: transform 250ms ease-in-out;
+	transition: all 250ms ease-in-out;
 	user-select: none;
 }
 
 .container:hover {
 	cursor: pointer;
 	transform: scale(1.025);
+	background: linear-gradient($orange, $purple);
 }
 
 .img {
@@ -54,17 +60,21 @@
 		margin-bottom: 4px;
 	}
 
-	.name, .title {
+	.name,
+	.title {
 		font-weight: bolder;
 	}
 
 	.title {
 		margin-bottom: -48px;
-		.circle, .line {
+
+		.circle,
+		.line {
 			display: block;
 			background: #f0f0f0;
 			position: relative;
 		}
+
 		.circle {
 			width: 16px;
 			height: 16px;
@@ -72,6 +82,7 @@
 			border-radius: 50%;
 			top: -16px;
 		}
+
 		.line {
 			width: 2px;
 			height: 32px;
@@ -81,7 +92,7 @@
 	}
 
 	.subtitle {
-		color: #888;
+		color: #ccc;
 		margin: 4px 0;
 	}
 }
