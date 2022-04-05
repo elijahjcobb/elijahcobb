@@ -122,6 +122,6 @@ export const projects: IProject[] = [
 		description: "A website for a medical labratory at Michigan Tech.",
 		date: [2018, 2019],
 		chips: ["HTML", "CSS", "JS"],
-		link: "https://abadi.me.mtu.edu"
+		link: "abadi.me.mtu.edu"
 	}
 ];

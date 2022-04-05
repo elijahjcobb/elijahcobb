@@ -176,7 +176,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 		fileData = FS.readFileSync("data/md/" + url + ".md").toString("utf8");
 	} catch (e) { }
 	if (!project) return { redirect: { destination: "/", permanent: false } }
-	if (!fileData) fileData = "Elijah was lazy and did not add info about this project yet.";
+	if (!fileData) fileData = project.description;
 
 	return {
 		props: {
