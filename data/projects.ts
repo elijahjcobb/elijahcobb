@@ -115,5 +115,13 @@ export const projects: IProject[] = [
 		date: [2022],
 		chips: ["TypeScript", "NodeJS"],
 		github: "elijahjcobb/tmplit"
+	},
+	{
+		title: "Abadi Lab",
+		slug: "abadi",
+		description: "A website for a medical labratory at Michigan Tech.",
+		date: [2018, 2019],
+		chips: ["HTML", "CSS", "JS"],
+		link: "abadi.me.mtu.edu"
 	}
 ];

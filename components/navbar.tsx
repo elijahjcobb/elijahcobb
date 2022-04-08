@@ -27,6 +27,7 @@ export const NavBar: FC = () => {
 		<div className={styles.logos}>
 			<a className={styles.mail} href={"/positions"}><WorkIcon /></a>
 			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:elijah@elijahcobb.com"}><EmailIcon /></a>
+			<a rel="noreferrer" className={styles.mail} target={"_blank"} href={"mailto:elijah@elijahcobb.com"}><EmailIcon /></a>
 			<a rel="noreferrer" className={styles.twitter} target={"_blank"} href={"https://twitter.com/elijahjcobb"}><TwitterIcon /></a>
 			<a rel="noreferrer" className={styles.linkedin} target={"_blank"} href={"https://www.linkedin.com/in/elijahjcobb/"}><LinkedInIcon /></a>
 			<a rel="noreferrer" className={styles.github} target={"_blank"} href={"https://github.com/elijahjcobb/"}><GitHubIcon /></a>

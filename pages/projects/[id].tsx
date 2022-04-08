@@ -62,13 +62,13 @@ const Page: NextPage<PageProps> = props => {
 				margin: 32px 0;
 			}
 			.top h1 {
-			  text-align: center;
-			  width: 100%;
-			  font-size: 3em;
-			  background: -webkit-linear-gradient(${COLOR_orange} 60%, ${COLOR_purple});
-			  -webkit-background-clip: text;
-			  -webkit-text-fill-color: transparent;
-			  user-select: none;
+				text-align: center;
+				width: 100%;
+				font-size: 3em;
+				background: -webkit-linear-gradient(${COLOR_orange} 60%, ${COLOR_purple});
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				user-select: none;
 			}
 			.top img {
 				width: 80%;
@@ -180,9 +180,8 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
 		try {
 			const r = await fetch(`https://raw.githubusercontent.com/${project.github}/master/README.md`)
 			githubSource = await r.text();
-		} catch (e) {}
+		} catch (e) { }
 	}
-
 
 	return {
 		props: {
