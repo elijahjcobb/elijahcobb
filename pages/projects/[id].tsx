@@ -17,7 +17,6 @@ import markdownStyles from "../../styles/markdownStyles.module.scss";
 import { COLOR_blue1, COLOR_blue5, COLOR_orange, COLOR_purple } from "../../components/colors";
 import { useCallback } from "react";
 import { GitHub, Link } from "@mui/icons-material";
-import { PrismAsync as SyntaxHighlighter } from "react-syntax-highlighter";
 import { Chips } from "../../components/Chips";
 import { ProjectType } from "../../components/ProjectRow";
 
@@ -70,10 +69,6 @@ const Page: NextPage<PageProps> = props => {
 				-webkit-text-fill-color: transparent;
 				user-select: none;
 			}
-			.top img {
-				width: 80%;
-				max-width: 400px;
-			}
 			.date {
 				text-transform: uppercase;
 				font-size: 22px;
@@ -98,9 +93,6 @@ const Page: NextPage<PageProps> = props => {
 				margin-left: 8px;
 			}
 			@media (min-width: 720px) {
-				.top img {
-					margin: 64px 0;
-				}
 				.top, .mid {
 					font-size: 2em;
 				}
@@ -116,7 +108,6 @@ const Page: NextPage<PageProps> = props => {
 			<div className={"container"}>
 				<div className={"top"}>
 					<h1>{props.project.title}</h1>
-					{props.project.img && <img src={props.project.img} alt={props.project.slug} />}
 				</div>
 				<div className={"mid"}>
 					<span className={"date"}>{dateString()}</span>

@@ -56,15 +56,13 @@
 
     a {
       text-decoration: none;
-      //margin-left: 6px;
-      color: $blue4;
-      font-weight: 500;
+      color: $blue5;
       transition: color 250ms ease-in-out;
       border-bottom: none;
       margin: 4px 3px;
 
       &:hover {
-        color: $blue4;
+        color: $orange;
       }
     }
   }
@@ -77,6 +75,7 @@
     .twitter,
     .linkedin,
     .github,
+    .resume,
     .mail {
       margin-right: 8px;
       transition: color 250ms ease-in-out;
@@ -104,12 +103,13 @@
       }
       a {
         margin-left: 16px;
-        font-size: 1.25em;
+        font-size: 1em;
       }
     }
     .logos {
       * {
-        margin-right: 8px;
+        margin-right: 16px;
+        display: block;
       }
     }
   }

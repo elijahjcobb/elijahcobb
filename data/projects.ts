@@ -4,7 +4,7 @@
  * @Date   : 3/27/2022, 8:18:35 PM
  */
 
-import {ProjectRowProps, ProjectType} from "../components/ProjectRow";
+import {ProjectType} from "../components/ProjectRow";
 
 export interface IProject {
 	title: string;
@@ -12,7 +12,6 @@ export interface IProject {
 	date: [number, number?];
 	description: string;
 	chips: string[];
-	img?: string;
 	type?: ProjectType;
 	link?: string;
 	github?: string;
@@ -22,7 +21,6 @@ export const projects: IProject[] = [
 	{
 		title: "dotmd",
 		slug: "dotmd",
-		img: "/dotmd.png",
 		description: "A web-based markdown editor accessible on any device. Simply sign in with Google and all your files will be synced automatically. Full markdown support, LaTeX, Github syntax highlighting, and much more!",
 		date: [2021],
 		chips: ["TypeScript", "NextJS", "ReactJS", "MongoDB", "REST", "NextAuth", "SCSS", "MD", "NGINX", "Ubuntu", "NodeJS"],
@@ -32,7 +30,6 @@ export const projects: IProject[] = [
 	{
 		title: "wramble",
 		slug: "wramble",
-		img: "/wramble.png",
 		description: "Wordl meets Scrabble, built with Expo & React Native.",
 		date: [2022],
 		chips: ["TypeScript", "React Native", "Expo", "NodeJS", "CSS"],

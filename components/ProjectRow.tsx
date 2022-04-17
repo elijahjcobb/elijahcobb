@@ -52,16 +52,7 @@ export const ProjectRow: FC<ProjectRowProps> = props => {
 			border: none;
 		}
 
-		.img {
-			width: 100%;
-			max-height: 200px;
-			object-fit: contain;
-			margin-bottom: 32px;
-			filter: grayscale(100%) blur(4px);
-			transition: 250ms ease-in-out;
-		}
-
-		.container:hover .img {
+		.container:hover {
 			filter: none;
 		}
 
@@ -108,7 +99,6 @@ export const ProjectRow: FC<ProjectRowProps> = props => {
 		}
 		`}</style>
 		<a href={"/projects/" + project.slug} className={"container"}>
-			{project.img && <img alt={"preview"} className={"img"} src={project.img} />}
 			<div className={"titleRow"}>
 				<b>{project.title}</b>
 				<span>{project.date[0]} - {project.date[1] ?? "present"}</span>
