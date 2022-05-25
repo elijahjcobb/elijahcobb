@@ -3,3 +3,17 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+:root {
+	--ec-background: #272c36;
+	--ec-dark: #20252c;
+	--ec-foreground: #6d717b;
+	--ec-padding: 16px;
+	--side-bar-width: 48px;
+	--tab-bar-height: 32px;
+	--side-bar-spacing: 24px;
+}
+
+body {
+	background-color: red;
+}
