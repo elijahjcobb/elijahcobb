@@ -9,11 +9,11 @@ export function Sidebar({ }: SidebarProps): ReactElement {
 	return <div className="sidebar">
 		<style jsx>{`
 			.sidebar {
-				background: var(--ec-background);
+				background: var(--dark);
 				width: var(--side-bar-width);
-				color: var(--ec-foreground);
+				color: var(--foreground);
 				height: 100vh;
-				padding: var(--ec-padding);
+				padding: var(--padding);
 			}
 			.sidebar, .section {
 				display: flex;
