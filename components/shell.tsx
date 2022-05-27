@@ -24,6 +24,9 @@ export function Shell({
 				height: calc(100vh - var(--tab-bar-height));
 				font-family: "Roboto Mono", monospace;
 				padding: 0 4px;
+				margin-top: var(--tab-bar-height);
+				margin-left: var(--side-bar-width);
+				overflow-y: auto;
 			}
 		`}</style>
 		<div className="root">

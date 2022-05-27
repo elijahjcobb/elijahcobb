@@ -13,15 +13,15 @@ function ECImage(props: { src: string, width?: number, height?: number }) {
 }
 
 function ECH1({ children }: CustomChild) {
-	return <h1 className={styles.h1}># {children}</h1>
+	return <h1 className={styles.h1}>{children}</h1>
 }
 
 function ECH2({ children }: CustomChild) {
-	return <h2 className={styles.h2}>## {children}</h2>
+	return <h2 className={styles.h2}>{children}</h2>
 }
 
 function ECH3({ children }: CustomChild) {
-	return <h3 className={styles.h3}>### {children}</h3>
+	return <h3 className={styles.h3}>{children}</h3>
 }
 
 function ECPre({ children }: CustomChild) {

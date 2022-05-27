@@ -14,6 +14,9 @@ export function Sidebar({ }: SidebarProps): ReactElement {
 				color: var(--foreground);
 				height: 100vh;
 				padding: var(--padding);
+				position: fixed;
+				left: 0;
+				top: 0;
 			}
 			.sidebar, .section {
 				display: flex;

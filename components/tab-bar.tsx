@@ -14,6 +14,9 @@ export function TabBar({ }: TabBarProps): ReactElement {
 				height: var(--tab-bar-height);
 				color: var(--foreground);
 				display: flex;
+				position: fixed;
+				left: var(--side-bar-width);
+				top: 0;
 			}
 		`}</style>
 		<TabBarItem name="index" link="/" />

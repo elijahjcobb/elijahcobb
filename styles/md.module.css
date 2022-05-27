@@ -2,21 +2,44 @@
 	margin: var(--padding) 0 var(--padding-half);
 }
 
+.h1::before,
+.h2::before,
+.h3:before {
+	color: var(--green);
+}
+
 .h1 {
-	text-transform: uppercase;
+	font-size: calc(var(--font-size) * 2);
+	color: var(--green);
 }
 
 .h2 {
-
+	font-size: calc(var(--font-size) * 1.5);
 }
 
 .h3 {
+	font-size: calc(var(--font-size) * 1.25);
+}
 
+.h2::before {
+content: "## ";
+}
+
+.h3::before {
+content: "### ";
 }
 
 .text {
 	margin: var(--padding-half) 0;
 	font-size: var(--font-size);
+}
+
+.text strong {
+	color: var(--red);
+}
+
+.text em {
+	color: var(--yellow);
 }
 
 .img {
@@ -38,6 +61,18 @@
 .a {
 	color: var(--blue);
 	text-decoration: none;
+}
+
+.a::before, .a::after {
+	color: var(--green);
+}
+
+.a::before {
+	content: "[";
+}
+
+.a::after {
+	content: "]";
 }
 
 .a:hover {
@@ -80,5 +115,13 @@
 }
 
 .blockquote {
+	color: var(--gray);
+}
 
+.blockquote p {
+	display: inline;
+}
+
+.blockquote::before {
+	content: "//";
 }
