@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			<title>elijahcobb.dev</title>
 		</Head>
 		<Shell>
-			<MDXProvider components={components}>
+			<MDXProvider components={components as import("mdx/types").MDXComponents}>
 				<Component {...pageProps} />
 			</MDXProvider>
 		</Shell>

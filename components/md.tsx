@@ -5,7 +5,6 @@ import styles from "../styles/md.module.css";
 type CustomChild = { children: JSX.Element };
 
 function ECText(props: CustomChild) {
-	console.log(props);
 	return <p className={styles.text}>{props.children}</p>
 }
 
