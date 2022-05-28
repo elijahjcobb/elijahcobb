@@ -17,10 +17,11 @@ export function TabBar({ }: TabBarProps): ReactElement {
 				position: fixed;
 				left: var(--side-bar-width);
 				top: 0;
+				overflow-x: auto;
+				border-bottom: solid 1px var(--dark);
 			}
 		`}</style>
 		<TabBarItem name="index" link="/" />
 		<TabBarItem name="blog" link="/blog" />
-		<TabBarItem name="test" link="/test" />
 	</div>
 }

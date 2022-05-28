@@ -6,9 +6,15 @@
 	box-sizing: border-box;
 }
 
+::selection {
+	background: var(--cyan);
+	color: var(--background);
+}
+
 :root {
 	--padding: 16px;
 	--padding-half: calc(var(--padding) / 2);
+	--padding-dub: calc(var(--padding) * 2);
 	--side-bar-width: 48px;
 	--tab-bar-height: 36px;
 	--side-bar-spacing: 24px;
@@ -20,7 +26,7 @@
 	--purple: #c678dd;
 	--cyan: #56b6c2;
 	--white: #abb2bf;
-	--gray: #5f656c;
+	--gray: #59646d;
 	--foreground: var(--white);
 	--dark: #20252c;
 	--background:#272c36;
@@ -33,4 +39,136 @@ body {
 	color: var(--foreground);
 	font-family: "Roboto", sans-serif;
 	font-size: var(--font-size);
+}
+
+.h1, .h2, .h3 {
+	margin: var(--padding-dub) 0 var(--padding);
+}
+
+.h1::before,
+.h2::before,
+.h3:before {
+	color: var(--purple);
+}
+
+.h1 {
+	font-size: calc(var(--font-size) * 1.5);
+}
+
+.h2 {
+	font-size: calc(var(--font-size) * 1.25);
+}
+
+.h3 {
+	font-size: calc(var(--font-size) * 1.125);
+}
+
+.h1::before {
+content: "# ";
+}
+
+.h2::before {
+content: "## ";
+}
+
+.h3::before {
+content: "### ";
+}
+
+.text {
+	margin: var(--padding-half) 0;
+	font-size: var(--font-size);
+}
+
+strong {
+	color: var(--red);
+}
+
+em {
+	color: var(--yellow);
+}
+
+.img {
+
+}
+
+.ul {
+
+}
+
+.ol {
+	
+}
+
+.li, .ol {
+	margin: var(--padding-half) 0 var(--padding-half) var(--padding);
+}
+
+.a {
+	color: var(--blue);
+	text-decoration: none;
+}
+
+.a::before, .a::after {
+	color: var(--green);
+}
+
+.a::before {
+	content: "[";
+}
+
+.a::after {
+	content: "]";
+}
+
+.a:hover {
+	text-decoration: underline;
+}
+
+.pre, .code {
+	font-size: var(--font-size);
+	font-family: "Roboto Mono", monospace;
+}
+
+.code::before, .code::after {
+	content: "`";
+	color: var(--blue);
+}
+
+.code {
+	background-color: var(--dark);
+	padding: 2px 4px;
+	border-radius: 4px;
+}
+
+.pre {
+	padding: var(--padding);
+	border-radius: var(--padding-half);
+	max-width: 720px;
+	margin: auto;
+	box-shadow: 0 0 var(--padding) var(--dark);
+	border: solid 1px var(--dark);
+}
+
+.pre .code {
+	padding: 0;
+	border-radius: 0;
+	background-color: var(--background);
+}
+
+.pre .code::before, .pre .code::after {
+	content: none;
+}
+
+.blockquote {
+	color: var(--gray);
+	display: inline;
+}
+
+.blockquote p {
+	display: inline;
+}
+
+.blockquote::before {
+	content: "//";
 }
