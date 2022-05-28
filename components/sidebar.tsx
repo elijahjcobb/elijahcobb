@@ -32,7 +32,7 @@ export function Sidebar({ }: SidebarProps): ReactElement {
 		`}</style>
 		<div className="section">
 			<SideBarItem icon={VscFiles} href="https://github.com/elijahjcobb/elijahcobb" />
-			<SideBarItem icon={VscSearch} href="https://github.com/elijahjcobb/elijahcobb/search?q=%3CSideBarIteam+icon%3D%7BVscSearch" />
+			<SideBarItem icon={VscSearch} href="https://github.com/elijahjcobb/elijahcobb/search?q=%3CSideBarItem+icon%3D%7BVscSearch" />
 			<SideBarItem icon={VscGitMerge} href="https://github.com/elijahjcobb/elijahcobb" />
 		</div>
 		<SideBarItem icon={FaEnvelope} href="mailto:elijah@elijahcobb.com" />
