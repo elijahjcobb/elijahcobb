@@ -1,5 +1,7 @@
-import { VscFiles, VscGitMerge, VscAccount } from "react-icons/vsc";
+import { VscFiles, VscGitMerge, VscAccount, VscSearch } from "react-icons/vsc";
 import type { ReactElement } from "react";
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { SideBarItem } from "./sidebar-item";
 
 export interface SidebarProps {
 
@@ -29,9 +31,13 @@ export function Sidebar({ }: SidebarProps): ReactElement {
 			}
 		`}</style>
 		<div className="section">
-			<VscFiles size={24} />
-			<VscGitMerge size={24} />
+			<SideBarItem icon={VscFiles} href="https://github.com/elijahjcobb/elijahcobb" />
+			<SideBarItem icon={VscSearch} href="https://github.com/elijahjcobb/elijahcobb/search?q=%3CSideBarIteam+icon%3D%7BVscSearch" />
+			<SideBarItem icon={VscGitMerge} href="https://github.com/elijahjcobb/elijahcobb" />
 		</div>
-		<VscAccount size={24} />
+		<SideBarItem icon={FaEnvelope} href="mailto:elijah@elijahcobb.com" />
+		<SideBarItem icon={FaTwitter} href="https://twitter.com/elijahjcobb" />
+		<SideBarItem icon={FaGithub} href="http://github.com/elijahjcobb" />
+		<SideBarItem icon={FaLinkedin} href="https://linkedin.com/in/elijahjcobb" />
 	</div>
 }

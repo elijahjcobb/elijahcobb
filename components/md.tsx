@@ -4,7 +4,7 @@ import React from "react";
 type CustomChild = { children: JSX.Element };
 
 function ECText(props: CustomChild) {
-	return <p className="text">{props.children}</p>
+	return <p contentEditable={true} className="text">{props.children}</p>
 }
 
 function ECImage(props: { src: string, width?: number, height?: number }) {
@@ -12,23 +12,23 @@ function ECImage(props: { src: string, width?: number, height?: number }) {
 }
 
 function ECH1({ children }: CustomChild) {
-	return <h1 className="h1">{children}</h1>
+	return <h1 contentEditable={true} className="h1">{children}</h1>
 }
 
 function ECH2({ children }: CustomChild) {
-	return <h2 className="h2">{children}</h2>
+	return <h2 contentEditable={true} className="h2">{children}</h2>
 }
 
 function ECH3({ children }: CustomChild) {
-	return <h3 className="h3">{children}</h3>
+	return <h3 contentEditable={true} className="h3">{children}</h3>
 }
 
 function ECPre({ children }: CustomChild) {
-	return <pre className="pre">{children}</pre>
+	return <pre contentEditable={true} className="pre">{children}</pre>
 }
 
 function ECCode({ children }: CustomChild) {
-	return <code className="code">{children}</code>
+	return <code contentEditable={true} className="code">{children}</code>
 }
 
 function ECUl({ children }: CustomChild) {
@@ -40,7 +40,7 @@ function ECOl({ children }: CustomChild) {
 }
 
 function ECLi({ children }: CustomChild) {
-	return <li className="li">{children}</li>
+	return <li contentEditable={true} className="li">{children}</li>
 }
 
 function ECA({ children, href }: CustomChild & { href: string }) {
@@ -49,11 +49,12 @@ function ECA({ children, href }: CustomChild & { href: string }) {
 		href={href}
 		target="_blank"
 		rel="noreferrer noopener"
+		contentEditable={false}
 	>{children}</a>
 }
 
 function ECBlockquote({ children }: CustomChild) {
-	return <p className="blockquote">{children}</p>
+	return <div className="blockquote">{children}</div>
 }
 
 export const components = {
