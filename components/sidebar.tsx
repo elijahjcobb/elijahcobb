@@ -19,6 +19,7 @@ export function Sidebar({ }: SidebarProps): ReactElement {
 				position: fixed;
 				left: 0;
 				top: 0;
+				border-right: solid 1px var(--dark-gray);
 			}
 			.sidebar, .section {
 				display: flex;
