@@ -1,9 +1,7 @@
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
-import { MDXProvider } from '@mdx-js/react'
-import { components } from '../components/md'
-import { Shell } from '../components/shell'
 import "../styles/index.css";
+import { Shell } from '../components/Shell';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	return <>
@@ -11,9 +9,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			<title>elijahcobb.dev</title>
 		</Head>
 		<Shell>
-			<MDXProvider components={components as import("mdx/types").MDXComponents}>
-				<Component {...pageProps} />
-			</MDXProvider>
+			<Component {...pageProps} />
 		</Shell>
 	</ >
 }
