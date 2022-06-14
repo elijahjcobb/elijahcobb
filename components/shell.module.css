@@ -1,0 +1,24 @@
+.shell {
+
+}
+
+.main {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.container {
+	flex-grow: 1;
+	width: 100%;
+	max-width: 1080px;
+	padding: var(--padding);
+}
+.sidebar {
+	display: none !important;
+}
+
+@media (min-width: 720px) {
+	.sidebar {
+		display: flex !important;
+	}
+}

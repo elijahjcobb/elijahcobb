@@ -1,7 +1,9 @@
 import { Icon } from "./icon"
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export function NavBar() {
+	const router = useRouter();
 	return <nav className="nav">
 		<style jsx>{`
 			.nav {
@@ -10,22 +12,29 @@ export function NavBar() {
 				align-items: center;
 				padding: 0 var(--padding);
 				height: var(--nav-height);
+				position: sticky;
+				background: var(--background);
+				z-index: 2;
+				top: 0;
+				left: 0;
+				width: 100vw;
 			}
 			.list {
-				display: flex;
+				display: none;
 				align-items: center;
 				gap: var(--padding-xl);
 			}
 			.item {
 				font-size: 14px;
-				color: var(--primary);
+				color: var(--foreground);
 				font-family: var(--font-mono);
+				padding: var(--padding-xs)
 			}
 
 			.link {
 				text-decoration: none;
 				text-transform: capitalize;
-				color: var(--foreground);
+				color: var(--primary);
 				font-size: 18px;
 				font-family: var(--font);
 			}
@@ -35,16 +44,30 @@ export function NavBar() {
 			}
 
 			.item:hover .link {
-				color: var(--primary);
+				color: var(--secondary);
 			}
 
 			.item:hover {
-				transform: scale(1.25);
+				transform: scale(1.0625) translateY(-2px);
+				color: var(--secondary);
 			}
 
+			.home:hover {
+				cursor: pointer;
+			}
+
+			@media (min-width: 720px) {
+				.list {
+					display: flex;
+				}
+			}
 			
 		`}</style>
-		<Icon />
+		<Link href={`/`}>
+			<a className='home'>
+				<Icon />
+			</a>
+		</Link>
 		<ol className="list" start={0}>
 			{["about", "work", "projects", "contact"].map(page => {
 				return <li className="item" key={page}>

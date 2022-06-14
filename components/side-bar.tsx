@@ -1,5 +1,7 @@
-export function SideBar({ children }: { children?: React.ReactNode }) {
-	return <div className="container">
+import cn from "classnames";
+
+export function SideBar({ children, className }: { className?: string, children?: React.ReactNode }) {
+	return <div className={cn("container", className)}>
 		<style jsx>{`
 			.container {
 				height: calc(100vh - var(--nav-height));
@@ -9,6 +11,12 @@ export function SideBar({ children }: { children?: React.ReactNode }) {
 				justify-content: flex-end;
 				gap: var(--padding);
 				padding: var(--padding);
+				width: var(--nav-height);
+				overflow: hidden;
+				left: 0;
+				top: var(--nav-height);
+				position: sticky;
+				background: var(--background);
 			}
 		`}</style>
 		{children}
