@@ -47,7 +47,7 @@
 	--font-mono: 'JetBrains Mono', monospace;
 	--font: 'Lato', sans-serif;
 	--page-height: var(100vh - var(--nav-height));
-	--break: 720px;
+	--break: 800px;
 }
 
 body {

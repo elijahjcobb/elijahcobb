@@ -59,7 +59,7 @@ export function NavBar() {
 				cursor: pointer;
 			}
 
-			@media (min-width: 720px) {
+			@media (min-width: 800px) {
 				.list {
 					display: flex;
 				}

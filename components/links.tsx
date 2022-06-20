@@ -2,6 +2,7 @@ import { IconType } from "react-icons";
 import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
 
 export const LINKS: { path: string, name: string }[] = [
+	{ path: "/", name: "Hello" },
 	{ path: "/#about", name: "About" },
 	{ path: "/#work", name: "Work" },
 	{ path: "/projects", name: "Projects" },
