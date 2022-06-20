@@ -3,21 +3,7 @@ import { FaLinkedin, FaTwitterSquare, FaGithubSquare } from "react-icons/fa";
 import type { IconType } from "react-icons";
 import Link from "next/link";
 import { VerticalLine } from "./vertical-line";
-
-const ITEMS: { icon: IconType, link: string }[] = [
-	{
-		link: "https://github.com/elijahjcobb",
-		icon: FaGithubSquare
-	},
-	{
-		link: "https://www.linkedin.com/in/elijahjcobb/",
-		icon: FaLinkedin
-	},
-	{
-		link: "https://twitter.com/elijahjcobb",
-		icon: FaTwitterSquare
-	}
-];
+import { SOCIAL } from "./links";
 
 export function LeftBar({ className }: { className?: string }) {
 	return <SideBar className={className}>
@@ -31,7 +17,7 @@ export function LeftBar({ className }: { className?: string }) {
 				transform: scale(1.125) translateY(-2px);
 			}
 		`}</style>
-		{ITEMS.map(({ link, icon: Icon }) => (
+		{SOCIAL.map(({ link, icon: Icon }) => (
 			<Link key={link} href={link} passHref >
 				<a target='_blank' rel='noopener noreferrer'>
 					<Icon size={32} className='icon' />

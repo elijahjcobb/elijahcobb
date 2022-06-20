@@ -1,6 +1,9 @@
 import { Icon } from "./icon"
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { MobileNavBar } from "./mobile-nav-bar";
+import { LINKS } from "./links";
+
 
 export function NavBar() {
 	const router = useRouter();
@@ -14,7 +17,7 @@ export function NavBar() {
 				height: var(--nav-height);
 				position: sticky;
 				background: var(--background);
-				z-index: 2;
+				z-index: 9;
 				top: 0;
 				left: 0;
 				width: 100vw;
@@ -60,6 +63,9 @@ export function NavBar() {
 				.list {
 					display: flex;
 				}
+				.mobile {
+					display: none;
+				}
 			}
 			
 		`}</style>
@@ -69,13 +75,16 @@ export function NavBar() {
 			</a>
 		</Link>
 		<ol className="list" start={0}>
-			{["about", "work", "projects", "contact"].map(page => {
-				return <li className="item" key={page}>
-					<Link href={`/#${page}`}>
-						<a className="link">{page}</a>
+			{LINKS.map(({ name, path }) => {
+				return <li className="item" key={name}>
+					<Link href={path}>
+						<a className="link">{name}</a>
 					</Link>
 				</li>
 			})}
 		</ol>
+		<div className="mobile">
+			<MobileNavBar />
+		</div>
 	</nav>
 }
