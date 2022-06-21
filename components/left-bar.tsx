@@ -1,6 +1,4 @@
 import { SideBar } from "./side-bar";
-import { FaLinkedin, FaTwitterSquare, FaGithubSquare } from "react-icons/fa";
-import type { IconType } from "react-icons";
 import Link from "next/link";
 import { VerticalLine } from "./vertical-line";
 import { SOCIAL } from "./links";

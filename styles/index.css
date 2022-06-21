@@ -4,20 +4,24 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
+	scroll-padding-top: var(--nav-height);
 	/* border: solid 1px red; */
 }
 
-::selection {
+/* ::selection {
 	background: var(--cyan);
 	color: var(--background);
-}
+} */
 
 :root {
 	--padding: 16px;
+	--padding-xxs: calc(var(--padding) / 8);
 	--padding-xs: calc(var(--padding) / 4);
 	--padding-s: calc(var(--padding) / 2);
 	--padding-l: calc(var(--padding) * 2);
 	--padding-xl: calc(var(--padding) * 4);
+	--padding-xxl: calc(var(--padding) * 8);
 	--nav-height: 72px;
 	--red: #a71d31; /*#e3170a;*/
 	--green: #98c379;
@@ -33,6 +37,7 @@
 	--tertiary: var(--red);
 	--secondary: var(--orange);
 	--background: var(--blue-dark);
+	--background-dark: #120e26b0;
 	--accent-0: #000;
 	--accent-1: #111;
 	--accent-2: #222;

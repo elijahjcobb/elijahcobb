@@ -25,7 +25,8 @@ export function NavBar() {
 			.list {
 				display: none;
 				align-items: center;
-				gap: var(--padding-xl);
+				gap: var(--padding-l);
+				list-style: none;
 			}
 			.item {
 				font-size: 14px;
@@ -74,7 +75,7 @@ export function NavBar() {
 				<Icon />
 			</a>
 		</Link>
-		<ol className="list" start={0}>
+		<ul className="list">
 			{LINKS.map(({ name, path }) => {
 				return <li className="item" key={name}>
 					<Link href={path}>
@@ -82,7 +83,7 @@ export function NavBar() {
 					</Link>
 				</li>
 			})}
-		</ol>
+		</ul>
 		<div className="mobile">
 			<MobileNavBar />
 		</div>
