@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Position } from ".";
+import { PositionType } from "../../data/types";
 import styles from "./position.module.css";
 
-export function Position({ position }: { position: Position }) {
+export function Position({ position }: { position: PositionType }) {
 	return <div className={styles.container}>
 		<p className={styles.text}>
 			{position.position}
