@@ -1,0 +1,102 @@
+.container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	position: relative;
+	gap: var(--padding);
+	background: linear-gradient(
+		var(--secondary),
+		var(--tertiary)
+	);
+	padding: var(--padding);
+	border-radius: var(--padding);
+	box-shadow: 0 0 var(--padding) #444;
+}
+
+.container span {
+	text-align: left;
+}
+
+.middle {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding-s);
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	font-size: 18px;
+	gap: 4px;
+}
+
+.progressContainer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.progressOuter {
+	flex-grow: 1;
+	background: var(--background);
+	height: 6px;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.progressInner {
+	background: white;
+	width: 60%;
+	height: 4px;
+	margin: 1px;
+	border-radius: 2px;
+}
+
+.name {
+	font-weight: bold;
+}
+
+.album {
+	font-weight: lighter;
+}
+
+
+.logo {
+	z-index: 3;
+	position: absolute;
+	top: -24px;
+	right: -24px;
+	background: #1DB954;
+	border-radius: 50%;
+	padding: 4px;
+	transform: rotate(8deg);
+}
+
+.coverContainer {
+	width: 100px;
+	min-width: 100px;
+	height: 100px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-position: center;
+	background-size: cover;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.fade {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 100px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+	z-index: 1;
+}

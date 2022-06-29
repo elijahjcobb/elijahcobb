@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ExternalLink } from "../external-link";
 import profile from "/public/profile.jpg";
 import styles from "./index.module.css";
+import { SpotifyPreview } from "../spotify";
 
 export function About() {
 	return <div id='about' className={styles.container}>
@@ -23,6 +24,10 @@ export function About() {
 					joined <ExternalLink href="https://vercel.com/home">Vercel</ExternalLink>. I am currently a Full Stack Engineer at Vercel on the Growth team and could not be happier. I
 					moved across the country from <ExternalLink href="https://www.google.com/maps/place/Traverse+City,+MI">Northern Michigan</ExternalLink> to <ExternalLink href="https://www.google.com/maps/place/Seattle,+WA">Seattle, WA</ExternalLink>.
 				</p>
+				<p>In addition to work, I enjoy playing hockey, skiing, hiking, biking, and listening to music. I play music about 50% of every waking
+					second of my day. In fact, check out what I am listening to right now!
+				</p>
+				<SpotifyPreview />
 			</div>
 		</div>
 	</div>

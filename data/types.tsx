@@ -19,3 +19,17 @@ export interface LinkType {
 	path: string;
 	name: string;
 }
+
+export interface SpotifyResponse {
+	progress: number;
+	duration: number;
+	name: string;
+	album: string;
+	artist: string;
+	cover: string;
+	isPlaying: boolean;
+}
+
+export interface ErrorResponse {
+	error: string;
+}
