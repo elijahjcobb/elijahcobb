@@ -1,6 +1,5 @@
 import { useSpotify } from "../../data/hooks"
-import { FaSpotify, FaPlay, FaPause } from "react-icons/fa";
-import Image from "next/image";
+import { FaSpotify, FaSpinner } from "react-icons/fa";
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
 
@@ -24,16 +23,26 @@ export function SpotifyPreview() {
 
 	useEffect(() => {
 		setProgress(data?.progress ?? 0);
+		if (!data?.isPlaying) return;
 		const interval = setInterval(() => {
 			setProgress(v => v + 1000);
 		}, 1000);
 		return () => clearInterval(interval);
 	}, [data?.progress])
 
-	if (error) return <p>Error: {error.message}</p>;
-	if (!data) return <p>Loading...</p>
 
-	return <div className={styles.container}>
+	if (error) return <p>Error: {error.message}</p>;
+	if (!data) return <div style={{ justifyContent: "center" }} className={styles.container}>
+		<FaSpinner className={styles.spinner} size={48} />
+		<FaSpotify className={styles.logo} size={64} />
+	</div>
+
+	if (data.error) return <div style={{ justifyContent: "center" }} className={styles.container}>
+		<span>Elijah is currently living a music-less existence.</span>
+		<FaSpotify className={styles.logo} size={64} />
+	</div>
+
+	return <div className={styles.container} id='spotify'>
 		<div className={styles.middle}>
 			<div className={styles.info}>
 				<span className={styles.name}>{data.name}</span>
@@ -52,6 +61,6 @@ export function SpotifyPreview() {
 			style={{ backgroundImage: `url(${data.cover})` }}
 			className={styles.coverContainer}>
 		</div>
-		<FaSpotify className={styles.logo} size={48} />
+		<FaSpotify className={styles.logo} size={64} />
 	</div>
 }

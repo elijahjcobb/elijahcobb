@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import type { ErrorResponse, SpotifyResponse } from './types';
+import type { SpotifyResponse } from './types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

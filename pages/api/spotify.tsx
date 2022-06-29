@@ -48,5 +48,6 @@ export default async (_: NextApiRequest, res: NextApiResponse<SpotifyResponse | 
 		console.error(apiRes);
 		return res.status(500).json({ error: "Error communicating with Spotify." });
 	}
+	res.setHeader('Cache-Control', 's-maxage=2');
 	res.status(200).json(spotify);
 }

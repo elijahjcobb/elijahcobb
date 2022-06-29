@@ -8,9 +8,23 @@
 		var(--secondary),
 		var(--tertiary)
 	);
-	padding: var(--padding);
+	padding: 0 var(--padding);
+	height: 140px;
 	border-radius: var(--padding);
 	box-shadow: 0 0 var(--padding) #444;
+}
+
+@keyframes loadingSpinner {
+	from {
+		transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+	to {
+		transform: rotate(360deg) translate3d(0, 0, 0);
+	}
+}
+
+.spinner {
+	animation: loadingSpinner 1.25s infinite linear;
 }
 
 .container span {
@@ -67,10 +81,12 @@
 	position: absolute;
 	top: -24px;
 	right: -24px;
-	background: #1DB954;
+	fill: #1DB954;
+	background: var(--background);
 	border-radius: 50%;
-	padding: 4px;
+	padding: 8px;
 	transform: rotate(8deg);
+	box-shadow: 0 0 8px #1DB954;
 }
 
 .coverContainer {

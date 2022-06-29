@@ -28,6 +28,7 @@ export interface SpotifyResponse {
 	artist: string;
 	cover: string;
 	isPlaying: boolean;
+	error?: string;
 }
 
 export interface ErrorResponse {
