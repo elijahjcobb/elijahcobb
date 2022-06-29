@@ -25,8 +25,9 @@ const getAccessToken = async () => {
 export default async (_: NextApiRequest, res: NextApiResponse<SpotifyResponse | ErrorResponse>) => {
 	const { access_token } = await getAccessToken();
 	let spotify: SpotifyResponse;
+	let apiRes;
 	try {
-		const apiRes = await fetch(
+		apiRes = await fetch(
 			"https://api.spotify.com/v1/me/player/currently-playing",
 			{
 				headers: {
@@ -44,6 +45,7 @@ export default async (_: NextApiRequest, res: NextApiResponse<SpotifyResponse | 
 		}
 	} catch (e) {
 		console.error(e);
+		console.error(apiRes);
 		return res.status(500).json({ error: "Error communicating with Spotify." });
 	}
 	res.status(200).json(spotify);
