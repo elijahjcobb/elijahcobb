@@ -7,8 +7,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 	return <>
 		<Head>
 			<title>elijahcobb.dev</title>
-			<link rel="icon" type="image/png" href="/favicon-16.png" sizes="16x16" />
-			<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
+			<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		</Head>
 		<Shell>
 			<Component {...pageProps} />

@@ -1,11 +1,8 @@
-.shell {
-
-}
-
 .main {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
+	padding: 0 var(--padding);
 }
 .container {
 	flex-grow: 1;

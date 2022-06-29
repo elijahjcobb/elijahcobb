@@ -1,3 +1,3 @@
 export default function Page() {
-	return <span>Blog</span>
+	return <span>Coming Soon...</span>
 }
