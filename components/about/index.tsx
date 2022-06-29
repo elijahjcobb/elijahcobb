@@ -1,47 +1,14 @@
 import Image from "next/image";
-import { ExternalLink } from "./link";
+import { ExternalLink } from "../link";
 import profile from "/public/profile.jpg";
+import styles from "./index.module.css";
 
 export function About() {
-	return <div id='about' className='container'>
-		<style jsx global>{`
-			.profile {
-				border-radius: 50%;
-			}
-		`}</style>
-		<style jsx>{`
-			.text, .about {
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: var(--padding);
-			}
-			.text {
-				text-align: justify;
-				max-width: 480px;
-			}
-			.text p {
-				line-height: 1.5;
-				font-size: 1.0625em;
-			}
-			@media (min-width: 800px) {
-				.container {
-				}
-				.about {
-					flex-direction: row;
-					align-items: flex-start;
-					margin-top: var(--padding-xl);
-				}
-				.text, .about {
-					gap: var(--padding-l);
-				}
-			}
-		`}</style>
+	return <div id='about' className={styles.container}>
 		<h1>About</h1>
-		<div className="about">
-			<Image src={profile} width={180} height={180} className='profile' alt='elijah' />
-			<div className="text">
+		<div className={styles.about}>
+			<Image src={profile} width={180} height={180} className={styles.profile} alt='elijah' />
+			<div className={styles.text}>
 				<p>Hi! My name is Elijah Cobb. I am currently a Full Stack Engineer at <ExternalLink href="https://vercel.com/home">Vercel</ExternalLink>. My passion for Software Engineer started when I was 12. I loved making iOS Apps with Objective-C and UIKit.
 					From there, I began web development and landed my <ExternalLink href="https://solutionstud.io">first job</ExternalLink> working for a startup after High School.</p>
 				<p><ExternalLink href="https://github.com/ampelfeedback">Ampel Feedback</ExternalLink> was a startup founded in Traverse City providing businesses with a point-of-sale kiosk

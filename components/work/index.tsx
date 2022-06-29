@@ -1,7 +1,8 @@
-import Link from "next/link";
 import { useState } from "react";
+import { Position } from "./position";
+import styles from "./index.module.css";
 
-type Position = {
+export type Position = {
 	shortName?: string;
 	name: string;
 	href: string;
@@ -80,117 +81,14 @@ const POSITIONS: Position[] = [
 	},
 ];
 
-export function Position({ position }: { position: Position }) {
-	return <div className="container">
-		<style jsx>{`
-			.container {
-				display: flex;
-				flex-direction: column;
-				gap: var(--padding);
-				margin-top: var(--padding);
-				font-size: var(--font-size);
-				justify-content: flex-start;
-				align-items: flex-start;
-				padding-bottom: 120px;
-			}
-			.text {
-				font-size: 1.25em;
-				text-align: left;
-			}
-			.date {
-				font-size: 1.125em;
-				font-weight: lighter;
-			}
-			.positions {
-				display: flex;
-				flex-direction: column;
-				gap: var(--padding);
-			}
-			.position {
-				margin-left: var(--padding);
-				line-height: 1.25;
-			}
-		`}</style>
-		<p className="text">
-			{position.position}
-			<Link href={position.href} passHref>
-				<a className="org" rel='noreferrer noopener' target='_blank'>{' @ ' + position.name}</a>
-			</Link>
-		</p>
-		<p className="date">{position.startDate + " - " + position.endDate}</p>
-		<ul className="positions">
-			{position.tasks.map(task => <li className="position" key={task}>{task}</li>)}
-		</ul>
-	</div>
-}
-
 export function Positions() {
 	const [selected, setSelected] = useState(0);
-	return <div className='container' id='work'>
-		<style jsx>{`
-			.container {
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-				gap: var(--padding);
-			}
-			.positions {
-				width: 100%;
-				display: flex;
-				align-items: center;
-				overflow-x: auto;
-			}
-			.position {
-				background: none;
-				outline: none;
-				border: none;
-				border-bottom: solid 2px var(--accent-6);
-				color: var(--accent-6);
-				font-family: var(--font-mono);
-				padding: var(--padding);
-				transition: 250ms ease-in-out;
-				font-size: var(--size);
-			}
-			.position:hover, .active {
-				color: var(--primary);
-			}
-			.position:hover {
-				cursor: pointer;
-			}
-			.active {
-				border-bottom-color: var(--primary);
-			}
-			@media (min-width: 800px) {
-				.card {
-					display: flex;
-					gap: var(--padding);
-				}
-				.positions {
-					flex-direction: column;
-					width: 120px;
-					min-width: 120px;
-				}
-				.position {
-					width: 100%;
-					border-bottom: none;
-					border-right: solid 4px var(--accent-6);
-					text-align: right;
-				}
-				.active {
-					border-right-color: var(--primary);
-				}
-			}
-			@media (min-width: 800px) {
-				.container {
-					height: 480px;
-				}
-			}
-		`}</style>
+	return <div className={styles.container} id='work'>
 		<h1>Work</h1>
-		<div className="card">
-			<div className="positions">
+		<div className={styles.card}>
+			<div className={styles.positions}>
 				{POSITIONS.map((position, i) => {
-					return <button className={"position" + (selected === i ? " active" : "")} key={i} onClick={() => setSelected(i)}>{position.shortName ?? position.name}</button>
+					return <button className={styles.position + (selected === i ? " " + styles.active : "")} key={i} onClick={() => setSelected(i)}>{position.shortName ?? position.name}</button>
 				})}
 			</div>
 			<Position position={POSITIONS[selected] as Position} />
