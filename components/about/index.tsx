@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ExternalLink } from "../link";
+import { ExternalLink } from "../external-link";
 import profile from "/public/profile.jpg";
 import styles from "./index.module.css";
 

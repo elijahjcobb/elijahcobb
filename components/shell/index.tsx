@@ -1,7 +1,7 @@
-import { LeftBar } from "./left-bar";
-import { NavBar } from "./nav-bar";
-import { RightBar } from "./right-bar";
-import styles from "./shell.module.css";
+import { LeftBar } from "../nav/left";
+import { NavBar } from "../nav";
+import { RightBar } from "../nav/right";
+import styles from "./index.module.css";
 
 export function Shell({ children }: { children: React.ReactNode }) {
 	return (

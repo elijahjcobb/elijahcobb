@@ -1,0 +1,17 @@
+.sidebar {
+	width: 64px;
+}
+.item {
+	display: flex;
+	align-items: center;
+	height: 24px;
+	width: 22ch;
+	transform: rotate(90deg);
+	margin-bottom: 90px;
+}
+.item:hover {
+	transform: rotate(90deg) scale(1.0625);
+}
+.email {
+	display: block;
+}
