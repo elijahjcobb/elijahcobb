@@ -14,12 +14,13 @@
 	background: none;
 	outline: none;
 	border: none;
-	border-bottom: solid 2px var(--accent-6);
-	color: var(--accent-6);
-	font-family: var(--font-mono);
+	border-bottom: solid 2px var(--accent-4);
+	color: var(--accent-4);
+	font-family: var(--font);
 	padding: var(--padding);
 	transition: 250ms ease-in-out;
 	font-size: var(--size);
+	font-weight: bold;
 }
 .position:hover, .active {
 	color: var(--primary);
@@ -30,6 +31,29 @@
 .active {
 	border-bottom-color: var(--primary);
 }
+
+.line {
+	display: none;
+	height: calc(56px * 5);
+	background: var(--accent-4);
+	position: relative;
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.line, .progress {
+	width: 4px;
+	min-width: 4px;
+}
+
+.progress {
+	position: absolute;
+	top: 0;
+	transition: transform 250ms ease-in-out;;
+	height: 56px;
+	background: var(--primary);
+}
+
 @media (min-width: 800px) {
 	.card {
 		display: flex;
@@ -43,11 +67,12 @@
 	.position {
 		width: 100%;
 		border-bottom: none;
-		border-right: solid 4px var(--accent-6);
 		text-align: right;
+		padding-right: 0;
+		height: 56px;
 	}
-	.active {
-		border-right-color: var(--primary);
+	.line {
+		display: block;
 	}
 }
 @media (min-width: 800px) {
