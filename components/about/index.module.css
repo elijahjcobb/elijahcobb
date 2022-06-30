@@ -1,3 +1,7 @@
+.container {
+	margin: auto;
+	width: 80%;
+}
 .text, .about {
 	width: 100%;
 	display: flex;
@@ -7,7 +11,7 @@
 }
 .text {
 	text-align: justify;
-	max-width: 480px;
+	/* max-width: 480px; */
 }
 .text p {
 	line-height: 1.5;

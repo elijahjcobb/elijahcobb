@@ -1,7 +1,8 @@
 .container {
 	display: flex;
 	align-items: center;
-	width: 100%;
+	align-self: flex-start;
+	width: 340px;
 	position: relative;
 	gap: var(--padding);
 	background: linear-gradient(
@@ -12,6 +13,12 @@
 	height: 180px;
 	border-radius: var(--padding);
 	box-shadow: 0 0 var(--padding) #444;
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 480px;
+	}
 }
 
 @keyframes loadingSpinner {
