@@ -3,11 +3,11 @@ import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
 import { LinkType, SocialType } from "./types";
 
 export const LINKS: LinkType[] = [
-	{ path: "/", name: "🌎 Hello" },
-	{ path: "/#about", name: "👨‍💻 About" },
-	{ path: "/#work", name: "👔 Work" },
-	{ path: "/projects", name: "🚢 Ships" },
-	{ path: "/blog", name: "✍️ Blog" }
+	{ path: "/", name: "Hello" },
+	{ path: "/#about", name: "About" },
+	{ path: "/#work", name: "Work" },
+	{ path: "/ships", name: "Ships" },
+	{ path: "/snippets", name: "Snippets" }
 ];
 
 export const SOCIAL: SocialType[] = [

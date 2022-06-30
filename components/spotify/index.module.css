@@ -9,7 +9,7 @@
 		var(--tertiary)
 	);
 	padding: 0 var(--padding);
-	height: 140px;
+	height: 180px;
 	border-radius: var(--padding);
 	box-shadow: 0 0 var(--padding) #444;
 }
