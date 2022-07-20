@@ -10,6 +10,6 @@ export const getStaticProps: GetStaticProps<SnippetsProps> = async () => {
 		props: {
 			gists
 		},
-		revalidate: 60
+		revalidate: 10
 	}
 }
