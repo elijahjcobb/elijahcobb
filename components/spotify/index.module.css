@@ -1,125 +1,123 @@
 .container {
-	display: flex;
-	align-items: center;
-	align-self: flex-start;
-	width: 340px;
-	position: relative;
-	gap: var(--padding);
-	background: linear-gradient(
-		var(--secondary),
-		var(--tertiary)
-	);
-	padding: 0 var(--padding);
-	height: 180px;
-	border-radius: var(--padding);
-	box-shadow: 0 0 var(--padding) #444;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  width: 340px;
+  position: relative;
+  gap: var(--padding);
+  background: linear-gradient(var(--secondary), var(--tertiary));
+  padding: 0 var(--padding);
+  height: 180px;
+  border-radius: var(--padding);
+  box-shadow: 0 0 var(--padding) #444;
+  transform: scale(0.75);
 }
 
 @media (min-width: 768px) {
-	.container {
-		width: 480px;
-	}
+  .container {
+    width: 480px;
+    transform: scale(1);
+  }
 }
 
 @keyframes loadingSpinner {
-	from {
-		transform: rotate(0deg) translate3d(0, 0, 0);
-	}
-	to {
-		transform: rotate(360deg) translate3d(0, 0, 0);
-	}
+  from {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  to {
+    transform: rotate(360deg) translate3d(0, 0, 0);
+  }
 }
 
 .spinner {
-	animation: loadingSpinner 1.25s infinite linear;
+  animation: loadingSpinner 1.25s infinite linear;
 }
 
 .container span {
-	text-align: left;
+  text-align: left;
 }
 
 .middle {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
-	gap: var(--padding-s);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-s);
 }
 
 .info {
-	display: flex;
-	flex-direction: column;
-	font-size: 18px;
-	gap: 4px;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  gap: 4px;
 }
 
 .progressContainer {
-	display: flex;
-	align-items: center;
-	gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .progressOuter {
-	flex-grow: 1;
-	background: var(--background);
-	height: 6px;
-	border-radius: 3px;
-	overflow: hidden;
+  flex-grow: 1;
+  background: var(--background);
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 .progressInner {
-	background: white;
-	width: 60%;
-	height: 4px;
-	margin: 1px;
-	border-radius: 2px;
+  background: white;
+  width: 60%;
+  height: 4px;
+  margin: 1px;
+  border-radius: 2px;
 }
 
 .name {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .album {
-	font-weight: lighter;
+  font-weight: lighter;
 }
 
-
 .logo {
-	z-index: 3;
-	position: absolute;
-	top: -24px;
-	right: -24px;
-	fill: #1DB954;
-	background: var(--background);
-	border-radius: 50%;
-	padding: 8px;
-	transform: rotate(8deg);
-	box-shadow: 0 0 8px #1DB954;
+  z-index: 3;
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  fill: #1db954;
+  background: var(--background);
+  border-radius: 50%;
+  padding: 8px;
+  transform: rotate(8deg);
+  box-shadow: 0 0 8px #1db954;
 }
 
 .coverContainer {
-	width: 100px;
-	min-width: 100px;
-	height: 100px;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-position: center;
-	background-size: cover;
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .fade {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100px;
-	height: 100px;
-	background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .icon {
-	z-index: 1;
+  z-index: 1;
 }

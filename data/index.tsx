@@ -27,7 +27,7 @@ export const SOCIAL: SocialType[] = [
 export const POSITIONS: PositionType[] = [
 	{
 		name: "Vercel",
-		href: "https://vercel.com/",
+		href: "https://vercel.com/home",
 		startDate: "Apr 2022",
 		endDate: "Present",
 		position: "Fullstack Software Engineer",

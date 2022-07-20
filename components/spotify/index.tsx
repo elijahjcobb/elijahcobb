@@ -37,10 +37,13 @@ export function SpotifyPreview() {
 		<FaSpotify className={styles.logo} size={64} />
 	</div>
 
-	if (data.error) return <div className={styles.container} style={{ justifyContent: "center" }}>
-		<span>Elijah is currently living a music-less existence.</span>
-		<FaSpotify className={styles.logo} size={64} />
-	</div>
+	// if (data.error) return <div className={styles.container} style={{ justifyContent: "center" }}>
+	// 	<span>Elijah is currently living a music-less existence.</span>
+	// 	<FaSpotify className={styles.logo} size={64} />
+	// </div>
+
+	if (data.error) return <div />
+
 
 	return <div className={styles.container} id='spotify'>
 		<div className={styles.middle}>
