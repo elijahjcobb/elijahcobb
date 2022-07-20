@@ -1,5 +1,4 @@
 import type { Gist } from "../../data/types"
-import { SnippetRow } from "./row"
 import styles from "./index.module.css";
 import { Snippet } from "./snippet";
 
