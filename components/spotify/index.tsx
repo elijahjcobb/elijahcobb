@@ -28,16 +28,16 @@ export function SpotifyPreview() {
 			setProgress(v => v + 1000);
 		}, 1000);
 		return () => clearInterval(interval);
-	}, [data?.progress])
+	}, [data?.progress, data?.isPlaying])
 
 
-	if (error) return <p>Error: {error.message}</p>;
-	if (!data) return <div style={{ justifyContent: "center" }} className={styles.container}>
+	if (error) return <p>Error: {error}</p>;
+	if (!data) return <div className={styles.container} style={{ justifyContent: "center" }}>
 		<FaSpinner className={styles.spinner} size={48} />
 		<FaSpotify className={styles.logo} size={64} />
 	</div>
 
-	if (data.error) return <div style={{ justifyContent: "center" }} className={styles.container}>
+	if (data.error) return <div className={styles.container} style={{ justifyContent: "center" }}>
 		<span>Elijah is currently living a music-less existence.</span>
 		<FaSpotify className={styles.logo} size={64} />
 	</div>
@@ -58,9 +58,8 @@ export function SpotifyPreview() {
 			</div>
 		</div>
 		<div
-			style={{ backgroundImage: `url(${data.cover})` }}
-			className={styles.coverContainer}>
-		</div>
+			className={styles.coverContainer}
+			style={{ backgroundImage: `url(${data.cover})` }} />
 		<FaSpotify className={styles.logo} size={64} />
 	</div>
 }

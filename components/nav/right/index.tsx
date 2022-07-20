@@ -8,7 +8,7 @@ const EMAIL = "elijah@elijahcobb.com";
 export function RightBar({ className }: { className?: string }) {
 	return <SideBar className={className}>
 		<Link href={`mailto:${EMAIL}`} passHref >
-			<a target='_blank' rel='noopener noreferrer' className={styles.item}>
+			<a className={styles.item} rel='noopener noreferrer' target='_blank'>
 				<span className={styles.email}>{EMAIL}</span>
 			</a>
 		</Link>

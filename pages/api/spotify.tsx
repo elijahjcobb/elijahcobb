@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { ErrorResponse, SpotifyResponse } from '../../data/types';
+import type { ErrorResponse, SpotifyResponse } from '../../data/types';
 
-const client_id = process.env.SPOTIFY_CLIENT_ID;
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+const client_id = process.env.SPOTIFY_CLIENT_ID as string;
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET as string;
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN as string;
 const auth = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 

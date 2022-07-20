@@ -1,25 +1,36 @@
 .main {
-	display: flex;
-	width: 100vw;
-	overflow-x: hidden;
-	justify-content: space-between;
-	padding: 0 var(--padding);
+  display: flex;
+  width: 100vw;
+  overflow-x: hidden;
+  justify-content: center;
+  padding: 0 var(--padding);
 }
 .container {
-	flex-grow: 1;
-	width: 100%;
-	max-width: 1280px;
-	padding: var(--padding);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .sidebar {
-	display: none !important;
+  display: none !important;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
 }
 
 @media (min-width: 800px) {
-	.sidebar {
-		display: flex !important;
-	}
+  .sidebar {
+    display: flex !important;
+  }
+  .container {
+    margin: 0 var(--nav-height);
+    padding: var(--padding);
+  }
 }

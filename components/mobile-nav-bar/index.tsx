@@ -16,28 +16,28 @@ function MobileNavItems(props: MobileNavItemsProps) {
 		<ul className={styles.list}>
 			{LINKS.map(({ name, path }) => {
 				return <li key={name}>
-					<a onClick={() => {
+					<button className={styles.item} onClick={() => {
 						props.setIsOpen(false);
-						router.push(path);
-					}} className={styles.item}>
+						void router.push(path);
+					}} type='button'>
 						<span>{name}</span>
 						<BsChevronRight />
-					</a>
+					</button>
 				</li>
 			})}
 		</ul>
 		<div className={styles.socials}>
 			{SOCIAL.map(({ icon: Icon, link }) => {
-				return <Link key={link} href={link} passHref>
-					<a onClick={() => props.setIsOpen(false)} target='_blank' rel='noopener noreferrer'>
-						<Icon size={32} className={styles.icon} />
+				return <Link href={link} key={link} passHref>
+					<a href={link} onClick={() => props.setIsOpen(false)} rel='noopener noreferrer' target='_blank'>
+						<Icon className={styles.icon} size={32} />
 					</a>
 				</Link>
 			})}
 		</div>
 		<div className={styles.socials}>
-			<Link href={'mailto:elijah@elijahcobb.com'} passHref>
-				<a target='_blank' rel='noopener noreferrer'>
+			<Link href="mailto:elijah@elijahcobb.com" passHref>
+				<a href="mailto:elijah@elijahcobb.com" rel='noopener noreferrer' target='_blank'>
 					elijah@elijahcobb.com
 				</a>
 			</Link>
@@ -50,7 +50,7 @@ export function MobileNavBar() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return <>
-		<Hamburger color='var(--primary)' toggled={isOpen} toggle={setIsOpen} />
+		<Hamburger color='var(--primary)' toggle={setIsOpen} toggled={isOpen} />
 		{isOpen && <MobileNavItems setIsOpen={setIsOpen} />}
 	</>
 }

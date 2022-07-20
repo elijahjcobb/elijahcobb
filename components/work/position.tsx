@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PositionType } from "../../data/types";
+import type { PositionType } from "../../data/types";
 import styles from "./position.module.css";
 
 export function Position({ position }: { position: PositionType }) {
