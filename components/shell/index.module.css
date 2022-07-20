@@ -9,11 +9,9 @@
   flex-grow: 1;
   width: 100%;
   max-width: 1080px;
-  padding: var(--padding);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 var(--nav-height);
 }
 .sidebar {
   display: none !important;
@@ -30,5 +28,9 @@
 @media (min-width: 800px) {
   .sidebar {
     display: flex !important;
+  }
+  .container {
+    margin: 0 var(--nav-height);
+    padding: var(--padding);
   }
 }

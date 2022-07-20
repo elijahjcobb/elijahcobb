@@ -1,0 +1,17 @@
+import type { Gist } from "../../data/types"
+import { SnippetRow } from "./row"
+import styles from "./index.module.css";
+import { Snippet } from "./snippet";
+
+export interface SnippetsProps {
+	gists: Gist[]
+}
+
+export function Snippets({ gists }: SnippetsProps) {
+	return <ul className={styles.list}>
+		{gists.map((gist, i) => <>
+			<Snippet gist={gist} />
+			{i !== gists.length - 1 && <div className={styles.bar} />}
+		</>)}
+	</ul>
+}

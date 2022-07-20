@@ -2,7 +2,7 @@ import { LeftBar } from "../nav/left";
 import { NavBar } from "../nav";
 import { RightBar } from "../nav/right";
 import styles from "./index.module.css";
-import cn from "classnames";
+import cn from "clsx";
 
 export function Shell({ children }: { children: React.ReactNode }) {
 	return (
