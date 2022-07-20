@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { ExternalLink } from "../external-link";
-import profile from "/public/profile.jpg";
 import styles from "./index.module.css";
 import { SpotifyPreview } from "../spotify";
 
@@ -8,7 +6,6 @@ export function About() {
 	return <div className={styles.container} id='about'>
 		<h1>About</h1>
 		<div className={styles.about}>
-			<Image alt='elijah' className={styles.profile} height={180} src={profile} width={180} />
 			<div className={styles.text}>
 				<p>Hi! My name is Elijah Cobb. I am currently a Full Stack Engineer at <ExternalLink href="https://vercel.com/home">Vercel</ExternalLink>. My passion for Software Engineer started when I was 12. I loved making iOS Apps with Objective-C and UIKit.
 					From there, I began web development and landed my <ExternalLink href="https://solutionstud.io">first job</ExternalLink> working for a startup after High School.</p>
