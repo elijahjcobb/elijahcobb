@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { POSITIONS } from "../../data";
 import type { PositionType } from "../../data/types";
 import { Position } from "./position";
-import cn from "classnames";
+import cn from "clsx";
 
 export function Positions() {
 	const [selected, setSelected] = useState(0);
