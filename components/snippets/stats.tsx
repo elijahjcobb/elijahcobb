@@ -1,4 +1,4 @@
-import { Gist } from "../../data/types";
+import type { Gist } from "../../data/types";
 import styles from "./index.module.css";
 import cn from "clsx";
 import { FaCalendar, FaCode, FaFile } from "react-icons/fa";

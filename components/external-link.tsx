@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 export function ExternalLink({ href, children }: PropsWithChildren<{ href: string }>) {
 	return <Link href={href} passHref>
-		<a target="_blank" rel="noopener noreferrer">
+		<a rel="noopener noreferrer" target="_blank">
 			{children}
 		</a>
 	</Link>

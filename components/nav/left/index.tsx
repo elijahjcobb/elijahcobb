@@ -7,9 +7,9 @@ import styles from "./index.module.css";
 export function LeftBar({ className }: { className?: string }) {
 	return <SideBar className={className}>
 		{SOCIAL.map(({ link, icon: Icon }) => (
-			<Link key={link} href={link} passHref >
-				<a target='_blank' rel='noopener noreferrer'>
-					<Icon size={32} className={styles.icon} />
+			<Link href={link} key={link} passHref >
+				<a href={link} rel='noopener noreferrer' target='_blank'>
+					<Icon className={styles.icon} size={32} />
 				</a>
 			</Link>
 		))}

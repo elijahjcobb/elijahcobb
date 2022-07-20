@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { Snippet } from "./snippet";
 
 export interface SnippetsProps {
-	gists: Gist[]
+	gists: Gist[];
 }
 
 export function Snippets({ gists }: SnippetsProps) {

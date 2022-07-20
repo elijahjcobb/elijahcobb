@@ -1,6 +1,5 @@
-import { PositionType } from "./types";
 import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
-import { LinkType, SocialType } from "./types";
+import type { LinkType, SocialType, PositionType } from "./types";
 
 export const LINKS: LinkType[] = [
 	{ path: "/", name: "Hello" },

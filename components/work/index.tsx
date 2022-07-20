@@ -12,7 +12,7 @@ export function Positions() {
 		<div className={styles.card}>
 			<div className={styles.positions}>
 				{POSITIONS.map((position, i) => {
-					return <button className={cn(styles.position, { [styles.active as string]: selected === i })} key={i} onClick={() => setSelected(i)}>{position.shortName ?? position.name}</button>
+					return <button className={cn(styles.position, { [styles.active as string]: selected === i })} key={position.name} onClick={() => setSelected(i)} type="button">{position.shortName ?? position.name}</button>
 				})}
 			</div>
 			<div className={styles.line}>

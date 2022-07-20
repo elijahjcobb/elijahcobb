@@ -28,5 +28,12 @@ module.exports = {
         "import/no-default-export": 0,
       },
     },
+    {
+      files: ["*"],
+      rules: {
+        "jsx-a11y/anchor-is-valid": 0,
+        "@typescript-eslint/no-unsafe-assignment": 0,
+      },
+    },
   ],
 };

@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons";
 
-export type PositionType = {
+export interface PositionType {
 	shortName?: string;
 	name: string;
 	href: string;
@@ -8,7 +8,7 @@ export type PositionType = {
 	endDate: string;
 	position: string;
 	tasks: string[];
-};
+}
 
 export interface SocialType {
 	icon: IconType;
@@ -59,7 +59,7 @@ export interface RawGithubGistResponse {
 	git_pull_url: string;
 	git_push_url: string;
 	html_url: string;
-	files: { [key: string]: RawGithubGistResponseFile };
+	files: Record<string, RawGithubGistResponseFile>;
 	public: boolean;
 	created_at: string;
 	updated_at: string;

@@ -41,9 +41,7 @@ async function gistFromRawGist({
   };
 }
 
-export async function fetchGists(
-  skipContent: boolean = false
-): Promise<Gist[]> {
+export async function fetchGists(skipContent = false): Promise<Gist[]> {
   const rawGists = (await fetch(
     "https://api.github.com/users/elijahjcobb/gists"
   ).then((res) => res.json())) as RawGithubGistResponse[];

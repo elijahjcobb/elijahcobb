@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { useMemo } from "react";
 import { FaCode, FaGithub } from "react-icons/fa";
-import { Gist, GistFile } from "../../data/types";
+import type { Gist, GistFile } from "../../data/types";
 import styles from "./snippet.module.css";
 import { SnippetStats } from "./stats";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -12,18 +11,6 @@ export interface SnippetProps {
 }
 
 export function SnippetCode({ file }: { file: GistFile }) {
-
-	const lineCount = useMemo<number>(() => {
-		if (!file.content) return 0;
-		return file.content.split("\n").length;
-	}, [file.content]);
-
-	const lines = useMemo<string[]>(() => {
-		const a = new Array(lineCount);
-		for (let i = 0; i < lineCount; i++) a[i] = i + 1;
-		return a;
-	}, [lineCount]);
-
 	return <div className={styles.codeBlock}>
 		<div className={styles.blockTop}>
 			<span>{file.name}</span>
@@ -35,9 +22,9 @@ export function SnippetCode({ file }: { file: GistFile }) {
 		<div className={styles.bottom}>
 			<SyntaxHighlighter
 				customStyle={{ width: "100%", background: 'none' }}
+				language={file.language.toLowerCase()}
 				showLineNumbers
-				style={atomDark}
-				language={file.language.toLowerCase()}>
+				style={atomDark}>
 				{file.content ?? ""}
 			</SyntaxHighlighter>
 		</div>
@@ -49,8 +36,8 @@ export function Snippet({ gist }: SnippetProps) {
 		<div className={styles.left}>
 			<div className={styles.top}>
 				<h1>{gist.description}</h1>
-				<Link passHref href={gist.url}>
-					<a className={styles.btn} target={"_blank"}>
+				<Link href={gist.url} passHref>
+					<a className={styles.btn} target="_blank">
 						<FaGithub />
 						<span>Open Gist</span>
 					</a>
@@ -59,6 +46,6 @@ export function Snippet({ gist }: SnippetProps) {
 			<SnippetStats className={styles.stats} gist={gist} />
 		</div>
 		{gist.content && <p className={styles.description}>{gist.content}</p>}
-		{gist.files.map(file => <SnippetCode key={file.name} file={file} />)}
+		{gist.files.map(file => <SnippetCode file={file} key={file.name} />)}
 	</div>
 }

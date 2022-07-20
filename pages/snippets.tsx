@@ -1,5 +1,6 @@
 import type { GetStaticProps } from "next"
-import { SnippetsProps, Snippets } from "../components/snippets"
+import type { SnippetsProps } from "../components/snippets";
+import { Snippets } from "../components/snippets"
 import { fetchGists } from "../data/github"
 
 export default Snippets;
