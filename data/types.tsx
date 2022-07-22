@@ -99,3 +99,10 @@ export interface RawGithubGistResponseOwner {
 	type: string;
 	site_admin: boolean;
 }
+export interface TrackRequest {
+	key: string;
+}
+
+export interface TrackResponse {
+	message: "OK";
+}
