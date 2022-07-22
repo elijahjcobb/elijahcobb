@@ -1,53 +1,56 @@
 @keyframes blink {
-	from, to {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 .animate .cursor {
-	opacity: 0;
-	animation: 1.2s 2.8s blink step-end forwards infinite;
+  opacity: 0;
+  animation: 1.2s 1s blink step-end forwards infinite;
 }
 @keyframes move-circle {
-	75% {
-		transform: scale(1);
-	}
-	100% {
-		offset-distance: 100%;
-		transform: scale(0);
-	}
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    offset-distance: 100%;
+    transform: scale(0);
+  }
 }
 @keyframes fade-in {
-	from {
-		opacity: 0;
-		transform: scale(0.75);
-	}
-	50% {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-		transform: scale(1)
-	}
+  from {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 .animate .circle {
-	offset-path: path('M25.1488 70.3094L132 8.6188L238.851 70.3094V193.691L132 255.381L25.1488 193.691V70.3094Z');
-	animation: move-circle 2.5s forwards;
+  offset-path: path(
+    "M25.1488 70.3094L132 8.6188L238.851 70.3094V193.691L132 255.381L25.1488 193.691V70.3094Z"
+  );
+  animation: move-circle 1s forwards;
 }
 .animate .border {
-	transform-origin: center;
-	opacity: 0;
-	animation: fade-in 2s 600ms forwards;
+  transform-origin: center;
+  opacity: 0;
+  animation: fade-in 800ms 600ms forwards;
 }
 .animate .e {
-	opacity: 0;
-	transform-origin: center;
-	animation: fade-in 1.2s 1.4s forwards;
+  opacity: 0;
+  transform-origin: center;
+  animation: fade-in 400ms 800ms forwards;
 }
 .animate .c {
-	opacity: 0;
-	transform-origin: center;
-	animation: fade-in 1.2s 2s forwards;
+  opacity: 0;
+  transform-origin: center;
+  animation: fade-in 400ms 1000ms forwards;
 }

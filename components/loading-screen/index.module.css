@@ -1,0 +1,26 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  background: var(--background);
+  opacity: 1;
+  transform-origin: center;
+  animation: fadeOut 2s ease-in-out 1.8s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}

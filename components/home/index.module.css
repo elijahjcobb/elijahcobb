@@ -11,6 +11,10 @@
   gap: var(--padding);
   font-size: 1.125em;
 }
+.profile {
+  user-select: none;
+  border: solid 10px red;
+}
 .text {
   display: flex;
   flex-direction: column;

@@ -1,14 +1,17 @@
 import { About } from "../about";
-import { Icon } from "../icon";
 import { Positions } from "../work";
 import { FaArrowDown } from "react-icons/fa";
 import Link from "next/link";
 import styles from "./index.module.css";
+import Image from "next/image";
+import profilePicture from "../../public/profile.jpg";
+import { IconLoadingScreen } from "../loading-screen";
 
 export function HomePage() {
 	return <div className={styles.container}>
+		<IconLoadingScreen />
 		<div className={styles.header}>
-			<div><Icon animate size={320} /></div>
+			<Image alt="elijah sketch" height={480} src={profilePicture} width={480} />
 			<div className={styles.text}>
 				<span className={styles.head}>Hello, my name is</span>
 				<h1 className={styles.name}>Elijah Cobb</h1>
