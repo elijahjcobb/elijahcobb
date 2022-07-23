@@ -2,16 +2,9 @@ import type { PropsWithChildren } from "react";
 import { Icon } from "../icon";
 import styles from "./index.module.css";
 
-export interface LoadingScreenProps {
-	duration?: number;
-	delay?: number;
-}
-
 export function LoadingScreen({
-	duration = 2000,
-	delay = 0,
 	children
-}: PropsWithChildren<LoadingScreenProps>) {
+}: PropsWithChildren) {
 	return <div
 		className={styles.container}
 	>
@@ -19,8 +12,8 @@ export function LoadingScreen({
 	</div>
 }
 
-export function IconLoadingScreen(props: LoadingScreenProps) {
-	return <LoadingScreen {...props}>
+export function IconLoadingScreen() {
+	return <LoadingScreen>
 		<Icon animate size={480} />
 	</LoadingScreen>
 }
