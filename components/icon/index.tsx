@@ -9,7 +9,7 @@ export interface IconProps {
 }
 
 export function Icon(props: IconProps) {
-	const size = props.size ?? 48;
+	const size = props.size ?? 48;;
 	return <svg
 		className={cn(props.className, props.animate && styles.animate)}
 		fill="none"
