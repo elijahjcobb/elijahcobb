@@ -9,7 +9,7 @@
 }
 .animate .cursor {
   opacity: 0;
-  animation: 1.2s 1s blink step-end forwards infinite;
+  animation: 1.2s 2s blink step-end forwards infinite;
 }
 @keyframes move-circle {
   75% {
@@ -37,20 +37,20 @@
   offset-path: path(
     "M25.1488 70.3094L132 8.6188L238.851 70.3094V193.691L132 255.381L25.1488 193.691V70.3094Z"
   );
-  animation: move-circle 1s forwards;
+  animation: move-circle 1.8s forwards;
 }
 .animate .border {
   transform-origin: center;
   opacity: 0;
-  animation: fade-in 800ms 600ms forwards;
+  animation: fade-in 1.8s 600ms forwards;
 }
 .animate .e {
   opacity: 0;
   transform-origin: center;
-  animation: fade-in 400ms 800ms forwards;
+  animation: fade-in 1s 1.2s forwards;
 }
 .animate .c {
   opacity: 0;
   transform-origin: center;
-  animation: fade-in 400ms 1000ms forwards;
+  animation: fade-in 1s 1.8s forwards;
 }
