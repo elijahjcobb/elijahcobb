@@ -5,11 +5,11 @@
   width: 340px;
   position: relative;
   gap: var(--padding);
-  background: linear-gradient(var(--secondary), var(--tertiary));
+  background: var(--background);
   padding: 0 var(--padding);
   height: 180px;
   border-radius: var(--padding);
-  box-shadow: 0 0 var(--padding) #444;
+  box-shadow: 0 0 var(--padding) var(--spotify);
   transform: scale(0.75);
 }
 
@@ -66,9 +66,9 @@
 }
 
 .progressInner {
-  background: white;
+  background: var(--spotify);
   width: 60%;
-  height: 4px;
+  height: 6px;
   margin: 1px;
   border-radius: 2px;
 }

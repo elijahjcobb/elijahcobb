@@ -12,7 +12,7 @@
   background: var(--background);
   opacity: 1;
   transform-origin: center;
-  animation: fadeOut 1s ease-in-out 4s forwards;
+  animation: fadeOut 1s ease-in-out 3s forwards;
 }
 
 @keyframes fadeOut {
