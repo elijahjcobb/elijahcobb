@@ -1,15 +1,14 @@
 .container {
   display: flex;
-  align-items: center;
-  align-self: flex-start;
+  flex-direction: column;
   width: 340px;
   position: relative;
   gap: var(--padding);
-  background: linear-gradient(var(--secondary), var(--tertiary));
-  padding: 0 var(--padding);
+  background: var(--background);
+  padding: var(--padding);
   height: 180px;
   border-radius: var(--padding);
-  box-shadow: 0 0 var(--padding) #444;
+  box-shadow: 0 0 var(--padding) var(--spotify);
   transform: scale(0.75);
 }
 
@@ -40,45 +39,48 @@
 .middle {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--padding-s);
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   font-size: 18px;
-  gap: 4px;
+  flex-grow: 1;
+  gap: var(--padding-xs);
 }
 
 .progressContainer {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--padding);
 }
 
 .progressOuter {
   flex-grow: 1;
   background: var(--background);
-  height: 6px;
+  height: 8px;
   border-radius: 3px;
   overflow: hidden;
+  /* border: solid 2px var(--spotify); */
+  box-shadow: 0 0 4px var(--spotify);
 }
 
 .progressInner {
-  background: white;
-  width: 60%;
-  height: 4px;
-  margin: 1px;
-  border-radius: 2px;
+  background: var(--spotify);
+  height: 100%;
 }
 
 .name {
   font-weight: bold;
+  font-size: 1.6em;
 }
 
-.album {
+.artist {
   font-weight: lighter;
+  font-size: 1.25em;
 }
 
 .logo {

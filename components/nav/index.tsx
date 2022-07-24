@@ -3,14 +3,18 @@ import Link from "next/link";
 import { MobileNavBar } from "../mobile-nav-bar";
 import { LINKS } from "../../data";
 import styles from "./index.module.css";
+import { SpotifyWidget } from "../spotify-widget";
 
 export function NavBar() {
 	return <nav className={styles.nav}>
-		<Link href="/">
-			<a className='home'>
-				<Icon />
-			</a>
-		</Link>
+		<div className={styles.left}>
+			<Link href="/">
+				<a className='home'>
+					<Icon />
+				</a>
+			</Link>
+			<SpotifyWidget />
+		</div>
 		<ul className={styles.list}>
 			{LINKS.map(({ name, path }) => {
 				return <li className={styles.item} key={name}>

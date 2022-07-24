@@ -1,7 +1,7 @@
-import { useSpotify } from "../../data/hooks"
-import { FaSpotify, FaSpinner } from "react-icons/fa";
+import { truncate, useSpotifyContext } from "../../data/hooks"
+import { FaSpotify } from "react-icons/fa";
 import styles from "./index.module.css";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
 function padTo2Digits(num: number): string {
 	return num.toString().padStart(2, '0');
@@ -18,51 +18,39 @@ function convertMsToMinutesSeconds(milliseconds: number): string {
 
 export function SpotifyPreview() {
 
-	const { data, error } = useSpotify();
-	const [progress, setProgress] = useState(0);
+	const { data, progress } = useSpotifyContext();
 
-	useEffect(() => {
-		setProgress(data?.progress ?? 0);
-		if (!data?.isPlaying) return;
-		const interval = setInterval(() => {
-			setProgress(v => v + 1000);
-		}, 1000);
-		return () => clearInterval(interval);
-	}, [data?.progress, data?.isPlaying])
+	const songName = useMemo(() => {
+		if (!data?.name) return "";
+		return truncate(data.name, 48);
+	}, [data?.name]);
+
+	const songArtist = useMemo(() => {
+		if (!data?.artist) return "";
+		return truncate(data.artist, 32);
+	}, [data?.artist]);
 
 
-	if (error) return <p>Error: {error}</p>;
-	if (!data) return <div className={styles.container} style={{ justifyContent: "center" }}>
-		<FaSpinner className={styles.spinner} size={48} />
-		<FaSpotify className={styles.logo} size={64} />
-	</div>
-
-	// if (data.error) return <div className={styles.container} style={{ justifyContent: "center" }}>
-	// 	<span>Elijah is currently living a music-less existence.</span>
-	// 	<FaSpotify className={styles.logo} size={64} />
-	// </div>
-
-	if (data.error) return <div />
+	if (!data || data.error) return <div />
 
 
 	return <div className={styles.container} id='spotify'>
 		<div className={styles.middle}>
 			<div className={styles.info}>
-				<span className={styles.name}>{data.name}</span>
-				<span className={styles.album}>{data.album}</span>
-				<span className={styles.artist}>{data.artist}</span>
+				<span className={styles.name}>{songName}</span>
+				<span className={styles.artist}>{songArtist}</span>
 			</div>
-			<div className={styles.progressContainer}>
-				<span>{convertMsToMinutesSeconds(progress)}</span>
-				<div className={styles.progressOuter}>
-					<div className={styles.progressInner} style={{ width: `${Math.floor(progress / data.duration * 100)}%` }} />
-				</div>
-				<span>{convertMsToMinutesSeconds(data.duration)}</span>
-			</div>
+			<div
+				className={styles.coverContainer}
+				style={{ backgroundImage: `url(${data.cover})` }} />
 		</div>
-		<div
-			className={styles.coverContainer}
-			style={{ backgroundImage: `url(${data.cover})` }} />
+		<div className={styles.progressContainer}>
+			<span>{convertMsToMinutesSeconds(progress)}</span>
+			<div className={styles.progressOuter}>
+				<div className={styles.progressInner} style={{ width: `${Math.floor(progress / data.duration * 100)}%` }} />
+			</div>
+			<span>{convertMsToMinutesSeconds(data.duration)}</span>
+		</div>
 		<FaSpotify className={styles.logo} size={64} />
 	</div>
 }

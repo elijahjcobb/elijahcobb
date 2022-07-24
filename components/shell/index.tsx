@@ -13,7 +13,6 @@ export function Shell({ children }: { children: React.ReactNode }) {
 				<div className={styles.container}>{children}</div>
 				<RightBar className={cn(styles.sidebar, styles.right)} />
 			</div>
-
 		</div>
 	);
 }
