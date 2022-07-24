@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--padding);
+}
+
+.link {
+  font: unset;
+  color: unset;
+}
+
+.link:hover {
+  color: var(--spotify);
+}
