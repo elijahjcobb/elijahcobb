@@ -14,12 +14,8 @@ async function redis(command: string, ...params: string[]): Promise<void> {
 
 async function handleAnalytics(request: NextRequest): Promise<void> {
   const path = request.nextUrl.pathname;
-  if (path.includes(".") || path.startsWith("/api")) return;
-  await redis("incr", `path:${path}`);
-
-  if (path !== "/") return;
-
-  console.log("WILL LOG GEO");
+  console.log(path);
+  await redis("incr", `home`);
   console.log(request.geo);
 
   if (request.geo?.country)
@@ -39,4 +35,5 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   runtime: "experimental-edge",
+  matcher: "/",
 };
