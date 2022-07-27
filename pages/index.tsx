@@ -19,6 +19,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => {
 				const [lat, lng] = point.split(":");
 				return { lat, lng } as unknown as MapPin;
 			})
-		}
+		},
+		revalidate: 10
 	}
 }
