@@ -33,6 +33,7 @@ module.exports = {
       rules: {
         "jsx-a11y/anchor-is-valid": 0,
         "@typescript-eslint/no-unsafe-assignment": 0,
+        "@next/next/no-server-import-in-page": 0,
       },
     },
   ],
