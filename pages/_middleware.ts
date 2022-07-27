@@ -2,13 +2,13 @@ import type { NextRequest } from "next/server";
 import { redis } from "../data/redis";
 
 async function handleAnalytics(request: NextRequest): Promise<void> {
-  console.log(request.geo);
-
   const path = request.nextUrl.pathname;
   if (path.includes(".") || path.startsWith("/api")) return;
   await redis.incr(`path:${path}`);
 
   if (path !== "/") return;
+
+  console.log("WILL LOG GEO");
 
   if (request.geo?.country) await redis.sadd("countries", request.geo.country);
   if (request.geo?.city) await redis.sadd("cities", request.geo.city);
