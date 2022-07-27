@@ -1,14 +1,15 @@
 import type { NextRequest } from "next/server";
 
 async function redis(command: string, ...params: string[]): Promise<void> {
-  await fetch(
-    `https://usw1-fast-pigeon-33325.upstash.io/${command}/${params.join("/")}`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.UPSTASH_KEY ?? ""}`,
-      },
-    }
-  );
+  const url = `https://usw1-fast-pigeon-33325.upstash.io/${command}/${params.join(
+    "/"
+  )}`;
+  console.log(url);
+  await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${process.env.UPSTASH_KEY ?? ""}`,
+    },
+  });
 }
 
 async function handleAnalytics(request: NextRequest): Promise<void> {
@@ -19,6 +20,7 @@ async function handleAnalytics(request: NextRequest): Promise<void> {
   if (path !== "/") return;
 
   console.log("WILL LOG GEO");
+  console.log(request.geo);
 
   if (request.geo?.country)
     await redis("sadd", "countries", request.geo.country);
