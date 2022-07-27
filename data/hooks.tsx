@@ -5,10 +5,17 @@ import type { SpotifyResponse } from './types';
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 function useSpotify() {
-	return useSWR<SpotifyResponse>('/api/spotify', fetcher, {
+	let { data, error } = useSWR<SpotifyResponse>('/api/spotify', fetcher, {
 		revalidateOnFocus: true,
 		refreshInterval: 2000
 	});
+
+	if (data?.error) {
+		error = data.error
+		data = undefined;
+	}
+
+	return { data, error };
 }
 
 export function truncate(value: string, length: number) {

@@ -1,0 +1,6 @@
+.container {
+  width: 100vw;
+  position: absolute;
+  height: calc(100vh - var(--nav-height));
+  z-index: 9999999;
+}
