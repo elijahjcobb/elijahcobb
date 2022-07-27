@@ -3,6 +3,7 @@ import type { MapRef, GeoJSONSource, LayerProps } from 'react-map-gl';
 import { useRef } from 'react';
 import type mapboxgl from 'mapbox-gl';
 import styles from "./map.module.css";
+import { useMapData } from '../../data/map-data';
 
 const clusterLayer: LayerProps = {
 	id: 'clusters',
@@ -42,11 +43,8 @@ const unclusteredPointLayer: LayerProps = {
 	}
 };
 
-export interface PinGuestBookMapProps {
-	pins: { username?: string, lat: number, lng: number }[];
-}
-
-export function GuestBookMap(props: PinGuestBookMapProps) {
+export function GuestBookMap() {
+	const pins = useMapData();
 	const mapRef = useRef<MapRef>(null);
 
 	const onClick = (event: mapboxgl.MapLayerMouseEvent) => {
@@ -99,11 +97,9 @@ export function GuestBookMap(props: PinGuestBookMapProps) {
 					clusterRadius={50}
 					data={{
 						type: "FeatureCollection",
-						features: props.pins.map(pin => ({
+						features: pins.map(pin => ({
 							type: "Feature",
-							properties: {
-								id: pin.username
-							},
+							properties: {},
 							geometry: {
 								type: "Point",
 								coordinates: [

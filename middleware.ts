@@ -1,4 +1,5 @@
 import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
   fetch(`${process.env.HIT_API_ENDPOINT ?? ""}/api/hit`, {
@@ -14,6 +15,13 @@ export function middleware(request: NextRequest) {
       lng: request.geo?.longitude ?? null,
     }),
   }).catch(console.error);
+
+  const response = NextResponse.next();
+  response.cookies.set("city", request.geo?.city, { httpOnly: true });
+  response.cookies.set("region", request.geo?.region, { httpOnly: true });
+  response.cookies.set("country", request.geo?.country, { httpOnly: true });
+
+  return response;
 }
 
 export const config = {
