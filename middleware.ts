@@ -5,28 +5,27 @@ async function redis(command: string, ...params: string[]): Promise<void> {
     "/"
   )}`;
   console.log(url);
-  await fetch(url, {
+  const r = await fetch(url, {
     headers: {
       Authorization: `Bearer ${process.env.UPSTASH_KEY ?? ""}`,
     },
   });
+  console.log("STATUS: ", r.status);
 }
 
 async function handleAnalytics(request: NextRequest): Promise<void> {
-  const path = request.nextUrl.pathname;
-  console.log(path);
-  await redis("incr", `home`);
   console.log(request.geo);
-
-  if (request.geo?.country)
-    await redis("sadd", "countries", request.geo.country);
-  if (request.geo?.city) await redis("sadd", "cities", request.geo.city);
-  if (request.geo?.latitude && request.geo.longitude)
-    await redis(
-      "sadd",
-      "lat-lng",
-      [request.geo.latitude, request.geo.longitude].join(":")
-    );
+  await redis("incr", `home`);
+  await redis("sadd", "countries", request.geo?.country ?? "localhost");
+  await redis("sadd", "cities", request.geo?.city ?? "localhost");
+  await redis(
+    "sadd",
+    "lat-lng",
+    [
+      request.geo?.latitude ?? "localhost",
+      request.geo?.longitude ?? "localhost",
+    ].join(":")
+  );
 }
 
 export function middleware(request: NextRequest) {
