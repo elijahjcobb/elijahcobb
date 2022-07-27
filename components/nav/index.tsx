@@ -10,13 +10,13 @@ export function NavBar() {
 		<div className={styles.left}>
 			<Link href="/">
 				<a className='home'>
-					<Icon />
+					<Icon animate />
 				</a>
 			</Link>
-			<SpotifyWidget />
 		</div>
 		<ul className={styles.list}>
 			{LINKS.map(({ name, path }) => {
+				if (name === 'Spotify') return <SpotifyWidget key='spotify' />
 				return <li className={styles.item} key={name}>
 					<Link href={path}>
 						<a className={styles.link}>{name}</a>

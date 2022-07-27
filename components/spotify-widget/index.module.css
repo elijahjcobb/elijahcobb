@@ -1,7 +1,15 @@
 .container {
   display: flex;
   align-items: center;
-  gap: var(--padding);
+  gap: var(--padding-s);
+  --spotify-icon: var(--primary);
+}
+
+.container {
+  font-weight: bold;
+  text-transform: lowercase;
+  color: var(--spotify-icon);
+  transition: 125ms ease-in-out;
 }
 
 .link {
@@ -9,6 +17,6 @@
   color: unset;
 }
 
-.link:hover {
-  color: var(--spotify);
+.link:hover .container {
+  --spotify-icon: var(--spotify);
 }

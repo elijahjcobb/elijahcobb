@@ -5,11 +5,11 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import Image from "next/image";
 import profilePicture from "../../public/profile.jpg";
-import { IconLoadingScreen } from "../loading-screen";
+import { GuestBook } from "../guest-book";
+import { SpotifyPage } from "../spotify-page";
 
 export function HomePage() {
 	return <div className={styles.container}>
-		<IconLoadingScreen />
 		<div className={styles.header}>
 			<Image alt="elijah sketch" height={480} src={profilePicture} width={480} />
 			<div className={styles.text}>
@@ -24,7 +24,9 @@ export function HomePage() {
 				</Link>
 			</div>
 		</div>
+		<GuestBook />
 		<About />
+		<SpotifyPage />
 		<Positions />
 	</div>
 }

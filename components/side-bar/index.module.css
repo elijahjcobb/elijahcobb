@@ -10,5 +10,5 @@
   overflow: hidden;
   top: var(--nav-height);
   position: fixed;
-  background: var(--background);
+  z-index: 4;
 }

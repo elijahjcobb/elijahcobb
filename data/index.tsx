@@ -3,10 +3,10 @@ import type { LinkType, SocialType, PositionType } from "./types";
 
 export const LINKS: LinkType[] = [
 	{ path: "/", name: "Hello" },
+	{ path: "/#guestbook", name: "Guestbook" },
 	{ path: "/#about", name: "About" },
+	{ path: "/#spotify", name: "Spotify" },
 	{ path: "/#work", name: "Work" },
-	{ path: "/guest-book", name: "Guest Book" },
-	{ path: "/ships", name: "Ships" },
 	{ path: "/snippets", name: "Snippets" }
 ];
 

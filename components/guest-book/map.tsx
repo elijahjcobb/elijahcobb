@@ -81,21 +81,22 @@ export function GuestBookMap(props: PinGuestBookMapProps) {
 		<div className={styles.mapContainer}>
 			<Map
 				initialViewState={{
-					latitude: 20,
-					longitude: 10,
-					zoom: 1.05
+					latitude: 30,
+					longitude: -80,
+					zoom: 2,
+					pitch: 0
 				}}
 				interactiveLayerIds={[clusterLayer.id ?? ""]}
-				mapStyle="mapbox://styles/mapbox/dark-v9"
-				mapboxAccessToken="pk.eyJ1IjoiZWxpamFoY29iYiIsImEiOiJjbDYyczBveHUyYWJyM2lwNHpldnU0MmV0In0.58yRy97C4E9DbCZYy9s4Jw"
+				mapStyle='mapbox://styles/elijahcobb/cl630138t001n14o6mcmhdxbc'
+				mapboxAccessToken='pk.eyJ1IjoiZWxpamFoY29iYiIsImEiOiJjajkzYThmbTgwdGVtMnFtd2FwanR0OG1pIn0.Rz-BZmtYh57w2KRbEc7JpQ'
 				onClick={onClick}
+				projection='globe'
 				ref={mapRef}
 			>
 				<Source
 					cluster
 					clusterMaxZoom={14}
 					clusterRadius={50}
-					// data="https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
 					data={{
 						type: "FeatureCollection",
 						features: props.pins.map(pin => ({

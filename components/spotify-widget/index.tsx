@@ -18,7 +18,7 @@ export function SpotifyWidget() {
 	return <Link href="/#spotify" passHref>
 		<a className={styles.link}>
 			<div className={styles.container}>
-				<FaSpotify color='var(--spotify)' size={24} />
+				<FaSpotify color='var(--spotify-icon)' size={24} />
 				<span>{songName}</span>
 			</div>
 		</a>

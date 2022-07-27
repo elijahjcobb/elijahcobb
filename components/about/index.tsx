@@ -1,6 +1,5 @@
 import { ExternalLink } from "../external-link";
 import styles from "./index.module.css";
-import { SpotifyPreview } from "../spotify";
 
 export function About() {
 	return <div className={styles.container} id='about'>
@@ -26,6 +25,5 @@ export function About() {
 				</p>
 			</div>
 		</div>
-		<SpotifyPreview />
 	</div>
 }
