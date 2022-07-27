@@ -36,6 +36,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "node",
   matcher: "/",
 };
