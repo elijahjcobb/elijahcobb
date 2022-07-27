@@ -476,7 +476,7 @@
     "@typescript-eslint/types" "5.31.0"
     eslint-visitor-keys "^3.3.0"
 
-"@upstash/redis@^1.10.1":
+"@upstash/redis@^1.10.2":
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/@upstash/redis/-/redis-1.10.2.tgz#a41cfdb15bb990fdb7cd634d3e50afb2bf5e8967"
   integrity sha512-eQg9i6PUeBhsH7XddIcdBJXSlJlXhcad4aOg4QvvjshssyZhlmu6SW2dKkr50vgjZScln8pCsexZkEcpn8GMhQ==

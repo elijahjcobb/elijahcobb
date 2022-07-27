@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  fetch("https://dev.elijahcobb.dev/api/hit", {
+  fetch(`${process.env.HIT_API_ENDPOINT ?? ""}/api/hit`, {
     headers: {
       Authorization: `Bearer ${process.env.MY_SECRET ?? ""}`,
     },
