@@ -1,41 +1,21 @@
 import type { NextRequest } from "next/server";
 
-async function redis(command: string, ...params: string[]): Promise<void> {
-  const url = `https://usw1-fast-pigeon-33325.upstash.io/${command}/${params.join(
-    "/"
-  )}`;
-  console.log(url);
-  const r = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${process.env.UPSTASH_KEY ?? ""}`,
-    },
-  });
-  console.log("STATUS: ", r.status);
-  console.log("STATUS: ", await r.text());
-}
-
-async function handleAnalytics(request: NextRequest): Promise<void> {
-  await redis("sadd", "cities", request.geo?.city ?? "localhost");
-  console.log(request.geo);
-  await redis("incr", `home`);
-  await redis("sadd", "countries", request.geo?.country ?? "localhost");
-
-  await redis("sadd", "regions", request.geo?.region ?? "localhost");
-  await redis(
-    "sadd",
-    "lat-lng",
-    [
-      request.geo?.latitude ?? "localhost",
-      request.geo?.longitude ?? "localhost",
-    ].join(":")
-  );
-}
-
 export function middleware(request: NextRequest) {
-  (async () => handleAnalytics(request))().catch(console.error);
+  fetch("https://dev.elijahcobb.dev/api/hit", {
+    headers: {
+      Authorization: `Bearer ${process.env.MY_SECRET ?? ""}`,
+    },
+    method: "POST",
+    body: JSON.stringify({
+      city: request.geo?.city ?? null,
+      country: request.geo?.country ?? null,
+      region: request.geo?.region ?? null,
+      lat: request.geo?.latitude ?? null,
+      lng: request.geo?.longitude ?? null,
+    }),
+  }).catch(console.error);
 }
 
 export const config = {
-  runtime: "nodejs",
   matcher: "/",
 };

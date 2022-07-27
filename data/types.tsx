@@ -103,6 +103,14 @@ export interface TrackRequest {
 	key: string;
 }
 
+export interface HitRequest {
+	city: string | null;
+	country: string | null;
+	region: string | null;
+	lat: string | null;
+	lng: string | null;
+}
+
 export interface TrackResponse {
 	message: "OK";
 }
