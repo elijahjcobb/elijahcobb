@@ -5,20 +5,21 @@ async function redis(command: string, ...params: string[]): Promise<void> {
     "/"
   )}`;
   console.log(url);
-  console.log(process.env.UPSTASH_KEY);
   const r = await fetch(url, {
     headers: {
       Authorization: `Bearer ${process.env.UPSTASH_KEY ?? ""}`,
     },
   });
   console.log("STATUS: ", r.status);
+  console.log("STATUS: ", await r.text());
 }
 
 async function handleAnalytics(request: NextRequest): Promise<void> {
+  await redis("sadd", "cities", request.geo?.city ?? "localhost");
   console.log(request.geo);
   await redis("incr", `home`);
   await redis("sadd", "countries", request.geo?.country ?? "localhost");
-  await redis("sadd", "cities", request.geo?.city ?? "localhost");
+
   await redis("sadd", "regions", request.geo?.region ?? "localhost");
   await redis(
     "sadd",
