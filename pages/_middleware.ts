@@ -2,6 +2,8 @@ import type { NextRequest } from "next/server";
 import { redis } from "../data/redis";
 
 async function handleAnalytics(request: NextRequest): Promise<void> {
+  console.log(request.geo);
+
   const path = request.nextUrl.pathname;
   if (path.includes(".") || path.startsWith("/api")) return;
   await redis.incr(`path:${path}`);
