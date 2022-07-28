@@ -5,18 +5,18 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import Image from "next/image";
 import profilePicture from "../../public/profile.jpg";
-import { IconLoadingScreen } from "../loading-screen";
+import { GuestBook } from "../guest-book";
+import { SpotifyPage } from "../spotify-page";
 
 export function HomePage() {
 	return <div className={styles.container}>
-		<IconLoadingScreen />
 		<div className={styles.header}>
 			<Image alt="elijah sketch" height={480} src={profilePicture} width={480} />
 			<div className={styles.text}>
 				<span className={styles.head}>Hello, my name is</span>
 				<h1 className={styles.name}>Elijah Cobb</h1>
 				<span className={styles.subheader}>I am a Full Stack Engineer in Seattle, WA.</span>
-				<Link href="/#about" passHref>
+				<Link href="/#guestbook" passHref>
 					{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
 					<a className={styles.down}>
 						<FaArrowDown color='var(--secondary)' size={32} />
@@ -24,7 +24,9 @@ export function HomePage() {
 				</Link>
 			</div>
 		</div>
+		<GuestBook />
 		<About />
+		<SpotifyPage />
 		<Positions />
 	</div>
 }

@@ -28,9 +28,10 @@
   font-family: var(--font-mono);
   padding: var(--padding-xs);
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: lowercase;
   color: var(--primary);
   font-size: 18px;
+  font-weight: bold;
   font-family: var(--font);
 }
 .item,
