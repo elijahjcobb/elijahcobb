@@ -25,6 +25,7 @@ export function SpotifyPage() {
 			<div className={styles.backBlur} />
 			<div className={styles.content}>
 				<FaSpotify className={styles.logo} size={64} />
+				<span>I am currently on Spotify and jamming out to...</span>
 				<img alt={`${data.album} album cover`} className={styles.cover} src={data.cover} />
 				<div className={styles.descriptions}>
 					<span className={styles.name}>{data.name}</span>

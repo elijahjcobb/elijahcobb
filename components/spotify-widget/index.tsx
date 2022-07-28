@@ -10,7 +10,7 @@ export function SpotifyWidget() {
 
 	const songName = useMemo(() => {
 		if (!data?.name) return "";
-		return truncate(data.name, window.innerWidth < 480 ? 18 : 120);
+		return truncate(data.name, 10);
 	}, [data?.name]);
 
 	if (!data || error) return <div />
