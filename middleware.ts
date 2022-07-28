@@ -17,9 +17,14 @@ export function middleware(request: NextRequest) {
   }).catch(console.error);
 
   const response = NextResponse.next();
-  response.cookies.set("city", request.geo?.city, { httpOnly: true });
+  response.cookies.set("city", request.geo?.city ?? "Earth", {
+    httpOnly: false,
+  });
   response.cookies.set("region", request.geo?.region, { httpOnly: true });
   response.cookies.set("country", request.geo?.country, { httpOnly: true });
+  response.cookies.set("lng", request.geo?.latitude ?? "-98", {
+    httpOnly: false,
+  });
 
   return response;
 }

@@ -1,9 +1,10 @@
 import Map, { Layer, Source } from 'react-map-gl';
 import type { MapRef, GeoJSONSource, LayerProps } from 'react-map-gl';
-import { useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type mapboxgl from 'mapbox-gl';
 import styles from "./map.module.css";
 import { useMapData } from '../../data/map-data';
+import { useCookies } from 'react-cookie';
 
 const clusterLayer: LayerProps = {
 	id: 'clusters',
@@ -12,7 +13,7 @@ const clusterLayer: LayerProps = {
 	filter: ['has', 'point_count'],
 	paint: {
 		'circle-color': ['step', ['get', 'point_count'], '#0693e3', 100, '#0693e3', 750, '#0693e3'],
-		'circle-radius': ['step', ['get', 'point_count'], 20, 100, 30, 750, 40],
+		'circle-radius': ['step', ['get', 'point_count'], 30, 10, 30, 50, 40],
 		'circle-stroke-width': 1,
 		'circle-stroke-color': '#fff'
 	}
@@ -37,7 +38,7 @@ const unclusteredPointLayer: LayerProps = {
 	filter: ['!', ['has', 'point_count']],
 	paint: {
 		'circle-color': '#0693e3',
-		'circle-radius': 4,
+		'circle-radius': 10,
 		'circle-stroke-width': 1,
 		'circle-stroke-color': '#fff'
 	}
@@ -46,6 +47,9 @@ const unclusteredPointLayer: LayerProps = {
 export function GuestBookMap() {
 	const pins = useMapData();
 	const mapRef = useRef<MapRef>(null);
+	const [cookies] = useCookies();
+	const homeLongitude = Number(cookies['lng'] ?? "-98");
+	console.log(homeLongitude);
 
 	const onClick = (event: mapboxgl.MapLayerMouseEvent) => {
 
@@ -60,7 +64,7 @@ export function GuestBookMap() {
 		}
 
 		const clusterId = feature.properties.cluster_id
-		const mapboxSource = mapRef.current?.getSource('earthquakes') as GeoJSONSource;
+		const mapboxSource = mapRef.current?.getSource('users') as GeoJSONSource;
 
 		mapboxSource.getClusterExpansionZoom(clusterId, (err, zoom) => {
 			if (err) {
@@ -75,21 +79,48 @@ export function GuestBookMap() {
 		});
 	};
 
+	const setNewPosition = useCallback((props: { lng: number, zoom: number }) => {
+		mapRef.current?.easeTo({
+			center: {
+				lat: 30,
+				lng: props.lng,
+			},
+			zoom: props.zoom,
+			duration: 0
+		});
+	}, []);
+
+	useEffect(() => {
+		const onScroll = () => {
+			const scrollPosition = document.documentElement.scrollTop;
+			const height = window.innerHeight - 72;
+			const factor = Math.min(Math.max((scrollPosition / height), 0), 2) / 2;
+			const MAX_ZOOM = 720;
+			const lng = (factor * MAX_ZOOM) - 360 + homeLongitude;
+			setNewPosition({ lng, zoom: Math.max(Math.min((factor * 5), 5), 0) });
+		};
+		document.addEventListener("scroll", onScroll);
+		return () => {
+			document.removeEventListener("scroll", onScroll)
+		}
+	}, [setNewPosition, homeLongitude]);
+
 	return (
 		<div className={styles.mapContainer}>
 			<Map
 				initialViewState={{
-					latitude: 30,
-					longitude: -80,
-					zoom: 2,
-					pitch: 0
+					longitude: homeLongitude,
+					pitch: 0,
+					zoom: 2
 				}}
 				interactiveLayerIds={[clusterLayer.id ?? ""]}
+				// longitude={lng}
 				mapStyle='mapbox://styles/elijahcobb/cl630138t001n14o6mcmhdxbc'
 				mapboxAccessToken='pk.eyJ1IjoiZWxpamFoY29iYiIsImEiOiJjajkzYThmbTgwdGVtMnFtd2FwanR0OG1pIn0.Rz-BZmtYh57w2KRbEc7JpQ'
 				onClick={onClick}
 				projection='globe'
 				ref={mapRef}
+				scrollZoom={false}
 			>
 				<Source
 					cluster
@@ -118,6 +149,6 @@ export function GuestBookMap() {
 					<Layer {...unclusteredPointLayer} />
 				</Source>
 			</Map>
-		</div>
+		</div >
 	);
 }

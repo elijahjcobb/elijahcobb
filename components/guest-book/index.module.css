@@ -6,3 +6,18 @@
   height: calc(100vh - var(--nav-height));
   z-index: 1;
 }
+
+.overlay {
+  z-index: 2;
+  position: absolute;
+  top: 64px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 6em;
+}
