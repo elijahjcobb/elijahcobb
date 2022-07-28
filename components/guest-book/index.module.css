@@ -7,27 +7,14 @@
   z-index: 1;
 }
 
-.overlay {
-  z-index: 2;
-  padding: 8px;
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  user-select: none;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 4em;
-  margin-top: 28px;
-}
-
 .description {
+  z-index: 2;
+  position: absolute;
+  bottom: 4px;
+  left: 30vw;
+  width: 40vw;
+  margin: auto;
+  text-align: center;
   font-size: 0.75em;
   font-weight: lighter;
 }
