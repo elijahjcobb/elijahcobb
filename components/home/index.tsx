@@ -16,7 +16,7 @@ export function HomePage() {
 				<span className={styles.head}>Hello, my name is</span>
 				<h1 className={styles.name}>Elijah Cobb</h1>
 				<span className={styles.subheader}>I am a Full Stack Engineer in Seattle, WA.</span>
-				<Link href="/#about" passHref>
+				<Link href="/#guestbook" passHref>
 					{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
 					<a className={styles.down}>
 						<FaArrowDown color='var(--secondary)' size={32} />

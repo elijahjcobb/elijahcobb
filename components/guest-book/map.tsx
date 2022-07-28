@@ -5,6 +5,7 @@ import type mapboxgl from 'mapbox-gl';
 import styles from "./map.module.css";
 import { useMapData } from '../../data/map-data';
 import { useCookies } from 'react-cookie';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const clusterLayer: LayerProps = {
 	id: 'clusters',
