@@ -20,9 +20,14 @@ export function middleware(request: NextRequest) {
   response.cookies.set("city", request.geo?.city ?? "Earth", {
     httpOnly: false,
   });
+
+  const rand = Math.random();
+  let long = Number(request.geo?.longitude ?? "-98");
+  long = long + Math.floor(rand * 2 - 1);
+
   response.cookies.set("region", request.geo?.region, { httpOnly: false });
   response.cookies.set("country", request.geo?.country, { httpOnly: false });
-  response.cookies.set("lng", request.geo?.latitude ?? "-98", {
+  response.cookies.set("lng", `${long}`, {
     httpOnly: false,
   });
 
