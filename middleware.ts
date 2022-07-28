@@ -20,8 +20,8 @@ export function middleware(request: NextRequest) {
   response.cookies.set("city", request.geo?.city ?? "Earth", {
     httpOnly: false,
   });
-  response.cookies.set("region", request.geo?.region, { httpOnly: true });
-  response.cookies.set("country", request.geo?.country, { httpOnly: true });
+  response.cookies.set("region", request.geo?.region, { httpOnly: false });
+  response.cookies.set("country", request.geo?.country, { httpOnly: false });
   response.cookies.set("lng", request.geo?.latitude ?? "-98", {
     httpOnly: false,
   });

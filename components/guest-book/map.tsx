@@ -1,6 +1,6 @@
 import Map, { Layer, Source } from 'react-map-gl';
 import type { MapRef, GeoJSONSource, LayerProps } from 'react-map-gl';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import type mapboxgl from 'mapbox-gl';
 import styles from "./map.module.css";
 import { useMapData } from '../../data/map-data';
@@ -49,7 +49,6 @@ export function GuestBookMap() {
 	const mapRef = useRef<MapRef>(null);
 	const [cookies] = useCookies();
 	const homeLongitude = Number(cookies['lng'] ?? "-98");
-	console.log(homeLongitude);
 
 	const onClick = (event: mapboxgl.MapLayerMouseEvent) => {
 
@@ -59,7 +58,6 @@ export function GuestBookMap() {
 		const feature = event.features[0] as { properties: { cluster_id: number }, geometry: { coordinates: mapboxgl.LngLatLike } } | undefined;
 
 		if (!feature) {
-			console.log("CLICKED", event);
 			return;
 		}
 
