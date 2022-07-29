@@ -96,7 +96,7 @@ export function GuestBookMap() {
 			const factor = Math.min(Math.max((scrollPosition / height), 0), 2) / 2;
 			const MAX_ZOOM = 720;
 			const lng = (factor * MAX_ZOOM) - 360 + homeLongitude;
-			setNewPosition({ lng, zoom: Math.max(Math.min((factor * 5), 5), 0) });
+			setNewPosition({ lng, zoom: Math.max(Math.min((factor * 4), 4), 0) });
 		};
 		document.addEventListener("scroll", onScroll);
 		return () => {
@@ -113,7 +113,6 @@ export function GuestBookMap() {
 					zoom: 2
 				}}
 				interactiveLayerIds={[clusterLayer.id ?? ""]}
-				// longitude={lng}
 				mapStyle='mapbox://styles/elijahcobb/cl630138t001n14o6mcmhdxbc'
 				mapboxAccessToken='pk.eyJ1IjoiZWxpamFoY29iYiIsImEiOiJjajkzYThmbTgwdGVtMnFtd2FwanR0OG1pIn0.Rz-BZmtYh57w2KRbEc7JpQ'
 				onClick={onClick}

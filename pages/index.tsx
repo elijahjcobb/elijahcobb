@@ -20,6 +20,6 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => {
 				return { lat, lng } as unknown as MapPin;
 			})
 		},
-		revalidate: 10
+		revalidate: 3
 	}
 }
