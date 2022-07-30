@@ -1,19 +1,19 @@
 .container {
   width: 100vw;
   position: absolute;
+  overflow: hidden;
   left: 0;
   top: 100vh;
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
   z-index: 1;
 }
 
 .description {
   z-index: 2;
   position: absolute;
-  bottom: 4px;
-  left: 30vw;
-  width: 40vw;
-  margin: auto;
+  bottom: 8px;
+  left: 5vw;
+  width: 90vw;
   text-align: center;
   font-size: 0.75em;
   font-weight: lighter;

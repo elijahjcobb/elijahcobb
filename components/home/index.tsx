@@ -26,7 +26,7 @@ export function HomePage() {
 		</div>
 		<GuestBook />
 		<About />
-		<SpotifyPage />
 		<Positions />
+		<SpotifyPage />
 	</div>
 }

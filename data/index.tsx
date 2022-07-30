@@ -5,8 +5,8 @@ export const LINKS: LinkType[] = [
 	{ path: "/", name: "Hello" },
 	{ path: "/#guestbook", name: "Guestbook" },
 	{ path: "/#about", name: "About" },
-	{ path: "/#spotify", name: "Spotify" },
 	{ path: "/#work", name: "Work" },
+	{ path: "/#spotify", name: "Spotify" },
 	{ path: "/snippets", name: "Snippets" }
 ];
 
