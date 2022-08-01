@@ -7,6 +7,7 @@ export const LINKS: LinkType[] = [
 	{ path: "/#about", name: "About" },
 	{ path: "/#work", name: "Work" },
 	{ path: "/#spotify", name: "Spotify" },
+	{ path: "/ships", name: "Ships" },
 	{ path: "/snippets", name: "Snippets" }
 ];
 
@@ -30,6 +31,7 @@ export const POSITIONS: PositionType[] = [
 		name: "Vercel",
 		href: "https://vercel.com/home",
 		startDate: "Apr 2022",
+		shortName: null,
 		endDate: "Present",
 		position: "Fullstack Software Engineer",
 		tasks: [
