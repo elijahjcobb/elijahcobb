@@ -53,19 +53,3 @@
 .name {
   font-weight: bold;
 }
-
-.stats,
-.stat {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: var(--padding);
-}
-
-.stats {
-  gap: var(--padding);
-}
-
-.stat {
-  gap: var(--padding-xs);
-}
