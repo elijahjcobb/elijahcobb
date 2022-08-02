@@ -36,7 +36,8 @@ export interface Unsplash {
 	height: number;
 	date: string;
 	description: string;
-	href: string;
+	src: string;
+	id: string;
 }
 
 export interface UnsplashRaw {

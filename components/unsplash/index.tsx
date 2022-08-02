@@ -1,5 +1,5 @@
-import { off } from "process";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Unsplash } from "../../data/types"
 import styles from "./index.module.css";
 import { FaArrowRight, FaArrowLeft, FaTimes, FaUndo } from "react-icons/fa";
@@ -23,14 +23,32 @@ export function NavButton(props: {
 		style={{ opacity: props.enabled ? 1 : 0 }}
 		type='button'
 	>
-		<Icon color="var(--primary)" size={32} />
+		<Icon className={styles.icon} size={32} />
 	</button>
+}
+
+export function useControlledState<T>(value: T, ms: number): [T, Dispatch<SetStateAction<T>>] {
+	const [debounced, setDebounced] = useState(value);
+	const lastUpdated = useRef<number>(Date.now());
+
+	const handleUpdate = (newValue: SetStateAction<T>) => {
+		const now = Date.now();
+		if ((now - lastUpdated.current) >= ms) {
+			setDebounced(newValue);
+			lastUpdated.current = now;
+			return newValue;
+		}
+		return value;
+	};
+
+	return [debounced, handleUpdate];
+
 }
 
 export function UnsplashPage({ images }: UnsplashProps) {
 
 	const [width, setWidth] = useState(0);
-	const [index, setIndex] = useState(0);
+	const [index, setIndex] = useControlledState(0, 1000);
 	const router = useRouter();
 
 	const canGoLeft = useMemo(() => {
@@ -62,6 +80,23 @@ export function UnsplashPage({ images }: UnsplashProps) {
 		return () => window.removeEventListener("resize", handler);
 	}, []);
 
+	useEffect(() => {
+		const handler = (ev: KeyboardEvent) => {
+			switch (ev.key) {
+				case "ArrowLeft":
+					return step(-1);
+				case "ArrowRight":
+				case "Enter":
+				case " ":
+					return step(1);
+				case "Escape":
+					return void router.push("/");
+			}
+		};
+		window.addEventListener("keyup", handler);
+		return () => window.removeEventListener("keyup", handler);
+	}, [router, step]);
+
 	return <div className={styles.root}>
 		<NavButton
 			className={styles.close}
@@ -77,20 +112,19 @@ export function UnsplashPage({ images }: UnsplashProps) {
 			icon={FaArrowLeft}
 			onClick={setPrevious}
 		/>
-		{canGoRight && <NavButton
+		<NavButton
 			className={styles.next}
 			enabled
-			icon={FaArrowRight}
+			icon={canGoRight ? FaArrowRight : FaUndo}
 			onClick={setNext}
-		/>}
-		{!canGoRight && <NavButton
-			className={styles.next}
-			enabled
-			icon={FaUndo}
-			onClick={() => setIndex(0)}
-		/>}
+		/>
+		<span className={styles.status}>{`${index + 1} / ${images.length}`}</span>
+		<a
+			className={styles.link}
+			href={`https://unsplash.com/photos/${images[index]?.id ?? ''}`}
+			rel="noopener" target='_blank'>View on Unsplash</a>
 		<div className={styles.carousel} style={{
-			transform: `translate3d(0, 0, 0) translateX(-${width * index}px)`,
+			transform: `translate3d(0, 0, 0) translateX(-${index * width}px)`,
 			width: `${images.length}00vw`
 		}}>
 			{images.map(image => {
@@ -98,8 +132,8 @@ export function UnsplashPage({ images }: UnsplashProps) {
 				return <img
 					alt={image.description}
 					className={styles.image}
-					key={image.href}
-					src={image.href}
+					key={image.id}
+					src={image.src}
 				/>
 			})}
 		</div>
