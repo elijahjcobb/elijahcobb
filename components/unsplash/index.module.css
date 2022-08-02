@@ -1,0 +1,64 @@
+.root {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background: black;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  transition: 1s ease-in-out;
+}
+
+.image {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  object-fit: cover;
+}
+
+.close,
+.previous,
+.next {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px black;
+  outline: none;
+  z-index: 1;
+  border-radius: 50%;
+  transition: 250ms ease-in-out;
+}
+
+.close:hover,
+.previous:hover,
+.next:hover {
+  background: black;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.close {
+  top: 32px;
+  left: 32px;
+}
+
+.previous {
+  bottom: 32px;
+  left: 32px;
+}
+
+.next {
+  bottom: 32px;
+  right: 32px;
+}
