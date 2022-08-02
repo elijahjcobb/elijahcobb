@@ -19,6 +19,7 @@
   --padding-xxs: calc(var(--padding) / 8);
   --padding-xs: calc(var(--padding) / 4);
   --padding-s: calc(var(--padding) / 2);
+  --padding-m: calc(var(--padding) * 1.25);
   --padding-l: calc(var(--padding) * 2);
   --padding-xl: calc(var(--padding) * 4);
   --padding-xxl: calc(var(--padding) * 8);
@@ -39,7 +40,7 @@
   --tertiary: var(--red);
   --secondary: var(--orange);
   --background: var(--blue-darker);
-  --background-dark: #120e26b0;
+  --background-dark: #120e26;
   --accent-0: #000;
   --accent-1: #111;
   --accent-2: #222;
