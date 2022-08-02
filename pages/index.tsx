@@ -1,5 +1,6 @@
 import type { GetStaticProps } from "next";
 import { HomePage } from "../components/home";
+import { REVALIDATE_DEFAULT } from "../data";
 import { fetchPositions } from "../data/contentful";
 import { PositionsProvider } from "../data/contentful-hooks";
 import { MapDataProvider, type MapPin } from "../data/map-data";
@@ -27,6 +28,6 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => {
 			pins,
 			positions
 		},
-		revalidate: 3
+		revalidate: REVALIDATE_DEFAULT
 	}
 }
