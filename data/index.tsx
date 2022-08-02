@@ -1,12 +1,15 @@
 import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
 import type { LinkType, SocialType, PositionType } from "./types";
 
+export const REVALIDATE_DEFAULT = 10;
+
 export const LINKS: LinkType[] = [
 	{ path: "/", name: "Hello" },
 	{ path: "/#guestbook", name: "Guestbook" },
 	{ path: "/#about", name: "About" },
 	{ path: "/#work", name: "Work" },
 	{ path: "/#spotify", name: "Spotify" },
+	{ path: "/ships", name: "Ships" },
 	{ path: "/snippets", name: "Snippets" }
 ];
 
@@ -30,6 +33,7 @@ export const POSITIONS: PositionType[] = [
 		name: "Vercel",
 		href: "https://vercel.com/home",
 		startDate: "Apr 2022",
+		shortName: null,
 		endDate: "Present",
 		position: "Fullstack Software Engineer",
 		tasks: [

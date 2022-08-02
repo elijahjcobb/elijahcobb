@@ -1,6 +1,7 @@
 import type { GetStaticProps } from "next"
 import type { SnippetsProps } from "../components/snippets";
 import { Snippets } from "../components/snippets"
+import { REVALIDATE_DEFAULT } from "../data";
 import { fetchGists } from "../data/github"
 
 export default Snippets;
@@ -11,6 +12,6 @@ export const getStaticProps: GetStaticProps<SnippetsProps> = async () => {
 		props: {
 			gists
 		},
-		revalidate: 10
+		revalidate: REVALIDATE_DEFAULT
 	}
 }
