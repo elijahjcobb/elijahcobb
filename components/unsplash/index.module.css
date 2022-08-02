@@ -1,0 +1,98 @@
+.root {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: black;
+  transition: 1s ease-in-out;
+}
+
+.image {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  object-fit: cover;
+}
+
+.close,
+.previous,
+.next,
+.status,
+.link {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px black;
+  outline: none;
+  z-index: 1;
+  border-radius: 32px;
+  transition: 250ms ease-in-out;
+}
+
+.close:hover,
+.previous:hover,
+.next:hover {
+  background: black;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.status,
+.link {
+  font-family: var(--font-mono);
+  width: 128px;
+  font-size: 22px;
+}
+
+.status {
+  top: 32px;
+  right: 32px;
+}
+
+.link {
+  font-size: 18px;
+  width: 256px;
+  height: 32px;
+  bottom: 32px;
+  left: calc(50vw - 128px);
+}
+
+.icon {
+  color: var(--primary);
+  transition: 250ms;
+}
+
+.close:hover .icon,
+.previous:hover .icon,
+.next:hover .icon {
+  color: var(--secondary);
+}
+
+.close {
+  top: 32px;
+  left: 32px;
+}
+
+.previous {
+  bottom: 32px;
+  left: 32px;
+}
+
+.next {
+  bottom: 32px;
+  right: 32px;
+}
