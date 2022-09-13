@@ -9,6 +9,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 		<Head>
 			<title>elijahcobb.dev</title>
 			<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+			<script async src="https://cdn.splitbee.io/sb.js" />
 		</Head>
 		<IncludeAllProviders>
 			<Shell>
