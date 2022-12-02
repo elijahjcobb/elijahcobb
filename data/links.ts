@@ -1,7 +1,7 @@
 import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
 import type { LinkType, SocialType } from "./types";
 
-export const REVALIDATE_DEFAULT = 10;
+export const REVALIDATE_DEFAULT = 30;
 
 export const LINKS: LinkType[] = [
   { path: "/", name: "Hello" },
