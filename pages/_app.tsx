@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import "../styles/index.css";
 import { Shell } from '../components/shell';
 import { IncludeAllProviders } from '../data/providers';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	return <>
@@ -16,5 +17,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 				<Component {...pageProps} />
 			</Shell>
 		</IncludeAllProviders>
+		<Analytics />
 	</ >
 } 
