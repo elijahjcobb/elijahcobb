@@ -1,7 +1,7 @@
 import { Divide as Hamburger } from 'hamburger-react'
 import Link from 'next/link';
 import { useState } from 'react';
-import { LINKS, SOCIAL } from '../../data';
+import { LINKS, SOCIAL } from '../../data/links';
 import { BsChevronRight } from 'react-icons/bs';
 import { useRouter } from 'next/router';
 import styles from "./index.module.css";

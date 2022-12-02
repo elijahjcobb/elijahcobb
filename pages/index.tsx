@@ -1,10 +1,9 @@
 import type { GetStaticProps } from "next";
 import { HomePage } from "../components/home";
-import { REVALIDATE_DEFAULT } from "../data";
-import { fetchPositions } from "../data/contentful";
-import { PositionsProvider } from "../data/contentful-hooks";
+import { REVALIDATE_DEFAULT } from "../data/links";
 import { MapDataProvider, type MapPin } from "../data/map-data";
 import { fetchPins } from "../data/redis";
+import { fetchPositions } from "../data/static/positions";
 import type { PositionType } from "../data/types";
 
 interface PageProps {
@@ -14,19 +13,16 @@ interface PageProps {
 
 export default function Page(props: PageProps) {
 	return <MapDataProvider value={props.pins}>
-		<PositionsProvider positions={props.positions}>
-			<HomePage />
-		</PositionsProvider>
+		<HomePage positions={props.positions} />
 	</MapDataProvider>
 }
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => {
 	const pins = await fetchPins();
-	const positions = await fetchPositions();
 	return {
 		props: {
 			pins,
-			positions
+			positions: fetchPositions()
 		},
 		revalidate: REVALIDATE_DEFAULT
 	}

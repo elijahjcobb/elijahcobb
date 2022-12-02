@@ -8,9 +8,9 @@ export interface SnippetsProps {
 
 export function Snippets({ gists }: SnippetsProps) {
 	return <ul className={styles.list}>
-		{gists.map((gist, i) => <>
-			<Snippet gist={gist} key={gist.id} />
-			{i !== gists.length - 1 && <div className={styles.bar} key={gist.id + "divider"} />}
-		</>)}
+		{gists.map((gist, i) => <div key={gist.id}>
+			<Snippet gist={gist} />
+			{i !== gists.length - 1 && <div className={styles.bar} />}
+		</div>)}
 	</ul>
 }

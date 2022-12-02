@@ -1,12 +1,5 @@
 import { formatDistance } from "date-fns";
-import { fetchShipSlugs } from "./contentful";
-import type {
-  Gist,
-  GistFile,
-  GithubRepo,
-  RawGithubGistResponse,
-  Ship,
-} from "./types";
+import type { Gist, GistFile, RawGithubGistResponse } from "./types";
 
 export function fetchGistFileData(url: string): Promise<string> {
   return fetch(url).then((res) => res.text());
@@ -75,35 +68,37 @@ export function fetchLanguage(slug: string): Promise<Record<string, number>> {
   ) as Promise<Record<string, number>>;
 }
 
-export async function fetchShips(): Promise<Ship[]> {
-  const slugs = await fetchShipSlugs();
+// export async function fetchShips(): Promise<GithubShip[]> {
+//   const slugs = SHIP_SLUGS;
 
-  const ships: Ship[] = [];
-  const proms: Promise<void>[] = [];
+//   const ships: GithubShip[] = [];
+//   const proms: Promise<void>[] = [];
 
-  async function handleSlug(slug: string): Promise<void> {
-    const raw = await fetch(`https://api.github.com/repos/${slug}`);
-    const res = (await raw.json()) as GithubRepo;
-    ships.push({
-      slug,
-      name: res.name,
-      fullName: res.full_name,
-      description: res.description,
-      updatedAt: res.updated_at,
-      createdAt: res.created_at,
-      year: new Date(res.created_at).getFullYear(),
-      stars: res.stargazers_count,
-      forks: res.forks_count,
-      languages: await fetchLanguage(slug),
-    });
-  }
+//   async function handleSlug(slug: string): Promise<void> {
+//     const raw = await fetch(`https://api.github.com/repos/elijahjcobb/${slug}`);
+//     const res = (await raw.json()) as GithubRepo;
+//     ships.push({
+//       slug,
+//       name: res.name,
+//       fullName: res.full_name,
+//       description: res.description,
+//       updatedAt: res.updated_at,
+//       createdAt: res.created_at,
+//       year: new Date(res.created_at).getFullYear(),
+//       stars: res.stargazers_count,
+//       forks: res.forks_count,
+//       languages: await fetchLanguage(slug),
+//     });
+//   }
 
-  for (const slug of slugs) proms.push(handleSlug(slug));
-  await Promise.all(proms);
+//   for (const slug of slugs) proms.push(handleSlug(slug));
+//   await Promise.all(proms);
 
-  return ships.sort((a, b) => {
-    const aD: Date = new Date(a.createdAt);
-    const bD: Date = new Date(b.createdAt);
-    return bD.getTime() - aD.getTime();
-  });
-}
+//   console.log({ ships });
+
+//   return ships.sort((a, b) => {
+//     const aD: Date = new Date(a.createdAt);
+//     const bD: Date = new Date(b.createdAt);
+//     return bD.getTime() - aD.getTime();
+//   });
+// }

@@ -21,7 +21,7 @@ export function About() {
 					moved across the country from <ExternalLink href="https://www.google.com/maps/place/Traverse+City,+MI">Northern Michigan</ExternalLink> to <ExternalLink href="https://www.google.com/maps/place/Seattle,+WA">Seattle, WA</ExternalLink>.
 				</p>
 				<p>In addition to work, I enjoy playing hockey, skiing, hiking, biking, and listening to music. I play music about 50% of every waking
-					second of my day. In fact, check out what I am listening to right now!
+					second of my day.
 				</p>
 			</div>
 		</div>

@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--padding-l);
+  gap: var(--padding-m);
 }
 
 .table {
@@ -17,17 +17,46 @@
 .row {
   padding: var(--padding-m) var(--padding-s);
   display: grid;
-  grid-template-columns: 60px auto 0px;
-  gap: var(--padding-l);
-  align-items: flex-start;
+  grid-template-columns: 24px 60px auto 88px;
+  gap: var(--padding-m);
+  align-items: center;
   background: var(--background);
   font-family: var(--font);
   color: var(--foreground);
-  transition: 250ms ease-in-out;
 }
 
 .description {
   display: none;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: flex-end;
+}
+
+.link,
+.github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+}
+
+.typeIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.typeIcon,
+.date {
+  color: var(--accent-9);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
 }
 
 @media (min-width: 768px) {
@@ -35,15 +64,8 @@
     display: block;
   }
   .row {
-    grid-template-columns: 60px min(40%, 100px) auto;
+    grid-template-columns: 24px 60px min(40%, 160px) auto 88px;
   }
-}
-
-.row:hover {
-  background: var(--secondary);
-  color: var(--background);
-  transform: none;
-  cursor: pointer;
 }
 
 .date {

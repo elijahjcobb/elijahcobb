@@ -10,6 +10,7 @@
 .bar {
   width: 100%;
   height: 2px;
+  margin-top: var(--padding-xl);
   background: var(--foreground);
 }
 

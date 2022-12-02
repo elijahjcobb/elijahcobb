@@ -1,7 +1,7 @@
 import { SideBar } from "../../side-bar";
 import Link from "next/link";
 import { VerticalLine } from "../../vertical-line";
-import { SOCIAL } from "../../../data";
+import { SOCIAL } from "../../../data/links";
 import styles from "./index.module.css";
 
 export function LeftBar({ className }: { className?: string }) {

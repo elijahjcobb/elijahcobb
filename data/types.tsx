@@ -1,11 +1,12 @@
 import type { IconType } from "react-icons";
 
+export interface MonthYearDate { month: number, year: number }
 export interface PositionType {
-	shortName: string | null;
+	shortName?: string;
 	name: string;
 	href: string;
-	startDate: string;
-	endDate: string | null;
+	startDate: MonthYearDate;
+	endDate?: MonthYearDate;
 	position: string;
 	tasks: string[];
 }
@@ -343,7 +344,7 @@ export interface GitHubOwner {
 }
 
 
-export interface Ship {
+export interface GithubShip {
 	slug: string;
 	fullName: string;
 	name: string;
@@ -354,4 +355,15 @@ export interface Ship {
 	stars: number;
 	forks: number;
 	languages: Record<string, number>;
+}
+
+export interface Ship {
+	name: string;
+	description: string;
+	url?: string;
+	githubSlug?: string;
+	year: number;
+	wip?: boolean;
+	trophy?: boolean;
+	work?: boolean;
 }
