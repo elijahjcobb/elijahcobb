@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
       city: request.geo?.city ?? null,
       country: request.geo?.country ?? null,
       region: request.geo?.region ?? null,
-      lat: request.geo?.latitude ?? null, // lat and long are stored in a redis set, and are not linked to user in any way
+      lat: request.geo?.latitude ?? null, // lat and lng are stored in a redis set, and are not linked to user in any way
       lng: request.geo?.longitude ?? null, // see /pages/api/hit.ts
     }),
   }).catch(console.error);
