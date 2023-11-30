@@ -7,7 +7,7 @@
 
 .positions {
   list-style: none;
-  width: 100%;
+  width: 90vw;
   max-width: 960px;
 }
 
@@ -37,6 +37,7 @@
 
 .mid {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--padding-s);
 }
 

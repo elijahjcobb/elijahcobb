@@ -42,7 +42,7 @@ const POSITIONS: PositionType[] = [
     endDate: { month: 4, year: 2022 },
     position: "Undergraduate / Graduate Researcher",
     tasks: [
-      "Created a component library for developing robotic systems.",
+      "Created a UI component library for developing robotic systems.",
       "Developed ground control, communication, vision, and mobility software for the NASA award winning T-REX lunar rover prototype.",
       "System design and the development communication, and ground control software for the NASA LuSTR 2020 MTU testing bed, 'HOPLITE'.",
       "Developed an autonomous 3-axis gravity offloading system for the PSTDL's lunar simulant platform.",
