@@ -1,7 +1,7 @@
 .link {
   display: flex;
   flex-direction: column;
-  background: var(--accent-2);
+  background: var(--accent-1);
   width: 340px;
   height: 300px;
   max-height: 300px;
@@ -10,12 +10,14 @@
   color: var(--foreground);
   border-radius: var(--padding-m);
   overflow: hidden;
+  border: solid 1px var(--accent-2);
   box-shadow: 0 0 10px var(--accent-1);
 }
 
 .link:hover {
   color: var(--foreground);
-  transform: scale(1.025);
+  transform: scale(1.0125);
+  border-color: var(--secondary);
   box-shadow: 0 0 10px var(--secondary);
 }
 
@@ -23,7 +25,6 @@
   width: 100%;
   height: 180px;
   object-fit: cover;
-  /* padding: var(--padding-s); */
 }
 
 .text {
