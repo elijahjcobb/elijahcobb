@@ -1,4 +1,3 @@
-"use server";
 import { sql } from "@vercel/postgres";
 
 export type Location = [number, number];
