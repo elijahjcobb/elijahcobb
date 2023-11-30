@@ -9,10 +9,20 @@ export interface Marker {
 
 const RESOLUTION = 3;
 
-export async function addLocation(location: Location): Promise<void> {
-  await sql`INSERT INTO visitors (lat, lng, time) VALUES (${location[0].toFixed(
-    RESOLUTION
-  )}, ${location[1].toFixed(RESOLUTION)}, ${Date.now()})`;
+function parsePos(pos: unknown): string {
+  let posNum: number | null = null;
+  if (typeof pos === "string") posNum = parseFloat(pos);
+  else if (typeof pos === "number") posNum = pos;
+
+  if (posNum === null) throw new Error("Invalid position");
+
+  return posNum.toFixed(RESOLUTION);
+}
+
+export async function addLocation(lat: unknown, lng: unknown): Promise<void> {
+  await sql`INSERT INTO visitors (lat, lng, time) VALUES (${parsePos(
+    lat
+  )}, ${parsePos(lng)}, ${Date.now()})`;
 }
 
 const MAX_SIZE = 0.2;
