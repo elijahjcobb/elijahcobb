@@ -50,8 +50,8 @@
   --accent-8: #ddd;
   --accent-9: #fff;
   --font-size: 16px;
-  --font-mono: var(--font-roboto-mono), monospace;
-  --font: var(--font-lato), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font: var(--font-geist-sans), sans-serif;
   --page-height: var(100vh - var(--nav-height));
   --break: 800px;
 }

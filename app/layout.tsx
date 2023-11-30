@@ -5,7 +5,9 @@ import { RightBar } from "#/components/nav/right";
 import styles from "./layout.module.css";
 import { Analytics } from '@vercel/analytics/react';
 import cn from "clsx";
-import { lato, roboto_mono } from "#/components/fonts";
+
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 export default function RootLayout({
 	children,
@@ -13,7 +15,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }): JSX.Element {
 	return (
-		<html className={`${lato.variable} ${roboto_mono.variable}`} lang="en">
+		<html className={`${GeistSans.variable} ${GeistMono.variable}`} lang="en">
 			<head>
 				<title>elijahcobb.dev</title>
 				<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
