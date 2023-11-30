@@ -20,9 +20,9 @@ function parsePos(pos: unknown): string {
 }
 
 export async function addLocation(lat: unknown, lng: unknown): Promise<void> {
-  await sql`INSERT INTO visitors (lat, lng, time) VALUES (${parsePos(
+  await sql`INSERT INTO visitors (lat, lng) VALUES (${parsePos(
     lat
-  )}, ${parsePos(lng)}, ${Date.now()})`;
+  )}, ${parsePos(lng)})`;
 }
 
 const MAX_SIZE = 0.2;
