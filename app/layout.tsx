@@ -3,6 +3,7 @@ import { LeftBar } from "#/components/nav/left";
 import { NavBar } from "#/components/nav";
 import { RightBar } from "#/components/nav/right";
 import styles from "./layout.module.css";
+import { Analytics } from '@vercel/analytics/react';
 import cn from "clsx";
 import { lato, roboto_mono } from "#/components/fonts";
 
@@ -18,6 +19,7 @@ export default function RootLayout({
 				<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 			</head>
 			<body className={styles.shell}>
+				<Analytics />
 				<NavBar />
 				<div className={styles.main}>
 					<LeftBar className={cn(styles.sidebar, styles.left)} />
