@@ -14,7 +14,7 @@
     "@types/react-syntax-highlighter": "^15.5.10",
     "@vercel/analytics": "^1.1.1",
     "@vercel/edge": "^1.1.1",
-    "@vercel/kv": "^1.0.0",
+    "@vercel/postgres": "^0.5.1",
     "clsx": "^2.0.0",
     "cobe": "^0.6.3",
     "date-fns": "^2.30.0",
