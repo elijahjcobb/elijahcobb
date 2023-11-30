@@ -18,7 +18,7 @@ function MobileNavItems({ setIsOpen, isOpen }: MobileNavItemsProps): JSX.Element
 
 	return <div className={cn(styles.container, isOpen && styles.isOpen)}>
 		<ul className={styles.list}>
-			{LINKS.map(({ name, path }) => {
+			{LINKS.filter((link) => !link.hideMobile).map(({ name, path }) => {
 				return <li key={name}>
 					<Link className={styles.item} href={path} onClick={close}>
 						<span>{name}</span>
