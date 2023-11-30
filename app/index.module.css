@@ -10,8 +10,18 @@
 .header {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: var(--padding);
   font-size: 1.125em;
+  width: 90vw;
+  position: absolute;
+  left: 5vw;
+  top: var(--nav-height);
+}
+
+.globe {
+  display: none;
 }
 .profile {
   user-select: none;
@@ -60,12 +70,11 @@
   .header {
     font-size: 2em;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: var(--padding-xl);
-    padding-bottom: var(--padding-xxl);
-    width: 100%;
     flex-grow: 1;
+    padding-top: var(--padding-xl);
+  }
+  .globe {
+    display: block;
   }
   .text {
     gap: var(--padding-s);

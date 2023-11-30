@@ -20,6 +20,7 @@ export interface SocialType {
 export interface LinkType {
 	path: string;
 	name: string;
+	hideMobile?: boolean;
 }
 
 export interface SpotifyResponse {
