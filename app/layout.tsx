@@ -17,8 +17,12 @@ export default function RootLayout({
 	return (
 		<html className={`${GeistSans.variable} ${GeistMono.variable}`} lang="en">
 			<head>
-				<title>elijahcobb.dev</title>
+				<title>Elijah Cobb</title>
 				<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+				<meta property="og:title" content="Elijah Cobb" />
+				<meta property="description" content="The personal portfolio of Elijah Cobb." />
+				<meta property="og:description" content="The personal portfolio of Elijah Cobb." />
+				<meta property="og:url" content="elijahcobb.dev" />
 			</head>
 			<body className={styles.shell}>
 				<Analytics />
