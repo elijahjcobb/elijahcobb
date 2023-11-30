@@ -31,7 +31,7 @@ export function Globe({ markers, fullWidth }: { markers: Marker[]; fullWidth?: b
 			markers,
 			onRender: (state) => {
 				state.phi = phi;
-				phi += 0.005;
+				phi -= 0.005;
 			}
 		});
 
