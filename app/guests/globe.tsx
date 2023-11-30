@@ -23,7 +23,7 @@ export function Globe({ markers, fullWidth }: { markers: Marker[]; fullWidth?: b
 			theta: 0,
 			dark: 1,
 			diffuse: 1.2,
-			mapSamples: 32_000,
+			mapSamples: 24_000,
 			mapBrightness: 2,
 			baseColor: [0.4, 0.4, 0.8],
 			markerColor: [0.94, 0.501, 0.2354],
