@@ -16,8 +16,8 @@ interface OGData {
 	domain: string;
 }
 
-const TITLE_LENGTH = 64;
-const DESC_LENGTH = 120;
+const TITLE_LENGTH = 48;
+const DESC_LENGTH = 100;
 
 async function fetchOGData(href: string): Promise<OGData> {
 	const resp = await fetch(`https://opengraph.io/api/1.1/site/${encodeURIComponent(href)}?app_id=${process.env.OPEN_GRAPH_KEY ?? ""}`);
