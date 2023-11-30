@@ -16,7 +16,6 @@ export default function RootLayout({
 			<head>
 				<title>elijahcobb.dev</title>
 				<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
-				<script async src="https://cdn.splitbee.io/sb.js" />
 			</head>
 			<body className={styles.shell}>
 				<NavBar />

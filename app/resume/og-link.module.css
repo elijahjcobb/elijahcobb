@@ -1,0 +1,42 @@
+.link {
+  display: flex;
+  flex-direction: column;
+  background: var(--accent-2);
+  width: 340px;
+  height: 300px;
+  max-height: 300px;
+  min-width: 340px;
+  font-family: var(--font);
+  color: var(--foreground);
+  border-radius: var(--padding-m);
+  overflow: hidden;
+  box-shadow: 0 0 10px var(--accent-1);
+}
+
+.link:hover {
+  color: var(--foreground);
+  transform: scale(1.025);
+  box-shadow: 0 0 10px var(--secondary);
+}
+
+.image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  padding: var(--padding-s);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-s);
+  padding: var(--padding-s);
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  font-weight: lighter;
+}

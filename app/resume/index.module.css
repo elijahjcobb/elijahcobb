@@ -1,0 +1,68 @@
+.positions,
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-l);
+}
+
+.positions {
+  list-style: none;
+  width: 100%;
+  max-width: 960px;
+}
+
+.position {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-s);
+  width: 100%;
+}
+
+.position span {
+  display: block;
+}
+
+.position > h2 {
+  font-size: 1.5rem;
+}
+
+.business,
+.date {
+  font-size: 1.25rem;
+}
+
+.date {
+  font-weight: lighter;
+}
+
+.mid {
+  display: flex;
+  gap: var(--padding-s);
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-xs);
+  list-style: "-";
+}
+
+.task {
+  margin-left: var(--padding-m);
+  padding-left: var(--padding-m);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+  font-weight: normal;
+}
+
+.linkContainer {
+  padding: var(--padding-m);
+  width: 100%;
+  overflow-x: auto;
+}
+
+.links {
+  display: flex;
+  gap: var(--padding-m);
+}
