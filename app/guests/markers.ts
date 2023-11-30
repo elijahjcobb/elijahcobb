@@ -14,7 +14,6 @@ export interface Marker {
 }
 
 const RESOLUTION = 3;
-const MAX_SIZE = 40;
 
 const ROOT_KEY = "guests";
 export type Key = `${typeof ROOT_KEY}:${string}:${string}`;
@@ -35,13 +34,17 @@ export async function addLocation(location: Location): Promise<void> {
   await kv.incr(key);
 }
 
+const MAX_SIZE = 0.2;
+const MIN_SIZE = 0.05;
+const SIZE_MULTIPLIER = 0.005;
+
 export async function getMarkers(): Promise<Marker[]> {
   const markers: Marker[] = [];
   for await (const key of kv.scanIterator({ match: `${ROOT_KEY}:*` })) {
     const size = (await kv.get<number>(key)) ?? 0;
     markers.push({
       location: keyToLocation(key),
-      size: Math.max(Math.min(size / MAX_SIZE, 0.2), 0.05),
+      size: Math.max(Math.min(size * SIZE_MULTIPLIER, MAX_SIZE), MIN_SIZE),
     });
   }
   return markers;
