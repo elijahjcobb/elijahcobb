@@ -1,6 +1,6 @@
 import styles from "./index.module.css";
 import Image from "next/image";
-import profilePicture from "#/public/profile.jpg";
+import profilePicture from "#/public/profile.png";
 
 export default function HomePage(): JSX.Element {
 	return <div className={styles.container}>
