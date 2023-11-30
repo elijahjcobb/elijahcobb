@@ -7,6 +7,7 @@ export const REVALIDATE_DEFAULT = 30;
 
 export const LINKS: LinkType[] = [
   { path: "/", name: "Hello" },
+  { path: "/guests", name: "Guests" },
   { path: "/resume", name: "resume" },
   { path: "/ships", name: "Ships" },
   { path: "/snippets", name: "Snippets" },
