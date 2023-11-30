@@ -7,7 +7,7 @@ export const POST = async (request: NextRequest): Promise<Response> => {
     const { latitude: lat, longitude: lng } = geolocation(request);
     if (!lat || !lng) throw new Error("No location");
     addLocation([parseFloat(lat), parseFloat(lng)]);
-    return Response.json({ lat, lng });
+    return Response.json({ error: false });
   } catch (e) {
     return Response.json({ error: true }, { status: 500 });
   }

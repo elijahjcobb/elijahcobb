@@ -1,26 +1,21 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import createGlobe from "cobe";
-import { Marker, addLocation } from "./markers";
+import type { Marker } from "./markers";
 
+const WIDTH = 400;
 
-export function Globe({ markers: initialMarkers }: { markers: Marker[] }): JSX.Element {
-
-	const [markers, setMarkers] = useState<Marker[]>(initialMarkers);
+export function Globe({ markers }: { markers: Marker[] }): JSX.Element {
 
 	const canvasRef = useRef<HTMLCanvasElement>({} as HTMLCanvasElement);
-
-	const width = useRef(0);
 
 	useEffect(() => {
 		let phi = 0;
 
-		width.current = Math.floor(window.screen.width * 0.4);
-
 		const globe = createGlobe(canvasRef.current, {
 			devicePixelRatio: 2,
-			width: width.current * 2,
-			height: width.current * 2,
+			width: WIDTH * 2,
+			height: WIDTH * 2,
 			phi: 0,
 			theta: 0,
 			dark: 1,
@@ -42,34 +37,17 @@ export function Globe({ markers: initialMarkers }: { markers: Marker[] }): JSX.E
 		};
 	}, [markers]);
 
-	const [loading, setLoading] = useState(false);
-	const [positionAdded, setPositionAdded] = useState(false);
-
-	const addMyLocation = useCallback(() => {
-		setLoading(true);
+	useEffect(() => {
+		const controller = new AbortController();
 		fetch('/guests/markers', {
 			method: "POST",
-		})
-			.then((res) => {
-				if (!res.ok) throw new Error("Failed to update")
-				return res;
-			})
-			.then(res => res.json())
-			.then(({ lat, lng }) => {
-				// setPositionAdded(true);
-				setMarkers([...markers, { size: 0.3, location: [lat, lng] }]);
-			}).catch(() => {
-				alert("Failed to add your location");
-			}).finally(() => {
-				setLoading(false);
-			});
-	}, [markers]);
+			signal: controller.signal,
+		});
+		return () => controller.abort();
+	}, []);
 
-	return <div>
-		<canvas
-			ref={canvasRef}
-			style={{ width: width.current, height: width.current, maxWidth: "100%", aspectRatio: 1 }}
-		/>
-		{positionAdded ? null : <button onClick={addMyLocation} disabled={loading}>Add My Location</button>}
-	</div>
+	return <canvas
+		ref={canvasRef}
+		style={{ width: WIDTH, height: WIDTH, maxWidth: "100%", aspectRatio: 1 }}
+	/>
 }

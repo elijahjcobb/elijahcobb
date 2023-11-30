@@ -32,20 +32,17 @@ function keyToLocation(key: string): Location {
 
 export async function addLocation(location: Location): Promise<void> {
   const key = locationToKey(location);
-  console.log({ key });
-  console.log(await kv.incr(key));
+  await kv.incr(key);
 }
 
 export async function getMarkers(): Promise<Marker[]> {
   const markers: Marker[] = [];
   for await (const key of kv.scanIterator({ match: `${ROOT_KEY}:*` })) {
     const size = (await kv.get<number>(key)) ?? 0;
-    console.log({ key, size });
     markers.push({
       location: keyToLocation(key),
       size: Math.max(Math.min(size / MAX_SIZE, 0.2), 0.05),
     });
   }
-  console.log(markers);
   return markers;
 }
