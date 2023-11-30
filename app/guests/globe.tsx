@@ -10,10 +10,12 @@ export function Globe({ markers: initialMarkers }: { markers: Marker[] }): JSX.E
 
 	const canvasRef = useRef<HTMLCanvasElement>({} as HTMLCanvasElement);
 
-	const width = useRef(Math.floor(window.screen.width * 0.4));
+	const width = useRef(0);
 
 	useEffect(() => {
 		let phi = 0;
+
+		width.current = Math.floor(window.screen.width * 0.4);
 
 		const globe = createGlobe(canvasRef.current, {
 			devicePixelRatio: 2,
