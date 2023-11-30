@@ -14,7 +14,7 @@ export function NavBar(): JSX.Element {
 		<ul className={styles.list}>
 			{LINKS.map(({ name, path }) => {
 				return <li className={styles.item} key={name}>
-					<Link aria-label={`go to ${path}`} className={styles.link} href={path}>
+					<Link aria-label={`go to ${name}`} className={styles.link} href={path}>
 						{name}
 					</Link>
 				</li>
