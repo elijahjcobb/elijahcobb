@@ -4,7 +4,7 @@ export interface MonthYearDate { month: number, year: number }
 export interface PositionType {
 	shortName?: string;
 	name: string;
-	href: string;
+	href?: string;
 	startDate: MonthYearDate;
 	endDate?: MonthYearDate;
 	position: string;
@@ -135,6 +135,7 @@ export interface GistFile {
 	name: string;
 	language: string;
 	content: string | null;
+	url: string;
 }
 export interface Gist {
 	description: string;
@@ -363,7 +364,7 @@ export interface Ship {
 	name: string;
 	description: string;
 	url?: string;
-	githubSlug?: string;
+	github_slug?: string;
 	year: number;
 	wip?: boolean;
 	trophy?: boolean;

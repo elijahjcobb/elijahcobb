@@ -4,11 +4,13 @@ import { ExternalLink } from "#/components/external-link";
 import { RiShip2Fill } from "react-icons/ri";
 import { BiLoader } from "react-icons/bi";
 import { FaTrophy, FaBriefcase } from "react-icons/fa";
-import { fetchShips } from "#/data/static/ships";
+import { fetchShips } from "#/data/ships";
 
-export default function Ships(): JSX.Element {
+export const revalidate = 60;
 
-	const ships = fetchShips();
+export default async function Ships(): Promise<JSX.Element> {
+
+	const ships = await fetchShips();
 
 	return <div className={styles.container}>
 		<h1>Ships</h1>
@@ -21,7 +23,7 @@ export default function Ships(): JSX.Element {
 					<span className={styles.name}>{ship.name}</span>
 					<span className={styles.description}>{ship.description}</span>
 					<div className={styles.buttons}>
-						{ship.githubSlug ? <ExternalLink className={styles.github} href={`https://github.com/${ship.githubSlug}`} ><FiGithub className={styles.icon} /></ExternalLink> : null}
+						{ship.github_slug ? <ExternalLink className={styles.github} href={`https://github.com/${ship.github_slug}`} ><FiGithub className={styles.icon} /></ExternalLink> : null}
 						{ship.url ? <ExternalLink className={styles.link} href={ship.url}><FiExternalLink className={styles.icon} /></ExternalLink> : null}
 					</div>
 				</div>

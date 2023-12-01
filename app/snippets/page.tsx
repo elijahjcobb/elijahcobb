@@ -7,7 +7,7 @@ export const revalidate = 60;
 
 export default async function Snippets(): Promise<JSX.Element> {
 
-	const gists = await fetchGists();
+	const gists = await fetchGists(true);
 
 	return <ul className={styles.list}>
 		{gists.map((gist, i) => <div key={gist.id}>

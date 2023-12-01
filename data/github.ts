@@ -1,8 +1,10 @@
 import { formatDistance } from "date-fns";
 import type { Gist, GistFile, RawGithubGistResponse } from "./types";
 
-export function fetchGistFileData(url: string): Promise<string> {
-  return fetch(url).then((res) => res.text());
+export function fetchGistFileData(url: string | GistFile): Promise<string> {
+  return fetch(typeof url === "string" ? url : url.url).then((res) =>
+    res.text()
+  );
 }
 
 async function gistFromRawGist({
@@ -22,6 +24,7 @@ async function gistFromRawGist({
       name: rawFile.filename,
       language: rawFile.language,
       content: fileContent,
+      url: rawFile.raw_url,
     };
     if (file.name !== "content.txt") files.push(file);
     else if (fetchContent) content = fileContent;

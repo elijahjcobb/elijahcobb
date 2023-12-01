@@ -1,10 +1,12 @@
 import { convertMonthYearDateToString } from "#/data/helpers";
 import { fetchPositions } from "#/data/static/positions";
 import type { PositionType } from "#/data/types";
-import { formatDistance } from "date-fns";
+import Link from "next/link";
 import styles from "./index.module.css";
 import { OGLink } from "./og-link";
 import { useMemo } from "react";
+import { ExternalLink } from "#/components/external-link";
+import { FiExternalLink } from "react-icons/fi";
 
 function dateFromPosition(date: PositionType['startDate']): Date {
 	return new Date(`${date.month}-1-${date.year}`);
@@ -38,6 +40,9 @@ function ResumePosition({ position }: { position: PositionType }): JSX.Element {
 		<h2>{position.position}</h2>
 		<div className={styles.mid}>
 			<span className={styles.business}>{position.name}</span>
+			{position.href ? <ExternalLink href={position.href}>
+				<FiExternalLink size={24} />
+			</ExternalLink> : null}
 			<span>·</span>
 			<span className={styles.date}>{convertMonthYearDateToString(position.startDate)} - {convertMonthYearDateToString(position.endDate)}</span>
 			<span>·</span>
