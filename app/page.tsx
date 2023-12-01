@@ -5,7 +5,7 @@ import { Globe } from "./guests/globe";
 import { getMarkers } from "./guests/markers";
 import Link from "next/link";
 
-export const revalidate = 10;
+export const revalidate = 60;
 
 export default async function HomePage(): Promise<JSX.Element> {
 	const markers = await getMarkers();

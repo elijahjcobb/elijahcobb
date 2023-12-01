@@ -7,6 +7,8 @@ import { ExternalLink } from "#/components/external-link";
 import { FiExternalLink } from "react-icons/fi";
 import { fetchPositions } from "#/data/positions";
 
+export const revalidate = 60;
+
 function dateFromPosition(year: number, month: number): Date {
 	return new Date(`${month}-1-${year}`);
 }
