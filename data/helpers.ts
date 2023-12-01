@@ -1,5 +1,3 @@
-import type { MonthYearDate } from "./types";
-
 const MONTHS: Record<number, string> = {
   1: "Jan",
   2: "Feb",
@@ -15,8 +13,11 @@ const MONTHS: Record<number, string> = {
   12: "Dec",
 };
 
-export function convertMonthYearDateToString(date?: MonthYearDate): string {
-  if (!date) return "Current";
-  if (!date.month) return `${date.year}`;
-  return `${MONTHS[date.month] ?? ""} ${date.year}`;
+export function convertMonthYearDateToString(
+  year?: number,
+  month?: number
+): string {
+  if (!year) return "Current";
+  if (!month) return `${year}`;
+  return `${MONTHS[month] ?? ""} ${year}`;
 }

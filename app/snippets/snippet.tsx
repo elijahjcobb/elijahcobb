@@ -11,7 +11,6 @@ export interface SnippetProps {
 }
 
 export function Snippet({ gist }: SnippetProps): JSX.Element {
-	console.log(gist)
 	return <div className={styles.container}>
 		<div className={styles.left}>
 			<div className={styles.top}>

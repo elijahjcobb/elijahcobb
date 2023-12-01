@@ -1,12 +1,14 @@
 import type { IconType } from "react-icons";
 
-export interface MonthYearDate { month: number, year: number }
 export interface PositionType {
-	shortName?: string;
+	id: number;
+	short_name?: string;
 	name: string;
 	href?: string;
-	startDate: MonthYearDate;
-	endDate?: MonthYearDate;
+	start_year: number;
+	start_month: number;
+	end_year?: number;
+	end_month?: number;
 	position: string;
 	tasks?: string[];
 	links?: string[];

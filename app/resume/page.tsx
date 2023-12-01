@@ -1,21 +1,20 @@
 import { convertMonthYearDateToString } from "#/data/helpers";
-import { fetchPositions } from "#/data/static/positions";
 import type { PositionType } from "#/data/types";
-import Link from "next/link";
 import styles from "./index.module.css";
 import { OGLink } from "./og-link";
 import { useMemo } from "react";
 import { ExternalLink } from "#/components/external-link";
 import { FiExternalLink } from "react-icons/fi";
+import { fetchPositions } from "#/data/positions";
 
-function dateFromPosition(date: PositionType['startDate']): Date {
-	return new Date(`${date.month}-1-${date.year}`);
+function dateFromPosition(year: number, month: number): Date {
+	return new Date(`${month}-1-${year}`);
 }
 
 function usePositionDuration(position: PositionType): string {
 	return useMemo(() => {
-		const start = dateFromPosition(position.startDate);
-		const end = position.endDate ? dateFromPosition(position.endDate) : new Date();
+		const start = dateFromPosition(position.start_year, position.start_month);
+		const end = position.end_month && position.end_year ? dateFromPosition(position.end_year, position.end_month) : new Date();
 
 		const diff = end.getTime() - start.getTime();
 
@@ -44,14 +43,14 @@ function ResumePosition({ position }: { position: PositionType }): JSX.Element {
 				<FiExternalLink size={24} />
 			</ExternalLink> : null}
 			<span>·</span>
-			<span className={styles.date}>{convertMonthYearDateToString(position.startDate)} - {convertMonthYearDateToString(position.endDate)}</span>
+			<span className={styles.date}>{convertMonthYearDateToString(position.start_year, position.start_month)} - {convertMonthYearDateToString(position.end_year, position.end_month)}</span>
 			<span>·</span>
 			<span className={styles.date}>{duration}</span>
 		</div>
-		{position.tasks ? <ul className={styles.tasks}>
+		{position.tasks && position.tasks.length > 0 ? <ul className={styles.tasks}>
 			{position.tasks.map(task => <li className={styles.task} key={task}>{task}</li>)}
 		</ul> : null}
-		{position.links ? <div className={styles.linkContainer}>
+		{position.links && position.links.length > 0 ? <div className={styles.linkContainer}>
 			<ul className={styles.links}>
 				{position.links.map(href => <OGLink href={href} key={href} />)}
 			</ul>
@@ -59,11 +58,12 @@ function ResumePosition({ position }: { position: PositionType }): JSX.Element {
 	</li>
 }
 
-export default function ResumePage(): JSX.Element {
+export default async function ResumePage(): Promise<JSX.Element> {
+	const positions = await fetchPositions();
 	return <div className={styles.page}>
 		<h1>Positions</h1>
 		<ul className={styles.positions}>
-			{fetchPositions().map(p => <ResumePosition key={p.key} position={p} />)}
+			{positions.map(p => <ResumePosition key={p.id} position={p} />)}
 		</ul>
 	</div>
 }
