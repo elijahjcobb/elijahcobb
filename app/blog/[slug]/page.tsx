@@ -8,6 +8,7 @@ import { getFileNames, parseFile } from "./parse-file";
 import { Reporter } from "./reporter";
 
 export const revalidate = 10;
+export const runtime = 'nodejs';
 
 function languageFromExtension(extension: string): string {
 	switch (extension) {

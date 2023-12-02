@@ -6,6 +6,5 @@ export const POST = async (
   { params }: { params: { slug: string } }
 ): Promise<NextResponse> => {
   kv.incr(`views:blog:${params.slug}`);
-  console.log("REPORTED", params.slug);
   return NextResponse.json({});
 };
