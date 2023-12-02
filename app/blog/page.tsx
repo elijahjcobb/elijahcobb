@@ -1,24 +1,6 @@
-import { readdir } from "fs/promises"
-import { MDFile, parseFile } from "./[slug]/parse-file";
+import { getFiles } from "./[slug]/parse-file";
 import Link from "next/link";
 import styles from "./index.module.css";
-
-async function getFileNames(): Promise<string[]> {
-	return await readdir('./posts');
-}
-
-async function getFiles(): Promise<MDFile[]> {
-	const fileNames = await getFileNames();
-	const files = await Promise.all(fileNames.map(file => {
-		const slug = file.replace('.mdx', '');
-		return parseFile(slug);
-	}));
-	return files.sort((a, b) => {
-		const aDate = new Date(a.date);
-		const bDate = new Date(b.date);
-		return bDate.getTime() - aDate.getTime();
-	});
-}
 
 export const dynamic = 'force-static';
 

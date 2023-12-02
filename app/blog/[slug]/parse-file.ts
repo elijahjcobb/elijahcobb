@@ -1,6 +1,6 @@
 import { kv } from "@vercel/kv";
 import { formatDistance } from "date-fns";
-import { readFile } from "fs/promises";
+import { readFile, readdir } from "fs/promises";
 import matter from "gray-matter";
 import path from "node:path";
 
@@ -39,4 +39,23 @@ export async function parseFile(slug: string): Promise<MDFile> {
     content,
     slug,
   };
+}
+
+export async function getFileNames(): Promise<string[]> {
+  return await readdir("./posts");
+}
+
+export async function getFiles(): Promise<MDFile[]> {
+  const fileNames = await getFileNames();
+  const files = await Promise.all(
+    fileNames.map((file) => {
+      const slug = file.replace(".mdx", "");
+      return parseFile(slug);
+    })
+  );
+  return files.sort((a, b) => {
+    const aDate = new Date(a.date);
+    const bDate = new Date(b.date);
+    return bDate.getTime() - aDate.getTime();
+  });
 }

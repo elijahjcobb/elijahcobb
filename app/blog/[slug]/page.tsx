@@ -5,7 +5,7 @@ import { FaReadme, FaCalendar, FaEye } from "react-icons/fa6";
 import { Reporter } from "./reporter";
 import type { MDXComponents } from "mdx/types";
 import { SnippetCode } from "#/app/snippets/snippet-code-block";
-import { parseFile } from "./parse-file";
+import { getFileNames, parseFile } from "./parse-file";
 
 export const revalidate = 10;
 
@@ -97,4 +97,12 @@ export default async function Page({
 			</div>
 		</div>
 	);
+}
+
+export async function generateStaticParams() {
+	const posts = await getFileNames();
+	return posts.map((slug) => ({
+		slug
+	}))
+
 }
