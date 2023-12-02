@@ -36,7 +36,7 @@ export async function parseFile(slug: string): Promise<MDFile> {
   const releaseTiming = formatDistance(date, new Date(), { addSuffix: true });
   const words = content.split(/\s+/g).length;
   const minutes = Math.ceil(words / 238) * 60 * 1000;
-  const views = ((await kv.get(`views:${slug}`)) ?? 0) as number;
+  const views = ((await kv.get(`views:blog:${slug}`)) ?? 0) as number;
   return {
     title,
     description,
