@@ -3,7 +3,9 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
-  const slug = request.nextUrl.pathname.replace("/blog/", "");
+  const pathname = request.nextUrl.pathname.slice(1);
+  const [_, slug] = pathname.split("/");
+  if (!slug) return NextResponse.next();
   await kv.incr(`views:${slug}`);
   return NextResponse.next();
 }
