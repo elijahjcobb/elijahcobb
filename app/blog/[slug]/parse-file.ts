@@ -40,7 +40,7 @@ export async function parseFile(slug: string): Promise<MDFile> {
   return {
     title,
     description,
-    date: dateString,
+    date: date.toLocaleDateString(undefined, { dateStyle: "medium" }),
     releaseTiming,
     readTime: formatDistance(0, minutes),
     views,

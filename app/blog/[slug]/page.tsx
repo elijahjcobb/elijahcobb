@@ -77,6 +77,7 @@ export default async function Page({
 		readTime,
 		description,
 		content,
+		date,
 		views
 	} = await parseFile(params.slug);
 
@@ -85,9 +86,9 @@ export default async function Page({
 			<div className={styles.header}>
 				<h1 className={styles.title}>{title}</h1>
 				<div className={styles.pills}>
-					<p className={styles.date}><FaCalendar />{releaseTiming}</p>
+					<p className={styles.date}><FaCalendar />{date} ({releaseTiming})</p>
 					<p className={styles.duration}><FaReadme />{readTime}</p>
-					<p className={styles.date}><FaEye />{views} views</p>
+					<p className={styles.views}><FaEye />{views.toLocaleString()} views</p>
 				</div>
 				<p className={styles.description}>{description}</p>
 			</div>

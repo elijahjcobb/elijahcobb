@@ -27,24 +27,6 @@
   flex-direction: column;
 }
 
-.button {
-  border: solid 2px var(--background);
-  color: var(--background);
-  outline: none;
-  background: var(--blue-dark);
-  border-radius: 4px;
-  padding: 4px;
-  transition: 125ms ease-in-out;
-}
-
-.button:hover {
-  cursor: pointer;
-  background: var(--secondary);
-  border-color: var(--secondary);
-  color: var(--blue-dark);
-  transform: scale(1.05);
-}
-
 @media (min-width: 800px) {
   .container {
     padding: 0 var(--nav-height);
@@ -96,23 +78,4 @@
 
 .stats {
   font-size: 1.125em;
-}
-
-.codeBlock {
-  font-family: var(--font-mono);
-  background: var(--blue-dark);
-  padding: var(--padding);
-  border-radius: var(--padding);
-}
-
-.bottom {
-  background: var(--background);
-  border-radius: var(--padding-s);
-  padding: var(--padding-s);
-  margin: var(--padding);
-}
-
-.bottom span {
-  font-family: var(--font-mono);
-  text-decoration: none !important;
 }
