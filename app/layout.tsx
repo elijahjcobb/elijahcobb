@@ -8,6 +8,7 @@ import cn from "clsx";
 
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({
 	children,
@@ -28,6 +29,7 @@ export default function RootLayout({
 			<body className={styles.shell}>
 				<Analytics />
 				<NavBar />
+				<Toaster position="bottom-right" />
 				<div className={styles.main}>
 					<LeftBar className={cn(styles.sidebar, styles.left)} />
 					<div className={styles.container}>{children}</div>

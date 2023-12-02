@@ -5,11 +5,18 @@ import styles from "./snippet.module.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { useCallback } from "react";
+import toast from "react-hot-toast";
 
 export function SnippetCode({ file, content }: { file: GistFile, content: string }): JSX.Element {
 
 	const copyToClipboard = useCallback(() => {
-		void navigator.clipboard.writeText(content);
+		navigator.clipboard.writeText(content)
+			.then(() => {
+				toast.success("Copied to clipboard.");
+			})
+			.catch(() => {
+				toast.error("Failed to copy to clipboard.");
+			})
 	}, [content]);
 
 	return <div className={styles.codeBlock}>
