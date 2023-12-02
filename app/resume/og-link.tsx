@@ -23,12 +23,13 @@ async function fetchOGData(href: string): Promise<OGData> {
 	const resp = await fetch(`https://opengraph.io/api/1.1/site/${encodeURIComponent(href)}?app_id=${process.env.OPEN_GRAPH_KEY ?? ""}`);
 	const json = await resp.json();
 
-	let title = json.hybridGraph.title as string
+
+	let title = json?.hybridGraph?.title ?? '' as string;
 
 	if (title.length > TITLE_LENGTH) {
 		title = title.substring(0, TITLE_LENGTH - 3) + "..."
 	}
-	let description = json.hybridGraph.description as string
+	let description = json?.hybridGraph?.description ?? '' as string
 
 	if (description.length > DESC_LENGTH) {
 		description = description.substring(0, DESC_LENGTH - 3) + "..."
