@@ -6,6 +6,7 @@ import type { MDXComponents } from "mdx/types";
 import { SnippetCode } from "#/app/snippets/snippet-code-block";
 import { getFileNames, parseFile } from "./parse-file";
 import { Reporter } from "./reporter";
+import Link from "next/link";
 
 export const revalidate = 10;
 
@@ -62,6 +63,9 @@ const components: MDXComponents = {
 		return <div className={blogStyles.codeBlock}>
 			<SnippetCode content={content} file={{ name: '', language, url: 'null', content }} />
 		</div>
+	},
+	a: (props) => {
+		return <Link href={props.href!} target="_blank">{props.children}</Link>
 	}
 }
 
