@@ -21,8 +21,16 @@ export async function parseFile(slug: string): Promise<MDFile> {
     "utf8"
   );
   const { data, content } = matter(file);
-  const title = data.title as string;
-  const description = data.description as string;
+  const title = data.title as string | undefined;
+  if (!title) {
+    console.error(data);
+    throw new Error("No title");
+  }
+  const description = data.description as string | undefined;
+  if (!description) {
+    console.error(data);
+    throw new Error("No title");
+  }
   const dateString = data.date as string;
   const date = new Date(dateString);
   const releaseTiming = formatDistance(date, new Date(), { addSuffix: true });
