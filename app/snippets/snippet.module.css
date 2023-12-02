@@ -27,6 +27,23 @@
   flex-direction: column;
 }
 
+.button {
+  border: solid 1px var(--blue-dark);
+  color: var(--background);
+  outline: none;
+  background: var(--blue-dark);
+  border-radius: 4px;
+  padding: 4px;
+  transition: 125ms ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: var(--secondary);
+  color: var(--blue-dark);
+  transform: scale(1.05);
+}
+
 @media (min-width: 800px) {
   .container {
     padding: 0 var(--nav-height);

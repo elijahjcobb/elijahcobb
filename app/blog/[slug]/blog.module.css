@@ -1,0 +1,52 @@
+.blog h1,
+.blog h2,
+.blog h3,
+.blog h4,
+.blog h5 {
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.blog p {
+  font-size: 1.25rem;
+}
+
+.blog li {
+  padding: var(--padding-xs);
+  margin-left: var(--padding-m);
+}
+
+.blog code:not(.blog pre code) {
+  border-radius: 4px;
+  padding: 2px 4px;
+  background-color: var(--accent-3);
+  border: solid 1px var(--accent-2);
+  font-family: var(--font-mono);
+}
+
+.blog a {
+  font-family: var(--font);
+}
+
+.blog img {
+  background: var(--accent-1);
+  box-shadow: 0 0 16px var(--accent-2);
+  width: 100%;
+  border: solid 1px var(--accent-4);
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+.blog h1,
+.blog h2,
+.blog h3,
+.blog h4,
+.blog h5,
+.blog p,
+.blog img,
+.blog pre,
+.codeBlock {
+  margin: var(--padding-m) 0;
+}

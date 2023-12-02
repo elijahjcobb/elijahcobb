@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-m);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  line-height: 1.2;
+  flex-grow: 1;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--secondary);
+  margin: var(--padding-m) 0;
+}
+
+.pills {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-m);
+  flex-wrap: wrap;
+}
+
+.pills p {
+  font-family: var(--font-mono);
+  color: var(--secondary);
+  border: solid 1px var(--secondary);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.description {
+  font-size: 1.5rem;
+}
