@@ -35,6 +35,11 @@ async function fetchOGData(href: string): Promise<Partial<OGData>> {
 		description = description.substring(0, DESC_LENGTH - 3) + "..."
 	}
 
+	if (!title || !description) {
+		console.error("Failed to fetch OG data for", href);
+		console.error(json);
+	}
+
 	return {
 		title,
 		description,
