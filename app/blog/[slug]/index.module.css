@@ -9,6 +9,7 @@
   font-weight: bolder;
   line-height: 1.2;
   flex-grow: 1;
+  color: var(--foreground);
 }
 
 .header::after {
