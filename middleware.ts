@@ -2,9 +2,9 @@ import { kv } from "@vercel/kv";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest): Promise<NextResponse> {
   const slug = request.nextUrl.pathname.replace("/blog/", "");
-  kv.incr(`views:${slug}`);
+  await kv.incr(`views:${slug}`);
   return NextResponse.next();
 }
 
