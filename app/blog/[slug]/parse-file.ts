@@ -2,6 +2,7 @@ import { kv } from "@vercel/kv";
 import { formatDistance } from "date-fns";
 import { readFile } from "fs/promises";
 import matter from "gray-matter";
+import path from "node:path";
 
 export interface MDFile {
   title: string;
@@ -15,7 +16,10 @@ export interface MDFile {
 }
 
 export async function parseFile(slug: string): Promise<MDFile> {
-  const file = await readFile(`./posts/${slug}.mdx`, "utf8");
+  const file = await readFile(
+    path.join(process.cwd(), "posts", `${slug}.mdx`),
+    "utf8"
+  );
   const { data, content } = matter(file);
   const title = data.title as string;
   const description = data.description as string;

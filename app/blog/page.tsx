@@ -20,6 +20,8 @@ async function getFiles(): Promise<MDFile[]> {
 	});
 }
 
+export const dynamic = 'force-static';
+
 export default async function Page(): Promise<JSX.Element> {
 	const files = await getFiles();
 	return <>
