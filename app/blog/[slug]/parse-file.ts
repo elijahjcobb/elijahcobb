@@ -42,17 +42,13 @@ export async function parseFile(slug: string): Promise<MDFile> {
 }
 
 export async function getFileNames(): Promise<string[]> {
-  return await readdir("./posts");
+  const files = await readdir("./posts");
+  return files.map((file) => file.replace(".mdx", ""));
 }
 
 export async function getFiles(): Promise<MDFile[]> {
   const fileNames = await getFileNames();
-  const files = await Promise.all(
-    fileNames.map((file) => {
-      const slug = file.replace(".mdx", "");
-      return parseFile(slug);
-    })
-  );
+  const files = await Promise.all(fileNames.map(parseFile));
   return files.sort((a, b) => {
     const aDate = new Date(a.date);
     const bDate = new Date(b.date);

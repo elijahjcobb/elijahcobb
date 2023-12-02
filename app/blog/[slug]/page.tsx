@@ -101,8 +101,5 @@ export default async function Page({
 
 export async function generateStaticParams() {
 	const posts = await getFileNames();
-	return posts.map((slug) => ({
-		slug
-	}))
-
+	return posts.map((slug) => ({ slug }))
 }
