@@ -5,6 +5,7 @@ import { FaReadme, FaCalendar, FaEye } from "react-icons/fa6";
 import type { MDXComponents } from "mdx/types";
 import { SnippetCode } from "#/app/snippets/snippet-code-block";
 import { getFileNames, parseFile } from "./parse-file";
+import { Reporter } from "./reporter";
 
 export const revalidate = 10;
 
@@ -91,6 +92,7 @@ export default async function Page({
 				<p className={styles.description}>{description}</p>
 			</div>
 			<div className={blogStyles.blog}>
+				<Reporter slug={params.slug} />
 				<MDXRemote components={components} source={content} />
 			</div>
 		</div>
