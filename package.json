@@ -20,7 +20,6 @@
     "@vercel/edge": "^1.1.1",
     "@vercel/kv": "^1.0.0",
     "@vercel/postgres": "^0.5.1",
-    "@vercel/toolbar": "^0.1.6",
     "clsx": "^2.0.0",
     "cobe": "^0.6.3",
     "date-fns": "^2.30.0",

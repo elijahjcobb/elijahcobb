@@ -1,6 +1,6 @@
 ---
 title: I wrote a runtime type checker.
-description: An article about "typr", a runtime type checker I built for TypeScript.
+description: An article about "type-guarder", a runtime type checker I built for TypeScript.
 date: 12-1-2023
 ---
 
@@ -13,11 +13,11 @@ I wanted a package that would allow me to write type checking code in a more dec
 Many such packages already exist, but I believe you never truly learn something unless you build
 it youself.
 
-Thus, [`typr`](https://github.com/elijahjcobb/typr) was born.
+Thus, [`typr`](https://github.com/elijahjcobb/type-guarder) was born.
 
 # How does you use it?
 
-[`typr`](https://github.com/elijahjcobb/typr) is a recursive runtime type checker. You define a type
+[`typr`](https://github.com/elijahjcobb/type-guarder) is a recursive runtime type checker. You define a type
 and provide a value, and it will ensure that the type you provide, is the type you get.
 
 There are three main functions that you can use to check types: `conforms`, `verify`, and `force`.
