@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import styles from "./og-link.module.css";
+import { kv } from "@vercel/kv";
 
 export function OGLink(props: { href: string }): JSX.Element {
 	return <Suspense fallback={<p>hi</p>}>
@@ -19,7 +20,7 @@ interface OGData {
 const TITLE_LENGTH = 48;
 const DESC_LENGTH = 100;
 
-async function fetchOGData(href: string): Promise<Partial<OGData>> {
+async function fetchOGDataFromOpenGraph(href: string): Promise<Partial<OGData>> {
 	const resp = await fetch(`https://opengraph.io/api/1.1/site/${encodeURIComponent(href)}?app_id=${process.env.OPEN_GRAPH_KEY ?? ""}`);
 	const json = await resp.json();
 
@@ -47,6 +48,20 @@ async function fetchOGData(href: string): Promise<Partial<OGData>> {
 		siteName: json?.hybridGraph?.site_name,
 		domain: new URL(href).hostname.replace('www.', '')
 	}
+}
+
+function ogCacheKey(href: string): string {
+	return `og:${href}`;
+}
+
+async function fetchOGData(href: string): Promise<Partial<OGData>> {
+	const cachedOGData = await kv.get<string>(ogCacheKey(href));
+	if (cachedOGData) {
+		return JSON.parse(cachedOGData) as Partial<OGData>;
+	}
+	const ogData = await fetchOGDataFromOpenGraph(href);
+	await kv.set(ogCacheKey(href), JSON.stringify(ogData));
+	return ogData;
 }
 
 async function OGCard({ href }: { href: string }): Promise<JSX.Element> {
