@@ -6,11 +6,12 @@ import type { LinkType, SocialType } from "./types";
 export const REVALIDATE_DEFAULT = 30;
 
 export const LINKS: LinkType[] = [
-  { path: "/", name: "Hello" },
-  { path: "/guests", name: "Guests", hideMobile: true },
+  { path: "/", name: "hello" },
   { path: "/resume", name: "resume" },
-  { path: "/ships", name: "Ships" },
-  { path: "/snippets", name: "Snippets" },
+  { path: "/blog", name: "blog" },
+  { path: "/guests", name: "guests", hideMobile: true },
+  { path: "/ships", name: "ships" },
+  { path: "/snippets", name: "snippets" },
 ];
 
 export const SOCIAL: SocialType[] = [

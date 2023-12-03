@@ -63,7 +63,7 @@ function ResumePosition({ position }: { position: PositionType }): JSX.Element {
 export default async function ResumePage(): Promise<JSX.Element> {
 	const positions = await fetchPositions();
 	return <div className={styles.page}>
-		<h1>Positions</h1>
+		<h1>Resume</h1>
 		<ul className={styles.positions}>
 			{positions.map(p => <ResumePosition key={p.id} position={p} />)}
 		</ul>

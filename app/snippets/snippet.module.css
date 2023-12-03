@@ -79,22 +79,3 @@
 .stats {
   font-size: 1.125em;
 }
-
-.codeBlock {
-  font-family: var(--font-mono);
-  background: var(--blue-dark);
-  padding: var(--padding);
-  border-radius: var(--padding);
-}
-
-.bottom {
-  background: var(--background);
-  border-radius: var(--padding-s);
-  padding: var(--padding-s);
-  margin: var(--padding);
-}
-
-.bottom span {
-  font-family: var(--font-mono);
-  text-decoration: none !important;
-}

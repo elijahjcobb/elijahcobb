@@ -5,9 +5,10 @@ import { RightBar } from "#/components/nav/right";
 import styles from "./layout.module.css";
 import { Analytics } from '@vercel/analytics/react';
 import cn from "clsx";
-
+import { VercelToolbar } from '@vercel/toolbar/next';
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({
 	children,
@@ -28,6 +29,8 @@ export default function RootLayout({
 			<body className={styles.shell}>
 				<Analytics />
 				<NavBar />
+				<VercelToolbar />
+				<Toaster position="bottom-right" />
 				<div className={styles.main}>
 					<LeftBar className={cn(styles.sidebar, styles.left)} />
 					<div className={styles.container}>{children}</div>

@@ -19,26 +19,32 @@ interface OGData {
 const TITLE_LENGTH = 48;
 const DESC_LENGTH = 100;
 
-async function fetchOGData(href: string): Promise<OGData> {
+async function fetchOGData(href: string): Promise<Partial<OGData>> {
 	const resp = await fetch(`https://opengraph.io/api/1.1/site/${encodeURIComponent(href)}?app_id=${process.env.OPEN_GRAPH_KEY ?? ""}`);
 	const json = await resp.json();
 
-	let title = json.hybridGraph.title as string
 
-	if (title.length > TITLE_LENGTH) {
+	let title = (json?.hybridGraph?.title) as string | undefined;
+
+	if (title && title.length > TITLE_LENGTH) {
 		title = title.substring(0, TITLE_LENGTH - 3) + "..."
 	}
-	let description = json.hybridGraph.description as string
+	let description = (json?.hybridGraph?.description) as string | undefined
 
-	if (description.length > DESC_LENGTH) {
+	if (description && description.length > DESC_LENGTH) {
 		description = description.substring(0, DESC_LENGTH - 3) + "..."
+	}
+
+	if (!title || !description) {
+		console.error("Failed to fetch OG data for", href);
+		console.error(json);
 	}
 
 	return {
 		title,
 		description,
-		image: json.hybridGraph.image,
-		siteName: json.hybridGraph.site_name,
+		image: json?.hybridGraph?.image,
+		siteName: json?.hybridGraph?.site_name,
 		domain: new URL(href).hostname.replace('www.', '')
 	}
 }
@@ -47,10 +53,10 @@ async function OGCard({ href }: { href: string }): Promise<JSX.Element> {
 	const { title, description, image, domain } = await fetchOGData(href);
 	return <Link className={styles.link} href={href} target="_blank">
 		{/* eslint-disable-next-line @next/next/no-img-element */}
-		<img alt={title} className={styles.image} src={image} />
+		{image ? <img alt={title} className={styles.image} src={image} /> : null}
 		<div className={styles.text}>
-			<span className={styles.title}>{domain} | {title}</span>
-			<span className={styles.description}>{description}</span>
+			{title ? <span className={styles.title}>{domain} | {title}</span> : null}
+			{description ? <span className={styles.description}>{description}</span> : null}
 		</div>
 	</Link>
 }
