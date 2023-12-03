@@ -6,6 +6,7 @@ import { LINKS, SOCIAL } from '../../data/links';
 import { BsChevronRight } from 'react-icons/bs';
 import styles from "./index.module.css";
 import cn from "clsx";
+import { track } from '@vercel/analytics/react';
 
 interface MobileNavItemsProps {
 	setIsOpen: (value: boolean) => void;
@@ -28,14 +29,17 @@ function MobileNavItems({ setIsOpen, isOpen }: MobileNavItemsProps): JSX.Element
 			})}
 		</ul>
 		<div className={styles.socials}>
-			{SOCIAL.map(({ icon: Icon, link }) => {
-				return <Link href={link} key={link} onClick={close} passHref rel='noopener noreferrer' target='_blank'>
+			{SOCIAL.map(({ icon: Icon, link, eventName }) => {
+				return <Link href={link} key={link} onClick={() => {
+					track(eventName)
+					close();
+				}} passHref rel='noopener noreferrer' target='_blank'>
 					<Icon className={styles.icon} size={32} />
 				</Link>
 			})}
 		</div>
 		<div className={styles.socials}>
-			<Link href="mailto:elijah@elijahcobb.com" rel='noopener noreferrer' target='_blank'>
+			<Link onClick={() => track("email")} href="mailto:elijah@elijahcobb.com" rel='noopener noreferrer' target='_blank'>
 				elijah@elijahcobb.com
 			</Link>
 		</div>

@@ -5,11 +5,13 @@ export function ExternalLink({
 	href,
 	children,
 	className,
+	onClick
 }: PropsWithChildren<{
 	href: string,
 	className?: string,
+	onClick?: () => void;
 }>): JSX.Element {
-	return <Link className={className} href={href} rel="noopener noreferrer" target="_blank">
+	return <Link onClick={onClick} className={className} href={href} rel="noopener noreferrer" target="_blank">
 		{children}
 	</Link>
 }

@@ -17,6 +17,7 @@ export interface PositionType {
 export interface SocialType {
 	icon: IconType;
 	link: string;
+	eventName: string;
 }
 
 export interface LinkType {

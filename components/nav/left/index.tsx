@@ -3,11 +3,12 @@ import Link from "next/link";
 import { VerticalLine } from "../../vertical-line";
 import { SOCIAL } from "../../../data/links";
 import styles from "./index.module.css";
+import { track } from "@vercel/analytics/react";
 
 export function LeftBar({ className }: { className?: string }): JSX.Element {
 	return <SideBar className={className}>
-		{SOCIAL.map(({ link, icon: Icon }) => (
-			<Link aria-label={`go to ${link} social site`} href={link} key={link} rel='noopener noreferrer' target='_blank'>
+		{SOCIAL.map(({ link, icon: Icon, eventName }) => (
+			<Link onClick={() => { track(eventName) }} aria-label={`go to ${link} social site`} href={link} key={link} rel='noopener noreferrer' target='_blank'>
 				<Icon className={styles.icon} size={32} />
 			</Link>
 		))}

@@ -18,13 +18,16 @@ export const SOCIAL: SocialType[] = [
   {
     link: "https://twitter.com/elijahjcobb",
     icon: FaXTwitter,
+    eventName: "twitter",
   },
   {
     link: "https://www.linkedin.com/in/elijahjcobb/",
     icon: FaLinkedin,
+    eventName: "linkedin",
   },
   {
     link: "https://github.com/elijahjcobb",
     icon: FaGithubSquare,
+    eventName: "github",
   },
 ];

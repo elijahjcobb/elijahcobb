@@ -2,12 +2,13 @@ import { SideBar } from "../../side-bar";
 import Link from "next/link";
 import { VerticalLine } from "../../vertical-line";
 import styles from "./index.module.css";
+import { track } from "@vercel/analytics/react";
 
 const EMAIL = "elijah@elijahcobb.com";
 
 export function RightBar({ className }: { className?: string }): JSX.Element {
 	return <SideBar className={className}>
-		<Link className={styles.item} href={`mailto:${EMAIL}`} rel='noopener noreferrer' target='_blank'>
+		<Link className={styles.item} onClick={() => track("email")} href={`mailto:${EMAIL}`} rel='noopener noreferrer' target='_blank'>
 			<span className={styles.email}>{EMAIL}</span>
 		</Link>
 		<VerticalLine color='var(--foreground)' />
