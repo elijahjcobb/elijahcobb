@@ -19,11 +19,12 @@ export default function RootLayout({
 			<head>
 				<title>Elijah Cobb</title>
 				<link href="https://elijahcobb.dev/favicon.svg" rel="icon" type="image/svg+xml" />
-				<meta property="og:image" content="https://elijahcobb.dev/og.png"></meta>
-				<meta property="og:title" content="Elijah Cobb" />
+				<meta name="og:image" content="https://elijahcobb.dev/og.png" />
+				<meta name="title" content="Elijah Cobb" />
+				<meta name="og:title" content="Elijah Cobb" />
 				<meta name="description" content="The personal portfolio of Elijah Cobb." />
-				<meta property="og:description" content="The personal portfolio of Elijah Cobb." />
-				<meta property="og:url" content="elijahcobb.dev" />
+				<meta name="og:description" content="The personal portfolio of Elijah Cobb." />
+				<meta name="og:url" content="elijahcobb.dev" />
 			</head>
 			<body className={styles.shell}>
 				<Analytics />
