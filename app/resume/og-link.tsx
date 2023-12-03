@@ -57,10 +57,10 @@ function ogCacheKey(href: string): string {
 async function fetchOGData(href: string): Promise<Partial<OGData>> {
 	const cachedOGData = await kv.get<string>(ogCacheKey(href));
 	if (cachedOGData) {
-		return JSON.parse(cachedOGData) as Partial<OGData>;
+		return cachedOGData as Partial<OGData>;
 	}
 	const ogData = await fetchOGDataFromOpenGraph(href);
-	await kv.set(ogCacheKey(href), JSON.stringify(ogData));
+	await kv.set(ogCacheKey(href), ogData);
 	return ogData;
 }
 
