@@ -4,9 +4,10 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { FaReadme, FaCalendar, FaEye } from "react-icons/fa6";
 import type { MDXComponents } from "mdx/types";
 import { SnippetCode } from "#/app/snippets/snippet-code-block";
-import { getFileNames, parseFile } from "./parse-file";
+import { MDFile, getFileNames, parseFile } from "./parse-file";
 import { Reporter } from "./reporter";
 import Link from "next/link";
+import sluga from "sluga";
 
 export const revalidate = 10;
 
@@ -51,7 +52,7 @@ function languageFromExtension(extension: string): string {
 	}
 }
 
-const components: MDXComponents = {
+const components = (file: MDFile): MDXComponents => ({
 	pre: (props) => {
 		// @ts-expect-error - just ignore this
 		const languageCode = props?.children?.props?.className.replace('language-', '');
@@ -66,14 +67,21 @@ const components: MDXComponents = {
 	},
 	a: (props) => {
 		return <Link href={props.href!} target="_blank">{props.children}</Link>
+	},
+	h1: (props) => {
+		console.log(props);
+		const slug = sluga(props.children as string)
+		return <Link href={`#${slug}`} id={slug} className={blogStyles.h1}>{props.children}</Link>
 	}
-}
+})
 
 export default async function Page({
 	params
 }: {
 	params: { slug: string }
 }): Promise<JSX.Element> {
+
+	const file = await parseFile(params.slug);
 
 	const {
 		title,
@@ -83,7 +91,7 @@ export default async function Page({
 		content,
 		date,
 		views
-	} = await parseFile(params.slug);
+	} = file;
 
 	return (
 		<div>
@@ -98,7 +106,7 @@ export default async function Page({
 			</div>
 			<div className={blogStyles.blog}>
 				<Reporter slug={params.slug} />
-				<MDXRemote components={components} source={content} />
+				<MDXRemote components={components(file)} source={content} />
 			</div>
 		</div>
 	);

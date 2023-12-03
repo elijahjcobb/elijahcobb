@@ -15,7 +15,7 @@ it youself.
 
 Thus, [`typr`](https://github.com/elijahjcobb/typr) was born.
 
-# How does it work?
+# How does you use it?
 
 [`typr`](https://github.com/elijahjcobb/typr) is a recursive runtime type checker. You define a type
 and provide a value, and it will ensure that the type you provide, is the type you get.
@@ -93,3 +93,32 @@ checker.verify({
   isAdmin: 9,
 }); // undefined
 ```
+
+# How does it work?
+
+typr is set up to be extensible. A base class exists, and all other types extend that base class. The base class has a few helper functions, and requires that all children classes implement a `conforms` function.
+
+## The `TType` Class
+
+All special types extend the `TType` class. This class has the implementation for the few helper functions `force` and `verify`. It requires that any children classes implement the `conforms` function.
+
+```ts
+export abstract class TType<T> {
+  protected constructor() {}
+
+  public abstract conforms(value: any): boolean;
+
+  public verify(value: any): T | undefined {
+    if (!this.conforms(value)) return undefined;
+    return value as unknown as T;
+  }
+
+  public force(value: any): T {
+    if (!this.conforms(value))
+      throw new Error("typr found a type that does not conform");
+    return value as unknown as T;
+  }
+}
+```
+
+## Strings

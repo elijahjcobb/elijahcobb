@@ -2,9 +2,17 @@
 .blog h2,
 .blog h3,
 .blog h4,
-.blog h5 {
+.blog h5,
+.h1 {
   color: var(--secondary);
   font-weight: bold;
+}
+
+.h1 {
+  font-size: 32px;
+  outline: none;
+  border: none;
+  background: none;
 }
 
 .blog p {
@@ -40,14 +48,36 @@
   object-fit: contain;
 }
 
+.blog p {
+  margin: var(--padding-m) 0;
+}
+
 .blog h1,
 .blog h2,
 .blog h3,
 .blog h4,
 .blog h5,
-.blog p,
 .blog img,
 .blog pre,
 .codeBlock {
-  margin: var(--padding-m) 0;
+  margin: var(--padding-l) 0;
+}
+
+.h1 {
+  position: relative;
+}
+
+.h1:hover {
+  text-decoration: underline;
+}
+
+.h1::before {
+  content: "#";
+  position: absolute;
+  left: -2rem;
+  opacity: 0;
+}
+
+.h1:hover::before {
+  opacity: 1;
 }
