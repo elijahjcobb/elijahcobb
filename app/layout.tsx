@@ -21,7 +21,7 @@ export default function RootLayout({
 				<link href="https://elijahcobb.dev/favicon.svg" rel="icon" type="image/svg+xml" />
 				<meta property="og:image" content="https://elijahcobb.dev/og.png"></meta>
 				<meta property="og:title" content="Elijah Cobb" />
-				<meta property="description" content="The personal portfolio of Elijah Cobb." />
+				<meta name="description" content="The personal portfolio of Elijah Cobb." />
 				<meta property="og:description" content="The personal portfolio of Elijah Cobb." />
 				<meta property="og:url" content="elijahcobb.dev" />
 			</head>
