@@ -30,16 +30,13 @@ function MobileNavItems({ setIsOpen, isOpen }: MobileNavItemsProps): JSX.Element
 		</ul>
 		<div className={styles.socials}>
 			{SOCIAL.map(({ icon: Icon, link, eventName }) => {
-				return <Link href={link} key={link} onClick={() => {
-					track(eventName)
-					close();
-				}} passHref rel='noopener noreferrer' target='_blank'>
+				return <Link href={link} key={link} onClick={close} passHref rel='noopener noreferrer' target='_blank'>
 					<Icon className={styles.icon} size={32} />
 				</Link>
 			})}
 		</div>
 		<div className={styles.socials}>
-			<Link onClick={() => track("email")} href="mailto:elijah@elijahcobb.com" rel='noopener noreferrer' target='_blank'>
+			<Link href="mailto:elijah@elijahcobb.com" rel='noopener noreferrer' target='_blank'>
 				elijah@elijahcobb.com
 			</Link>
 		</div>

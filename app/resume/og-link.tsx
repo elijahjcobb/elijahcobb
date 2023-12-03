@@ -70,7 +70,7 @@ async function fetchOGData(href: string): Promise<Partial<OGData>> {
 
 async function OGCard({ href }: { href: string }): Promise<JSX.Element> {
 	const { title, description, image, domain } = await fetchOGData(href);
-	return <Link onClick={() => track("og-link", { href })} className={styles.link} href={href} target="_blank">
+	return <Link className={styles.link} href={href} target="_blank">
 		{/* eslint-disable-next-line @next/next/no-img-element */}
 		{image ? <img alt={title} className={styles.image} src={image} /> : null}
 		<div className={styles.text}>

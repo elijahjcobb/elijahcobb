@@ -5,7 +5,6 @@ import { SnippetCode } from "./snippet-code-block";
 import styles from "./snippet.module.css";
 import { SnippetStats } from "./stats";
 import { fetchGistFileData } from "#/data/github";
-import { track } from "@vercel/analytics/react";
 
 export interface SnippetProps {
 	gist: Gist;
@@ -16,7 +15,7 @@ export function Snippet({ gist }: SnippetProps): JSX.Element {
 		<div className={styles.left}>
 			<div className={styles.top}>
 				<h2>{gist.description}</h2>
-				<Link onClick={() => track("gist-open", { href: gist.url })} className={styles.btn} href={gist.url} target="_blank">
+				<Link className={styles.btn} href={gist.url} target="_blank">
 					<FaGithub />
 					<span>Open Gist</span>
 				</Link>
