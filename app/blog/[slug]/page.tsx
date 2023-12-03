@@ -69,7 +69,6 @@ const components = (file: MDFile): MDXComponents => ({
 		return <Link href={props.href!} target="_blank">{props.children}</Link>
 	},
 	h1: (props) => {
-		console.log(props);
 		const slug = sluga(props.children as string)
 		return <Link href={`#${slug}`} id={slug} className={blogStyles.h1}>{props.children}</Link>
 	}
