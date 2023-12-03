@@ -21,6 +21,9 @@ const TITLE_LENGTH = 48;
 const DESC_LENGTH = 100;
 
 async function fetchOGDataFromOpenGraph(href: string): Promise<Partial<OGData>> {
+
+	console.warn("No cache for OG data, now fetching for", href);
+
 	const resp = await fetch(`https://opengraph.io/api/1.1/site/${encodeURIComponent(href)}?app_id=${process.env.OPEN_GRAPH_KEY ?? ""}`);
 	const json = await resp.json();
 
