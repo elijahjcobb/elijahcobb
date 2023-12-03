@@ -22,6 +22,10 @@
   margin: var(--padding-m) 0;
 }
 
+.blog {
+  width: 100%;
+}
+
 .pills {
   display: flex;
   align-items: center;

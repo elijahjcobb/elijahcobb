@@ -24,7 +24,6 @@ export function SnippetCode({ file, content }: { file: GistFile, content: string
 		<SyntaxHighlighter
 			customStyle={{ width: "100%", background: 'none' }}
 			language={file.language.toLowerCase()}
-			wrapLines
 			style={oneDark}>
 			{content}
 		</SyntaxHighlighter>

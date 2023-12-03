@@ -4,6 +4,7 @@
   border: solid 1px var(--background-2);
   border-radius: var(--padding);
   position: relative;
+  font-size: 1rem;
 }
 
 .codeBlock code {

@@ -94,7 +94,7 @@ export default async function Page({
 	} = file;
 
 	return (
-		<div>
+		<div className={styles.blog}>
 			<div className={styles.header}>
 				<h1 className={styles.title}>{title}</h1>
 				<div className={styles.pills}>

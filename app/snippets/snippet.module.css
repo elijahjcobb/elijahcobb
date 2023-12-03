@@ -5,10 +5,6 @@
   gap: var(--padding-l);
 }
 
-.description {
-  font-size: 1.125em;
-}
-
 .lang {
   display: flex;
   gap: 4px;
@@ -43,7 +39,7 @@
 }
 
 .btn {
-  font-size: 18px;
+  font-size: 1rem;
   --size: 132px;
   width: var(--size);
   max-width: var(--size);
@@ -74,8 +70,4 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.stats {
-  font-size: 1.125em;
 }

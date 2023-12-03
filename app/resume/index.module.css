@@ -22,13 +22,9 @@
   display: block;
 }
 
-.position > h2 {
-  font-size: 1.5rem;
-}
-
 .business,
 .date {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .date {
@@ -52,7 +48,6 @@
 .task {
   margin-left: var(--padding-m);
   padding-left: var(--padding-m);
-  font-size: 1.125rem;
   line-height: 1.5;
   letter-spacing: 0.25px;
   font-weight: normal;

@@ -14,7 +14,7 @@ export function Snippet({ gist }: SnippetProps): JSX.Element {
 	return <div className={styles.container}>
 		<div className={styles.left}>
 			<div className={styles.top}>
-				<h1>{gist.description}</h1>
+				<h2>{gist.description}</h2>
 				<Link className={styles.btn} href={gist.url} target="_blank">
 					<FaGithub />
 					<span>Open Gist</span>
