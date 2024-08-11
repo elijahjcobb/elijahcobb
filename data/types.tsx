@@ -4,7 +4,7 @@ export interface PositionType {
 	id: number;
 	short_name?: string;
 	name: string;
-	href?: string;
+	href: string;
 	start_year: number;
 	start_month: number;
 	end_year?: number;
@@ -12,6 +12,7 @@ export interface PositionType {
 	position: string;
 	tasks?: string[];
 	links?: string[];
+	slug: string;
 }
 
 export interface SocialType {

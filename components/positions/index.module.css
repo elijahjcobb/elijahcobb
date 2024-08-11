@@ -1,0 +1,47 @@
+.position {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.title,
+.years {
+  color: var(--accent-4);
+}
+
+.years {
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--fg);
+  padding: 0 2px;
+  margin-left: -2px;
+  transition: color 125ms ease-in-out, background 125ms ease-in-out;
+}
+
+.left:hover {
+  color: var(--bg);
+  background: var(--fg);
+}
+
+.position li {
+  margin-left: var(--sp);
+}
+
+.position ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp4);
+}

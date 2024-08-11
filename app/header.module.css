@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
+.headshot {
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--accent-3);
+}
+
+.socials {
+  display: flex;
+  gap: var(--sp4);
+  --social-padding: 16px;
+}
+
+.social {
+  display: block;
+}
+
+.socialIcon {
+  color: var(--accent-5);
+  --size: calc(24px + (2 * var(--social-padding)));
+  width: var(--size);
+  height: var(--size);
+  transition: color 125ms ease-in-out;
+  padding: var(--social-padding);
+  margin-left: calc(-1 * var(--social-padding));
+}
+
+.socialIcon:hover {
+  color: var(--fg);
+}

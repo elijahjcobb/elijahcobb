@@ -1,8 +1,0 @@
-.icon {
-	color: var(--primary);
-	transition: 250ms ease-in-out;
-}
-.icon:hover {
-	color: var(--secondary);
-	transform: scale(1.125) translateY(-2px);
-}

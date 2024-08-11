@@ -1,5 +1,5 @@
 import { sql } from "@vercel/postgres";
-import { PositionType } from "./types";
+import type { PositionType } from "./types";
 
 export async function fetchPositions(): Promise<PositionType[]> {
   const { rows } =

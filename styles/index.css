@@ -3,44 +3,29 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth !important;
-  scroll-padding-top: var(--nav-height);
-  /* border: solid 1px red; */
+  /* scroll-padding-top: var(--nav-height); */
 }
 
-::selection {
+/* ::selection {
   background: var(--primary);
   color: var(--background);
-}
+} */
 
 :root {
-  --padding: 16px;
-  --padding-xxs: calc(var(--padding) / 8);
-  --padding-xs: calc(var(--padding) / 4);
-  --padding-s: calc(var(--padding) / 2);
-  --padding-m: calc(var(--padding) * 1.25);
-  --padding-l: calc(var(--padding) * 2);
-  --padding-xl: calc(var(--padding) * 4);
-  --padding-xxl: calc(var(--padding) * 8);
+  --sp: 16px;
+  --sp4: calc(var(--sp) / 8);
+  --sp3: calc(var(--sp) / 4);
+  --sp2: calc(var(--sp) / 2);
+  --sp1: calc(var(--sp) / 1.5);
+  --sp-1: var(--sp);
+  --sp-2: calc(var(--sp) * 1.25);
+  --sp-3: calc(var(--sp) * 1.5);
+  --sp-4: calc(var(--sp) * 2);
+  --sp-5: calc(var(--sp) * 4);
+  --sp-6: calc(var(--sp) * 8);
   --nav-height: 72px;
-  --red: #a71d31; /*#e3170a;*/
-  --green: #98c379;
-  --spotify: #1db954;
-  --yellow: #e5c07b;
-  --blue: #0693e3;
-  --blue-dark: #04669f;
-  --background-1: #1f143d;
-  --background-2: #2f1e5c;
-  --blue-darker: #120c24; /* #120e26; */
-  --orange: #f0803c;
-  --white: #f4f4f4;
-  --gray: #59646d;
-  --dark-gray: #2e3338;
-  --foreground: var(--white);
-  --primary: var(--blue);
-  --tertiary: var(--red);
-  --secondary: var(--orange);
-  --background: var(--blue-darker);
-  --background-dark: #120e26;
+  --bg: #fff;
+  --fg: #000;
   --accent-0: #000;
   --accent-1: #111;
   --accent-2: #222;
@@ -52,35 +37,24 @@
   --accent-8: #ddd;
   --accent-9: #fff;
   --font-size: 16px;
-  --font-mono: var(--font-geist-mono), monospace;
-  --font: var(--font-geist-sans), sans-serif;
   --page-height: var(100vh - var(--nav-height));
   --break: 800px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font);
   font-size: var(--font-size);
+  font-family: var(--font);
+  font-weight: 500;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: var(--secondary);
+hr {
+  border: none;
+  outline: solid 0.5px var(--accent-8);
+  border-radius: 1px;
 }
 
-a {
-  color: var(--primary);
-  font-family: var(--font-mono);
-  text-decoration: none;
-  transition: 250ms ease-in-out;
-}
-
-a:hover {
-  color: var(--secondary);
-  transform: scale(1.0625) translateY(-2px);
+.container {
+  max-width: 840px;
+  margin: auto;
+  padding: 32px;
 }
