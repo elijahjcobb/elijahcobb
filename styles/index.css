@@ -3,13 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth !important;
-  /* scroll-padding-top: var(--nav-height); */
 }
-
-/* ::selection {
-  background: var(--primary);
-  color: var(--background);
-} */
 
 :root {
   --sp: 16px;
@@ -41,10 +35,29 @@
   --break: 800px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #fff;
+    --bg: #000;
+    --accent-0: #fff;
+    --accent-1: #eee;
+    --accent-2: #ddd;
+    --accent-3: #ccc;
+    --accent-4: #bbb;
+    --accent-5: #aaa;
+    --accent-6: #777;
+    --accent-7: #333;
+    --accent-8: #111;
+    --accent-9: #000;
+  }
+}
+
 body {
   font-size: var(--font-size);
   font-family: var(--font);
   font-weight: 500;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 hr {
