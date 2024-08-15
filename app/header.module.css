@@ -12,6 +12,12 @@
 
 .headshot {
   border-radius: 50%;
+  filter: grayscale(1);
+  transition: filter 250ms ease-in-out;
+}
+
+.headshot:hover {
+  filter: grayscale(0);
 }
 
 .name {

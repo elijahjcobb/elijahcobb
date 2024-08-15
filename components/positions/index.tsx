@@ -8,6 +8,7 @@ import { GiMoonOrbit } from "react-icons/gi";
 import { FaUniversity } from "react-icons/fa";
 import { PiTestTubeFill } from "react-icons/pi";
 import Link from "next/link";
+import { PositionLinks } from "../links";
 
 
 function iconForPosition(position: PositionType): IconType | null {
@@ -49,5 +50,7 @@ export function Position({ position }: { position: PositionType }): JSX.Element 
 				<li key={task}>{task}</li>
 			)}
 		</ul> : null}
+		{position.links ? <PositionLinks links={position.links} /> : null}
 	</div>
 }
+

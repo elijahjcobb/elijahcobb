@@ -1,0 +1,44 @@
+.links {
+  display: flex;
+  gap: var(--sp2);
+  margin-top: var(--sp2);
+  flex-wrap: wrap;
+}
+
+.link {
+  padding: var(--sp2);
+  border: solid 1px var(--accent-8);
+  border-radius: var(--sp2);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--accent-5);
+  position: relative;
+  overflow: hidden;
+}
+
+.link:hover .iconContainer {
+  opacity: 1;
+}
+
+.iconContainer {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--fg);
+  transition: opacity 125ms ease-in-out;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: var(--bg);
+}
