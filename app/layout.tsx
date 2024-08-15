@@ -1,6 +1,5 @@
 import "#/styles/index.css";
 import { Instrument_Sans, Roboto_Mono } from 'next/font/google'
-import { Header } from "./header";
 
 export const metadata = {
   title: 'Next.js',
@@ -31,10 +30,7 @@ export default function RootLayout({
         <title>Elijah Cobb</title>
         <link rel="icon" href="/favicon.svg" />
       </head>
-      <body>
-        <Header />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

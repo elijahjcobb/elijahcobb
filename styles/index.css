@@ -27,8 +27,8 @@
   --accent-4: #555;
   --accent-5: #777;
   --accent-6: #999;
-  --accent-7: #bbb;
-  --accent-8: #ddd;
+  --accent-7: #eaeaea;
+  --accent-8: #fafafa;
   --accent-9: #fff;
   --font-size: 16px;
   --page-height: var(100vh - var(--nav-height));

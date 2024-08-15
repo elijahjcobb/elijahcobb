@@ -1,17 +1,18 @@
-import { PositionType } from "#/data/types";
 import { useMemo } from "react";
 import styles from "./index.module.css";
 import { IoLogoVercel, IoLogoApple, } from "react-icons/io5";
 import { BsFillStoplightsFill } from "react-icons/bs";
-import type { IconType } from "react-icons";
+import { IconType, IconBase } from "react-icons";
 import { GiMoonOrbit } from "react-icons/gi";
 import { FaUniversity } from "react-icons/fa";
 import { PiTestTubeFill } from "react-icons/pi";
 import Link from "next/link";
-import { PositionLinks } from "../links";
+import { PositionType } from "#/data/schemas";
+import { OGLink } from "../links";
 
 
 function iconForPosition(position: PositionType): IconType | null {
+
 	switch (position.slug) {
 		case "apple":
 			return IoLogoApple;
@@ -50,7 +51,11 @@ export function Position({ position }: { position: PositionType }): JSX.Element 
 				<li key={task}>{task}</li>
 			)}
 		</ul> : null}
-		{position.links ? <PositionLinks links={position.links} /> : null}
+		{position.links ? <div className={styles.links}>
+			{position.links.map(link => (
+				<OGLink key={link} id={link} />
+			))}
+		</div> : null}
 	</div>
 }
 

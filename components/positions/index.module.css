@@ -45,3 +45,10 @@
   flex-direction: column;
   gap: var(--sp4);
 }
+
+.links {
+  display: flex;
+  gap: var(--sp);
+  margin-top: var(--sp2);
+  flex-wrap: wrap;
+}

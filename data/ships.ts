@@ -1,8 +1,7 @@
 import { sql } from "@vercel/postgres";
-import { Ship } from "./types";
 
-export async function fetchShips(): Promise<Ship[]> {
+export async function fetchShips(): Promise<unknown[]> {
   const { rows } =
     await sql`SELECT * FROM Ships ORDER BY year DESC, trophy DESC, wip ASC, name;`;
-  return rows as Ship[];
+  return rows as unknown[];
 }
