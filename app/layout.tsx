@@ -28,7 +28,11 @@ export default function RootLayout({
     <html lang="en" className={`container ${font.variable} ${monoFont.variable}`}>
       <head>
         <title>Elijah Cobb</title>
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="https://elijahcobb.com/favicon.svg" />
+        <meta property="og:title" content="Elijah Cobb" />
+        <meta property="og:description" content="A personal portfolio site for Elijah Cobb." />
+        <meta property="og:url" content="https://elijahcobb.com" />
+        <meta property="og:image" content="https://elijahcobb.com/og.png" />
       </head>
       <body>{children}</body>
     </html>
