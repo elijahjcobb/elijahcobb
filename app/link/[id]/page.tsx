@@ -20,8 +20,8 @@ export default async function Page({ params }: { params: { id: string } }): Prom
 
 	const link = `https://elijahcobb.com/${id}`
 
-	const lastHit = moment(updated_at).subtract(7, 'hour').fromNow()
-	const createdAt = moment(created_at).subtract(7, 'hour');
+	const lastHit = moment(updated_at).fromNow()
+	const createdAt = moment(created_at);
 	const createdAgo = createdAt.fromNow();
 
 	return <div className={styles.container}>

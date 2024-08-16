@@ -19,7 +19,6 @@ export function generateRandomKey() {
 
 export async function doesIdExist(id: string): Promise<boolean> {
   const res = await sql`SELECT COUNT(*) FROM url_shortener WHERE id=${id}`;
-  console.log(res.rows[0]);
   const schema = z.object({
     count: z.coerce.number(),
   });
