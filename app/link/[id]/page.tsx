@@ -51,7 +51,7 @@ export default async function Page({ params }: { params: { id: string } }): Prom
 		</section>
 		<section>
 			<h3>Created At</h3>
-			<p>{`${createdAt.format("ddd, M-D-YY [at] h:mm:ssa")} (${createdAgo})`}</p>
+			<p>{createdAgo}</p>
 		</section>
 	</div>
 }
