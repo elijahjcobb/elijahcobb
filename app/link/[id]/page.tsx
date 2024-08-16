@@ -1,9 +1,9 @@
-import { fetchLink } from "#/data/links";
 import { LinkGetType } from "#/data/schemas";
 import { redirect } from 'next/navigation'
 import styles from "./page.module.css";
 import Link from "next/link";
 import moment from "moment";
+import { fetchLink } from "#/app/api/link/utils";
 
 export const revalidate = 0;
 

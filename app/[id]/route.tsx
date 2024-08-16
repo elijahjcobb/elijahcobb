@@ -3,17 +3,13 @@ import { kv } from "@vercel/kv";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { waitUntil } from "@vercel/functions";
-import { sql } from "@vercel/postgres";
-
-async function track(id: string): Promise<void> {
-	await sql`UPDATE link_meta SET hits = hits + 1, updated_at=NOW() WHERE id=${id}`;
-}
+import { getURLForLinkId, incrementHitCount } from "../api/link/utils";
 
 export const GET = createEndpoint(async (req, getParam) => {
 	try {
 		const id = getParam("id");
-		const href = z.string().url().parse(await kv.get(`link:${id}`));
-		waitUntil(track(id));
+		const href = await getURLForLinkId(id);
+		waitUntil(incrementHitCount(id));
 		return NextResponse.redirect(href)
 	} catch (e) {
 		console.error(e);

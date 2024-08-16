@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
-import { generateRandomKey } from "./utils";
+import { createLink, doesIdExist, generateRandomKey } from "./utils";
 import { APIError, createEndpoint, verifyBody } from "@elijahjcobb/next-api";
-import { kv } from "@vercel/kv";
 import { LinkPostResponseType, LinkPostBodySchema } from "#/data/schemas";
-import { sql } from "@vercel/postgres";
 
 export const POST = createEndpoint<LinkPostResponseType>(async (req) => {
   const { href } = await verifyBody(req, LinkPostBodySchema);
@@ -12,7 +10,7 @@ export const POST = createEndpoint<LinkPostResponseType>(async (req) => {
   const attempts = 1000;
   for (let i = 0; i < attempts; i++) {
     const newId = generateRandomKey();
-    const exists = await kv.exists(`link:${newId}`);
+    const exists = await doesIdExist(newId);
     if (!exists) {
       id = newId;
       break;
@@ -26,8 +24,7 @@ export const POST = createEndpoint<LinkPostResponseType>(async (req) => {
       message: `Failed to generate key in ${attempts} times.`,
     });
 
-  await kv.set(`link:${id}`, href);
-  await sql`INSERT INTO link_meta (id) VALUES (${id})`;
+  await createLink(id, href);
 
   return NextResponse.json({
     id,

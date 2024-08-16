@@ -81,6 +81,7 @@ export type LinkGetType = z.infer<typeof LinkGetSchema>;
 
 export const LinkMetaTableSchema = z.object({
   id: z.string(),
+  href: z.string(),
   hits: z.number(),
   created_at: z.date(),
   updated_at: z.date(),
