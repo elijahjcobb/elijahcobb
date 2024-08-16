@@ -1,6 +1,6 @@
-// import { OGLink } from "#/components/links";
+import { OGLink } from "#/components/links";
 import { Position } from "#/components/positions"
-import { fetchPositions } from "#/data/positions"
+import { fetchPositions, fetchLinks } from "#/data/positions"
 import image from "#/public/profile.png";
 import Link from "next/link";
 import styles from "./page.module.css"
@@ -8,7 +8,7 @@ import Image from "next/image";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa6";
 import { IconType } from "react-icons";
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 function ExternalIconLink({ href, icon: Icon }: { href: string, icon: IconType }): JSX.Element {
 	return <Link className={styles.social} href={href} target="_blank">
@@ -18,7 +18,7 @@ function ExternalIconLink({ href, icon: Icon }: { href: string, icon: IconType }
 
 export default async function Page() {
 	const positions = await fetchPositions()
-	// const links = await fetchLinks();
+	const links = await fetchLinks();
 	return <div className={styles.container}>
 		<section>
 			<header className={styles.header}>
@@ -40,12 +40,12 @@ export default async function Page() {
 				<Position position={pos} key={pos.id} />
 			))}
 		</section>
-		{/* <section className={styles.links}>
+		<section className={styles.links}>
 			<h2>Links</h2>
-			<p>Some fun links I have found along the way...</p>
+			<p>Some cool links I have found along the way...</p>
 			{links.map(link => (
 				<OGLink href={link.href} id={link.id} key={link.id} />
 			))}
-		</section> */}
+		</section>
 	</div>
 }
