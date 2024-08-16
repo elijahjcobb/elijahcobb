@@ -26,8 +26,19 @@ export async function doesIdExist(id: string): Promise<boolean> {
   return count > 0;
 }
 
+export async function getCachedLink(id: string): Promise<string | null> {
+  try {
+    const value = await kv.get(`link:${id}`);
+    const href = z.string().parse(value);
+    return href;
+  } catch {
+    return null;
+  }
+}
+
 export async function createLink(id: string, href: string): Promise<void> {
   await sql`INSERT INTO url_shortener (id, href) VALUES (${id}, ${href})`;
+  await kv.set(`link:${id}`, href);
 }
 
 export async function fetchLink(id: string): Promise<LinkGetType> {
