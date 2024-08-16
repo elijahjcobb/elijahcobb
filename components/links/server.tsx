@@ -3,8 +3,7 @@ import Link from "next/link";
 import { type OGMetadataType } from "#/data/schemas";
 import { MdImageNotSupported } from "react-icons/md";
 import { MdError } from "react-icons/md";
-import { fetchOGWithCache } from "#/app/api/og/[id]/route";
-
+import { fetchOGWithCache } from "#/app/api/og/[id]/utils";
 
 export async function OGLink({ id, href }: { id: number, href?: string }): Promise<JSX.Element> {
 
