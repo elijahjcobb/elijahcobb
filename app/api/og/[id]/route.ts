@@ -60,15 +60,13 @@ async function fetchFromCache(id: string): Promise<OGMetadataType | null> {
   }
 }
 
-export async function GET(
-  _: NextRequest,
-  meta: { params: { id: string } }
-): Promise<NextResponse<OGMetadataType | { error: string }>> {
-  const id = meta.params.id;
+export async function fetchOGWithCache(
+  id: string
+): Promise<OGMetadataType | null> {
   try {
     const cached = await fetchFromCache(id);
     if (cached) {
-      return NextResponse.json(cached);
+      return cached;
     }
 
     const res = await sql`SELECT * FROM links WHERE id=${id}`;
@@ -78,6 +76,21 @@ export async function GET(
     const meta = await fetchOG(href);
     await kv.set(createKey(id), JSON.stringify(meta));
 
+    return meta;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
+
+export async function GET(
+  _: NextRequest,
+  meta: { params: { id: string } }
+): Promise<NextResponse<OGMetadataType | { error: string }>> {
+  const id = meta.params.id;
+  try {
+    const meta = await fetchOGWithCache(id);
+    if (!meta) throw new Error("Meta is null");
     return NextResponse.json(meta);
   } catch (e) {
     console.error(e);

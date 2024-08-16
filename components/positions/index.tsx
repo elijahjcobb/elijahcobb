@@ -2,13 +2,13 @@ import { useMemo } from "react";
 import styles from "./index.module.css";
 import { IoLogoVercel, IoLogoApple, } from "react-icons/io5";
 import { BsFillStoplightsFill } from "react-icons/bs";
-import { IconType, IconBase } from "react-icons";
+import { IconType } from "react-icons";
 import { GiMoonOrbit } from "react-icons/gi";
 import { FaUniversity } from "react-icons/fa";
 import { PiTestTubeFill } from "react-icons/pi";
 import Link from "next/link";
 import { PositionType } from "#/data/schemas";
-import { OGLink } from "../links";
+import { OGLink } from "../links/server";
 
 
 function iconForPosition(position: PositionType): IconType | null {
