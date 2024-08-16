@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.container > * {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
+.form > * {
+  display: block;
+}
+
+.input,
+.button {
+  background: var(--accent-8);
+  border: solid 1px var(--accent-7);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.input {
+  font-family: var(--font-mono);
+}
+
+.button {
+  font-family: var(--font);
+  font-weight: 500;
+  transition: 125ms ease-in-out;
+}
+
+.button:hover {
+  background: var(--fg);
+  color: var(--bg);
+  cursor: pointer;
+}
+
+.error {
+  color: firebrick;
+}

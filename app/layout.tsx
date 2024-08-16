@@ -1,5 +1,13 @@
 import "#/styles/index.css";
 import { Instrument_Sans, Roboto_Mono } from 'next/font/google'
+import image from "#/public/profile.png";
+import Image from "next/image";
+import Link from "next/link";
+import { IconType } from "react-icons";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import styles from "./layout.module.css";
+import { MdOutlineAddLink } from "react-icons/md";
+
 
 export const metadata = {
   title: 'Next.js',
@@ -19,6 +27,14 @@ const monoFont = Roboto_Mono({
   variable: "--font-mono"
 });
 
+
+function ExternalIconLink({ href, icon: Icon }: { href: string, icon: IconType }): JSX.Element {
+  return <Link className={styles.social} href={href} target="_blank">
+    <Icon className={styles.socialIcon} />
+  </Link>
+}
+
+
 export default function RootLayout({
   children,
 }: {
@@ -34,7 +50,29 @@ export default function RootLayout({
         <meta property="og:url" content="https://elijahcobb.com" />
         <meta property="og:image" content="https://elijahcobb.com/og.png" />
       </head>
-      <body>{children}</body>
+      <body>
+        <header className={styles.header}>
+          <Link href="/" className={styles.bio}>
+            <Image className={styles.headshot} src={image} width={72} alt="elijah headshot" />
+            <h1 className={styles.name}>Elijah Cobb</h1>
+            <p className={styles.title}>Software Engineer</p>
+          </Link>
+          <div className={styles.bar}>
+            <div className={styles.socials}>
+              <ExternalIconLink icon={FaLinkedin} href="http://linkedin.com/in/elijahjcobb" />
+              <ExternalIconLink icon={FaGithub} href="https://github.com/elijahjcobb" />
+              <ExternalIconLink icon={FaEnvelope} href="mailto:elijah@elijahcobb.com" />
+            </div>
+            <Link className={styles.social} href={"/link"}>
+              <MdOutlineAddLink className={styles.socialIcon} />
+            </Link>
+          </div>
+          <hr className={styles.split} />
+        </header>
+        <main>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }

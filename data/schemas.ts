@@ -56,3 +56,34 @@ export const LinkStorageSchema = z.object({
 export const LinksStorageSchema = z.array(LinkStorageSchema);
 
 export type LinkStorageType = z.infer<typeof LinkStorageSchema>;
+
+export const LinkPostBodySchema = z.object({
+  href: z.string().trim().url(),
+});
+
+export type LinkPostBodyType = z.infer<typeof LinkPostBodySchema>;
+
+export const LinkPostResponseSchema = z.object({
+  id: z.string(),
+});
+
+export type LinkPostResponseType = z.infer<typeof LinkPostResponseSchema>;
+
+export const LinkGetSchema = z.object({
+  href: z.string().url(),
+  id: z.string(),
+  hits: z.number(),
+  created_at: z.string(),
+  updated_at: z.string(),
+});
+
+export type LinkGetType = z.infer<typeof LinkGetSchema>;
+
+export const LinkMetaTableSchema = z.object({
+  id: z.string(),
+  hits: z.number(),
+  created_at: z.date(),
+  updated_at: z.date(),
+});
+
+export type LinkMetaTableType = z.infer<typeof LinkMetaTableSchema>;

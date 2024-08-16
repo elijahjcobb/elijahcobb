@@ -1,56 +1,8 @@
 .positions,
-.header,
 .links {
   display: flex;
   flex-direction: column;
   gap: var(--sp-4);
-}
-
-.bio {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp2);
-}
-
-.headshot {
-  border-radius: 50%;
-  filter: grayscale(1);
-  transition: filter 250ms ease-in-out;
-}
-
-.headshot:hover {
-  filter: grayscale(0);
-}
-
-.name {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-.title {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--accent-3);
-}
-
-.socials {
-  display: flex;
-  gap: var(--sp2);
-}
-
-.social {
-  display: block;
-}
-
-.socialIcon {
-  color: var(--accent-5);
-  width: 24px;
-  height: 24px;
-  transition: color 125ms ease-in-out;
-}
-
-.socialIcon:hover {
-  color: var(--fg);
 }
 
 .container {
