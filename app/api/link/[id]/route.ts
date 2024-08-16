@@ -1,7 +1,7 @@
-import { fetchLink } from "#/data/links";
 import { LinkGetType } from "#/data/schemas";
 import { createEndpoint } from "@elijahjcobb/next-api";
 import { NextResponse } from "next/server";
+import { fetchLink } from "../utils";
 
 export const GET = createEndpoint<LinkGetType>(async (_, getParam) => {
   const id = getParam("id");

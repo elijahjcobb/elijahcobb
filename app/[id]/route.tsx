@@ -1,7 +1,5 @@
 import { createEndpoint } from "@elijahjcobb/next-api";
-import { kv } from "@vercel/kv";
 import { NextResponse } from "next/server";
-import { z } from "zod";
 import { waitUntil } from "@vercel/functions";
 import { getURLForLinkId, incrementHitCount } from "../api/link/utils";
 
