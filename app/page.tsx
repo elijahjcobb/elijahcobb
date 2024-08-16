@@ -3,7 +3,7 @@ import { Position } from "#/components/positions"
 import { fetchPositions, fetchLinks } from "#/data/positions"
 import styles from "./page.module.css"
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 export default async function Page() {
 	const positions = await fetchPositions()

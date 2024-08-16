@@ -8,8 +8,12 @@ import * as cheerio from "cheerio";
 import { sql } from "@vercel/postgres";
 import { kv } from "@vercel/kv";
 
+function createKey(id: string): string {
+  return `og:${id}`;
+}
+
 async function fetchOG(url: string): Promise<OGMetadataType> {
-  const response = await fetch(url);
+  const response = await fetch(url, { redirect: "follow" });
   const body = await response.text();
   const $ = cheerio.load(body);
 
@@ -28,7 +32,7 @@ async function fetchOG(url: string): Promise<OGMetadataType> {
   const title = $(head).html();
   if (title) ogData.set("title", title);
 
-  const fullUrl = new URL(url);
+  const fullUrl = new URL(response.url);
 
   return {
     title: ogData.get("og:title") ?? ogData.get("title"),
@@ -37,7 +41,7 @@ async function fetchOG(url: string): Promise<OGMetadataType> {
     updatedAt: ogData.get("og:updated_time"),
     image: ogData.get("og:image"),
     imageAlt: ogData.get("og:image:alt"),
-    url,
+    url: response.url,
     domain: fullUrl.host.replace("www.", ""),
     path: fullUrl.pathname.split("?")[0],
   };
@@ -45,7 +49,9 @@ async function fetchOG(url: string): Promise<OGMetadataType> {
 
 async function fetchFromCache(id: string): Promise<OGMetadataType | null> {
   try {
-    const res = await kv.get(`og:${id}`);
+    const key = createKey(id);
+    const exists = await kv.exists(key);
+    const res = await kv.get(key);
     if (!res) return null;
     return OGMetadataSchema.parse(res);
   } catch (e) {
@@ -59,7 +65,6 @@ export async function GET(
   meta: { params: { id: string } }
 ): Promise<NextResponse<OGMetadataType | { error: string }>> {
   const id = meta.params.id;
-
   try {
     const cached = await fetchFromCache(id);
     if (cached) {
@@ -69,9 +74,9 @@ export async function GET(
     const res = await sql`SELECT * FROM links WHERE id=${id}`;
     const row = LinkStorageSchema.parse(res.rows[0]);
     const href = row.href;
-    const meta = await fetchOG(href);
 
-    await kv.set(`og:${id}`, meta);
+    const meta = await fetchOG(href);
+    await kv.set(createKey(id), JSON.stringify(meta));
 
     return NextResponse.json(meta);
   } catch (e) {

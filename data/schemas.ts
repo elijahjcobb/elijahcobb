@@ -50,7 +50,7 @@ export type OGMetadataType = z.infer<typeof OGMetadataSchema>;
 export const LinkStorageSchema = z.object({
   id: z.number(),
   href: z.string(),
-  position_id: z.number().nullable(),
+  position_id: z.number().nullable().optional(),
 });
 
 export const LinksStorageSchema = z.array(LinkStorageSchema);
