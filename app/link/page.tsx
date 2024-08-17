@@ -1,49 +1,33 @@
-"use client";
-
-import { LinkPostResponseSchema } from "#/data/schemas";
-import { FormEvent, useState } from "react";
 import styles from "./page.module.css";
+import { LinkBuilder } from "./link-builder";
+import { countLinks, getLatestLinks } from "../api/link/utils";
+import Link from "next/link";
+import { FiExternalLink } from "react-icons/fi";
 
-export default function Page(): JSX.Element {
+export const revalidate = 60;
 
-	const [url, setUrl] = useState("");
-	const [disabled, setDisabled] = useState(false);
-	const [error, setError] = useState<boolean>(false);
-
-	const onSubmit = (ev: FormEvent) => {
-		ev.preventDefault();
-		setDisabled(true);
-		setError(false);
-		fetch("/api/link", {
-			method: "POST",
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ href: url })
-		})
-			.then(res => res.json())
-			.then((res) => {
-				const { id } = LinkPostResponseSchema.parse(res);
-				window.open(`/link/${id}`, "_self")
-			})
-			.catch((err) => {
-				console.error(err);
-				setError(true);
-			})
-			.finally(() => {
-				setDisabled(false);
-			})
-	};
-
+export default async function Page(): Promise<JSX.Element> {
+	const links = await getLatestLinks(10);
+	const count = await countLinks();
 	return <div className={styles.container}>
 		<section className={styles.top}>
 			<h2>Link Shortener</h2>
 			<p>A simple link shortener.</p>
 		</section>
-		<form className={styles.form} onSubmit={onSubmit}>
-			<input className={styles.input} disabled={disabled} required value={url} onChange={(ev) => setUrl(ev.target.value)} type="url" placeholder="https://elijahcobb.com" />
-			<button className={styles.button} disabled={disabled} type="submit">Shorten</button>
-			{error ? <p className={styles.error}>An error occurred. Feel free to check the logs.</p> : null}
-		</form>
-	</div>
+		<LinkBuilder />
+		<section>
+			<h3>Latest Links ({links.length}/{count})</h3>
+			<ul className={styles.latestLinks}>
+				{links.map(link => {
+					return <li key={link.id} className={styles.row}>
+						<Link className={styles.link} href={`/link/${link.id}`}>
+							<span>{link.id}</span>
+							<FiExternalLink />
+						</Link>
+					</li>
+				})}
+			</ul>
+			<span className={styles.foot}>Fetched once a minute.</span>
+		</section>
+	</div >
 }

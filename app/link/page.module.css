@@ -10,6 +10,12 @@
   gap: var(--sp2);
 }
 
+.container section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
 .form > * {
   display: block;
 }
@@ -41,4 +47,36 @@
 
 .error {
   color: firebrick;
+}
+
+.latestLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp);
+  list-style: none;
+  align-items: flex-start;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--sp2);
+  border: solid 1px var(--fg);
+  border-radius: 4px;
+  padding: 4px;
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--font-mono);
+  transition: 125ms ease-in-out;
+}
+
+.link:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.foot {
+  color: var(--accent-5);
+  font-style: italic;
+  font-size: 0.8rem;
 }

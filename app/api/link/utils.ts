@@ -76,3 +76,26 @@ export async function getURLForLinkId(id: string): Promise<string> {
   const { href } = schema.parse(res.rows[0]);
   return href;
 }
+
+export async function getLatestLinks(count: number): Promise<LinkGetType[]> {
+  const res =
+    await sql`SELECT * FROM url_shortener ORDER BY created_at DESC LIMIT ${count}`;
+
+  const rows = res.rows
+    .map((r) => LinkMetaTableSchema.parse(r))
+    .map((r) => ({
+      ...r,
+      updated_at: r.updated_at.toUTCString(),
+      created_at: r.created_at.toUTCString(),
+    }));
+  return rows;
+}
+
+export async function countLinks(): Promise<number> {
+  const res = await sql`SELECT COUNT(*) FROM url_shortener`;
+  const schema = z.object({
+    count: z.coerce.number(),
+  });
+  const { count } = schema.parse(res.rows[0]);
+  return count;
+}
