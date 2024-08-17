@@ -49,7 +49,6 @@ async function fetchOG(url: string): Promise<OGMetadataType> {
 async function fetchFromCache(id: string): Promise<OGMetadataType | null> {
   try {
     const key = createKey(id);
-    const exists = await kv.exists(key);
     const res = await kv.get(key);
     if (!res) return null;
     return OGMetadataSchema.parse(res);

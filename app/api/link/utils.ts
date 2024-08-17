@@ -74,6 +74,7 @@ export async function getURLForLinkId(id: string): Promise<string> {
     href: z.string(),
   });
   const { href } = schema.parse(res.rows[0]);
+  await kv.set(`link:${id}`, href);
   return href;
 }
 
