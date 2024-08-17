@@ -6,7 +6,7 @@ import Link from "next/link";
 import { IconType } from "react-icons";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import styles from "./layout.module.css";
-import { MdOutlineAddLink } from "react-icons/md";
+import { Analytics } from '@vercel/analytics/react';
 
 
 export const metadata = {
@@ -72,6 +72,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   )
