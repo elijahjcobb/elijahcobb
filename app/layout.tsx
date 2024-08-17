@@ -63,9 +63,9 @@ export default function RootLayout({
               <ExternalIconLink icon={FaGithub} href="https://github.com/elijahjcobb" />
               <ExternalIconLink icon={FaEnvelope} href="mailto:elijah@elijahcobb.com" />
             </div>
-            <Link className={styles.social} href={"/link"}>
+            {/* <Link className={styles.social} href={"/link"}>
               <MdOutlineAddLink className={styles.socialIcon} />
-            </Link>
+            </Link> */}
           </div>
           <hr className={styles.split} />
         </header>
