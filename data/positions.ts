@@ -1,4 +1,4 @@
-import { sql } from "@vercel/postgres";
+import { pg } from "./pg";
 import {
   LinksStorageSchema,
   LinkStorageType,
@@ -7,7 +7,7 @@ import {
 } from "./schemas";
 
 export async function fetchPositions(): Promise<PositionType[]> {
-  const { rows } = await sql`
+  const { rows } = await pg`
 SELECT
     *,
     ARRAY(SELECT id FROM links WHERE position_id = Positions.id ORDER BY id DESC) AS links
@@ -24,6 +24,6 @@ ORDER BY
 }
 
 export async function fetchLinks(): Promise<LinkStorageType[]> {
-  const { rows } = await sql`SELECT * FROM links WHERE position_id IS NULL`;
+  const { rows } = await pg`SELECT * FROM links WHERE position_id IS NULL`;
   return LinksStorageSchema.parse(rows);
 }

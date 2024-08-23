@@ -1,11 +1,11 @@
+import { kv } from "#/data/kv";
+import { pg } from "#/data/pg";
 import {
   OGMetadataType,
   OGMetadataSchema,
   LinkStorageSchema,
 } from "#/data/schemas";
 import * as cheerio from "cheerio";
-import { sql } from "@vercel/postgres";
-import { kv } from "@vercel/kv";
 
 function createKey(id: string): string {
   return `og:${id}`;
@@ -33,12 +33,33 @@ async function fetchOG(url: string): Promise<OGMetadataType> {
 
   const fullUrl = new URL(response.url);
 
+  function getIconUrlForProperty(prop: string): string | undefined {
+    const icon = $(`head link[rel="${prop}"]`);
+    let url: string | undefined;
+    if (icon) {
+      url = $(icon).attr("href");
+      if (url) {
+        if (url.startsWith("//")) {
+          url = `https:${url}`;
+        } else if (url.startsWith("/")) {
+          url = `${fullUrl.origin}/${url.slice(1)}`;
+        }
+      }
+    }
+    return url;
+  }
+
+  let iconUrl =
+    getIconUrlForProperty("icon") ??
+    getIconUrlForProperty("apple-touch-icon") ??
+    getIconUrlForProperty("shortcut icon");
+
   return {
     title: ogData.get("og:title") ?? ogData.get("title"),
     type: ogData.get("og:type"),
     description: ogData.get("og:description"),
     updatedAt: ogData.get("og:updated_time"),
-    image: ogData.get("og:image"),
+    image: ogData.get("og:image") ?? iconUrl,
     imageAlt: ogData.get("og:image:alt"),
     url: response.url,
     domain: fullUrl.host.replace("www.", ""),
@@ -62,12 +83,12 @@ export async function fetchOGWithCache(
   id: string
 ): Promise<OGMetadataType | null> {
   try {
-    const cached = await fetchFromCache(id);
-    if (cached) {
-      return cached;
-    }
+    // const cached = await fetchFromCache(id);
+    // if (cached) {
+    //   return cached;
+    // }
 
-    const res = await sql`SELECT * FROM links WHERE id=${id}`;
+    const res = await pg`SELECT * FROM links WHERE id=${id}`;
     const row = LinkStorageSchema.parse(res.rows[0]);
     const href = row.href;
 
