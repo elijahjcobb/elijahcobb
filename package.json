@@ -12,7 +12,6 @@
   "dependencies": {
     "@elijahjcobb/next-api": "^0.1.28",
     "@types/pg": "^8.11.6",
-    "@vercel/analytics": "^1.1.1",
     "@vercel/functions": "^1.4.0",
     "cheerio": "^1.0.0",
     "moment": "^2.30.1",

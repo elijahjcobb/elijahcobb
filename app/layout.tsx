@@ -6,7 +6,6 @@ import Link from "next/link";
 import { IconType } from "react-icons";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import styles from "./layout.module.css";
-import { Analytics } from '@vercel/analytics/react';
 
 
 export const metadata = {
@@ -45,6 +44,7 @@ export default function RootLayout({
       <head>
         <title>Elijah Cobb</title>
         <link rel="icon" href="https://elijahcobb.com/favicon.svg" />
+        <script defer src="https://analytics.elijahcobb.app/script.js" data-website-id="ac3368f3-97be-4c53-987f-54fa394441f6" />
         <meta property="og:title" content="Elijah Cobb" />
         <meta property="og:description" content="A personal portfolio site for Elijah Cobb." />
         <meta property="og:url" content="https://elijahcobb.com" />
@@ -63,16 +63,12 @@ export default function RootLayout({
               <ExternalIconLink icon={FaGithub} href="https://github.com/elijahjcobb" />
               <ExternalIconLink icon={FaEnvelope} href="mailto:elijah@elijahcobb.com" />
             </div>
-            {/* <Link className={styles.social} href={"/link"}>
-              <MdOutlineAddLink className={styles.socialIcon} />
-            </Link> */}
           </div>
           <hr className={styles.split} />
         </header>
         <main>
           {children}
         </main>
-        <Analytics />
       </body>
     </html>
   )
