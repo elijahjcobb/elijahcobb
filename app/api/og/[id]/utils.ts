@@ -1,10 +1,5 @@
-import { kv } from "#/data/kv";
 import { pg } from "#/data/pg";
-import {
-  OGMetadataType,
-  OGMetadataSchema,
-  LinkStorageSchema,
-} from "#/data/schemas";
+import { OGMetadataType, LinkStorageSchema } from "#/data/schemas";
 import * as cheerio from "cheerio";
 
 function createKey(id: string): string {
@@ -67,33 +62,15 @@ async function fetchOG(url: string): Promise<OGMetadataType> {
   };
 }
 
-async function fetchFromCache(id: string): Promise<OGMetadataType | null> {
-  try {
-    const key = createKey(id);
-    const res = await kv.get(key);
-    if (!res) return null;
-    return OGMetadataSchema.parse(res);
-  } catch (e) {
-    console.error(e);
-    return null;
-  }
-}
-
 export async function fetchOGWithCache(
   id: string
 ): Promise<OGMetadataType | null> {
   try {
-    // const cached = await fetchFromCache(id);
-    // if (cached) {
-    //   return cached;
-    // }
-
     const res = await pg`SELECT * FROM links WHERE id=${id}`;
     const row = LinkStorageSchema.parse(res.rows[0]);
     const href = row.href;
 
     const meta = await fetchOG(href);
-    await kv.set(createKey(id), JSON.stringify(meta));
 
     return meta;
   } catch (e) {
