@@ -21,9 +21,7 @@ export async function pg(
   ...values: Array<SupportedValue | Sql>
 ): Promise<QueryResult> {
   if (!client) {
-    client = new Client({
-      database: "postgres",
-    });
+    client = new Client(process.env.PG_URL);
     await client.connect();
   }
 
