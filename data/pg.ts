@@ -22,7 +22,7 @@ export async function pg(
 ): Promise<QueryResult> {
   if (!client) {
     client = new Client({
-      database: "elijahcobb",
+      database: "postgres",
     });
     await client.connect();
   }
