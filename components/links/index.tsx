@@ -15,7 +15,7 @@ export function OGLink({ id, href }: { id: number, href?: string }): JSX.Element
 
 	const handleImageError = useCallback(() => {
 		setImageError(imageError)
-	}, []);
+	}, [imageError]);
 
 	if (loadingOGData) {
 		return <div className={styles.card}>
@@ -74,7 +74,7 @@ function useOGData(id: number) {
 			.finally(() => {
 				setIsLoading(false)
 			})
-	}, [])
+	}, [id])
 
 	return {
 		isLoading,

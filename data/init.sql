@@ -3,7 +3,7 @@ CREATE TABLE positions (
 	slug TEXT UNIQUE,
 	short_name TEXT,
 	name TEXT NOT NULL,
-	href TEXT,
+	href TEXT NOT NULL,
 	start_year INT NOT NULL,
 	start_month INT NOT NULL,
 	end_year INT,
