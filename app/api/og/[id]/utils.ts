@@ -2,11 +2,7 @@ import { pg } from "#/data/pg";
 import { OGMetadataType, LinkStorageSchema } from "#/data/schemas";
 import * as cheerio from "cheerio";
 
-function createKey(id: string): string {
-  return `og:${id}`;
-}
-
-async function fetchOG(url: string): Promise<OGMetadataType> {
+async function fetchAndParseOGMetadata(url: string): Promise<OGMetadataType> {
   const response = await fetch(url, { redirect: "follow" });
   const body = await response.text();
   const $ = cheerio.load(body);
@@ -62,15 +58,13 @@ async function fetchOG(url: string): Promise<OGMetadataType> {
   };
 }
 
-export async function fetchOGWithCache(
-  id: string
-): Promise<OGMetadataType | null> {
+export async function fetchOG(id: number): Promise<OGMetadataType | null> {
   try {
-    const res = await pg`SELECT * FROM links WHERE id=${id}`;
+    const res = await pg`SELECT * FROM links WHERE id=${id} LIMIT 1`;
     const row = LinkStorageSchema.parse(res.rows[0]);
     const href = row.href;
 
-    const meta = await fetchOG(href);
+    const meta = await fetchAndParseOGMetadata(href);
 
     return meta;
   } catch (e) {

@@ -8,7 +8,7 @@ import { FaUniversity } from "react-icons/fa";
 import { PiTestTubeFill } from "react-icons/pi";
 import Link from "next/link";
 import { PositionType } from "#/data/schemas";
-import { OGLink } from "../links/server";
+import { OGLink } from "../links";
 
 
 function iconForPosition(position: PositionType): IconType | null {

@@ -1,29 +1,20 @@
-"use client";
-import { useCallback, useEffect, useState } from "react";
 import styles from "./index.module.css";
 import Link from "next/link";
-import { OGMetadataSchema, type OGMetadataType } from "#/data/schemas";
-import { PiSpinnerBold } from "react-icons/pi";
+import { type OGMetadataType } from "#/data/schemas";
 import { MdImageNotSupported } from "react-icons/md";
 import { MdError } from "react-icons/md";
+import { fetchOG } from "#/app/api/og/[id]/utils";
 
+export async function OGLink({ id, href }: { id: number, href?: string }): Promise<JSX.Element> {
 
-export function OGLink({ id, href }: { id: number, href?: string }): JSX.Element {
-
-	const { data, isLoading: loadingOGData } = useOGData(id);
-	const [imageError, setImageError] = useState(false);
-
-	const handleImageError = useCallback(() => {
-		setImageError(imageError)
-	}, [imageError]);
-
-	if (loadingOGData) {
-		return <div className={styles.card}>
-			<PiSpinnerBold className={styles.spinner} />
-		</div>
+	let data: OGMetadataType | null;
+	try {
+		data = await fetchOG(id);
+	} catch (e) {
+		data = null;
 	}
 
-	if (!data || imageError) {
+	if (!data) {
 
 		let url: URL | null
 
@@ -45,39 +36,10 @@ export function OGLink({ id, href }: { id: number, href?: string }): JSX.Element
 	}
 
 	return <Link href={href ?? data.url} target="_blank" className={styles.card}>
-		{data.image ? <img onError={handleImageError} className={styles.image} src={data.image} /> : <div className={styles.placeholder}><MdImageNotSupported className={styles.placeholderIcon} /></div>}
+		{data.image ? <img className={styles.image} src={data.image} /> : <div className={styles.placeholder}><MdImageNotSupported className={styles.placeholderIcon} /></div>}
 		<div className={styles.container}>
 			<p className={styles.title}>{data.title ?? data.domain ?? "-"}</p>
 			<p className={styles.domain}>{data.domain ?? "-"}</p>
 		</div>
 	</Link>
-}
-
-async function fetchOGData(id: number): Promise<OGMetadataType> {
-	const response = await fetch(`/api/og/${id}`);
-	const json = await response.json();
-	return OGMetadataSchema.parse(json)
-}
-
-function useOGData(id: number) {
-
-	const [isLoading, setIsLoading] = useState(true)
-	const [data, setData] = useState<null | OGMetadataType>(null);
-
-	useEffect(() => {
-		setIsLoading(true)
-		fetchOGData(id)
-			.then(setData)
-			.catch((err) => {
-				console.error(err)
-			})
-			.finally(() => {
-				setIsLoading(false)
-			})
-	}, [id])
-
-	return {
-		isLoading,
-		data
-	}
 }
