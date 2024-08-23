@@ -144,7 +144,13 @@ export async function pg(
       ];
       for (const row of data) {
         const s = sql`INSERT INTO positions (short_name, name, href, start_year, start_month, end_year, end_month, position, tasks, slug) VALUES (${row.short_name}, ${row.name}, ${row.href}, ${row.start_year}, ${row.start_month}, ${row.end_year}, ${row.end_month}, ${row.position}, ${row.tasks}, ${row.slug})`;
-        await client.query(s.text, s.values);
+        try {
+          await client.query(s.text, s.values);
+          console.log(`Saved ${row.slug}`);
+        } catch (e) {
+          console.error(e);
+          throw e;
+        }
       }
     }
   }
