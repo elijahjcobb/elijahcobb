@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./index.module.css";
 import Link from "next/link";
 import { type OGMetadataType } from "#/data/schemas";
@@ -36,7 +37,7 @@ export async function OGLink({ href }: { href: string }): Promise<JSX.Element> {
 	}
 
 	return <Link href={href ?? data.url} target="_blank" className={styles.card}>
-		{data.image ? <img className={styles.image} src={data.image} /> : <div className={styles.placeholder}><MdImageNotSupported className={styles.placeholderIcon} /></div>}
+		{data.image ? <img alt="link preview" className={styles.image} src={data.image} /> : <div className={styles.placeholder}><MdImageNotSupported className={styles.placeholderIcon} /></div>}
 		<div className={styles.container}>
 			<p className={styles.title}>{data.title ?? data.domain ?? "-"}</p>
 			<p className={styles.domain}>{data.domain ?? "-"}</p>
