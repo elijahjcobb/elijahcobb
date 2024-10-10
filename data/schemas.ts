@@ -16,7 +16,7 @@ export const PositionSchema = z.object({
   end_month: z.number().nullable(),
   position: z.string(),
   tasks: z.array(z.string()).nullable(),
-  links: z.array(z.number()).nullable(),
+  links: z.array(z.string()).nullable(),
   slug: z.string(),
 });
 

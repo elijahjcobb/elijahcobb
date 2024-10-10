@@ -53,7 +53,7 @@ export function Position({ position }: { position: PositionType }): JSX.Element 
 		</ul> : null}
 		{position.links ? <div className={styles.links}>
 			{position.links.map(link => (
-				<OGLink key={link} id={link} />
+				<OGLink key={link} href={link} />
 			))}
 		</div> : null}
 	</div>

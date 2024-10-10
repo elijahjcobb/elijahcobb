@@ -1,6 +1,7 @@
 import { OGMetadataType } from "#/data/schemas";
 import { NextRequest, NextResponse } from "next/server";
 import { fetchOG } from "./utils";
+import { positionForID } from "#/data/positions";
 
 export async function GET(
   _: NextRequest,
@@ -8,7 +9,9 @@ export async function GET(
 ): Promise<NextResponse<OGMetadataType | { error: string }>> {
   const id = meta.params.id;
   try {
-    const meta = await fetchOG(parseInt(id));
+    const position = positionForID(id);
+    if (!position) throw new Error("Position is null");
+    const meta = await fetchOG(position.href);
     if (!meta) throw new Error("Meta is null");
     return NextResponse.json(meta);
   } catch (e) {

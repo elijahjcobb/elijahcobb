@@ -5,11 +5,11 @@ import { MdImageNotSupported } from "react-icons/md";
 import { MdError } from "react-icons/md";
 import { fetchOG } from "#/app/api/og/[id]/utils";
 
-export async function OGLink({ id, href }: { id: number, href?: string }): Promise<JSX.Element> {
+export async function OGLink({ href }: { href: string }): Promise<JSX.Element> {
 
 	let data: OGMetadataType | null;
 	try {
-		data = await fetchOG(id);
+		data = await fetchOG(href);
 	} catch (e) {
 		data = null;
 	}

@@ -1,29 +1,49 @@
-import { pg } from "./pg";
-import {
-  LinksStorageSchema,
-  LinkStorageType,
-  PositionsSchema,
-  PositionType,
-} from "./schemas";
+import { PositionType } from "./schemas";
 
-export async function fetchPositions(): Promise<PositionType[]> {
-  const { rows } = await pg`
-SELECT
-    *,
-    ARRAY(SELECT id FROM links WHERE position_id = Positions.id ORDER BY id DESC) AS links
-FROM
-    Positions
-ORDER BY
-    end_year DESC,
-    end_month DESC,
-    start_year ASC,
-    start_month ASC,
-    name ASC
-    `;
-  return PositionsSchema.parse(rows);
+const positions: Omit<PositionType, "id">[] = [
+  {
+    slug: "apple",
+    name: "Apple",
+    short_name: null,
+    href: "https://apple.com",
+    position: "Software Engineer",
+    links: [
+      "https://www.apple.com/apple-intelligence",
+      "https://www.apple.com/ios/ios-18-preview",
+      "https://www.apple.com/macos/macos-sequoia-preview",
+    ],
+    tasks: [
+      "Contributor to core OS frameworks in Swift and Objective-C. Application engineering using Swift, Objective-C in tandem with SwiftUI and UIKit.",
+      "Full-stack application development using Next.js, ExpressJS, TypeScript, etc.",
+    ],
+    start_month: 12,
+    start_year: 2023,
+    end_month: null,
+    end_year: null,
+  },
+  // {
+  //   slug: "",
+  //   name: "",
+  //   short_name: "",
+  //   href: "",
+  //   position: "",
+  //   links: [],
+  //   tasks: [],
+  //   start_month: 0,
+  //   start_year: 0,
+  //   end_month: 0,
+  //   end_year: 0,
+  // },
+];
+
+export function fetchPositions(): PositionType[] {
+  return positions.map((old, i) => ({ ...old, id: i }));
 }
 
-export async function fetchLinks(): Promise<LinkStorageType[]> {
-  const { rows } = await pg`SELECT * FROM links WHERE position_id IS NULL`;
-  return LinksStorageSchema.parse(rows);
+export function positionForID(id: number | string): PositionType | null {
+  let idNumber = typeof id == "string" ? parseInt(id) : id;
+  for (const position of fetchPositions()) {
+    if (position.id === idNumber) return position;
+  }
+  return null;
 }
