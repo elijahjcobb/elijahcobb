@@ -50,6 +50,7 @@ export async function fetchOG(url: string): Promise<OGMetadataType> {
     description: ogData.get("og:description"),
     updatedAt: ogData.get("og:updated_time"),
     image: ogData.get("og:image") ?? iconUrl,
+    icon: iconUrl,
     imageAlt: ogData.get("og:image:alt"),
     url: response.url,
     domain: fullUrl.host.replace("www.", ""),

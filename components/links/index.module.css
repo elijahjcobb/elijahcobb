@@ -1,80 +1,66 @@
 .card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  gap: 11px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--panel);
   text-decoration: none;
-  color: var(--fg);
-  border: solid 1px var(--accent-7);
-  border-radius: 8px;
-  width: 180px;
-  height: 138px;
-  overflow: hidden;
-  filter: grayscale(1);
-  transition: filter 125ms ease-in-out;
-  background: var(--accent-8);
+  transition: border-color 0.18s, transform 0.18s;
 }
 
 .card:hover {
-  filter: grayscale(0);
+  border-color: var(--faint);
+  transform: translateY(-1px);
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 4px;
-  width: 100%;
-  gap: 2px;
-  border-top: solid 1px var(--accent-7);
-}
-
-.image,
-.placeholder {
-  width: 100%;
-  aspect-ratio: 1.91;
-  object-fit: cover;
-  overflow: hidden;
-}
-
-.placeholder {
+.tile {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: var(--tile);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-7);
+  overflow: hidden;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  color: var(--muted);
 }
 
-.placeholderIcon {
-  width: 32px;
-  height: 32px;
-  color: var(--accent-6);
+.icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
 }
 
 .title {
-  font-size: 0.85rem;
-  height: 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg);
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .domain {
-  font-size: 0.7rem;
-  font-family: var(--font-mono);
-  color: var(--accent-5);
-  font-weight: 400;
+  font-family: var(--font-mono), monospace;
+  font-size: 10.5px;
+  color: var(--faint);
 }
 
-.spinner {
-  width: 24px;
-  height: 24px;
-  color: var(--accent-6);
-  animation: spin 2s linear forwards infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.arrow {
+  margin-left: auto;
+  color: var(--faint);
+  font-size: 12px;
+  padding-left: 4px;
 }

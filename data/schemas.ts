@@ -38,6 +38,7 @@ export const OGMetadataSchema = z.object({
   type: z.string().optional(),
   description: z.string().optional(),
   image: z.string().optional(),
+  icon: z.string().optional(),
   imageAlt: z.string().optional(),
   updatedAt: z.string().optional(),
   url: z.string(),

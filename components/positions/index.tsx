@@ -1,61 +1,58 @@
-import { useMemo } from "react";
-import styles from "./index.module.css";
-import { IoLogoVercel, IoLogoApple, } from "react-icons/io5";
-import { BsFillStoplightsFill } from "react-icons/bs";
-import { IconType } from "react-icons";
-import { GiMoonOrbit } from "react-icons/gi";
-import { FaUniversity } from "react-icons/fa";
-import { PiTestTubeFill } from "react-icons/pi";
 import Link from "next/link";
 import { PositionType } from "#/data/schemas";
 import { OGLink } from "../links";
+import styles from "./index.module.css";
 
-
-function iconForPosition(position: PositionType): IconType | null {
-
-	switch (position.slug) {
-		case "apple":
-			return IoLogoApple;
-		case "vercel":
-			return IoLogoVercel;
-		case "ampel":
-			return BsFillStoplightsFill;
-		case "pstdl":
-			return GiMoonOrbit;
-		case "coc":
-			return FaUniversity;
-		case "ss":
-			return PiTestTubeFill;
-		default:
-			return null;
-	}
+function formatYears(position: PositionType): string {
+  if (position.end_year && position.end_year !== position.start_year) {
+    return `${position.start_year} — ${position.end_year}`;
+  }
+  return `${position.start_year}`;
 }
 
-export function Position({ position }: { position: PositionType }): JSX.Element {
+export function Position({
+  position,
+  index,
+}: {
+  position: PositionType;
+  index: number;
+}): JSX.Element {
+  const n = String(index).padStart(2, "0");
 
-	const dataString = useMemo(() => `${position.start_year}${position.end_year ? `-${position.end_year}` : ''}`, [position.end_year, position.start_year]);
-
-	const Icon = useMemo(() => iconForPosition(position), [position]);
-
-	return <div className={styles.position}>
-		<div className={styles.top}>
-			<Link target="_blank" href={position.href} className={styles.left}>
-				{Icon ? <Icon className={styles.icon} /> : null}
-				<b className={styles.name}>{position.name}</b>
-			</Link>
-			<span className={styles.years}>{dataString}</span>
-		</div>
-		<p className={styles.title}>{position.position}</p>
-		{position.tasks ? <ul>
-			{position.tasks.map(task =>
-				<li key={task}>{task}</li>
-			)}
-		</ul> : null}
-		{position.links ? <div className={styles.links}>
-			{position.links.map(link => (
-				<OGLink key={link} href={link} />
-			))}
-		</div> : null}
-	</div>
+  return (
+    <article className={styles.position}>
+      <div className={styles.index}>{n}</div>
+      <div className={styles.body}>
+        <div className={styles.top}>
+          <Link
+            href={position.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.name}
+          >
+            {position.name}
+          </Link>
+          <span className={styles.years}>{formatYears(position)}</span>
+        </div>
+        <div className={styles.role}>{position.position}</div>
+        {position.tasks ? (
+          <ul className={styles.tasks}>
+            {position.tasks.map((task) => (
+              <li key={task} className={styles.task}>
+                <span className={styles.dash}>—</span>
+                <span className={styles.taskText}>{task}</span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {position.links ? (
+          <div className={styles.links}>
+            {position.links.map((link) => (
+              <OGLink key={link} href={link} />
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </article>
+  );
 }
-

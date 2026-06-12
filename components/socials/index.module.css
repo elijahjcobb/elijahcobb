@@ -1,0 +1,32 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 0;
+  border-top: 1px solid var(--line2);
+  text-decoration: none;
+  transition: padding-left 0.18s;
+}
+
+.row:hover {
+  padding-left: 6px;
+}
+
+.label {
+  font-size: 13.5px;
+  color: var(--fg);
+}
+
+.handle {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--faint);
+  white-space: nowrap;
+}
